@@ -1,0 +1,14 @@
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/bin/Debug/net7.0/PicnicFinder
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/bin/Debug/net7.0/PicnicFinder.deps.json
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/bin/Debug/net7.0/PicnicFinder.runtimeconfig.json
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/bin/Debug/net7.0/PicnicFinder.dll
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/bin/Debug/net7.0/PicnicFinder.pdb
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.GeneratedMSBuildEditorConfig.editorconfig
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.AssemblyInfoInputs.cache
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.AssemblyInfo.cs
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.csproj.CoreCompileInputs.cache
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.dll
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/refint/PicnicFinder.dll
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.pdb
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.genruntimeconfig.cache
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/ref/PicnicFinder.dll

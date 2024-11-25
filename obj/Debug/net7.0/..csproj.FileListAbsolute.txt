@@ -1,0 +1,7 @@
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/..GeneratedMSBuildEditorConfig.editorconfig
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/..AssemblyInfoInputs.cache
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/..AssemblyInfo.cs
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/..csproj.CoreCompileInputs.cache
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/..dll
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/refint/..dll
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/..pdb

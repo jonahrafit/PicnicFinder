@@ -1,4 +1,5 @@
 # PicnicFinder
+Une application qui aide les entreprises à trouver des lieux adaptés pour des sorties d’équipe ou des pique-niques, en fonction de leur emplacement, du nombre de participants, et des activités souhaitées.
 
 ## Technologies définies :
 
@@ -40,3 +41,41 @@ Afficher les lieux disponibles.
 Réserver un espace.
 Consulter les avis.
 Permet l’interaction entre le frontoffice et d’autres plateformes (par exemple, une application mobile).
+
+## Fonctionnalités du Projet
+### Frontoffice (Interface utilisateur)
+#### Recherche d’espaces :
+Critères de recherche : emplacement, distance, capacité, équipements disponibles (tables, barbecue, toilettes, parking).
+Type d’activités : jeux de groupe, détente, nature, sports.
+#### Carte interactive :
+Visualisation des espaces disponibles.
+Affichage des caractéristiques de chaque lieu.
+#### Réservation en ligne :
+Réservation des espaces directement via l’application (si applicable).
+#### Avis et photos :
+Permettre aux utilisateurs de consulter et laisser des avis ou des photos des lieux.
+#### Notifications :
+Recevoir des rappels ou suggestions pour des lieux disponibles et adaptés.
+
+### Backoffice (Administration)
+#### Gestion des espaces :
+Ajouter, modifier, ou supprimer des lieux de pique-nique.
+Gérer les descriptions, photos, tarifs, et disponibilités.
+#### Suivi des réservations :
+Voir les demandes de réservation et les confirmer.
+#### Gestion des avis et commentaires :
+Modérer les avis laissés par les utilisateurs.
+#### Statistiques et rapports :
+Suivi des espaces les plus réservés et des tendances d’utilisation.
+#### Partenariats locaux :
+Gestion des collaborations avec les propriétaires d’espaces ou des prestataires de services.
+
+### Exemple d’utilisation
+#### Entreprise A souhaite organiser un pique-nique :
+Elle recherche un espace pouvant accueillir 50 employés avec des installations pour un barbecue et des jeux.
+#### Utilisation de PicnicFinder :
+Entrée des critères (50 personnes, barbecue, jeux de groupe).
+Consultation des options disponibles sur une carte.
+Réservation directe en ligne d’un espace avec parking et avis positifs.
+#### Jour du pique-nique :
+Les employés suivent les instructions sur l’application pour se rendre sur place.

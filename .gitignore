@@ -1,0 +1,39 @@
+# Fichiers générés par Visual Studio ou .NET SDK
+bin/
+obj/
+*.user
+*.lock.json
+*.ide
+
+# Logs
+*.log
+
+# Systèmes d'exploitation
+.DS_Store
+Thumbs.db
+
+# Configuration utilisateur
+.vscode/
+.idea/
+*.suo
+*.userosscache
+*.userprefs
+
+# Environnements de conteneurs ou cloud
+.docker/
+*.dockerignore
+
+# Outils et fichiers temporaires
+*.vs
+*.tmp
+*.temp
+*.bak
+*.old
+*.swp
+
+# Secrets et fichiers sensibles
+secrets.json
+.env
+.env.*
+*.pfx
+*.cer
