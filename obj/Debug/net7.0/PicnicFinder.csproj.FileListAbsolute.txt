@@ -28,3 +28,4 @@
 /home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.pdb
 /home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.genruntimeconfig.cache
 /home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/ref/PicnicFinder.dll
+/home/jonah/Documents/MASTER/MBDS/PicnicFinder/obj/Debug/net7.0/PicnicFinder.sourcelink.json

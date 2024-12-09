@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PicnicFinder")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d8842a036b570f9458cc0b6efe1b350fa5c68fe2")]
 [assembly: System.Reflection.AssemblyProductAttribute("PicnicFinder")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PicnicFinder")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

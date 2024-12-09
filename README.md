@@ -34,48 +34,108 @@ Vue : Affichage des pages web (HTML/CSS avec Razor pour le rendu dynamique).
 Contrôleur : Logique métier et interaction avec l'utilisateur.
 Adaptée pour des applications front-end dynamiques et évolutives.
 
-### REST API
-Point d'accès pour communiquer avec le backend (via Entity Framework).
-Fournit une interface pour les actions comme :
-Afficher les lieux disponibles.
-Réserver un espace.
-Consulter les avis.
-Permet l’interaction entre le frontoffice et d’autres plateformes (par exemple, une application mobile).
 
-## Fonctionnalités du Projet
-### Frontoffice (Interface utilisateur)
-#### Recherche d’espaces :
-Critères de recherche : emplacement, distance, capacité, équipements disponibles (tables, barbecue, toilettes, parking).
-Type d’activités : jeux de groupe, détente, nature, sports.
-#### Carte interactive :
-Visualisation des espaces disponibles.
-Affichage des caractéristiques de chaque lieu.
-#### Réservation en ligne :
-Réservation des espaces directement via l’application (si applicable).
-#### Avis et photos :
-Permettre aux utilisateurs de consulter et laisser des avis ou des photos des lieux.
-#### Notifications :
-Recevoir des rappels ou suggestions pour des lieux disponibles et adaptés.
+--------------------------------------------------------
+# PicnicFinder
+PicnicFinder est une application qui aide les entreprises à trouver et réserver des lieux adaptés pour des sorties d’équipe ou des pique-niques. L'application propose une interface de gestion pour les administrateurs, une plateforme de recherche pour les employés, et un espace dédié pour les propriétaires de lieux.
 
-### Backoffice (Administration)
-#### Gestion des espaces :
-Ajouter, modifier, ou supprimer des lieux de pique-nique.
-Gérer les descriptions, photos, tarifs, et disponibilités.
-#### Suivi des réservations :
-Voir les demandes de réservation et les confirmer.
-#### Gestion des avis et commentaires :
-Modérer les avis laissés par les utilisateurs.
-#### Statistiques et rapports :
-Suivi des espaces les plus réservés et des tendances d’utilisation.
-#### Partenariats locaux :
-Gestion des collaborations avec les propriétaires d’espaces ou des prestataires de services.
+---
 
-### Exemple d’utilisation
-#### Entreprise A souhaite organiser un pique-nique :
-Elle recherche un espace pouvant accueillir 50 employés avec des installations pour un barbecue et des jeux.
-#### Utilisation de PicnicFinder :
-Entrée des critères (50 personnes, barbecue, jeux de groupe).
-Consultation des options disponibles sur une carte.
-Réservation directe en ligne d’un espace avec parking et avis positifs.
-#### Jour du pique-nique :
-Les employés suivent les instructions sur l’application pour se rendre sur place.
+## Fonctionnalités
+
+### 1. Écran de login (Backoffice et Frontoffice)
+- **Authentification :**
+  - **Administrateurs :** Accès au tableau de bord du Backoffice.
+  - **Employés :** Accès à l’espace de recherche avec email/mot de passe.
+  - **Propriétaires :** Accès à leur espace de gestion via login.
+
+---
+
+### 2. Backoffice (Administrateur)
+- **Gestion des utilisateurs :**
+  - Valider ou rejeter les inscriptions des propriétaires.
+  - Activer/désactiver les comptes des employés et propriétaires.
+
+- **Gestion des espaces :**
+  - Modérer les informations des espaces proposés (approbation avant publication).
+  - Supprimer ou désactiver les espaces inappropriés.
+
+- **Suivi des réservations :**
+  - Consulter les réservations effectuées par les employés.
+  - Gérer les conflits liés aux réservations.
+
+- **Rapports :**
+  - Générer des statistiques sur :
+    - Nombre de réservations par mois.
+    - Espaces les plus populaires.
+    - Performances des propriétaires.
+
+---
+
+### 3. Frontoffice (Employé)
+- **Recherche d’espaces :**
+  - Critères de recherche : localisation, prix, capacité, équipements, disponibilité.
+  - Affichage des résultats avec filtres (tri par distance, tarif, note des utilisateurs).
+
+- **Réservation d’un espace :**
+  - Consulter les détails d’un espace (photos, description, équipements).
+  - Sélectionner une date et confirmer la réservation.
+
+- **Suivi des réservations :**
+  - Historique des réservations effectuées.
+  - Possibilité d’annuler une réservation.
+
+---
+
+### 4. Frontoffice (Propriétaire)
+- **Inscription :**
+  - Création d’un compte avec nom, email, téléphone, mot de passe.
+  - Validation du compte par l’administrateur.
+
+- **Gestion des espaces :**
+  - Ajouter un espace avec :
+    - Nom, localisation (via carte interactive), capacité, prix, équipements disponibles.
+    - Photos et description détaillée.
+  - Modifier ou supprimer les espaces.
+
+- **Suivi des réservations :**
+  - Consultation des réservations sur leurs espaces.
+  - Validation ou rejet des demandes de réservation.
+
+---
+
+## Base de Données (SQL Server)
+
+### Tables principales :
+- **Users :**
+  - `UserID`, `Name`, `Email`, `Phone`, `Password`, `Role` (Admin/Employé/Propriétaire).
+- **Spaces :**
+  - `SpaceID`, `Name`, `Location`, `Capacity`, `Price`, `Description`, `OwnerID`.
+- **Reservations :**
+  - `ReservationID`, `SpaceID`, `EmployeeID`, `Date`, `Status` (Confirmée/Rejetée).
+- **Reviews (optionnel) :**
+  - `ReviewID`, `SpaceID`, `EmployeeID`, `Rating`, `Comment`.
+
+### Relations principales :
+- Un propriétaire peut avoir plusieurs espaces.
+- Un employé peut effectuer plusieurs réservations.
+- Une réservation est associée à un espace et à un employé.
+
+---
+
+## Exemple d’utilisation
+
+1. **Recherche d’un espace :**
+   - Un employé entre les critères (localisation, capacité, équipements, etc.).
+   - Résultats affichés sur une carte interactive avec filtres.
+
+2. **Réservation :**
+   - L’employé sélectionne un espace, consulte les détails, et confirme une réservation.
+
+3. **Gestion des espaces (propriétaire) :**
+   - Un propriétaire ajoute un nouvel espace avec les informations nécessaires.
+   - Les informations sont validées par un administrateur avant publication.
+
+4. **Rapports (administrateur) :**
+   - L’administrateur génère des rapports pour analyser les performances des propriétaires et des espaces.
+

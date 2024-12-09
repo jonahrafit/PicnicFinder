@@ -56,3 +56,5 @@ packages/
 
 # Resharper files
 _ReSharper*/
+
+.fake
