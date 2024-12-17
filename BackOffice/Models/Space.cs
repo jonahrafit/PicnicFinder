@@ -19,10 +19,10 @@ public class Space
 
     [ForeignKey("Owner")]
     public long OwnerId { get; set; }
-    public User Owner { get; set; }  // Propriétaire de l'espace
+    public required User Owner { get; set; }  // Propriétaire de l'espace
 
     [Required]
-    public string Name { get; set; }
+    public required string Name { get; set; }
 
     [Required]
     public double Latitude { get; set; }
@@ -33,9 +33,9 @@ public class Space
     [Required]
     public int Capacity { get; set; }
 
-    public ICollection<string> Photos { get; set; }  // Liste des URL des photos
+    public ICollection<string> Photos { get; set; } = new List<string>();  // Liste des URL des photos
 
-    public string Description { get; set; }
+    public string? Description { get; set; }
 
     [Required]
     public SpaceStatus Status { get; set; }  // Statut de l'espace

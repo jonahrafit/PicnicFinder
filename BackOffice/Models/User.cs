@@ -18,16 +18,16 @@ public class User
 
     [Required]
     [EmailAddress]
-    public string Email { get; set; }
+    public required string Email { get; set; }
 
     [Required]
-    public string Password { get; set; }
+    public required string Password { get; set; }
 
     [Required]
     public UserRole Role { get; set; }
 
-    public string Phone { get; set; }
-    public string Name { get; set; }
+    public required string Phone { get; set; }
+    public required string Name { get; set; }
 
     public ICollection<Space> Spaces { get; set; } // Espaces associés au propriétaire
 

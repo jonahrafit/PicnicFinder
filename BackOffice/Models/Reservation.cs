@@ -17,11 +17,11 @@ public class Reservation
 
     [ForeignKey("Employee")]
     public long EmployeeId { get; set; }
-    public User Employee { get; set; }  // L'employé qui fait la réservation
+    public required User Employee { get; set; }  // L'employé qui fait la réservation
 
     [ForeignKey("Space")]
     public long SpaceId { get; set; }
-    public Space Space { get; set; }  // L'espace réservé
+    public required Space Space { get; set; }  // L'espace réservé
 
     [Required]
     public DateTime ReservationDate { get; set; }  // Date et heure de la réservation

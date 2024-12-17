@@ -30,10 +30,5 @@ public class PicnicFinderContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        // Configurer des règles spécifiques, si nécessaire
-        modelBuilder.Entity<Space>()
-            .HasMany(s => s.Photos)
-            .WithOne()
-            .OnDelete(DeleteBehavior.Cascade);
     }
 }
