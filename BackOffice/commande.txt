@@ -1,0 +1,5 @@
+dotnet aspnet-codegenerator controller -name AuthController -actions -m User -dc PicnicFinderContext -outDir Controllers
+
+// LOGIN
+dotnet aspnet-codegenerator controller -name AuthController -outDir Controllers -async
+dotnet aspnet-codegenerator view Login -outDir Views/Auth
