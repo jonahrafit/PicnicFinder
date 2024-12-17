@@ -103,7 +103,6 @@ PicnicFinder est une application qui aide les entreprises à trouver et réserve
   - Validation ou rejet des demandes de réservation.
 
 ---
-
 ## Base de Données (SQL Server)
 
 ### Tables principales :
@@ -111,8 +110,6 @@ PicnicFinder est une application qui aide les entreprises à trouver et réserve
   - `UserID`, `Name`, `Email`, `Phone`, `Password`, `Role` (Admin/Employé/Propriétaire).
 - **Spaces :**
   - `SpaceID`, `Name`, `Location`, `Capacity`, `Price`, `Description`, `OwnerID`.
-- **Reservations :**
-  - `ReservationID`, `SpaceID`, `EmployeeID`, `Date`, `Status` (Confirmée/Rejetée).
 - **Reviews (optionnel) :**
   - `ReviewID`, `SpaceID`, `EmployeeID`, `Rating`, `Comment`.
 
