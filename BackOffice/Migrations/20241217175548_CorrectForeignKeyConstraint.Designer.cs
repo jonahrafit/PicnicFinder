@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackOffice.Migrations
 {
     [DbContext(typeof(PicnicFinderContext))]
-    [Migration("20241217133201_PicnicFinderMigration")]
-    partial class PicnicFinderMigration
+    [Migration("20241217175548_CorrectForeignKeyConstraint")]
+    partial class CorrectForeignKeyConstraint
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -168,13 +168,13 @@ namespace BackOffice.Migrations
                     b.HasOne("PicnicFinder.Models.User", "Employee")
                         .WithMany()
                         .HasForeignKey("EmployeeId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Space", "Space")
                         .WithMany()
                         .HasForeignKey("SpaceId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Employee");

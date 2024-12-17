@@ -29,6 +29,17 @@ public class PicnicFinderContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        
+        modelBuilder.Entity<Reservation>()
+            .HasOne(r => r.Employee)
+            .WithMany() // Ou .WithMany(r => r.Reservations) si la relation inverse existe
+            .HasForeignKey(r => r.EmployeeId)
+            .OnDelete(DeleteBehavior.Restrict); // Pas de cascade
 
+        modelBuilder.Entity<Reservation>()
+            .HasOne(r => r.Space)
+            .WithMany() // Ou .WithMany(s => s.Reservations) si la relation inverse existe
+            .HasForeignKey(r => r.SpaceId)
+            .OnDelete(DeleteBehavior.Restrict); // Pas de cascade
     }
 }
