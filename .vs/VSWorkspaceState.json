@@ -3,9 +3,9 @@
     "",
     "\\BackOffice",
     "\\BackOffice\\Data",
-    "\\BackOffice\\Models",
-    "\\FrontOffice"
+    "\\BackOffice\\Migrations",
+    "\\BackOffice\\Models"
   ],
-  "SelectedNode": "\\BackOffice\\appsettings.json",
+  "SelectedNode": "\\BackOffice\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
