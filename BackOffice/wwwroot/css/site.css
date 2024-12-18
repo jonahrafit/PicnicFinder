@@ -20,3 +20,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.nav-item.active > .nav-link {
+  font-weight: bold;
+  color: #007bff; /* Bleu par défaut Bootstrap */
+}

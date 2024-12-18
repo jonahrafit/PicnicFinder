@@ -21,6 +21,7 @@ namespace BackOffice.Controllers
         // GET: User
         public async Task<IActionResult> Index()
         {
+            ViewData["ActiveMenu"] = "GestionDesUtilisateurs";
             return View(await _context.Users.ToListAsync());
         }
 
