@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PicnicFinder.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BackOffice.Controllers
 {
@@ -46,6 +47,7 @@ namespace BackOffice.Controllers
         }
 
         // GET: Space/Create
+        [Authorize(Roles = "OWNER")]
         public IActionResult Create()
         {
             ViewData["OwnerId"] = new SelectList(_context.Set<User>(), "Id", "Email");
@@ -57,6 +59,7 @@ namespace BackOffice.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "OWNER")]
         public async Task<IActionResult> Create([Bind("Id,OwnerId,Name,Latitude,Longitude,Capacity,Photos,Description,Status,CreatedAt,UpdatedAt")] Space space)
         {
             if (ModelState.IsValid)
@@ -70,6 +73,7 @@ namespace BackOffice.Controllers
         }
 
         // GET: Space/Edit/5
+        [Authorize(Roles = "OWNER")]
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
@@ -91,6 +95,7 @@ namespace BackOffice.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "OWNER")]
         public async Task<IActionResult> Edit(long id, [Bind("Id,OwnerId,Name,Latitude,Longitude,Capacity,Photos,Description,Status,CreatedAt,UpdatedAt")] Space space)
         {
             if (id != space.Id)
@@ -123,6 +128,7 @@ namespace BackOffice.Controllers
         }
 
         // GET: Space/Delete/5
+        [Authorize(Roles = "OWNER")]
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
@@ -142,6 +148,7 @@ namespace BackOffice.Controllers
         }
 
         // POST: Space/Delete/5
+        [Authorize(Roles = "OWNER")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)

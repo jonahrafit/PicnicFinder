@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using PicnicFinder.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PicnicFinder.Controllers;
 
@@ -13,6 +14,7 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [Authorize(Roles = "ADMIN,OWNER")]
     public IActionResult Index()
     {
         ViewData["ActiveMenu"] = "Dashboard";
@@ -29,5 +31,5 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
-    
+
 }
