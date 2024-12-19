@@ -5,30 +5,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using PicnicFinder.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace BackOffice.Controllers
 {
-    public class UserController : Controller
+    public class ReservationController : Controller
     {
         private readonly PicnicFinderContext _context;
 
-        public UserController(PicnicFinderContext context)
+        public ReservationController(PicnicFinderContext context)
         {
             _context = context;
         }
 
-        // GET: User
-        [Authorize(Roles = "ADMIN")]
+        // GET: Reservation
+        [Authorize(Roles = "ADMIN,OWNER")]
         public async Task<IActionResult> Index()
         {
-            ViewData["ActiveMenu"] = "GestionDesUtilisateurs";
-            return View(await _context.Users.ToListAsync());
+            var picnicFinderContext = _context.Reservations.Include(r => r.Employee).Include(r => r.Space);
+            return View(await picnicFinderContext.ToListAsync());
         }
 
-        // GET: User/Details/5
-        [Authorize(Roles = "ADMIN,OWNER")]
+        // GET: Reservation/Details/5
         public async Task<IActionResult> Details(long? id)
         {
             if (id == null)
@@ -36,64 +34,70 @@ namespace BackOffice.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users
+            var reservation = await _context.Reservations
+                .Include(r => r.Employee)
+                .Include(r => r.Space)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
+            if (reservation == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(reservation);
         }
 
-        // GET: User/Create
+        // GET: Reservation/Create
         public IActionResult Create()
         {
-            ViewBag.UserRoles = new SelectList(Enum.GetValues(typeof(UserRole)));
+            ViewData["EmployeeId"] = new SelectList(_context.Users, "Id", "Email");
+            ViewData["SpaceId"] = new SelectList(_context.Space, "Id", "Name");
             return View();
         }
 
-        // POST: User/Create
+        // POST: Reservation/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Email,Password,Role,Phone,Name")] User user)
+        public async Task<IActionResult> Create([Bind("Id,EmployeeId,SpaceId,ReservationDate,StartDate,EndDate,Status")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
+                _context.Add(reservation);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            ViewData["EmployeeId"] = new SelectList(_context.Users, "Id", "Email", reservation.EmployeeId);
+            ViewData["SpaceId"] = new SelectList(_context.Space, "Id", "Name", reservation.SpaceId);
+            return View(reservation);
         }
 
-        // GET: User/Edit/5
+        // GET: Reservation/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
-            
-            ViewBag.UserRoles = new SelectList(Enum.GetValues(typeof(UserRole)));
-            var user = await _context.Users.FindAsync(id);
-            if (user == null)
+
+            var reservation = await _context.Reservations.FindAsync(id);
+            if (reservation == null)
             {
                 return NotFound();
             }
-            return View(user);
+            ViewData["EmployeeId"] = new SelectList(_context.Users, "Id", "Email", reservation.EmployeeId);
+            ViewData["SpaceId"] = new SelectList(_context.Space, "Id", "Name", reservation.SpaceId);
+            return View(reservation);
         }
 
-        // POST: User/Edit/5
+        // POST: Reservation/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(long id, [Bind("Id,Email,Password,Role,Phone,Name")] User user)
+        public async Task<IActionResult> Edit(long id, [Bind("Id,EmployeeId,SpaceId,ReservationDate,StartDate,EndDate,Status")] Reservation reservation)
         {
-            if (id != user.Id)
+            if (id != reservation.Id)
             {
                 return NotFound();
             }
@@ -102,12 +106,12 @@ namespace BackOffice.Controllers
             {
                 try
                 {
-                    _context.Update(user);
+                    _context.Update(reservation);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.Id))
+                    if (!ReservationExists(reservation.Id))
                     {
                         return NotFound();
                     }
@@ -118,10 +122,12 @@ namespace BackOffice.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(user);
+            ViewData["EmployeeId"] = new SelectList(_context.Users, "Id", "Email", reservation.EmployeeId);
+            ViewData["SpaceId"] = new SelectList(_context.Space, "Id", "Name", reservation.SpaceId);
+            return View(reservation);
         }
 
-        // GET: User/Delete/5
+        // GET: Reservation/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
@@ -129,34 +135,36 @@ namespace BackOffice.Controllers
                 return NotFound();
             }
 
-            var user = await _context.Users
+            var reservation = await _context.Reservations
+                .Include(r => r.Employee)
+                .Include(r => r.Space)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
+            if (reservation == null)
             {
                 return NotFound();
             }
 
-            return View(user);
+            return View(reservation);
         }
 
-        // POST: User/Delete/5
+        // POST: Reservation/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user != null)
+            var reservation = await _context.Reservations.FindAsync(id);
+            if (reservation != null)
             {
-                _context.Users.Remove(user);
+                _context.Reservations.Remove(reservation);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserExists(long id)
+        private bool ReservationExists(long id)
         {
-            return _context.Users.Any(e => e.Id == id);
+            return _context.Reservations.Any(e => e.Id == id);
         }
     }
 }

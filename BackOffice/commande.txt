@@ -3,3 +3,7 @@ dotnet aspnet-codegenerator controller -name AuthController -actions -m User -dc
 // LOGIN
 dotnet aspnet-codegenerator controller -name AuthController -outDir Controllers -async
 dotnet aspnet-codegenerator view Login -outDir Views/Auth
+dotnet aspnet-codegenerator view Index -outDir Views/Space
+
+
+// "DefaultConnection": "Server=localhost;Database=picnicfinder_db;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
