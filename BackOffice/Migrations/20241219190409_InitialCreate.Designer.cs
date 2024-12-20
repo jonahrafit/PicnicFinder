@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackOffice.Migrations
 {
     [DbContext(typeof(PicnicFinderContext))]
-    [Migration("20241217175548_CorrectForeignKeyConstraint")]
-    partial class CorrectForeignKeyConstraint
+    [Migration("20241219190409_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

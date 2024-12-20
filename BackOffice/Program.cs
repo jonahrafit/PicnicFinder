@@ -41,6 +41,8 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddLogging();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -51,13 +53,21 @@ if (!app.Environment.IsDevelopment())
 }
 
 // Appliquer les migrations automatiquement
-using (var scope = app.Services.CreateScope())
+try
 {
-    var context = scope.ServiceProvider.GetRequiredService<PicnicFinderContext>();
-    context.Database.Migrate();
+    using (var scope = app.Services.CreateScope())
+    {
+        var context = scope.ServiceProvider.GetRequiredService<PicnicFinderContext>();
+        context.Database.Migrate();
+    }
+}
+catch (Exception ex)
+{
+    // Loggez l'erreur ici ou gérez-la selon vos besoins
+    Console.WriteLine($"Erreur pendant la migration : {ex.Message}");
 }
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
