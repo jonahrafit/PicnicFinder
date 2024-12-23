@@ -57,6 +57,7 @@ namespace MyApp.Namespace
             {
                 // Nom d'utilisateur ou mot de passe incorrect
                 ViewBag.ErrorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
+                ViewData["HideNavbar"] = true;
                 return View("Index");
             }
 

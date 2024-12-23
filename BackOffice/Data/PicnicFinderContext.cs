@@ -10,6 +10,7 @@ public class PicnicFinderContext : DbContext
     public DbSet<Space> Space { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
     public DbSet<Report> Reports { get; set; }
+    public DbSet<Menu> Menus { get; set; }
 
     public PicnicFinderContext(DbContextOptions<PicnicFinderContext> options, IConfiguration configuration)
         : base(options)
