@@ -2,10 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\BackOffice",
+    "\\BackOffice\\Controllers",
     "\\BackOffice\\Data",
-    "\\BackOffice\\Migrations",
-    "\\BackOffice\\Models"
+    "\\BackOffice\\Service",
+    "\\BackOffice\\Views",
+    "\\BackOffice\\Views\\Home",
+    "\\BackOffice\\Views\\User",
+    "\\BackOffice\\wwwroot",
+    "\\BackOffice\\wwwroot\\lib\\jquery-validation-unobtrusive"
   ],
-  "SelectedNode": "\\BackOffice\\Program.cs",
+  "SelectedNode": "\\BackOffice\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }
