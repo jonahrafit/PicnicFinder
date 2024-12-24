@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="col-md-4 col-lg-3">
+        <div class="card p-4 shadow">
+            <h2 class="text-center text-success display-6 mb-4">Picnic Finder</h2>
+
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger text-center">@ViewBag.ErrorMessage</div>
+            }
+            @if (ViewBag.logoutMessage != null)
+            {
+                <div class="alert alert-warning text-center">@ViewBag.logoutMessage</div>
+            }
+
+            <form asp-controller="Auth" asp-action="Authenticate" method="post">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" class="form-control" value="admin" required />
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Mot de passe</label>
+                    <input type="password" id="password" name="password" class="form-control" value="password"
+                        required />
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Se connecter</button>
+            </form>
+
+            <div class="text-center mt-3">
+                <a href="#" class="text-decoration-none text-success">Mot de passe oublié?</a>
+            </div>
+        </div>
+    </div>
+</div>
