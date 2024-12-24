@@ -1,5 +1,7 @@
+--------------------------------------------------------
 # PicnicFinder
-Une application qui aide les entreprises à trouver des lieux adaptés pour des sorties d’équipe ou des pique-niques, en fonction de leur emplacement, du nombre de participants, et des activités souhaitées.
+PicnicFinder est une application qui aide les entreprises à trouver et réserver des lieux adaptés pour des sorties d’équipe ou des pique-niques. L'application propose une interface de gestion pour les administrateurs, une plateforme de recherche pour les employés, et un espace dédié pour les propriétaires de lieux.
+
 
 ## Technologies définies :
 
@@ -22,10 +24,14 @@ Exemple : un tableau pour gérer les lieux, utilisateurs, ou réservations.
 . SGBD : SQL Server
 Base de données commune avec le backoffice pour maintenir la cohérence des données.
 
-. Accès aux données : ADO.NET
+. Accès aux données : 
+ADO.NET
 Technologie d'accès aux données bas niveau.
 Permet des interactions directes avec SQL Server via des commandes SQL et des DataSets.
 Idéal pour une gestion fine et des performances élevées.
+
+REST API
+A certains fonctionnalité,  on utilise API REST
 
 . Présentation : MVC (Model-View-Controller)
 Architecture utilisée pour séparer les responsabilités :
@@ -34,13 +40,7 @@ Vue : Affichage des pages web (HTML/CSS avec Razor pour le rendu dynamique).
 Contrôleur : Logique métier et interaction avec l'utilisateur.
 Adaptée pour des applications front-end dynamiques et évolutives.
 
-
---------------------------------------------------------
-# PicnicFinder
-PicnicFinder est une application qui aide les entreprises à trouver et réserver des lieux adaptés pour des sorties d’équipe ou des pique-niques. L'application propose une interface de gestion pour les administrateurs, une plateforme de recherche pour les employés, et un espace dédié pour les propriétaires de lieux.
-
 ---
-
 ## Fonctionnalités
 
 ### 1. Écran de login (Backoffice et Frontoffice)
