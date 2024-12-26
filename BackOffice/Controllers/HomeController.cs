@@ -27,7 +27,6 @@ namespace PicnicFinder.Controllers
             if (string.IsNullOrEmpty(username))
             {
                 // Gérer le cas où le nom d'utilisateur est absent (par exemple, rediriger vers la page de connexion)
-                // Gérer le cas où le nom d'utilisateur est absent (par exemple, rediriger vers la page de connexion)
                 return RedirectToAction("Login", "Auth");
             }
 
@@ -50,7 +49,6 @@ namespace PicnicFinder.Controllers
             ViewData["ActiveMenu"] = "Dashboard";
             return View(menus);
         }
-
 
         public IActionResult Privacy()
         {

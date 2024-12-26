@@ -6,8 +6,15 @@ namespace PicnicFinder.Models;
 public enum UserRole
 {
     ADMIN,
-    EMPLOYEE,
-    OWNER
+    OWNER,
+    CLIENT
+}
+
+public enum UserStatus
+{
+    PENDING_APPROVAL,
+    APPROVED,
+    REJECTED
 }
 
 public class User
@@ -30,6 +37,9 @@ public class User
     public required string Name { get; set; }
 
     public ICollection<Space> Spaces { get; set; } // Espaces associés au propriétaire
+
+    [Required]
+    public UserStatus Status { get; set; } = UserStatus.PENDING_APPROVAL;
 
     public User()
     {
