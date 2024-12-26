@@ -1,30 +1,26 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using PicnicFinder.Models;
 using Microsoft.AspNetCore.Authorization;
+using BackOffice.Services;
 
 namespace BackOffice.Controllers
 {
     public class SpaceController : Controller
     {
-        private readonly PicnicFinderContext _context;
+        private readonly SpaceService _spaceService;
 
-        public SpaceController(PicnicFinderContext context)
+        public SpaceController(SpaceService spaceService)
         {
-            _context = context;
+            _spaceService = spaceService;
         }
 
         // GET: Space
         public async Task<IActionResult> Index()
         {
             ViewData["ActiveMenu"] = "GestionDesEspaces";
-            var picnicFinderContext = _context.Space.Include(s => s.Owner);
-            return View(await picnicFinderContext.ToListAsync());
+            var spaces = await _spaceService.GetAllSpacesAsync();
+            return View(spaces);
         }
 
         // GET: Space/Details/5
@@ -35,9 +31,7 @@ namespace BackOffice.Controllers
                 return NotFound();
             }
 
-            var space = await _context.Space
-                .Include(s => s.Owner)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var space = await _spaceService.GetSpaceByIdAsync(id.Value);
             if (space == null)
             {
                 return NotFound();
@@ -50,13 +44,10 @@ namespace BackOffice.Controllers
         [Authorize(Roles = "OWNER")]
         public IActionResult Create()
         {
-            ViewData["OwnerId"] = new SelectList(_context.Set<User>(), "Id", "Email");
             return View();
         }
 
         // POST: Space/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "OWNER")]
@@ -64,11 +55,9 @@ namespace BackOffice.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(space);
-                await _context.SaveChangesAsync();
+                await _spaceService.CreateSpaceAsync(space);
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Set<User>(), "Id", "Email", space.OwnerId);
             return View(space);
         }
 
@@ -81,18 +70,15 @@ namespace BackOffice.Controllers
                 return NotFound();
             }
 
-            var space = await _context.Space.FindAsync(id);
+            var space = await _spaceService.GetSpaceByIdAsync(id.Value);
             if (space == null)
             {
                 return NotFound();
             }
-            ViewData["OwnerId"] = new SelectList(_context.Set<User>(), "Id", "Email", space.OwnerId);
             return View(space);
         }
 
         // POST: Space/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "OWNER")]
@@ -107,12 +93,11 @@ namespace BackOffice.Controllers
             {
                 try
                 {
-                    _context.Update(space);
-                    await _context.SaveChangesAsync();
+                    await _spaceService.UpdateSpaceAsync(space);
                 }
-                catch (DbUpdateConcurrencyException)
+                catch
                 {
-                    if (!SpaceExists(space.Id))
+                    if (!await _spaceService.SpaceExistsAsync(space.Id))
                     {
                         return NotFound();
                     }
@@ -123,7 +108,6 @@ namespace BackOffice.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Set<User>(), "Id", "Email", space.OwnerId);
             return View(space);
         }
 
@@ -136,9 +120,7 @@ namespace BackOffice.Controllers
                 return NotFound();
             }
 
-            var space = await _context.Space
-                .Include(s => s.Owner)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var space = await _spaceService.GetSpaceByIdAsync(id.Value);
             if (space == null)
             {
                 return NotFound();
@@ -148,24 +130,13 @@ namespace BackOffice.Controllers
         }
 
         // POST: Space/Delete/5
-        [Authorize(Roles = "OWNER")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "OWNER")]
         public async Task<IActionResult> DeleteConfirmed(long id)
         {
-            var space = await _context.Space.FindAsync(id);
-            if (space != null)
-            {
-                _context.Space.Remove(space);
-            }
-
-            await _context.SaveChangesAsync();
+            await _spaceService.DeleteSpaceAsync(id);
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool SpaceExists(long id)
-        {
-            return _context.Space.Any(e => e.Id == id);
         }
     }
 }
