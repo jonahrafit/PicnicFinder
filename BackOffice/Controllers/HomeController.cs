@@ -24,32 +24,32 @@ namespace PicnicFinder.Controllers
         public async Task<IActionResult> Index()
         {
             var username = User.Identity?.Name;
-    if (string.IsNullOrEmpty(username))
-    {
-        // Gérer le cas où le nom d'utilisateur est absent (par exemple, rediriger vers la page de connexion)
-        // Gérer le cas où le nom d'utilisateur est absent (par exemple, rediriger vers la page de connexion)
-        return RedirectToAction("Login", "Auth");
-    }
+            if (string.IsNullOrEmpty(username))
+            {
+                // Gérer le cas où le nom d'utilisateur est absent (par exemple, rediriger vers la page de connexion)
+                // Gérer le cas où le nom d'utilisateur est absent (par exemple, rediriger vers la page de connexion)
+                return RedirectToAction("Login", "Auth");
+            }
 
-    // Récupérer le rôle à partir du JWT (claims)
-    var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
+            // Récupérer le rôle à partir du JWT (claims)
+            var userRole = User.FindFirst(ClaimTypes.Role)?.Value;
 
-    // Vérifier si le rôle est null
-    if (string.IsNullOrEmpty(userRole))
-    {
-        // Gérer le cas où le rôle est absent
-        return RedirectToAction("Login", "Auth");
-    }
+            // Vérifier si le rôle est null
+            if (string.IsNullOrEmpty(userRole))
+            {
+                // Gérer le cas où le rôle est absent
+                return RedirectToAction("Login", "Auth");
+            }
 
-    // Optionnel : afficher les informations utilisateur dans le journal ou pour d'autres traitements
-    _logger.LogInformation($"Utilisateur connecté : {username} avec rôle : {userRole}");
+            // Optionnel : afficher les informations utilisateur dans le journal ou pour d'autres traitements
+            _logger.LogInformation($"Utilisateur connecté : {username} avec rôle : {userRole}");
 
-    // Récupérer les menus accessibles pour cet utilisateur (selon son rôle)
-    var menus = await _menuService.GetMenusForUserAsync(new[] { userRole });
+            // Récupérer les menus accessibles pour cet utilisateur (selon son rôle)
+            var menus = await _menuService.GetMenusForUserAsync(new[] { userRole });
 
-    ViewData["ActiveMenu"] = "Dashboard";
-    return View(menus);
-}
+            ViewData["ActiveMenu"] = "Dashboard";
+            return View(menus);
+        }
 
 
         public IActionResult Privacy()

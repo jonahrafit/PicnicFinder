@@ -1,0 +1,85 @@
+2024-12-25 14:46:02.285 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-25 14:46:02.473 +03:00 [INF] Now listening on: http://localhost:5266
+2024-12-25 14:46:02.477 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-25 14:46:02.480 +03:00 [INF] Hosting environment: Development
+2024-12-25 14:46:02.480 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice
+2024-12-25 14:46:07.593 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/ - null null
+2024-12-25 14:46:07.605 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-25 14:46:07.683 +03:00 [INF] Executing endpoint 'MyApp.Namespace.AuthController.Index (BackOffice)'
+2024-12-25 14:46:07.708 +03:00 [INF] Route matched with {action = "Index", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyApp.Namespace.AuthController (BackOffice).
+2024-12-25 14:46:07.723 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-25 14:46:07.933 +03:00 [INF] Executed ViewResult - view Index executed in 215.0178ms.
+2024-12-25 14:46:07.944 +03:00 [INF] Executed action MyApp.Namespace.AuthController.Index (BackOffice) in 233.8575ms
+2024-12-25 14:46:07.946 +03:00 [INF] Executed endpoint 'MyApp.Namespace.AuthController.Index (BackOffice)'
+2024-12-25 14:46:07.950 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/ - 200 null text/html; charset=utf-8 359.0409ms
+2024-12-25 14:46:08.112 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/PicnicFinder.styles.css - null null
+2024-12-25 14:46:08.118 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/PicnicFinder.styles.css - 404 0 null 6.6185ms
+2024-12-25 14:46:08.130 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5266/PicnicFinder.styles.css, Response status code: 404
+2024-12-25 14:46:10.117 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5266/Auth/Authenticate - application/x-www-form-urlencoded 215
+2024-12-25 14:46:10.121 +03:00 [INF] CORS policy execution successful.
+2024-12-25 14:46:10.130 +03:00 [INF] Executing endpoint 'MyApp.Namespace.AuthController.Authenticate (BackOffice)'
+2024-12-25 14:46:10.151 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Authenticate(System.String, System.String) on controller MyApp.Namespace.AuthController (BackOffice).
+2024-12-25 14:46:10.285 +03:00 [INF] Executing RedirectResult, redirecting to /Home.
+2024-12-25 14:46:10.287 +03:00 [INF] Executed action MyApp.Namespace.AuthController.Authenticate (BackOffice) in 134.5952ms
+2024-12-25 14:46:10.287 +03:00 [INF] Executed endpoint 'MyApp.Namespace.AuthController.Authenticate (BackOffice)'
+2024-12-25 14:46:10.288 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5266/Auth/Authenticate - 302 0 null 170.8886ms
+2024-12-25 14:46:10.294 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/Home - null null
+2024-12-25 14:46:10.306 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-12-25 14:46:10.322 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-12-25 14:46:10.323 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/Home - 401 0 null 28.4523ms
+2024-12-25 14:47:57.742 +03:00 [INF] Application is shutting down...
+2024-12-25 14:50:06.631 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-25 14:50:06.804 +03:00 [INF] Now listening on: http://localhost:5266
+2024-12-25 14:50:06.810 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-25 14:50:06.811 +03:00 [INF] Hosting environment: Development
+2024-12-25 14:50:06.811 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice
+2024-12-25 14:50:19.136 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/ - null null
+2024-12-25 14:50:19.152 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-25 14:50:19.311 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-12-25 14:50:19.317 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+2024-12-25 14:50:19.322 +03:00 [INF] Executing endpoint 'MyApp.Namespace.AuthController.Index (BackOffice)'
+2024-12-25 14:50:19.347 +03:00 [INF] Route matched with {action = "Index", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MyApp.Namespace.AuthController (BackOffice).
+2024-12-25 14:50:19.365 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-25 14:50:19.550 +03:00 [INF] Executed ViewResult - view Index executed in 189.2374ms.
+2024-12-25 14:50:19.559 +03:00 [INF] Executed action MyApp.Namespace.AuthController.Index (BackOffice) in 209.5951ms
+2024-12-25 14:50:19.560 +03:00 [INF] Executed endpoint 'MyApp.Namespace.AuthController.Index (BackOffice)'
+2024-12-25 14:50:19.566 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/ - 200 null text/html; charset=utf-8 433.0493ms
+2024-12-25 14:50:19.674 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/PicnicFinder.styles.css - null null
+2024-12-25 14:50:19.713 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-12-25 14:50:19.730 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+2024-12-25 14:50:19.731 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/PicnicFinder.styles.css - 404 0 null 57.9279ms
+2024-12-25 14:50:19.734 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5266/PicnicFinder.styles.css, Response status code: 404
+2024-12-25 14:50:22.207 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5266/Auth/Authenticate - application/x-www-form-urlencoded 215
+2024-12-25 14:50:22.211 +03:00 [INF] CORS policy execution successful.
+2024-12-25 14:50:22.219 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-12-25 14:50:22.220 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+2024-12-25 14:50:22.221 +03:00 [INF] Executing endpoint 'MyApp.Namespace.AuthController.Authenticate (BackOffice)'
+2024-12-25 14:50:22.235 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Authenticate(System.String, System.String) on controller MyApp.Namespace.AuthController (BackOffice).
+2024-12-25 14:50:22.329 +03:00 [INF] Executing RedirectResult, redirecting to /Home.
+2024-12-25 14:50:22.330 +03:00 [INF] Executed action MyApp.Namespace.AuthController.Authenticate (BackOffice) in 93.6391ms
+2024-12-25 14:50:22.330 +03:00 [INF] Executed endpoint 'MyApp.Namespace.AuthController.Authenticate (BackOffice)'
+2024-12-25 14:50:22.331 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5266/Auth/Authenticate - 302 0 null 123.7163ms
+2024-12-25 14:50:22.335 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/Home - null null
+2024-12-25 14:50:22.338 +03:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidAudienceException: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateAudience(IEnumerable`1 audiences, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateTokenPayloadAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ValidateJWSAsync(JsonWebToken jsonWebToken, TokenValidationParameters validationParameters, BaseConfiguration configuration)
+2024-12-25 14:50:22.347 +03:00 [INF] Bearer was not authenticated. Failure message: IDX10208: Unable to validate audience. validationParameters.ValidAudience is null or whitespace and validationParameters.ValidAudiences is null.
+2024-12-25 14:50:22.360 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-12-25 14:50:22.376 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-12-25 14:50:22.378 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/Home - 401 0 null 42.6068ms

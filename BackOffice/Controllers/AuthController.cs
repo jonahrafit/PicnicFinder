@@ -21,6 +21,7 @@ namespace MyApp.Namespace
         }
 
         // GET: Auth/Login
+        [AllowAnonymous]
         public IActionResult Index()
         {
             ViewData["HideNavbar"] = true;  // Masquer la navbar sur cette page
