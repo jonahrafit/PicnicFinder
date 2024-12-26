@@ -14,10 +14,14 @@ namespace MyApp.Namespace
     public class AuthController : Controller
     {
         private readonly IConfiguration _configuration;
+        private readonly AuthService _authService;
+        private readonly PicnicFinderContext _dbContext;
 
-        public AuthController(IConfiguration configuration)
+        public AuthController(IConfiguration configuration, PicnicFinderContext dbContext)
         {
             _configuration = configuration;
+            _dbContext = dbContext;
+            _authService = new AuthService(_configuration, _dbContext);
         }
 
         // GET: Auth/Login
@@ -30,66 +34,49 @@ namespace MyApp.Namespace
 
         // POST: Auth/Authenticate
         [HttpPost]
-        public IActionResult Authenticate(string username, string password)
+        [Route("api/auth/login")]
+        public async Task<IActionResult> Authenticate(string username, string password)
         {
-            var secretKey = _configuration["Jwt:SecretKey"];
-            // Vérification si la clé secrète est null ou vide
-            if (string.IsNullOrEmpty(secretKey))
-            {
-                // Si la clé est manquante, lever une exception ou utiliser une valeur par défaut
-                throw new InvalidOperationException("La clé secrète JWT n'est pas configurée.");
-            }
+            var token = await _authService.AuthenticateAsync(username, password);
 
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-
-            var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-            // Vérification des identifiants
-            string role;
-            if (username == "admin" && password == "password")
+            if (token == null)
             {
-                role = "ADMIN";
-            }
-            else if (username == "jonah" && password == "jonah")
-            {
-                role = "OWNER";
-            }
-            else
-            {
-                // Nom d'utilisateur ou mot de passe incorrect
                 ViewBag.ErrorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
                 ViewData["HideNavbar"] = true;
                 return View("Index");
             }
 
-            // Création des claims (incluant le rôle)
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name, username),
-                new Claim(ClaimTypes.Role, role)
-            };
-
-            // Génération du token JWT
-            var token = new JwtSecurityToken(
-                issuer: "localhost",
-                audience: "localhost",
-                claims: claims,
-                expires: DateTime.Now.AddHours(1), // Durée de validité du token
-                signingCredentials: credentials
-            );
-
-            var jwtToken = new JwtSecurityTokenHandler().WriteToken(token);
-
             // Stockage du token côté client (par exemple via un cookie)
-            Response.Cookies.Append("jwt", jwtToken, new CookieOptions
+            Response.Cookies.Append("jwt", token, new CookieOptions
             {
                 HttpOnly = true,
                 Secure = true,
                 Expires = DateTimeOffset.Now.AddHours(1)
             });
 
-            // Redirection vers la page d'accueil ou autre
             return RedirectToAction("Index", "Home");
+        }
+
+        // POST: Auth/Signup
+        [HttpPost]
+        [Route("api/auth/signup")]
+        public async Task<IActionResult> Signup([FromBody] SignupModel model)
+        {
+            if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password) || string.IsNullOrEmpty(model.Role) || string.IsNullOrEmpty(model.Name))
+            {
+                return BadRequest("Veuillez fournir toutes les informations nécessaires.");
+            }
+
+            var result = await _authService.SignupAsync(model.Email, model.Password, model.Role, model.Phone, model.Name);
+
+            if (result)
+            {
+                return Ok("Inscription réussie. Un email de confirmation a été envoyé.");
+            }
+            else
+            {
+                return BadRequest("Y a un problème lors de l'inscription.");
+            }
         }
 
         [HttpPost]
