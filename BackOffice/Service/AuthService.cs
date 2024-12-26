@@ -25,6 +25,7 @@ public class AuthService
     public async Task<string> AuthenticateAsync(string username, string password)
     {
         var secretKey = _configuration["Jwt:SecretKey"];
+        Console.WriteLine($"-------- SERCRET KEY--------- = {secretKey} ");
 
         if (string.IsNullOrEmpty(secretKey))
         {
@@ -32,6 +33,7 @@ public class AuthService
         }
 
         // Récupération de l'utilisateur depuis la base de données
+        Console.WriteLine($"-------- username --------- = {username} ");
         var user = await _dbContext.Users
             .FirstOrDefaultAsync(u => u.Email == username);
 
@@ -40,8 +42,11 @@ public class AuthService
             return null; // Mauvais identifiants
         }
 
+        Console.WriteLine($"-------- user --------- = {user} ");
+
         // Création du rôle
         var role = user.Role.ToString();
+        Console.WriteLine($"-------- role --------- = {role} ");
 
         // Création des claims (incluant le rôle)
         var claims = new List<Claim>
@@ -64,7 +69,6 @@ public class AuthService
 
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
-
 
     public async Task<bool> SignupAsync(string email, string password, string role, string phone, string name)
     {

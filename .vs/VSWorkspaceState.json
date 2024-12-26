@@ -2,15 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\BackOffice",
-    "\\BackOffice\\Controllers",
-    "\\BackOffice\\Data",
-    "\\BackOffice\\Service",
-    "\\BackOffice\\Views",
+    "\\BackOffice\\Controllers\\api",
+    "\\BackOffice\\Models\\formBody",
+    "\\BackOffice\\Views\\Auth",
     "\\BackOffice\\Views\\Home",
-    "\\BackOffice\\Views\\User",
-    "\\BackOffice\\wwwroot",
-    "\\BackOffice\\wwwroot\\lib\\jquery-validation-unobtrusive"
+    "\\BackOffice\\Views\\User"
   ],
-  "SelectedNode": "\\BackOffice\\Controllers\\HomeController.cs",
+  "SelectedNode": "\\BackOffice\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

@@ -33,8 +33,6 @@ namespace MyApp.Namespace
         }
 
         // POST: Auth/Authenticate
-        [HttpPost]
-        [Route("api/auth/login")]
         public async Task<IActionResult> Authenticate(string username, string password)
         {
             var token = await _authService.AuthenticateAsync(username, password);
@@ -57,29 +55,6 @@ namespace MyApp.Namespace
             return RedirectToAction("Index", "Home");
         }
 
-        // POST: Auth/Signup
-        [HttpPost]
-        [Route("api/auth/signup")]
-        public async Task<IActionResult> Signup([FromBody] SignupModel model)
-        {
-            if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password) || string.IsNullOrEmpty(model.Role) || string.IsNullOrEmpty(model.Name))
-            {
-                return BadRequest("Veuillez fournir toutes les informations nécessaires.");
-            }
-
-            var result = await _authService.SignupAsync(model.Email, model.Password, model.Role, model.Phone, model.Name);
-
-            if (result)
-            {
-                return Ok("Inscription réussie. Un email de confirmation a été envoyé.");
-            }
-            else
-            {
-                return BadRequest("Y a un problème lors de l'inscription.");
-            }
-        }
-
-        [HttpPost]
         public IActionResult Logout()
         {
             ViewData["HideNavbar"] = true;
