@@ -5,9 +5,10 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;  // Pour UserManager et ApplicationUser
 using System.Threading.Tasks;
-using System.Security.Claims;
+using System.Security.Claims; 
+using BackOffice.Services;
 
-namespace PicnicFinder.Controllers
+namespace BackOffice.Controllers
 {
     [Authorize]
     public class HomeController : Controller

@@ -1,7 +1,7 @@
 using BCrypt.Net;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using PicnicFinder.Models; // Assurez-vous que le modèle User est correctement défini dans votre projet
+using PicnicFinder.Models;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -10,6 +10,8 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+
+namespace BackOffice.Services;
 
 public class AuthService
 {
@@ -25,7 +27,6 @@ public class AuthService
     public async Task<string> AuthenticateAsync(string username, string password)
     {
         var secretKey = _configuration["Jwt:SecretKey"];
-        Console.WriteLine($"-------- SERCRET KEY--------- = {secretKey} ");
 
         if (string.IsNullOrEmpty(secretKey))
         {
@@ -33,7 +34,6 @@ public class AuthService
         }
 
         // Récupération de l'utilisateur depuis la base de données
-        Console.WriteLine($"-------- username --------- = {username} ");
         var user = await _dbContext.Users
             .FirstOrDefaultAsync(u => u.Email == username);
 
@@ -42,17 +42,17 @@ public class AuthService
             return null; // Mauvais identifiants
         }
 
-        Console.WriteLine($"-------- user --------- = {user} ");
-
         // Création du rôle
         var role = user.Role.ToString();
-        Console.WriteLine($"-------- role --------- = {role} ");
+        var userId = user.Id.ToString();
+        Console.WriteLine($"ROLE TO STRING {role}");
 
         // Création des claims (incluant le rôle)
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, username),
-            new Claim(ClaimTypes.Role, role)
+            new Claim(ClaimTypes.Role, role),
+            new Claim("UserId", userId)
         };
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));

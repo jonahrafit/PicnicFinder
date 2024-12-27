@@ -3,60 +3,86 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using PicnicFinder.Models;
 
-namespace BackOffice.Services
+namespace BackOffice.Services;
+
+public class SpaceService
 {
-    public class SpaceService
+    private readonly PicnicFinderContext _context;
+    private readonly IConfiguration _configuration;
+
+    public SpaceService(IConfiguration configuration, PicnicFinderContext dbContext)
     {
-        private readonly PicnicFinderContext _context;
+        _configuration = configuration;
+        _context = dbContext;
+    }
 
-        public SpaceService(PicnicFinderContext context)
+    // Retourner tous les espaces
+    public async Task<List<Space>> GetAllSpacesAsync()
+    {
+        return await _context.Space.Include(s => s.Owner).ToListAsync();
+    }
+
+    // Retourner un espace par ID
+    public async Task<Space?> GetSpaceByIdAsync(long id)
+    {
+        return await _context.Space.Include(s => s.Owner).FirstOrDefaultAsync(s => s.Id == id);
+    }
+
+    // Crï¿½er un nouvel espace
+    public async Task CreateSpaceAsync(Space space)
+    {
+        if (space == null)
         {
-            _context = context;
+            throw new ArgumentNullException(nameof(space), "Space cannot be null.");
         }
 
-        // Retourner tous les espaces
-        public async Task<List<Space>> GetAllSpacesAsync()
+        try
         {
-            return await _context.Space.Include(s => s.Owner).ToListAsync();
-        }
+            // Log initial information for debugging
+            Console.WriteLine($"Creating space: {space.ToString()}");
 
-        // Retourner un espace par ID
-        public async Task<Space?> GetSpaceByIdAsync(long id)
-        {
-            return await _context.Space.Include(s => s.Owner).FirstOrDefaultAsync(s => s.Id == id);
-        }
-
-        // Créer un nouvel espace
-        public async Task CreateSpaceAsync(Space space)
-        {
+            // Set the timestamps
             space.CreatedAt = DateTime.UtcNow;
             space.UpdatedAt = DateTime.UtcNow;
+
+            // Add the space to the context and save changes
             _context.Space.Add(space);
             await _context.SaveChangesAsync();
-        }
 
-        // Mettre à jour un espace
-        public async Task UpdateSpaceAsync(Space space)
+            // Log success
+            Console.WriteLine($"Space created successfully with ID: {space.Id}");
+        }
+        catch (Exception ex)
         {
-            _context.Update(space);
+            // Log the exception
+            Console.WriteLine($"Error occurred while creating space: {ex.Message}");
+            // Rethrow the exception if needed
+            throw;
+        }
+    }
+
+
+    // Mettre ï¿½ jour un espace
+    public async Task UpdateSpaceAsync(Space space)
+    {
+        _context.Update(space);
+        await _context.SaveChangesAsync();
+    }
+
+    // Supprimer un espace
+    public async Task DeleteSpaceAsync(long id)
+    {
+        var space = await _context.Space.FindAsync(id);
+        if (space != null)
+        {
+            _context.Space.Remove(space);
             await _context.SaveChangesAsync();
         }
+    }
 
-        // Supprimer un espace
-        public async Task DeleteSpaceAsync(long id)
-        {
-            var space = await _context.Space.FindAsync(id);
-            if (space != null)
-            {
-                _context.Space.Remove(space);
-                await _context.SaveChangesAsync();
-            }
-        }
-
-        // Vérifier si un espace existe
-        public async Task<bool> SpaceExistsAsync(long id)
-        {
-            return await _context.Space.AnyAsync(e => e.Id == id);
-        }
+    // Vï¿½rifier si un espace existe
+    public async Task<bool> SpaceExistsAsync(long id)
+    {
+        return await _context.Space.AnyAsync(e => e.Id == id);
     }
 }

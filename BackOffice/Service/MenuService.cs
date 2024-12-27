@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using PicnicFinder.Models;
 
+namespace BackOffice.Services;
 public class MenuService
 {
     private readonly PicnicFinderContext _context;

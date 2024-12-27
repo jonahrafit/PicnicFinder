@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Net.Mail;
 
+namespace BackOffice.Services;
 public class EmailService
 {
     private const string SmtpServer = "smtp.gmail.com"; // Serveur SMTP de Gmail

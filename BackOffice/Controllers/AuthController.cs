@@ -6,10 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;  // Pour 'AuthorizeAttribute'
-using Microsoft.IdentityModel.Tokens;     // Pour 'SymmetricSecurityKey', 'SigningCredentials', etc.
+using Microsoft.IdentityModel.Tokens;
 using PicnicFinder.Models;
+using BackOffice.Services;
 
-namespace MyApp.Namespace
+namespace BackOffice.Controllers
 {
     public class AuthController : Controller
     {

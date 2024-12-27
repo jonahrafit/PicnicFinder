@@ -3,40 +3,120 @@
   "WorkspaceRootPath": "D:\\picnicfinder\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\api\\AuthApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\api\\AuthApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Service\\MenuService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Service\\MenuService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Views\\Auth\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Views\\Auth\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\HomeController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\api\\SpaceApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\api\\SpaceApiController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Service\\SpaceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Service\\SpaceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Service\\AuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Service\\AuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Service\\MailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Service\\MailService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\ReservationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\ReservationController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\SpaceController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\SpaceController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\formBody\\SignupModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\formBody\\SignupModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\formBody\\SigninModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\formBody\\SigninModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\ErrorViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\Report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\Report.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\Reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\Reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\Space.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\Space.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Views\\_ViewImports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Views\\_ViewImports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Data\\PicnicFinderContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Data\\PicnicFinderContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\Menu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\FrontOffice\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:FrontOffice\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Migrations\\20241226100616_addStatusColumnInUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Migrations\\20241226100616_addStatusColumnInUser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Views\\Auth\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Views\\Auth\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Views\\Home\\Index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Views\\Shared\\_Layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -47,16 +127,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Views\\Shared\\_Header.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Models\\Reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Models\\Reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\BackOffice\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BackOffice\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\picnicfinder\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
@@ -86,28 +158,271 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SpaceApiController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\api\\SpaceApiController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\api\\SpaceApiController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\api\\SpaceApiController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\api\\SpaceApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T11:26:42.968Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SpaceService.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Service\\SpaceService.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Service\\SpaceService.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Service\\SpaceService.cs",
+              "RelativeToolTip": "BackOffice\\Service\\SpaceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T11:13:47.326Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "BackOffice\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "BackOffice\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T12:55:07.525Z",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T07:32:31.413Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthApiController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\api\\AuthApiController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\api\\AuthApiController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\api\\AuthApiController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\api\\AuthApiController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T11:37:49.89Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T10:27:24.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuService.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Service\\MenuService.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Service\\MenuService.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Service\\MenuService.cs",
+              "RelativeToolTip": "BackOffice\\Service\\MenuService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T11:24:25.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Service\\AuthService.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Service\\AuthService.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Service\\AuthService.cs",
+              "RelativeToolTip": "BackOffice\\Service\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T07:00:06.417Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "MailService.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Service\\MailService.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Service\\MailService.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Service\\MailService.cs",
+              "RelativeToolTip": "BackOffice\\Service\\MailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T09:54:41.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReservationController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\ReservationController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\ReservationController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\ReservationController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\ReservationController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T11:12:52.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SpaceController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\SpaceController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\SpaceController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\SpaceController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\SpaceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T06:59:50.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BackOffice\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T11:04:19.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SignupModel.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\formBody\\SignupModel.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\formBody\\SignupModel.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\formBody\\SignupModel.cs",
+              "RelativeToolTip": "BackOffice\\Models\\formBody\\SignupModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T07:37:15.551Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "SigninModel.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\formBody\\SigninModel.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\formBody\\SigninModel.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\formBody\\SigninModel.cs",
+              "RelativeToolTip": "BackOffice\\Models\\formBody\\SigninModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T12:46:14.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "BackOffice\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-27T08:47:40.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Menu.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\Menu.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\Menu.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\Menu.cs",
+              "RelativeToolTip": "BackOffice\\Models\\Menu.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T11:21:33.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Report.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\Report.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\Report.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\Report.cs",
+              "RelativeToolTip": "BackOffice\\Models\\Report.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T07:36:50.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\Reservation.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\Reservation.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\Reservation.cs",
+              "RelativeToolTip": "BackOffice\\Models\\Reservation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-23T11:21:36.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Space.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\Space.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\Space.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\Space.cs",
+              "RelativeToolTip": "BackOffice\\Models\\Space.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T11:15:16.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\User.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Models\\User.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\User.cs",
+              "RelativeToolTip": "BackOffice\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T08:25:55.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "BackOffice\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "BackOffice\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-27T11:02:37.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "PicnicFinderContext.cs",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Data\\PicnicFinderContext.cs",
               "RelativeDocumentMoniker": "BackOffice\\Data\\PicnicFinderContext.cs",
@@ -115,77 +430,83 @@
               "RelativeToolTip": "BackOffice\\Data\\PicnicFinderContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T11:52:34.825Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T11:52:34.825Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MenuService.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Service\\MenuService.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Service\\MenuService.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Service\\MenuService.cs",
-              "RelativeToolTip": "BackOffice\\Service\\MenuService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 20,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Program.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Program.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Program.cs",
+              "RelativeToolTip": "BackOffice\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T11:24:25.226Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T08:08:15.924Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Reservation.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\Reservation.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Models\\Reservation.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\Reservation.cs",
-              "RelativeToolTip": "BackOffice\\Models\\Reservation.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T11:21:36.884Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Menu.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Models\\Menu.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Models\\Menu.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Models\\Menu.cs",
-              "RelativeToolTip": "BackOffice\\Models\\Menu.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T11:21:33.521Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "BackOffice\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAAAFwAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T10:27:24.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 22,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\appsettings.json",
               "RelativeDocumentMoniker": "BackOffice\\appsettings.json",
               "ToolTip": "D:\\picnicfinder\\BackOffice\\appsettings.json",
               "RelativeToolTip": "BackOffice\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-23T11:19:57.239Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T11:19:57.239Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 23,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\picnicfinder\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "D:\\picnicfinder\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-27T06:41:49.787Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\picnicfinder\\FrontOffice\\.gitignore",
+              "RelativeDocumentMoniker": "FrontOffice\\.gitignore",
+              "ToolTip": "D:\\picnicfinder\\FrontOffice\\.gitignore",
+              "RelativeToolTip": "FrontOffice\\.gitignore",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAwwDsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-27T06:40:50.357Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": ".gitignore",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\.gitignore",
+              "RelativeDocumentMoniker": "BackOffice\\.gitignore",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\.gitignore",
+              "RelativeToolTip": "BackOffice\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-12-26T13:09:21.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "20241226100616_addStatusColumnInUser.cs",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Migrations\\20241226100616_addStatusColumnInUser.cs",
+              "RelativeDocumentMoniker": "BackOffice\\Migrations\\20241226100616_addStatusColumnInUser.cs",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Migrations\\20241226100616_addStatusColumnInUser.cs",
+              "RelativeToolTip": "BackOffice\\Migrations\\20241226100616_addStatusColumnInUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-26T10:06:37.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
               "Title": "_Header.cshtml",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\Shared\\_Header.cshtml",
               "RelativeDocumentMoniker": "BackOffice\\Views\\Shared\\_Header.cshtml",
@@ -193,51 +514,35 @@
               "RelativeToolTip": "BackOffice\\Views\\Shared\\_Header.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T11:04:29.994Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T11:04:29.994Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 27,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\Auth\\Index.cshtml",
               "RelativeDocumentMoniker": "BackOffice\\Views\\Auth\\Index.cshtml",
               "ToolTip": "D:\\picnicfinder\\BackOffice\\Views\\Auth\\Index.cshtml",
               "RelativeToolTip": "BackOffice\\Views\\Auth\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T10:37:38.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T10:37:38.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Controllers\\HomeController.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "BackOffice\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAgwCYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T07:32:31.413Z",
-              "EditorCaption": ""
+              "DocumentIndex": 28,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "BackOffice\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\picnicfinder\\BackOffice\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "BackOffice\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-23T12:55:07.525Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Program.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Program.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Program.cs",
-              "RelativeToolTip": "BackOffice\\Program.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAIwFEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T08:08:15.924Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 31,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "BackOffice\\Properties\\launchSettings.json",
@@ -245,25 +550,11 @@
               "RelativeToolTip": "BackOffice\\Properties\\launchSettings.json",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-23T11:16:45.031Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T11:16:45.031Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "BackOffice\\Controllers\\UserController.cs",
-              "ToolTip": "D:\\picnicfinder\\BackOffice\\Controllers\\UserController.cs",
-              "RelativeToolTip": "BackOffice\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-23T11:04:19.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 29,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "BackOffice\\Views\\Shared\\_Layout.cshtml",
@@ -271,12 +562,11 @@
               "RelativeToolTip": "BackOffice\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T07:53:02.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T07:53:02.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 33,
               "Title": "Create.cshtml",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\User\\Create.cshtml",
               "RelativeDocumentMoniker": "BackOffice\\Views\\User\\Create.cshtml",
@@ -284,12 +574,11 @@
               "RelativeToolTip": "BackOffice\\Views\\User\\Create.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-23T10:49:16.841Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T10:49:16.841Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 34,
               "Title": "_Layout.cshtml.css",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\Views\\Shared\\_Layout.cshtml.css",
               "RelativeDocumentMoniker": "BackOffice\\Views\\Shared\\_Layout.cshtml.css",
@@ -297,12 +586,11 @@
               "RelativeToolTip": "BackOffice\\Views\\Shared\\_Layout.cshtml.css",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-12-23T10:23:39.354Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T10:23:39.354Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 35,
               "Title": "BackOffice.csproj",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\BackOffice.csproj",
               "RelativeDocumentMoniker": "BackOffice\\BackOffice.csproj",
@@ -310,12 +598,11 @@
               "RelativeToolTip": "BackOffice\\BackOffice.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-12-23T08:02:03.924Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T08:02:03.924Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 32,
               "Title": "README.md",
               "DocumentMoniker": "D:\\picnicfinder\\README.md",
               "RelativeDocumentMoniker": "README.md",
@@ -323,12 +610,11 @@
               "RelativeToolTip": "README.md",
               "ViewState": "AgIAAGAAAAAAAAAAAAAAAGYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2024-12-23T07:37:37.179Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T07:37:37.179Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 36,
               "Title": "commande.txt",
               "DocumentMoniker": "D:\\picnicfinder\\BackOffice\\commande.txt",
               "RelativeDocumentMoniker": "BackOffice\\commande.txt",
@@ -336,8 +622,7 @@
               "RelativeToolTip": "BackOffice\\commande.txt",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-12-23T08:09:25.78Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-23T08:09:25.78Z"
             }
           ]
         }

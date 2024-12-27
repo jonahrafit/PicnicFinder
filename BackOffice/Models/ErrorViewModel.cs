@@ -1,3 +1,4 @@
+
 namespace PicnicFinder.Models;
 
 public class ErrorViewModel

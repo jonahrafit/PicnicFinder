@@ -26,7 +26,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddDbContext<PicnicFinderContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Ajouter les services nécessaires
+// Ajouter les services nécessaires pour l'authentification JWT
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -35,7 +35,6 @@ builder.Services.AddAuthentication(options =>
 .AddJwtBearer(options =>
 {
     var secretKey = builder.Configuration["Jwt:SecretKey"];
-    // Vérification que la clé secrète n'est pas vide ou null
     if (string.IsNullOrEmpty(secretKey))
     {
         throw new InvalidOperationException("La clé secrète JWT n'est pas configurée.");
@@ -48,7 +47,8 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuerSigningKey = true,
         ValidIssuer = builder.Configuration["Jwt:Issuer"],
         ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey))
+        IssuerSigningKey = new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(secretKey)),
+        RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
     };
 });
 
@@ -62,7 +62,6 @@ builder.Services.AddCors(options =>
                .AllowAnyHeader();
     });
 });
-
 
 var app = builder.Build();
 

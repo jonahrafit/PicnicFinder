@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;  // Pour 'AuthorizeAttribute'
-using Microsoft.IdentityModel.Tokens;     // Pour 'SymmetricSecurityKey', 'SigningCredentials', etc.
+using Microsoft.IdentityModel.Tokens;
 using PicnicFinder.Models;
+using BackOffice.Services;
 
-namespace MyApp.Namespace
+namespace BackOffice.Controllers.Api
 {
+    [Route("api/auth")]
+    [ApiController]
     public class AuthApiController : Controller
     {
         private readonly IConfiguration _configuration;
@@ -25,14 +28,10 @@ namespace MyApp.Namespace
         }
 
         // POST: Auth/Authenticate
-        [HttpPost]
-        [Route("api/auth/login")]
+        [HttpPost("login")]
         public async Task<IActionResult> Authenticate([FromBody] SigninModel signinModel)
         {
-            Console.WriteLine($"-------- USERNAME --------- = {signinModel.Username} ");
-            Console.WriteLine($"-------- PASSWORD --------- = {signinModel.Password} ");
             var token = await _authService.AuthenticateAsync(signinModel.Username, signinModel.Password);
-            Console.WriteLine($"-------- TOKEN--------- = {token} ");
 
             if (token == null)
             {
@@ -44,8 +43,7 @@ namespace MyApp.Namespace
         }
 
         // POST: Auth/Signup
-        [HttpPost]
-        [Route("api/auth/signup")]
+        [HttpPost("signup")]
         public async Task<IActionResult> Signup([FromBody] SignupModel model)
         {
             if (model == null || string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password) || string.IsNullOrEmpty(model.Role) || string.IsNullOrEmpty(model.Name))

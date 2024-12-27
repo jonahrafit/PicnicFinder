@@ -3,24 +3,28 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PicnicFinder.Models;
-using BackOffice.Services;
-using System.Text;           
+using System.Text;
 using System.IdentityModel.Tokens.Jwt;    // Pour 'JwtSecurityToken', 'JwtSecurityTokenHandler'
-using System.Security.Claims;   
+using System.Security.Claims;
 using Microsoft.AspNetCore.Authorization;  // Pour 'AuthorizeAttribute'
-using Microsoft.IdentityModel.Tokens;     // Pour 'SymmetricSecurityKey', 'SigningCredentials', etc.
+using Microsoft.IdentityModel.Tokens;    // Pour 'SymmetricSecurityKey', 'SigningCredentials', etc.
+using BackOffice.Services;
 
 namespace BackOffice.Controllers.Api
 {
-    [Route("api/[controller]")]
+    [Route("api/space")]
     [ApiController]
     public class SpaceApiController : Controller
     {
         private readonly SpaceService _spaceService;
+        private readonly IConfiguration _configuration;
+        private readonly PicnicFinderContext _dbContext;
 
-        public SpaceApiController(SpaceService spaceService)
+        public SpaceApiController(IConfiguration configuration, PicnicFinderContext dbContext)
         {
-            _spaceService = spaceService;
+            _configuration = configuration;
+            _dbContext = dbContext;
+            _spaceService = new SpaceService(_configuration, _dbContext);
         }
 
         // GET: api/Space
@@ -30,7 +34,7 @@ namespace BackOffice.Controllers.Api
             var spaces = await _spaceService.GetAllSpacesAsync();
             if (spaces == null || spaces.Count == 0)
             {
-                return NotFound("Aucun espace trouvé.");
+                return NotFound("Aucun espace trouvï¿½.");
             }
             return Ok(spaces);
         }
@@ -42,38 +46,34 @@ namespace BackOffice.Controllers.Api
             var space = await _spaceService.GetSpaceByIdAsync(id);
             if (space == null)
             {
-                return NotFound($"Espace avec l'ID {id} non trouvé.");
+                return NotFound($"Espace avec l'ID {id} non trouvï¿½.");
             }
             return Ok(space);
         }
 
         // POST: api/Space
         [HttpPost]
-        [Authorize(Roles = "OWNER")]  // Seuls les utilisateurs avec le rôle "OWNER" peuvent créer un espace
+        [Authorize(Roles = "OWNER")]  // Seuls les utilisateurs avec le rï¿½le "OWNER" peuvent crï¿½er un espace
         public async Task<ActionResult<Space>> CreateSpace([FromBody] Space space)
         {
             if (space == null)
             {
-                return BadRequest("Les données de l'espace ne sont pas valides.");
+                return BadRequest("Les donnï¿½es de l'espace ne sont pas valides.");
             }
 
-            // Assurez-vous que l'utilisateur connecté est le propriétaire de l'espace
-            var currentUserId = GetCurrentUserId(); // Méthode fictive pour récupérer l'ID de l'utilisateur connecté
-            if (space.OwnerId != currentUserId)
-            {
-                return Forbid(); // L'utilisateur n'est pas autorisé à créer cet espace
-            }
-
-            // Enregistrez l'espace dans la base de données via le service
+            Console.WriteLine($"____________________");
+            space.OwnerId = GetCurrentUserId();
+            Console.WriteLine($"Creating space: {space.ToString()}");
+            Console.WriteLine($"____________________");
             await _spaceService.CreateSpaceAsync(space);
 
-            // Retourner une réponse avec l'ID du nouvel espace créé
+            // Retourner une rï¿½ponse avec l'ID du nouvel espace crï¿½ï¿½
             return CreatedAtAction(nameof(GetSpace), new { id = space.Id }, space);
         }
 
         private long GetCurrentUserId()
         {
-            // Cette méthode doit être implémentée pour récupérer l'ID de l'utilisateur connecté.
+            // Cette mï¿½thode doit ï¿½tre implï¿½mentï¿½e pour rï¿½cupï¿½rer l'ID de l'utilisateur connectï¿½.
             // Par exemple, vous pouvez l'extraire des claims du jeton JWT.
             var userIdClaim = User?.FindFirst("UserId")?.Value;
             return userIdClaim != null ? long.Parse(userIdClaim) : 0;
