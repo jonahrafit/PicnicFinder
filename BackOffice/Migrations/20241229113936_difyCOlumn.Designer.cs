@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BackOffice.Migrations
 {
     [DbContext(typeof(PicnicFinderContext))]
-    partial class PicnicFinderContextModelSnapshot : ModelSnapshot
+    [Migration("20241229113936_difyCOlumn")]
+    partial class difyCOlumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -215,12 +218,17 @@ namespace BackOffice.Migrations
             modelBuilder.Entity("PicnicFinder.Models.Space", b =>
                 {
                     b.HasOne("PicnicFinder.Models.User", "Owner")
-                        .WithMany()
+                        .WithMany("Spaces")
                         .HasForeignKey("OwnerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("PicnicFinder.Models.User", b =>
+                {
+                    b.Navigation("Spaces");
                 });
 #pragma warning restore 612, 618
         }

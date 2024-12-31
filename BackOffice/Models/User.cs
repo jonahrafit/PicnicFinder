@@ -37,13 +37,11 @@ public class User
     public required string Phone { get; set; }
     public required string Name { get; set; }
 
-    public ICollection<Space> Spaces { get; set; } // Espaces associés au propriétaire
-
     [Required]
     public UserStatus Status { get; set; } = UserStatus.PENDING_APPROVAL;
 
-    public User()
+    public override string ToString()
     {
-        Spaces = [];
+        return $"User [Id={Id}, Email={Email}, Role={Role}, Phone={Phone}, Name={Name}, Status={Status}]";
     }
 }

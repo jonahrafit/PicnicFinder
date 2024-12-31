@@ -17,6 +17,7 @@ namespace BackOffice.Controllers.Api
     public class SpaceApiController : Controller
     {
         private readonly SpaceService _spaceService;
+        private readonly UserService _userService;
         private readonly IConfiguration _configuration;
         private readonly PicnicFinderContext _dbContext;
 
@@ -24,6 +25,7 @@ namespace BackOffice.Controllers.Api
         {
             _configuration = configuration;
             _dbContext = dbContext;
+            _userService = new UserService(_configuration, _dbContext);
             _spaceService = new SpaceService(_configuration, _dbContext);
         }
 
@@ -61,14 +63,32 @@ namespace BackOffice.Controllers.Api
                 return BadRequest("Les donn�es de l'espace ne sont pas valides.");
             }
 
-            Console.WriteLine($"____________________");
             space.OwnerId = GetCurrentUserId();
-            Console.WriteLine($"Creating space: {space.ToString()}");
-            Console.WriteLine($"____________________");
-            await _spaceService.CreateSpaceAsync(space);
+            try
+            {
+                // Récupérer l'ID de l'utilisateur actuellement authentifié
+                var currentUserId = GetCurrentUserId();
 
-            // Retourner une r�ponse avec l'ID du nouvel espace cr��
-            return CreatedAtAction(nameof(GetSpace), new { id = space.Id }, space);
+                // Récupérer l'utilisateur à partir de la base de données
+                var owner = await _userService.GetUserByIdAsync(currentUserId);
+
+                if (owner == null)
+                {
+                    return Unauthorized("Utilisateur non trouvé.");
+                }
+
+                // Assigner l'owner à l'espace
+                space.Owner = owner;
+                await _spaceService.CreateSpaceAsync(space);
+
+                // Retourner l'espace créé avec un code de statut 201
+                return CreatedAtAction(nameof(GetSpace), new { id = space.Id }, space);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Erreur lors de la création de l'espace : {ex.Message}");
+                return StatusCode(500, "Une erreur interne est survenue.");
+            }
         }
 
         private long GetCurrentUserId()

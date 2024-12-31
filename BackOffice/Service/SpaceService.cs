@@ -38,8 +38,6 @@ public class SpaceService
 
         try
         {
-            // Log initial information for debugging
-            Console.WriteLine($"Creating space: {space.ToString()}");
 
             // Set the timestamps
             space.CreatedAt = DateTime.UtcNow;
@@ -48,9 +46,6 @@ public class SpaceService
             // Add the space to the context and save changes
             _context.Space.Add(space);
             await _context.SaveChangesAsync();
-
-            // Log success
-            Console.WriteLine($"Space created successfully with ID: {space.Id}");
         }
         catch (Exception ex)
         {
@@ -85,4 +80,5 @@ public class SpaceService
     {
         return await _context.Space.AnyAsync(e => e.Id == id);
     }
+
 }

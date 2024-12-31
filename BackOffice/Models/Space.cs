@@ -67,7 +67,8 @@ public class Space
                $"Status: {Status}, " +
                $"CreatedAt: {CreatedAt}, " +
                $"UpdatedAt: {UpdatedAt}, " +
-               $"Photos: [{string.Join(", ", Photos)}]";
+               $"Photos: [{string.Join(", ", Photos)}]" +
+               (Owner != null ? $", Owner: [{Owner.ToString()}]" : ", Owner: null");
     }
 
 }
