@@ -1,1 +1,231 @@
 2024-12-31 05:31:04.123 +03:00 [INF] Application is shutting down...
+2024-12-31 06:12:58.685 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 06:12:59.039 +03:00 [INF] Now listening on: http://localhost:5266
+2024-12-31 06:12:59.045 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 06:12:59.047 +03:00 [INF] Hosting environment: Development
+2024-12-31 06:12:59.047 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice
+2024-12-31 06:17:09.610 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/ - null null
+2024-12-31 06:17:09.638 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 06:17:09.731 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.AuthController.Index (BackOffice)'
+2024-12-31 06:17:09.766 +03:00 [INF] Route matched with {action = "Index", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller BackOffice.Controllers.AuthController (BackOffice).
+2024-12-31 06:17:09.797 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 06:17:10.214 +03:00 [INF] Executed ViewResult - view Index executed in 414.8569ms.
+2024-12-31 06:17:10.234 +03:00 [INF] Executed action BackOffice.Controllers.AuthController.Index (BackOffice) in 466.2211ms
+2024-12-31 06:17:10.241 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.AuthController.Index (BackOffice)'
+2024-12-31 06:17:10.251 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/ - 200 null text/html; charset=utf-8 640.7546ms
+2024-12-31 06:17:10.282 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-12-31 06:17:10.283 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/css/site.css?v=ZW_CM1R-ZLEZDhMeeRTyqInlLvM9xTOma97vSHTMPI8 - null null
+2024-12-31 06:17:10.283 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/PicnicFinder.styles.css - null null
+2024-12-31 06:17:10.312 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/PicnicFinder.styles.css - 404 0 null 28.9155ms
+2024-12-31 06:17:10.331 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5266/PicnicFinder.styles.css, Response status code: 404
+2024-12-31 06:17:10.378 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2024-12-31 06:17:10.380 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 98.668ms
+2024-12-31 06:17:10.381 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice/wwwroot/css/site.css'
+2024-12-31 06:17:10.388 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/css/site.css?v=ZW_CM1R-ZLEZDhMeeRTyqInlLvM9xTOma97vSHTMPI8 - 200 475 text/css 105.0486ms
+2024-12-31 06:17:10.575 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/lib/jquery/dist/jquery.min.js - null null
+2024-12-31 06:17:10.579 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2024-12-31 06:17:10.582 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-12-31 06:17:10.580 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 4.9329ms
+2024-12-31 06:17:10.589 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2024-12-31 06:17:10.590 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 8.2792ms
+2024-12-31 06:17:10.602 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - null null
+2024-12-31 06:17:10.604 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/BackOffice/wwwroot/js/site.js'
+2024-12-31 06:17:10.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0 - 200 230 text/javascript 2.5019ms
+2024-12-31 07:16:29.398 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:16:29.406 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:16:29.436 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:16:30.515 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:16:30.698 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:16:30.811 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 1367.934ms
+2024-12-31 07:16:30.812 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:16:30.817 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 1419.4453ms
+2024-12-31 07:17:21.603 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:17:21.608 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:17:21.608 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:17:21.679 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:17:21.687 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:17:21.688 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 78.0653ms
+2024-12-31 07:17:21.689 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:17:21.689 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 85.9521ms
+2024-12-31 07:22:07.094 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:22:07.097 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:22:07.097 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:22:07.102 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:22:07.110 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:22:07.111 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 13.2918ms
+2024-12-31 07:22:07.111 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:22:07.112 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 18.1971ms
+2024-12-31 07:23:32.649 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:23:32.652 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:23:32.654 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:23:32.661 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:23:32.666 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:23:32.667 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 12.7339ms
+2024-12-31 07:23:32.669 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:23:32.671 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 24.2823ms
+2024-12-31 07:45:16.230 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:45:16.236 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:45:16.236 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:45:16.496 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:45:16.508 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:45:16.510 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 272.7184ms
+2024-12-31 07:45:16.511 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:45:16.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 281.7763ms
+2024-12-31 07:54:52.539 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:54:52.543 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:54:52.543 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:54:52.828 +03:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:54:52.843 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:54:52.844 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 300.8426ms
+2024-12-31 07:54:52.845 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:54:52.845 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 306.7334ms
+2024-12-31 07:55:49.921 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:55:49.922 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:55:49.923 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:55:49.927 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:55:49.932 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:55:49.935 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 11.9229ms
+2024-12-31 07:55:49.937 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:55:49.938 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 17.322ms
+2024-12-31 07:57:53.274 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 07:57:53.275 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:57:53.276 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 07:57:53.281 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 07:57:53.286 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 07:57:53.286 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 10.0572ms
+2024-12-31 07:57:53.287 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 07:57:53.287 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 12.8498ms
+2024-12-31 08:04:29.995 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:04:30.003 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:04:30.003 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:04:30.264 +03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:04:30.268 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:04:30.268 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 265.0674ms
+2024-12-31 08:04:30.268 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:04:30.270 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 274.6006ms
+2024-12-31 08:05:16.751 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:05:16.752 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:05:16.752 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:05:16.758 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:05:16.764 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:05:16.765 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 11.6721ms
+2024-12-31 08:05:16.765 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:05:16.765 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 14.6179ms
+2024-12-31 08:07:06.517 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:07:06.518 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:07:06.519 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:07:06.522 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:07:06.525 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:07:06.525 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 5.4257ms
+2024-12-31 08:07:06.526 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:07:06.526 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 9.2601ms
+2024-12-31 08:09:58.792 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:09:58.804 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:09:58.804 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:09:58.810 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:09:58.823 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:09:58.831 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 26.0318ms
+2024-12-31 08:09:58.833 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:09:58.835 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 42.4281ms
+2024-12-31 08:10:40.483 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:10:40.484 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:10:40.484 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:10:40.490 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:10:40.497 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:10:40.498 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 13.0649ms
+2024-12-31 08:10:40.499 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:10:40.499 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 16.5934ms
+2024-12-31 08:15:14.728 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:15:14.730 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:15:14.731 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:15:14.735 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:15:14.740 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:15:14.741 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 9.621ms
+2024-12-31 08:15:14.741 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:15:14.741 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 13.4406ms
+2024-12-31 08:17:07.826 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:17:07.830 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:17:07.835 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:17:07.838 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:17:07.842 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:17:07.844 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 8.0377ms
+2024-12-31 08:17:07.845 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:17:07.846 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 19.8892ms
+2024-12-31 08:18:52.531 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:18:52.534 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:18:52.535 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:18:52.539 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:18:52.544 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:18:52.544 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 7.9986ms
+2024-12-31 08:18:52.545 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:18:52.545 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 14.142ms
+2024-12-31 08:19:26.451 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:19:26.451 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:19:26.452 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:19:26.455 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:19:26.460 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:19:26.461 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 9.2019ms
+2024-12-31 08:19:26.461 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:19:26.462 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 11.104ms
+2024-12-31 08:20:14.093 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5266/api/Space - null null
+2024-12-31 08:20:14.093 +03:00 [INF] Executing endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:20:14.093 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[PicnicFinder.Models.Space]]] GetSpaces() on controller BackOffice.Controllers.Api.SpaceApiController (BackOffice).
+2024-12-31 08:20:14.096 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt], [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Space] AS [s]
+INNER JOIN [Users] AS [u] ON [s].[OwnerId] = [u].[Id]
+2024-12-31 08:20:14.099 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[PicnicFinder.Models.Space, BackOffice, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-12-31 08:20:14.101 +03:00 [INF] Executed action BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice) in 6.9755ms
+2024-12-31 08:20:14.101 +03:00 [INF] Executed endpoint 'BackOffice.Controllers.Api.SpaceApiController.GetSpaces (BackOffice)'
+2024-12-31 08:20:14.102 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5266/api/Space - 200 null application/json; charset=utf-8 9.3305ms

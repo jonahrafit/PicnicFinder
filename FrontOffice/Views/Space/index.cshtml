@@ -1,51 +1,11 @@
 @{
     ViewData["Title"] = "Les espaces";
+    var jsonSpaceList = ViewData["JsonSpaceList"] as string;
+    var spaces = string.IsNullOrEmpty(jsonSpaceList)
+    ? new List<dynamic>()
+    : Newtonsoft.Json.JsonConvert.DeserializeObject<List<dynamic>>(jsonSpaceList);
 }
-@{
-    var villas = new List<dynamic>
-{
-new {
-Image = "/images/villa.png",
-Heart = true,
-Title = "Villa Luxueuse",
-Description = "Description de la villa luxueuse, idéale pour des vacances tranquilles...",
-Activities = new[] { "Piscine", "Tennis", "Salle de réception" },
-Price = "6000 Ar/heure"
-},
-new {
-Image = "/images/villa.png",
-Heart = false,
-Title = "Villa Moderne",
-Description = "Villa moderne avec des équipements de luxe, parfaite pour les séjours familiaux.",
-Activities = new[] { "Salle de sport", "Jacuzzi" },
-Price = "7000 Ar/heure"
-},
-new {
-Image = "/images/villa.png",
-Heart = true,
-Title = "Villa Familiale",
-Description = "Villa spacieuse pour des vacances en famille, avec plusieurs chambres.",
-Activities = new[] { "Salle de jeux", "Terrains de basketball", "Piscine" },
-Price = "5500 Ar/heure"
-},
-new {
-Image = "/images/villa.png",
-Heart = true,
-Title = "Villa de Charme",
-Description = "Une villa charmante pour des moments de détente et de convivialité.",
-Activities = new[] { "Salle de cinéma", "Cuisine gastronomique", "Spa" },
-Price = "8000 Ar/heure"
-},
-new {
-Image = "/images/villa.png",
-Heart = false,
-Title = "Villa de Luxe",
-Description = "Villa de luxe avec vue imprenable sur la mer, idéale pour des événements spéciaux.",
-Activities = new[] { "Salle de réception", "Barbecue extérieur", "Hammam" },
-Price = "10000 Ar/heure"
-}
-};
-}
+
 <style>
     .filter-container {
         width: 25%;
@@ -60,19 +20,14 @@ Price = "10000 Ar/heure"
     .card-columns {
         display: flex;
         flex-wrap: wrap;
-        /* Permet le retour à la ligne */
         gap: 20px;
-        /* Espacement entre les cartes */
         justify-content: flex-start;
-        /* Aligne les cartes à gauche */
     }
 
     .card {
         flex: 0 0 30%;
-        /* Définit une largeur de 30% */
         max-width: 30%;
         box-sizing: border-box;
-        /* Inclut le padding et la bordure dans la largeur */
     }
 
     .card-img-container {
@@ -85,22 +40,16 @@ Price = "10000 Ar/heure"
         display: block;
     }
 
-
-    .heart-icon {
+    .status-badge {
         position: absolute;
-        top: 5px;
-        /* Positionné plus haut */
+        top: 10px;
         right: 10px;
-        font-size: 24px;
-        /* Taille ajustée */
-        cursor: pointer;
-        /* Forme circulaire */
-        padding: 5px;
-        background-color: transparent;
-        border: 3cm;
-        /* Fond transparent */
+        background-color: #007bff;
         color: white;
-        /* Couleur du texte */
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: bold;
     }
 
     .card-body {
@@ -113,17 +62,21 @@ Price = "10000 Ar/heure"
         overflow: hidden;
         text-overflow: ellipsis;
         max-width: 100%;
-        /* Limite la largeur à celle du conteneur */
+    }
+
+    .capacity {
+        font-weight: bold;
+        color: #007bff;
     }
 </style>
+
 <div class="container mt-4">
-    <!-- Ligne 1: Titre centré -->
-    <h1 class="text-center">Titre de la Page :AMPIO NOMBRE de PERSONNE heart-icon </h1>
+    <!-- Titre -->
+    <h1 class="text-center">Les espaces disponibles</h1>
 
     <div class="row mt-4">
-        <!-- Ligne 2: Divisé en 1/4 pour le filtre et 3/4 pour le contenu -->
+        <!-- Filtre -->
         <div class="col-md-3 filter-container">
-            <!-- Filtre -->
             <h5>Filtrer la liste</h5>
             <form>
                 <div class="form-group">
@@ -137,14 +90,6 @@ Price = "10000 Ar/heure"
                         <option value="Tennis">Tennis</option>
                         <option value="Salle de réception">Salle de réception</option>
                         <option value="Salle de sport">Salle de sport</option>
-                        <option value="Jacuzzi">Jacuzzi</option>
-                        <option value="Salle de jeux">Salle de jeux</option>
-                        <option value="Terrains de basketball">Terrains de basketball</option>
-                        <option value="Salle de cinéma">Salle de cinéma</option>
-                        <option value="Cuisine gastronomique">Cuisine gastronomique</option>
-                        <option value="Spa">Spa</option>
-                        <option value="Barbecue extérieur">Barbecue extérieur</option>
-                        <option value="Hammam">Hammam</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -159,33 +104,31 @@ Price = "10000 Ar/heure"
             </form>
         </div>
 
-
+        <!-- Liste des espaces -->
         <div class="col-md-9 content-container">
-            <!-- 3/4: Divisé en 3 colonnes de Card -->
-            <div class="card-columns">
-                @foreach (var villa in villas)
-                {
-                    <div class="card">
-                        <div class="card-img-container">
-                            <img src="@villa.Image" class="card-img-top" alt="Villa Image">
-                            <span class="heart-icon">
-                                <i class="@(villa.Heart ? "fa fa-heart" : "fa-regular fa-heart")"></i>
-                            </span>
-                        </div>
-                        <div class="card-body">
-                            <div class="activities">
-                                @foreach (var activity in villa.Activities)
-                                {
-                                    <span class="activity">@activity</span>
-                                }
+            @if (spaces != null && spaces.Any())
+            {
+                <div class="card-columns">
+                    @foreach (var space in spaces)
+                    {
+                        <div class="card">
+                            <div class="card-img-container">
+                                <img src="@space.photos[0]" class="card-img-top" alt="Space Image">
+                                <span class="status-badge">@space.Status</span>
                             </div>
-                            <h5 class="card-title">@villa.Title</h5>
-                            <p class="card-text">@villa.Description</p>
-                            <p class="price">Prix: @villa.Price</p>
+                            <div class="card-body">
+                                <h5 class="card-title">@space.name</h5>
+                                <p class="card-text">@space.description</p>
+                                <p class="capacity">Capacité: @space.capacity personnes</p>
+                            </div>
                         </div>
-                    </div>
-                }
-            </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <p>Aucun espace disponible.</p>
+            }
         </div>
     </div>
 </div>

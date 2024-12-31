@@ -1,0 +1,505 @@
+2024-12-31 06:13:25.171 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 06:13:25.457 +03:00 [WRN] Overriding address(es) 'http://192.168.88.9:5179'. Binding to endpoints defined via IConfiguration and/or UseKestrel() instead.
+2024-12-31 06:13:25.482 +03:00 [ERR] Hosting failed to start
+System.Net.Sockets.SocketException (99): Cannot assign requested address
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportOptions.CreateDefaultBoundListenSocket(EndPoint endpoint)
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketConnectionListener.Bind()
+   at Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.SocketTransportFactory.BindAsync(EndPoint endpoint, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Infrastructure.TransportManager.BindAsync(EndPoint endPoint, ConnectionDelegate connectionDelegate, EndpointConfig endpointConfig, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.<>c__DisplayClass28_0`1.<<StartAsync>g__OnBind|0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindEndpointAsync(ListenOptions endpoint, AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.ListenOptions.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.EndpointsStrategy.BindAsync(AddressBindContext context, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.AddressBinder.BindAsync(ListenOptions[] listenOptions, AddressBindContext context, Func`2 useHttps, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.BindAsync(CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServerImpl.StartAsync[TContext](IHttpApplication`1 application, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.<StartAsync>b__15_1(IHostedService service, CancellationToken token)
+   at Microsoft.Extensions.Hosting.Internal.Host.ForeachService[T](IEnumerable`1 services, CancellationToken token, Boolean concurrent, Boolean abortOnFirstException, List`1 exceptions, Func`3 operation)
+2024-12-31 06:17:04.859 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 06:17:05.062 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 06:17:05.070 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 06:17:05.073 +03:00 [INF] Hosting environment: Development
+2024-12-31 06:17:05.074 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 06:17:13.015 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2024-12-31 06:17:13.046 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 06:17:13.081 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2024-12-31 06:17:13.177 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2024-12-31 06:17:13.197 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 06:17:13.355 +03:00 [INF] Executed ViewResult - view Index executed in 122.7334ms.
+2024-12-31 06:17:13.370 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 191.1592ms
+2024-12-31 06:17:13.371 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2024-12-31 06:17:13.376 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 363.1484ms
+2024-12-31 06:17:13.439 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-12-31 06:17:13.474 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - null null
+2024-12-31 06:17:13.509 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2024-12-31 06:17:13.520 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/css/site.css'
+2024-12-31 06:17:13.521 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 83.692ms
+2024-12-31 06:17:13.541 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - 200 329 text/css 66.9952ms
+2024-12-31 06:17:13.673 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - null null
+2024-12-31 06:17:13.676 +03:00 [INF] Sending file. Request path: '/FrontOffice.styles.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/obj/Debug/net8.0/scopedcss/bundle/FrontOffice.styles.css'
+2024-12-31 06:17:13.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - null null
+2024-12-31 06:17:13.684 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/js/site.js'
+2024-12-31 06:17:13.685 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo - 200 231 text/javascript 1.8658ms
+2024-12-31 06:17:13.678 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-12-31 06:17:13.678 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2024-12-31 06:17:13.688 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2024-12-31 06:17:13.688 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 10.4184ms
+2024-12-31 06:17:13.689 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - 200 1080 text/css 9.4557ms
+2024-12-31 06:17:13.691 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2024-12-31 06:17:13.692 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 14.2218ms
+2024-12-31 06:17:14.672 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/favicon.ico - null null
+2024-12-31 06:17:14.674 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/favicon.ico'
+2024-12-31 06:17:14.674 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/favicon.ico - 200 5430 image/x-icon 2.4951ms
+2024-12-31 06:17:35.483 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 06:17:35.486 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 06:17:35.535 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 06:17:35.539 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 06:17:35.711 +03:00 [INF] Executed ViewResult - view Index executed in 174.1017ms.
+2024-12-31 06:17:35.712 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 176.4081ms
+2024-12-31 06:17:35.714 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 06:17:35.715 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 231.8219ms
+2024-12-31 06:17:35.774 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/images/villa.png - null null
+2024-12-31 06:17:35.785 +03:00 [INF] Sending file. Request path: '/images/villa.png'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/images/villa.png'
+2024-12-31 06:17:35.786 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/images/villa.png - 200 1095904 image/png 11.1625ms
+2024-12-31 06:56:13.139 +03:00 [INF] Application is shutting down...
+2024-12-31 07:15:03.100 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:15:03.469 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:15:03.473 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:15:03.474 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:15:03.474 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:16:29.144 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:16:29.159 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:16:29.182 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:16:29.259 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:16:30.840 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:16:31.195 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1924.2534ms
+2024-12-31 07:16:31.218 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:16:31.232 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure, CallSite, Object, Int32)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at AspNetCoreGeneratedDocument.Views_Space_index.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/index.cshtml:line 113
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 07:16:31.364 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 500 null text/html; charset=utf-8 2221.5102ms
+2024-12-31 07:16:54.004 +03:00 [INF] Application is shutting down...
+2024-12-31 07:17:13.849 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:17:14.036 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:17:14.045 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:17:14.047 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:17:14.047 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:17:21.440 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:17:21.455 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:17:21.476 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:17:21.558 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:17:21.713 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:17:21.917 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 354.4807ms
+2024-12-31 07:17:21.922 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:17:21.924 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure, CallSite, Object, Int32)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at AspNetCoreGeneratedDocument.Views_Space_index.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/index.cshtml:line 113
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 07:17:22.025 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 500 null text/html; charset=utf-8 587.8176ms
+2024-12-31 07:21:46.553 +03:00 [INF] Application is shutting down...
+2024-12-31 07:22:01.804 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:22:02.040 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:22:02.045 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:22:02.047 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:22:02.047 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:22:06.922 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:22:06.940 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:22:06.964 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:22:07.040 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:22:07.143 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:22:07.383 +03:00 [INF] Executed ViewResult - view Index executed in 241.7104ms.
+2024-12-31 07:22:07.392 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 350.617ms
+2024-12-31 07:22:07.394 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:22:07.401 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 481.5858ms
+2024-12-31 07:22:07.606 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-12-31 07:22:07.646 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/images/villa.png - null null
+2024-12-31 07:22:07.674 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2024-12-31 07:22:07.682 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 77.1096ms
+2024-12-31 07:22:07.730 +03:00 [INF] Sending file. Request path: '/images/villa.png'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/images/villa.png'
+2024-12-31 07:22:07.731 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/images/villa.png - 200 1095904 image/png 84.4984ms
+2024-12-31 07:22:34.457 +03:00 [INF] Application is shutting down...
+2024-12-31 07:22:45.980 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:22:46.206 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:22:46.212 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:22:46.213 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:22:46.213 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:23:32.489 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:23:32.504 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:23:32.525 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:23:32.588 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:23:32.708 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:23:32.953 +03:00 [INF] Executed ViewResult - view Index executed in 247.9413ms.
+2024-12-31 07:23:32.962 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 372.058ms
+2024-12-31 07:23:32.963 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:23:32.971 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 483.5071ms
+2024-12-31 07:44:48.709 +03:00 [INF] Application is shutting down...
+2024-12-31 07:45:11.290 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:45:11.511 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:45:11.517 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:45:11.519 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:45:11.519 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:45:16.076 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:45:16.091 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:45:16.115 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:45:16.187 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:45:16.537 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:45:16.805 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 614.7158ms
+2024-12-31 07:45:16.812 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:45:16.815 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure, CallSite, Object, Int32)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at AspNetCoreGeneratedDocument.Views_Space_index.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/index.cshtml:line 114
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 07:45:16.918 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 500 null text/html; charset=utf-8 844.974ms
+2024-12-31 07:51:44.136 +03:00 [INF] Application is shutting down...
+2024-12-31 07:54:40.300 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:54:40.565 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:54:40.571 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:54:40.584 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:54:40.584 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:54:52.387 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:54:52.402 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:54:52.424 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:54:52.479 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:54:52.877 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:54:53.094 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 609.5535ms
+2024-12-31 07:54:53.099 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:54:53.101 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure, CallSite, Object, Int32)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at AspNetCoreGeneratedDocument.Views_Space_index.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/index.cshtml:line 113
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 07:54:53.196 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 500 null text/html; charset=utf-8 810.4618ms
+2024-12-31 07:55:11.052 +03:00 [INF] Application is shutting down...
+2024-12-31 07:55:46.444 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:55:46.611 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:55:46.616 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:55:46.617 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:55:46.617 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:55:49.732 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:55:49.752 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:55:49.804 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:55:49.868 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:55:49.969 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:55:50.259 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 385.979ms
+2024-12-31 07:55:50.265 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:55:50.267 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure, CallSite, Object, Int32)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at AspNetCoreGeneratedDocument.Views_Space_index.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/index.cshtml:line 113
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 07:55:50.355 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 500 null text/html; charset=utf-8 625.8107ms
+2024-12-31 07:56:58.707 +03:00 [INF] Application is shutting down...
+2024-12-31 07:57:48.122 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 07:57:48.307 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 07:57:48.317 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 07:57:48.318 +03:00 [INF] Hosting environment: Development
+2024-12-31 07:57:48.319 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 07:57:53.103 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 07:57:53.118 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 07:57:53.161 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:57:53.219 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 07:57:53.326 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 07:57:53.559 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 334.998ms
+2024-12-31 07:57:53.565 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 07:57:53.568 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime binding on a null reference
+   at CallSite.Target(Closure, CallSite, Object, Int32)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute2[T0,T1,TRet](CallSite site, T0 arg0, T1 arg1)
+   at AspNetCoreGeneratedDocument.Views_Space_index.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/index.cshtml:line 114
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 07:57:53.645 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 500 null text/html; charset=utf-8 542.989ms
+2024-12-31 07:58:10.295 +03:00 [INF] Application is shutting down...
+2024-12-31 08:04:26.588 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:04:26.753 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:04:26.757 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:04:26.758 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:04:26.758 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:04:29.841 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:04:29.856 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:04:29.882 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:04:29.943 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:04:30.297 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:04:30.432 +03:00 [INF] Executed ViewResult - view Index executed in 136.4084ms.
+2024-12-31 08:04:30.441 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 496.2565ms
+2024-12-31 08:04:30.442 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:04:30.449 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 609.6517ms
+2024-12-31 08:04:30.909 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2024-12-31 08:04:30.981 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - null null
+2024-12-31 08:04:31.038 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map'
+2024-12-31 08:04:31.039 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'
+2024-12-31 08:04:31.040 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - 200 327261 text/plain 59.3317ms
+2024-12-31 08:04:31.044 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - 200 449111 text/plain 135.8447ms
+2024-12-31 08:05:02.905 +03:00 [INF] Application is shutting down...
+2024-12-31 08:05:13.706 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:05:13.870 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:05:13.874 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:05:13.875 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:05:13.876 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:05:16.583 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:05:16.603 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:05:16.633 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:05:16.700 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:05:16.812 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:05:16.993 +03:00 [INF] Executed ViewResult - view Index executed in 182.5197ms.
+2024-12-31 08:05:17.001 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 299.5381ms
+2024-12-31 08:05:17.003 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:05:17.013 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 433.5817ms
+2024-12-31 08:06:45.988 +03:00 [INF] Application is shutting down...
+2024-12-31 08:06:55.396 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:06:55.674 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:06:55.689 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:06:55.693 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:06:55.704 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:07:06.368 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:07:06.382 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:07:06.405 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:07:06.463 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:07:06.560 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:07:06.773 +03:00 [INF] Executed ViewResult - view Index executed in 216.9925ms.
+2024-12-31 08:07:06.782 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 317.912ms
+2024-12-31 08:07:06.784 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:07:06.793 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 426.1911ms
+2024-12-31 08:09:45.143 +03:00 [INF] Application is shutting down...
+2024-12-31 08:09:53.736 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:09:53.910 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:09:53.915 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:09:53.917 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:09:53.918 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:09:58.595 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:09:58.611 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:09:58.639 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:09:58.693 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:09:58.916 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:09:59.265 +03:00 [INF] Executed ViewResult - view Index executed in 366.6251ms.
+2024-12-31 08:09:59.275 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 580.4012ms
+2024-12-31 08:09:59.277 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:09:59.285 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 691.3326ms
+2024-12-31 08:10:28.397 +03:00 [INF] Application is shutting down...
+2024-12-31 08:10:37.100 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:10:37.275 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:10:37.279 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:10:37.281 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:10:37.281 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:10:40.296 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:10:40.313 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:10:40.345 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:10:40.421 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:10:40.538 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:10:40.890 +03:00 [INF] Executed ViewResult - view Index executed in 352.8228ms.
+2024-12-31 08:10:40.901 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 478.666ms
+2024-12-31 08:10:40.903 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:10:40.913 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 619.4116ms
+2024-12-31 08:13:14.901 +03:00 [INF] Application is shutting down...
+2024-12-31 08:13:26.887 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:13:27.288 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:13:27.295 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:13:27.297 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:13:27.298 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:15:14.581 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:15:14.596 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:15:14.618 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:15:14.676 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:15:14.771 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:15:15.072 +03:00 [INF] Executed ViewResult - view Index executed in 302.9007ms.
+2024-12-31 08:15:15.081 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 403.3275ms
+2024-12-31 08:15:15.083 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:15:15.092 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 510.5761ms
+2024-12-31 08:16:55.038 +03:00 [INF] Application is shutting down...
+2024-12-31 08:17:04.395 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:17:04.565 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:17:04.569 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:17:04.570 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:17:04.570 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:17:07.665 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:17:07.678 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:17:07.702 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:17:07.773 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:17:07.874 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:17:08.175 +03:00 [INF] Executed ViewResult - view Index executed in 301.0623ms.
+2024-12-31 08:17:08.184 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 410.524ms
+2024-12-31 08:17:08.186 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:17:08.194 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 530.5789ms
+2024-12-31 08:18:52.513 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:18:52.516 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:18:52.517 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:18:52.546 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:18:52.557 +03:00 [INF] Executed ViewResult - view Index executed in 11.3106ms.
+2024-12-31 08:18:52.560 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 40.9088ms
+2024-12-31 08:18:52.561 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:18:52.562 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 49.1616ms
+2024-12-31 08:19:13.157 +03:00 [INF] Application is shutting down...
+2024-12-31 08:19:21.388 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:19:21.564 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:19:21.572 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:19:21.574 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:19:21.574 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:19:26.300 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:19:26.315 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:19:26.340 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:19:26.395 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:19:26.494 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:19:26.883 +03:00 [INF] Executed ViewResult - view Index executed in 391.9419ms.
+2024-12-31 08:19:26.893 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 496.7999ms
+2024-12-31 08:19:26.894 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:19:26.905 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 607.2336ms
+2024-12-31 08:19:56.376 +03:00 [INF] Application is shutting down...
+2024-12-31 08:20:09.067 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:20:09.269 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:20:09.280 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:20:09.281 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:20:09.282 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:20:13.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:20:13.962 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:20:13.986 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:20:14.047 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:20:14.137 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:20:14.440 +03:00 [INF] Executed ViewResult - view Index executed in 306.7502ms.
+2024-12-31 08:20:14.448 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 400.3368ms
+2024-12-31 08:20:14.450 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:20:14.458 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 511.5926ms
+2024-12-31 08:21:56.606 +03:00 [INF] Application is shutting down...

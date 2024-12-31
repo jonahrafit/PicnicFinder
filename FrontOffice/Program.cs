@@ -14,7 +14,6 @@ builder.Host.UseSerilog();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.WebHost.UseUrls("http://192.168.88.9:5179");
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
