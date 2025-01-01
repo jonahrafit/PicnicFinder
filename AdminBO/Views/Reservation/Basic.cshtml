@@ -1,0 +1,24 @@
+@model List<AdminBO.Models.User>
+
+@{
+  ViewData["Title"] = "Users";
+}
+
+<h6 class="pb-1 mb-6 text-muted">Masonry</h6>
+<div class="row g-6" data-masonry='{"percentPosition": true }'>
+  @for (int i = 0; i < 7; i++)
+  {
+    <div class="col-sm-6 col-lg-4">
+      <div class="card p-4">
+        <figure class="p-4 mb-0">
+          <blockquote class="blockquote">
+            <p>A well-known quote, contained in a blockquote element.</p>
+          </blockquote>
+          <figcaption class="blockquote-footer mb-0 text-muted">
+            Someone famous in <cite title="Source Title">Source Title</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  }
+</div>
