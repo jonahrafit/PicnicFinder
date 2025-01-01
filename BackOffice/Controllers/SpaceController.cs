@@ -9,17 +9,21 @@ namespace BackOffice.Controllers
     public class SpaceController : Controller
     {
         private readonly SpaceService _spaceService;
+        private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration _configuration;
+        private readonly PicnicFinderContext _dbContext;
 
-        public SpaceController(SpaceService spaceService)
+        public SpaceController(SpaceService spaceService, ILogger<HomeController> logger, MenuService menuService,IConfiguration configuration, PicnicFinderContext dbContext)
         {
-            _spaceService = spaceService;
+            _spaceService = new SpaceService(_configuration, _dbContext);
+            _logger = logger;
         }
 
         // GET: Space
         public async Task<IActionResult> Index()
         {
             ViewData["ActiveMenu"] = "GestionDesEspaces";
-            var spaces = await _spaceService.GetAllSpacesAsync();
+            var spaces = await _spaceService.GetAllSpacesAsyncByOwner();
             return View(spaces);
         }
 

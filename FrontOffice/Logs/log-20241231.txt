@@ -503,3 +503,756 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot perform runtime bi
 2024-12-31 08:20:14.450 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
 2024-12-31 08:20:14.458 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 511.5926ms
 2024-12-31 08:21:56.606 +03:00 [INF] Application is shutting down...
+2024-12-31 08:57:17.605 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 08:57:17.781 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 08:57:17.788 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 08:57:17.789 +03:00 [INF] Hosting environment: Development
+2024-12-31 08:57:17.789 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 08:57:21.522 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 08:57:21.545 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 08:57:21.575 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:57:21.648 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 08:57:22.171 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 08:57:22.298 +03:00 [INF] Executed ViewResult - view Index executed in 127.6325ms.
+2024-12-31 08:57:22.308 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 658.7049ms
+2024-12-31 08:57:22.310 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 08:57:22.319 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 800.4383ms
+2024-12-31 08:57:22.924 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2024-12-31 08:57:23.010 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map'
+2024-12-31 08:57:23.017 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - 200 449111 text/plain 92.504ms
+2024-12-31 08:57:23.066 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - null null
+2024-12-31 08:57:23.099 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'
+2024-12-31 08:57:23.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - 200 327261 text/plain 41.2134ms
+2024-12-31 09:05:02.748 +03:00 [INF] Application is shutting down...
+2024-12-31 09:05:11.847 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:05:12.018 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:05:12.023 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:05:12.025 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:05:12.025 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:05:15.904 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:05:15.922 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:05:15.952 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:05:16.019 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:05:16.712 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:05:16.845 +03:00 [INF] Executed ViewResult - view Index executed in 135.5217ms.
+2024-12-31 09:05:16.849 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 827.865ms
+2024-12-31 09:05:16.850 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:05:16.859 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 957.6459ms
+2024-12-31 09:09:17.981 +03:00 [INF] Application is shutting down...
+2024-12-31 09:20:41.492 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:20:41.686 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:20:41.689 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:20:41.690 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:20:41.690 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:20:53.291 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:20:53.304 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:20:53.335 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:20:53.405 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:20:53.935 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:20:54.060 +03:00 [INF] Executed ViewResult - view Index executed in 129.0551ms.
+2024-12-31 09:20:54.070 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 663.1128ms
+2024-12-31 09:20:54.071 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:20:54.080 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 790.6652ms
+2024-12-31 09:21:43.544 +03:00 [INF] Application is shutting down...
+2024-12-31 09:21:59.185 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:21:59.410 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:21:59.414 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:21:59.415 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:21:59.415 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:22:03.784 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:22:03.799 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:22:03.824 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:22:03.891 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:22:04.151 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:22:04.303 +03:00 [INF] Executed ViewResult - view Index executed in 152.8674ms.
+2024-12-31 09:22:04.312 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 420.2595ms
+2024-12-31 09:22:04.314 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:22:04.322 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 539.8706ms
+2024-12-31 09:22:36.330 +03:00 [INF] Application is shutting down...
+2024-12-31 09:23:33.332 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:23:33.599 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:23:33.607 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:23:33.608 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:23:33.609 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:23:57.243 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:23:57.394 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:23:57.527 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:23:57.619 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:23:58.139 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:23:58.374 +03:00 [INF] Executed ViewResult - view Index executed in 210.6293ms.
+2024-12-31 09:23:58.404 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 773.6452ms
+2024-12-31 09:23:58.409 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:23:58.426 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1186.6946ms
+2024-12-31 09:25:02.250 +03:00 [INF] Application is shutting down...
+2024-12-31 09:25:35.201 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:25:35.364 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:25:35.367 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:25:35.368 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:25:35.369 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:25:39.370 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:25:39.385 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:25:39.409 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:25:39.471 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:25:39.750 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:25:39.902 +03:00 [INF] Executed ViewResult - view Index executed in 156.1575ms.
+2024-12-31 09:25:39.912 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 439.7703ms
+2024-12-31 09:25:39.914 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:25:39.923 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 554.108ms
+2024-12-31 09:25:58.474 +03:00 [INF] Application is shutting down...
+2024-12-31 09:26:09.388 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:26:09.577 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:26:09.581 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:26:09.582 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:26:09.582 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:26:12.458 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:26:12.473 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:26:12.518 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:26:12.596 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:26:12.862 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:26:13.008 +03:00 [INF] Executed ViewResult - view Index executed in 147.1769ms.
+2024-12-31 09:26:13.017 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 419.0084ms
+2024-12-31 09:26:13.019 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:26:13.038 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 574.3575ms
+2024-12-31 09:26:52.803 +03:00 [INF] Application is shutting down...
+2024-12-31 09:28:45.797 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:28:46.038 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:28:46.045 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:28:46.046 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:28:46.047 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:28:50.082 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:28:50.095 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:28:50.124 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:28:50.195 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:28:50.611 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:28:50.746 +03:00 [INF] Executed ViewResult - view Index executed in 139.8784ms.
+2024-12-31 09:28:50.753 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 554.637ms
+2024-12-31 09:28:50.755 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:28:50.764 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 684.5072ms
+2024-12-31 09:30:53.400 +03:00 [INF] Application is shutting down...
+2024-12-31 09:31:10.993 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:31:11.248 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:31:11.252 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:31:11.253 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:31:11.253 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:31:37.327 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:31:37.352 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:31:37.427 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:31:37.582 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:31:38.693 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:31:38.997 +03:00 [INF] Executed ViewResult - view Index executed in 296.3806ms.
+2024-12-31 09:31:39.005 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1421.684ms
+2024-12-31 09:31:39.009 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:31:39.043 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1722.2338ms
+2024-12-31 09:37:33.018 +03:00 [INF] Application is shutting down...
+2024-12-31 09:37:42.216 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:37:42.422 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:37:42.432 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:37:42.434 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:37:42.434 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:37:45.074 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:37:45.106 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:37:45.155 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:37:45.235 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:37:45.935 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:37:46.109 +03:00 [INF] Executed ViewResult - view Index executed in 175.4356ms.
+2024-12-31 09:37:46.115 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 878.0101ms
+2024-12-31 09:37:46.116 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:37:46.130 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1059.3671ms
+2024-12-31 09:38:24.121 +03:00 [INF] Application is shutting down...
+2024-12-31 09:38:32.834 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:38:33.050 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:38:33.058 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:38:33.060 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:38:33.061 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:38:36.314 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:38:36.329 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:38:36.363 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:38:36.431 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:38:36.703 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:38:36.830 +03:00 [INF] Executed ViewResult - view Index executed in 126.53ms.
+2024-12-31 09:38:36.839 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 407.4172ms
+2024-12-31 09:38:36.841 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:38:36.848 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 536.383ms
+2024-12-31 09:38:58.424 +03:00 [INF] Application is shutting down...
+2024-12-31 09:39:07.187 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:39:07.367 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:39:07.372 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:39:07.372 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:39:07.373 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:39:10.643 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:39:10.658 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:39:10.684 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:39:10.755 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:39:11.023 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:39:11.185 +03:00 [INF] Executed ViewResult - view Index executed in 164.0567ms.
+2024-12-31 09:39:11.190 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 433.0594ms
+2024-12-31 09:39:11.193 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:39:11.202 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 559.2344ms
+2024-12-31 09:40:43.065 +03:00 [INF] Application is shutting down...
+2024-12-31 09:40:54.516 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:40:54.732 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:40:54.737 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:40:54.738 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:40:54.739 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:41:16.019 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:41:16.036 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:41:16.063 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:41:16.141 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:41:16.464 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:41:16.928 +03:00 [INF] Executed ViewResult - view Index executed in 465.2206ms.
+2024-12-31 09:41:16.939 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 796.7335ms
+2024-12-31 09:41:16.941 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:41:16.950 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 931.2951ms
+2024-12-31 09:43:29.272 +03:00 [INF] Application is shutting down...
+2024-12-31 09:43:38.619 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:43:38.809 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:43:38.822 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:43:38.826 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:43:38.827 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:43:42.504 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:43:42.519 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:43:42.544 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:43:42.666 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:43:42.950 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:43:43.158 +03:00 [INF] Executed ViewResult - view Index executed in 191.6347ms.
+2024-12-31 09:43:43.192 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 522.9436ms
+2024-12-31 09:43:43.205 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:43:43.226 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 724.4095ms
+2024-12-31 09:44:02.917 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:44:02.920 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:44:02.921 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:44:02.955 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:44:02.961 +03:00 [INF] Executed ViewResult - view Index executed in 5.7924ms.
+2024-12-31 09:44:02.962 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 39.6654ms
+2024-12-31 09:44:02.963 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:44:02.965 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 48.7648ms
+2024-12-31 09:47:47.862 +03:00 [INF] Application is shutting down...
+2024-12-31 09:47:59.163 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:47:59.403 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:47:59.408 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:47:59.409 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:47:59.410 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:48:03.702 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:48:03.716 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:48:03.743 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:48:03.836 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:48:04.522 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:48:04.722 +03:00 [INF] Executed ViewResult - view Index executed in 205.8988ms.
+2024-12-31 09:48:04.727 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 889.6734ms
+2024-12-31 09:48:04.729 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:48:04.735 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1034.5986ms
+2024-12-31 09:48:13.942 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2 - null null
+2024-12-31 09:48:13.949 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:48:13.951 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:48:14.012 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:48:14.020 +03:00 [INF] Executed ViewResult - view Index executed in 8.3813ms.
+2024-12-31 09:48:14.021 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 69.2481ms
+2024-12-31 09:48:14.025 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:48:14.030 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2 - 200 null text/html; charset=utf-8 86.3826ms
+2024-12-31 09:49:08.152 +03:00 [INF] Application is shutting down...
+2024-12-31 09:53:56.355 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 09:53:56.552 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 09:53:56.564 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 09:53:56.571 +03:00 [INF] Hosting environment: Development
+2024-12-31 09:53:56.572 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 09:54:02.150 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 09:54:02.170 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 09:54:02.197 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:54:02.268 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:54:02.903 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:54:03.072 +03:00 [INF] Executed ViewResult - view Index executed in 172.8181ms.
+2024-12-31 09:54:03.086 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 816.0857ms
+2024-12-31 09:54:03.088 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:54:03.097 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 949.8499ms
+2024-12-31 09:54:06.435 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=3 - null null
+2024-12-31 09:54:06.438 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:54:06.439 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:54:06.495 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:54:06.505 +03:00 [INF] Executed ViewResult - view Index executed in 10.4413ms.
+2024-12-31 09:54:06.506 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 67.4604ms
+2024-12-31 09:54:06.508 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:54:06.510 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=3 - 200 null text/html; charset=utf-8 77.0503ms
+2024-12-31 09:55:01.932 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=1&pageSize=3 - null null
+2024-12-31 09:55:01.934 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:01.934 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:55:02.042 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:55:02.047 +03:00 [INF] Executed ViewResult - view Index executed in 5.0813ms.
+2024-12-31 09:55:02.048 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 112.8025ms
+2024-12-31 09:55:02.048 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:02.048 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=1&pageSize=3 - 200 null text/html; charset=utf-8 116.8874ms
+2024-12-31 09:55:06.235 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=1&pageSize=5 - null null
+2024-12-31 09:55:06.236 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:06.238 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:55:06.279 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:55:06.284 +03:00 [INF] Executed ViewResult - view Index executed in 6.218ms.
+2024-12-31 09:55:06.285 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 46.4563ms
+2024-12-31 09:55:06.287 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:06.292 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=1&pageSize=5 - 200 null text/html; charset=utf-8 54.9025ms
+2024-12-31 09:55:12.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=5 - null null
+2024-12-31 09:55:12.948 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:12.948 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:55:12.960 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:55:12.963 +03:00 [INF] Executed ViewResult - view Index executed in 2.3224ms.
+2024-12-31 09:55:12.963 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 13.7078ms
+2024-12-31 09:55:12.963 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:12.967 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=5 - 200 null text/html; charset=utf-8 19.7135ms
+2024-12-31 09:55:15.924 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=1 - null null
+2024-12-31 09:55:15.925 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:15.926 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:55:15.937 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:55:15.944 +03:00 [INF] Executed ViewResult - view Index executed in 7.2619ms.
+2024-12-31 09:55:15.947 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 20.7668ms
+2024-12-31 09:55:15.948 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:15.953 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=1 - 200 null text/html; charset=utf-8 28.9767ms
+2024-12-31 09:55:20.305 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=1&pageSize=1 - null null
+2024-12-31 09:55:20.305 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:20.306 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:55:20.331 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:55:20.333 +03:00 [INF] Executed ViewResult - view Index executed in 1.7034ms.
+2024-12-31 09:55:20.333 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 27.401ms
+2024-12-31 09:55:20.334 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:20.335 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=1&pageSize=1 - 200 null text/html; charset=utf-8 29.7819ms
+2024-12-31 09:55:24.068 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=3&pageSize=3 - null null
+2024-12-31 09:55:24.068 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:24.069 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 09:55:24.081 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 09:55:24.083 +03:00 [INF] Executed ViewResult - view Index executed in 1.5021ms.
+2024-12-31 09:55:24.084 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 14.677ms
+2024-12-31 09:55:24.084 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 09:55:24.085 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=3&pageSize=3 - 200 null text/html; charset=utf-8 17.3891ms
+2024-12-31 10:14:36.502 +03:00 [INF] Application is shutting down...
+2024-12-31 10:15:19.593 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 10:15:19.835 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 10:15:19.839 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 10:15:19.840 +03:00 [INF] Hosting environment: Development
+2024-12-31 10:15:19.841 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 10:15:37.414 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 10:15:37.435 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 10:15:37.491 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:15:37.597 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:15:38.393 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:15:38.743 +03:00 [INF] Executed ViewResult - view Index executed in 345.3299ms.
+2024-12-31 10:15:38.752 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1153.2184ms
+2024-12-31 10:15:38.754 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:15:38.771 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1358.9755ms
+2024-12-31 10:16:04.627 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=3 - null null
+2024-12-31 10:16:04.629 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:16:04.630 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:16:04.685 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:16:04.697 +03:00 [INF] Executed ViewResult - view Index executed in 12.7105ms.
+2024-12-31 10:16:04.698 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 67.9481ms
+2024-12-31 10:16:04.699 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:16:04.700 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2&pageSize=3 - 200 null text/html; charset=utf-8 73.364ms
+2024-12-31 10:16:17.534 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=3&pageSize=3 - null null
+2024-12-31 10:16:17.536 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:16:17.536 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:16:17.600 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:16:17.608 +03:00 [INF] Executed ViewResult - view Index executed in 7.7369ms.
+2024-12-31 10:16:17.610 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 73.7239ms
+2024-12-31 10:16:17.611 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:16:17.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=3&pageSize=3 - 200 null text/html; charset=utf-8 79.9448ms
+2024-12-31 10:20:12.537 +03:00 [INF] Application is shutting down...
+2024-12-31 10:20:25.450 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 10:20:25.624 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 10:20:25.628 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 10:20:25.629 +03:00 [INF] Hosting environment: Development
+2024-12-31 10:20:25.629 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 10:20:30.892 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 10:20:30.910 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 10:20:30.938 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:20:31.021 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:20:31.342 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:20:31.544 +03:00 [INF] Executed ViewResult - view Index executed in 204.4471ms.
+2024-12-31 10:20:31.553 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 531.4896ms
+2024-12-31 10:20:31.556 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:20:31.572 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 681.7969ms
+2024-12-31 10:23:38.799 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 10:23:38.802 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:23:38.803 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:23:38.827 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:23:38.836 +03:00 [INF] Executed ViewResult - view Index executed in 8.8905ms.
+2024-12-31 10:23:38.838 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 33.7614ms
+2024-12-31 10:23:38.838 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:23:38.840 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 41.4566ms
+2024-12-31 10:26:05.894 +03:00 [INF] Application is shutting down...
+2024-12-31 10:26:15.477 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 10:26:15.668 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 10:26:15.677 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 10:26:15.678 +03:00 [INF] Hosting environment: Development
+2024-12-31 10:26:15.678 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 10:26:20.941 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2024-12-31 10:26:20.956 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 10:26:20.977 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2024-12-31 10:26:21.034 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2024-12-31 10:26:21.067 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:26:21.199 +03:00 [INF] Executed ViewResult - view Index executed in 138.5615ms.
+2024-12-31 10:26:21.211 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 176.1638ms
+2024-12-31 10:26:21.213 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2024-12-31 10:26:21.219 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 280.7646ms
+2024-12-31 10:26:23.224 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 10:26:23.227 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:23.255 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:26:23.562 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:26:23.636 +03:00 [INF] Executed ViewResult - view Index executed in 74.5003ms.
+2024-12-31 10:26:23.638 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 382.1921ms
+2024-12-31 10:26:23.639 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:23.642 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 419.3898ms
+2024-12-31 10:26:28.349 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Index?page=3&pageSize=5 - null null
+2024-12-31 10:26:28.351 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:28.352 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:26:28.395 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:26:28.402 +03:00 [INF] Executed ViewResult - view Index executed in 7.4182ms.
+2024-12-31 10:26:28.406 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 53.943ms
+2024-12-31 10:26:28.407 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:28.409 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Index?page=3&pageSize=5 - 200 null text/html; charset=utf-8 60.7306ms
+2024-12-31 10:26:32.116 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Index?page=1&pageSize=5 - null null
+2024-12-31 10:26:32.118 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:32.119 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:26:32.140 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:26:32.143 +03:00 [INF] Executed ViewResult - view Index executed in 2.9987ms.
+2024-12-31 10:26:32.156 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 35.9923ms
+2024-12-31 10:26:32.157 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:32.158 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Index?page=1&pageSize=5 - 200 null text/html; charset=utf-8 42.3216ms
+2024-12-31 10:26:47.605 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Index?page=1&pageSize=5 - null null
+2024-12-31 10:26:47.606 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:47.607 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:26:47.619 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:26:47.621 +03:00 [INF] Executed ViewResult - view Index executed in 1.8366ms.
+2024-12-31 10:26:47.622 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 15.0734ms
+2024-12-31 10:26:47.622 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:47.623 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Index?page=1&pageSize=5 - 200 null text/html; charset=utf-8 17.6285ms
+2024-12-31 10:26:58.847 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Index?page=2&pageSize=5 - null null
+2024-12-31 10:26:58.847 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:58.848 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 10:26:58.898 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 10:26:58.900 +03:00 [INF] Executed ViewResult - view Index executed in 2.4392ms.
+2024-12-31 10:26:58.901 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 52.5262ms
+2024-12-31 10:26:58.901 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 10:26:58.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Index?page=2&pageSize=5 - 200 null text/html; charset=utf-8 57.2138ms
+2024-12-31 11:08:01.755 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Index?page=2&pageSize=5 - null null
+2024-12-31 11:08:01.757 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 11:08:01.758 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 11:08:02.071 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 11:08:02.074 +03:00 [INF] Executed ViewResult - view Index executed in 4.8377ms.
+2024-12-31 11:08:02.075 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 317.053ms
+2024-12-31 11:08:02.076 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 11:08:02.076 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Index?page=2&pageSize=5 - 200 null text/html; charset=utf-8 320.996ms
+2024-12-31 11:08:04.798 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Index?page=3&pageSize=5 - null null
+2024-12-31 11:08:04.799 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 11:08:04.800 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 11:08:04.816 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 11:08:04.817 +03:00 [INF] Executed ViewResult - view Index executed in 1.7462ms.
+2024-12-31 11:08:04.818 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 17.0823ms
+2024-12-31 11:08:04.819 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 11:08:04.822 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Index?page=3&pageSize=5 - 200 null text/html; charset=utf-8 23.2474ms
+2024-12-31 11:13:02.557 +03:00 [INF] Application is shutting down...
+2024-12-31 11:13:33.205 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 11:13:33.418 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 11:13:33.423 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 11:13:33.424 +03:00 [INF] Hosting environment: Development
+2024-12-31 11:13:33.425 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 11:13:36.554 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 11:13:36.569 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 11:13:36.595 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 11:13:36.673 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 11:13:36.960 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 11:13:37.175 +03:00 [INF] Executed ViewResult - view Index executed in 218.7776ms.
+2024-12-31 11:13:37.182 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 507.105ms
+2024-12-31 11:13:37.190 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 11:13:37.208 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 654.8172ms
+2024-12-31 11:13:37.348 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-12-31 11:13:37.445 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2024-12-31 11:13:37.464 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 117.1107ms
+2024-12-31 11:15:38.333 +03:00 [INF] Application is shutting down...
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  2024-12-31 15:26:03.378 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 15:26:03.714 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 15:26:03.728 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 15:26:03.729 +03:00 [INF] Hosting environment: Development
+2024-12-31 15:26:03.730 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 15:26:39.406 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 15:26:39.427 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 15:26:39.506 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:26:39.595 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:26:42.877 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:26:43.211 +03:00 [INF] Executed ViewResult - view Index executed in 335.2519ms.
+2024-12-31 15:26:43.217 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 3619.679ms
+2024-12-31 15:26:43.218 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:26:43.226 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 3822.2427ms
+2024-12-31 15:26:43.740 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2024-12-31 15:26:43.824 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2024-12-31 15:26:43.847 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 107.501ms
+2024-12-31 15:26:44.123 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2024-12-31 15:26:44.130 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2024-12-31 15:26:44.131 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 7.7215ms
+2024-12-31 15:26:44.198 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2024-12-31 15:26:44.203 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2024-12-31 15:26:44.203 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 5.2901ms
+2024-12-31 15:27:04.277 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2 - null null
+2024-12-31 15:27:04.280 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:27:04.281 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:27:04.480 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:27:04.493 +03:00 [INF] Executed ViewResult - view Index executed in 13.2211ms.
+2024-12-31 15:27:04.495 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 213.3023ms
+2024-12-31 15:27:04.496 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:27:04.509 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2 - 200 null text/html; charset=utf-8 231.8077ms
+2024-12-31 15:27:51.915 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 15:27:51.917 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:27:51.919 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:27:51.956 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:27:51.961 +03:00 [INF] Executed ViewResult - view Index executed in 4.478ms.
+2024-12-31 15:27:51.961 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 37.5307ms
+2024-12-31 15:27:51.961 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:27:51.962 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 46.6341ms
+2024-12-31 15:32:20.619 +03:00 [INF] Application is shutting down...
+2024-12-31 15:48:05.871 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 15:48:06.113 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 15:48:06.122 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 15:48:06.127 +03:00 [INF] Hosting environment: Development
+2024-12-31 15:48:06.131 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 15:48:34.470 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 15:48:34.489 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 15:48:34.520 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:48:34.596 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:48:35.573 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:48:35.883 +03:00 [INF] Executed ViewResult - view Index executed in 318.3327ms.
+2024-12-31 15:48:35.889 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1290.4027ms
+2024-12-31 15:48:35.891 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:48:35.899 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1430.3401ms
+2024-12-31 15:48:38.948 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Spaces/Details/4 - null null
+2024-12-31 15:48:38.951 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Spaces/Details/4 - 404 0 null 4.0088ms
+2024-12-31 15:48:38.955 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/Spaces/Details/4, Response status code: 404
+2024-12-31 15:49:09.363 +03:00 [INF] Application is shutting down...
+2024-12-31 15:49:21.466 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 15:49:21.645 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 15:49:21.651 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 15:49:21.652 +03:00 [INF] Hosting environment: Development
+2024-12-31 15:49:21.652 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 15:49:26.469 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Spaces/ - null null
+2024-12-31 15:49:26.490 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 15:49:26.552 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Spaces/ - 404 0 null 74.7779ms
+2024-12-31 15:49:26.575 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/Spaces/, Response status code: 404
+2024-12-31 15:49:33.284 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/ - null null
+2024-12-31 15:49:33.293 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:49:33.371 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:49:33.688 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:49:33.860 +03:00 [INF] Executed ViewResult - view Index executed in 172.7066ms.
+2024-12-31 15:49:33.863 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 490.2345ms
+2024-12-31 15:49:33.864 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:49:33.869 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/ - 200 null text/html; charset=utf-8 586.0583ms
+2024-12-31 15:49:36.218 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2024-12-31 15:49:36.220 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:49:36.232 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:49:36.304 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 15:49:36.326 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 93.5ms
+2024-12-31 15:49:36.328 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:49:36.335 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at AspNetCoreGeneratedDocument.Views_Space_details.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/details.cshtml:line 3
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 15:49:36.446 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 500 null text/html; charset=utf-8 227.3695ms
+2024-12-31 15:50:11.066 +03:00 [INF] Application is shutting down...
+2024-12-31 15:50:19.916 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 15:50:20.108 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 15:50:20.117 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 15:50:20.118 +03:00 [INF] Hosting environment: Development
+2024-12-31 15:50:20.119 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 15:50:26.293 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 15:50:26.310 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 15:50:26.362 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:50:26.439 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:50:26.791 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:50:26.976 +03:00 [INF] Executed ViewResult - view Index executed in 185.3346ms.
+2024-12-31 15:50:26.989 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 548.5903ms
+2024-12-31 15:50:26.998 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:50:27.019 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 727.8155ms
+2024-12-31 15:50:30.300 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2024-12-31 15:50:30.303 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:50:30.313 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:50:30.364 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 15:50:30.375 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 60.6528ms
+2024-12-31 15:50:30.376 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:50:30.377 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 'value')
+   at Newtonsoft.Json.Utilities.ValidationUtils.ArgumentNotNull(Object value, String parameterName)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at AspNetCoreGeneratedDocument.Views_Space_details.ExecuteAsync() in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Views/Space/details.cshtml:line 3
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageCoreAsync(IRazorPage page, ViewContext context)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderPageAsync(IRazorPage page, ViewContext context, Boolean invokeViewStarts)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.RenderAsync(ViewContext context)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ViewContext viewContext, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.ExecuteAsync(ActionContext actionContext, IView view, ViewDataDictionary viewData, ITempDataDictionary tempData, String contentType, Nullable`1 statusCode)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-12-31 15:50:30.451 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 500 null text/html; charset=utf-8 152.1222ms
+2024-12-31 15:51:12.900 +03:00 [INF] Application is shutting down...
+2024-12-31 15:51:25.544 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 15:51:25.759 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 15:51:25.762 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 15:51:25.763 +03:00 [INF] Hosting environment: Development
+2024-12-31 15:51:25.763 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 15:52:17.269 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2024-12-31 15:52:17.288 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 15:52:17.321 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:52:17.405 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:52:17.736 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 15:52:17.889 +03:00 [INF] Executed ViewResult - view Details executed in 159.8702ms.
+2024-12-31 15:52:17.894 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 479.1907ms
+2024-12-31 15:52:17.895 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:52:17.903 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 200 null text/html; charset=utf-8 636.4061ms
+2024-12-31 15:53:55.119 +03:00 [INF] Application is shutting down...
+2024-12-31 15:54:07.810 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 15:54:08.007 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 15:54:08.012 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 15:54:08.014 +03:00 [INF] Hosting environment: Development
+2024-12-31 15:54:08.015 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 15:54:17.832 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 15:54:17.853 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 15:54:17.882 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:54:17.950 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:54:18.246 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 15:54:18.399 +03:00 [INF] Executed ViewResult - view Index executed in 156.4077ms.
+2024-12-31 15:54:18.404 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 452.1607ms
+2024-12-31 15:54:18.405 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 15:54:18.412 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 583.2034ms
+2024-12-31 15:55:06.403 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2024-12-31 15:55:06.407 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:55:06.423 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 15:55:06.505 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 15:55:06.574 +03:00 [INF] Executed ViewResult - view Details executed in 72.0415ms.
+2024-12-31 15:55:06.575 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 151.1696ms
+2024-12-31 15:55:06.575 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 15:55:06.577 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 200 null text/html; charset=utf-8 174.6511ms
+2024-12-31 22:13:20.857 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 22:13:21.030 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 22:13:21.034 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 22:13:21.035 +03:00 [INF] Hosting environment: Development
+2024-12-31 22:13:21.036 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 22:14:24.026 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2024-12-31 22:14:24.039 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 22:14:24.061 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2024-12-31 22:14:24.102 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2024-12-31 22:14:24.122 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 22:14:24.220 +03:00 [INF] Executed ViewResult - view Index executed in 98.5939ms.
+2024-12-31 22:14:24.229 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 126.085ms
+2024-12-31 22:14:24.229 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2024-12-31 22:14:24.232 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - null null
+2024-12-31 22:14:24.235 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 210.3712ms
+2024-12-31 22:14:24.250 +03:00 [INF] The file /css/site.css was not modified
+2024-12-31 22:14:24.263 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - 304 null text/css 31.7244ms
+2024-12-31 22:14:27.043 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 22:14:27.047 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:14:27.072 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:14:29.014 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 22:14:29.121 +03:00 [INF] Executed ViewResult - view Index executed in 108.3182ms.
+2024-12-31 22:14:29.123 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 2049.4373ms
+2024-12-31 22:14:29.124 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:14:29.126 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 2083.481ms
+2024-12-31 22:14:35.515 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2024-12-31 22:14:35.517 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 22:14:35.524 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:14:35.834 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 22:14:35.887 +03:00 [INF] Executed ViewResult - view Details executed in 54.634ms.
+2024-12-31 22:14:35.888 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 362.2475ms
+2024-12-31 22:14:35.889 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 22:14:35.890 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 200 null text/html; charset=utf-8 374.6403ms
+2024-12-31 22:14:40.414 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Auth/Logout - application/x-www-form-urlencoded 0
+2024-12-31 22:14:40.418 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Auth/Logout - 404 0 null 3.8125ms
+2024-12-31 22:14:40.419 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5179/Auth/Logout, Response status code: 404
+2024-12-31 22:14:46.026 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 22:14:46.027 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:14:46.028 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:14:46.051 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 22:14:46.060 +03:00 [INF] Executed ViewResult - view Index executed in 7.99ms.
+2024-12-31 22:14:46.063 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 34.1179ms
+2024-12-31 22:14:46.065 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:14:46.068 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 41.0312ms
+2024-12-31 22:14:48.796 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/6 - null null
+2024-12-31 22:14:48.798 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 22:14:48.798 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:14:48.814 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 22:14:48.816 +03:00 [INF] Executed ViewResult - view Details executed in 1.6718ms.
+2024-12-31 22:14:48.816 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 17.8287ms
+2024-12-31 22:14:48.816 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 22:14:48.817 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/6 - 200 null text/html; charset=utf-8 20.9458ms
+2024-12-31 22:14:50.987 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 22:14:50.988 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:14:50.988 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:14:51.013 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 22:14:51.016 +03:00 [INF] Executed ViewResult - view Index executed in 3.0495ms.
+2024-12-31 22:14:51.017 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 27.8967ms
+2024-12-31 22:14:51.017 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:14:51.018 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 31.0118ms
+2024-12-31 22:41:31.451 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2024-12-31 22:41:31.786 +03:00 [INF] Now listening on: http://localhost:5179
+2024-12-31 22:41:31.810 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-12-31 22:41:31.812 +03:00 [INF] Hosting environment: Development
+2024-12-31 22:41:31.812 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2024-12-31 22:42:06.538 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 22:42:06.560 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-12-31 22:42:06.588 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:42:06.667 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:42:09.071 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 22:42:09.380 +03:00 [INF] Executed ViewResult - view Index executed in 312.8318ms.
+2024-12-31 22:42:09.391 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 2721.5683ms
+2024-12-31 22:42:09.393 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:42:09.409 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 2873.518ms
+2024-12-31 22:42:20.489 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/3 - null null
+2024-12-31 22:42:20.493 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 22:42:20.502 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:42:20.740 +03:00 [INF] Executing ViewResult, running view Details.
+2024-12-31 22:42:20.808 +03:00 [INF] Executed ViewResult - view Details executed in 69.2798ms.
+2024-12-31 22:42:20.809 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 306.6256ms
+2024-12-31 22:42:20.810 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2024-12-31 22:42:20.812 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/3 - 200 null text/html; charset=utf-8 323.8003ms
+2024-12-31 22:43:04.347 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2024-12-31 22:43:04.349 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:43:04.350 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2024-12-31 22:43:04.404 +03:00 [INF] Executing ViewResult, running view Index.
+2024-12-31 22:43:04.410 +03:00 [INF] Executed ViewResult - view Index executed in 5.8703ms.
+2024-12-31 22:43:04.411 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 60.5635ms
+2024-12-31 22:43:04.412 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2024-12-31 22:43:04.414 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 67.3686ms

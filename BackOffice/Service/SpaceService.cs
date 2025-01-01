@@ -17,15 +17,45 @@ public class SpaceService
     }
 
     // Retourner tous les espaces
-    public async Task<List<Space>> GetAllSpacesAsync()
+    public async Task<List<Space>> GetSpacesPagedAsync(int page, int pageSize)
     {
-        return await _context.Space.Include(s => s.Owner).ToListAsync();
+        return await _context
+            .Space.Skip((page - 1) * pageSize) // Sauter les éléments précédents
+            .Take(pageSize) // Prendre seulement la page actuelle
+            .ToListAsync();
+    }
+
+    public async Task<int> GetTotalSpacesCountAsync()
+    {
+        return await _context.Space.CountAsync();
+    }
+
+    public async Task<List<Space>> GetAllSpacesAsyncByOwner()
+    {
+        try
+        {
+            return await _context.Space.Include(s => s.Owner).ToListAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+            throw;
+        }
+
+            throw;
+        }
     }
 
     // Retourner un espace par ID
     public async Task<Space?> GetSpaceByIdAsync(long id)
     {
         return await _context.Space.Include(s => s.Owner).FirstOrDefaultAsync(s => s.Id == id);
+    }
+
+    public async Task<Space?> GetSpaceByIdAsyncByOwner(long id)
+    {
+        return await _context.Space.FirstOrDefaultAsync(s => s.Id == id);
     }
 
     // Cr�er un nouvel espace
@@ -38,7 +68,6 @@ public class SpaceService
 
         try
         {
-
             // Set the timestamps
             space.CreatedAt = DateTime.UtcNow;
             space.UpdatedAt = DateTime.UtcNow;
@@ -55,7 +84,6 @@ public class SpaceService
             throw;
         }
     }
-
 
     // Mettre � jour un espace
     public async Task UpdateSpaceAsync(Space space)
@@ -80,5 +108,4 @@ public class SpaceService
     {
         return await _context.Space.AnyAsync(e => e.Id == id);
     }
-
 }

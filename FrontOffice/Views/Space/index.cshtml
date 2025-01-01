@@ -4,6 +4,15 @@
     var spaces = string.IsNullOrEmpty(jsonSpaceList)
     ? new List<dynamic>()
     : Newtonsoft.Json.JsonConvert.DeserializeObject<List<dynamic>>(jsonSpaceList);
+    var pagination = ViewData["Pagination"] as dynamic;
+
+    // Pagination
+    int pageNumber = pagination?.currentPage ?? 1; // Si aucune pagination, on commence par la page 1
+    int totalPages = pagination?.totalPages ?? 1;
+    int pageSize = pagination?.itemsPerPage ?? 10;
+
+    var pagedSpaces = spaces?.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(); // Espaces paginés
+
 }
 
 <style>
@@ -71,7 +80,6 @@
 </style>
 
 <div class="container mt-4">
-    <!-- Titre -->
     <h1 class="text-center">Les espaces disponibles</h1>
 
     <div class="row mt-4">
@@ -104,25 +112,67 @@
             </form>
         </div>
 
-        <!-- Liste des espaces -->
         <div class="col-md-9 content-container">
-            @if (spaces != null && spaces.Any())
+            @if (pagedSpaces != null && pagedSpaces.Any())
             {
                 <div class="card-columns">
-                    @foreach (var space in spaces)
+                    @foreach (var space in pagedSpaces)
                     {
                         <div class="card">
                             <div class="card-img-container">
                                 <img src="@space.photos[0]" class="card-img-top" alt="Space Image">
-                                <span class="status-badge">@space.Status</span>
+                                <span class="status-badge">@space.status</span>
                             </div>
                             <div class="card-body">
+                                <h5 class="card-title">
+                                    <a href="@Url.Action("Details", "Space", new { id = space.id })">@space.name</a>
+                                </h5>
                                 <h5 class="card-title">@space.name</h5>
                                 <p class="card-text">@space.description</p>
                                 <p class="capacity">Capacité: @space.capacity personnes</p>
                             </div>
                         </div>
                     }
+                </div>
+
+                <div class="pagination mt-4">
+                    <ul class="pagination">
+                        @if (pageNumber > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="?page=1" aria-label="First">
+                                    <span aria-hidden="true">&laquo;&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        }
+
+                        @for (int i = 1; i <= totalPages; i++)
+                        {
+                            <li class="page-item @(i == pageNumber ? " active"
+                                : "" )">
+                                <a class="page-link" href="?page=@i">@i</a>
+                            </li>
+                        }
+
+                        @if (pageNumber < totalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" href="?page=@totalPages" aria-label="Last">
+                                    <span aria-hidden="true">&raquo;&raquo;</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
                 </div>
             }
             else

@@ -31,21 +31,44 @@ namespace BackOffice.Controllers.Api
 
         // GET: api/Space
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Space>>> GetSpaces()
+        public async Task<ActionResult<IEnumerable<Space>>> GetSpaces(int page = 1, int pageSize = 10)
         {
-            var spaces = await _spaceService.GetAllSpacesAsync();
+            var spaces = await _spaceService.GetSpacesPagedAsync(page, pageSize);
+
             if (spaces == null || spaces.Count == 0)
             {
-                return NotFound("Aucun espace trouv�.");
+                return NotFound("Aucun espace trouvé.");
             }
-            return Ok(spaces);
+
+            // Nombre total d'espaces
+            var totalSpaces = await _spaceService.GetTotalSpacesCountAsync();
+
+            // Création d'un objet de pagination
+            var paginationModel = new PaginationModel
+            {
+                CurrentPage = page,
+                TotalItems = totalSpaces,
+                ItemsPerPage = pageSize,
+                TotalPages = (int)Math.Ceiling((double)totalSpaces / pageSize)
+            };
+
+            // Retourner les données paginées et la pagination dans les en-têtes ou le corps de la réponse
+            var result = new
+            {
+                Spaces = spaces,
+                Pagination = paginationModel
+            };
+
+            return Ok(result);
         }
+
+
 
         // GET: api/Space/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Space>> GetSpace(long id)
         {
-            var space = await _spaceService.GetSpaceByIdAsync(id);
+            var space = await _spaceService.GetSpaceByIdAsyncByOwner(id);
             if (space == null)
             {
                 return NotFound($"Espace avec l'ID {id} non trouv�.");

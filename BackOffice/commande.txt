@@ -7,3 +7,8 @@ dotnet aspnet-codegenerator view Index -outDir Views/Space
 
 
 // "DefaultConnection": "Server=localhost;Database=picnicfinder_db;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;"
+
+
+----------------------TODO-----------------------------
+MenuService
+        // var menus = await _context.Menus.Where(m => m.IsActive).ToListAsync();
