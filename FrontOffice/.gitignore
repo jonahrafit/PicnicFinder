@@ -1,6 +1,7 @@
 # Build Folders (can be generated at build time)
 bin/
 obj/
+logs/
 
 # User-specific files
 *.user

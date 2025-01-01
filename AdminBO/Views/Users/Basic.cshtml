@@ -1,0 +1,47 @@
+@model List<AdminBO.Models.User>
+
+@{
+  ViewData["Title"] = "Users";
+}
+<!-- Bootstrap Table with Header - Light -->
+<div class="card">
+  <h5 class="card-header">Listes des Proprietaires</h5>
+  <div class="table-responsive text-nowrap">
+    <table class="table">
+      <thead class="table-light">
+        <tr>
+          <th>Email</th>
+          <th>Nom</th>
+          <th>Phone</th>
+          <th>Role</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody class="table-border-bottom-0">
+        @foreach (var user in Model)
+        {
+          <tr>
+            <td>@user.Email</td>
+            <td>@user.Name</td>
+            <td>@user.Phone</td>
+            <td>
+              <span class="badge bg-label-@(user.Status.ToString().ToLower()) me-1">@user.Status</span>
+            </td>
+            <td>
+              <div class="dropdown">
+                <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                  <i class="bx bx-dots-vertical-rounded"></i>
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                  <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                </div>
+              </div>
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
