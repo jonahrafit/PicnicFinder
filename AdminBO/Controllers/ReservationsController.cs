@@ -27,8 +27,9 @@ public class ReservationsController : Controller
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> Index()
     {
-        var reservations = await _reservationService.GetReservationsAsync();
-        return View("Basic", reservations);
+        // var reservations = await _reservationService.GetReservationsAsync();
+        // return View("Basic", reservations);
+        return View("Basic");
     }
 
     [Authorize(Roles = "OWNER")]

@@ -59,7 +59,6 @@ public class AuthController : Controller
         // Message de déconnexion
         ViewBag.logoutMessage = "Vous avez été déconnecté avec succès.";
 
-        // Redirection vers la page de connexion
-        return RedirectToAction("LoginBasic");
+        return View("LoginBasic");
     }
 }

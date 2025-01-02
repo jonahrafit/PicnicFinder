@@ -45,7 +45,6 @@ public class AuthService
         // Cr�ation du r�le
         var role = user.Role.ToString();
         var userId = user.Id.ToString();
-        Console.WriteLine($"ROLE TO STRING {role}");
 
         // Cr�ation des claims (incluant le r�le)
         var claims = new List<Claim>
@@ -119,11 +118,36 @@ public class AuthService
             // Ajouter l'utilisateur � la base de donn�es
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
-            await _dbContext.SaveChangesAsync();
-            await _dbContext.SaveChangesAsync();
             return true;
         }
 
         return false;
+    }
+
+    public TokenModel DecodeToken(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+
+        // Vérifiez si le token est valide (si nécessaire)
+        if (!handler.CanReadToken(token))
+        {
+            throw new ArgumentException("Token invalide.");
+        }
+
+        var jwtToken = handler.ReadJwtToken(token);
+
+        // Récupérer les claims (données utilisateur)
+        var userId = jwtToken.Claims.FirstOrDefault(c => c.Type == "UserId")?.Value;
+        var name = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Name)?.Value;
+        var role = jwtToken.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value;
+        var expiration = jwtToken.ValidTo;
+
+        return new TokenModel
+        {
+            UserId = userId,
+            Name = name,
+            Role = role,
+            Expiration = expiration,
+        };
     }
 }

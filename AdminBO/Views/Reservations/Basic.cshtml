@@ -1,10 +1,10 @@
 @model List<AdminBO.Models.User>
 
 @{
-  ViewData["Title"] = "Users";
+  ViewData["Title"] = "Réservations";
 }
 
-<h6 class="pb-1 mb-6 text-muted">Masonry</h6>
+<h3 class="pb-1 mb-6 text-muted">Liste des réservations</h3>
 <div class="row g-6" data-masonry='{"percentPosition": true }'>
   @for (int i = 0; i < 7; i++)
   {
