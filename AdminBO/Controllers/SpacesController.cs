@@ -11,6 +11,7 @@ public class SpacesController : Controller
 {
     private readonly IConfiguration _configuration;
     private readonly SpaceService _spaceService;
+    private readonly SpaceServiceAdoNet _spaceServiceAdoNet;
     private readonly AdminBOContext _dbContext;
 
     public SpacesController(
@@ -22,6 +23,7 @@ public class SpacesController : Controller
         _configuration = configuration;
         _dbContext = dbContext;
         _spaceService = new SpaceService(_configuration, _dbContext);
+        _spaceServiceAdoNet = new SpaceServiceAdoNet(_configuration);
     }
 
     [Authorize(Roles = "ADMIN, OWNER")]
@@ -98,8 +100,6 @@ public class SpacesController : Controller
         return View(space);
     }
 
-    // POST: Space/Edit/5
-    [HttpPost]
     [ValidateAntiForgeryToken]
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> Edit(
@@ -163,5 +163,23 @@ public class SpacesController : Controller
     {
         await _spaceService.DeleteSpaceAsync(id);
         return RedirectToAction(nameof(Index));
+    }
+
+    public async Task<IActionResult> GetSpaceById(int id)
+    {
+        var space = await Task.Run(() => _spaceServiceAdoNet.GetSpaceById(id));
+        Console.WriteLine(space);
+
+        if (space == null)
+        {
+            return NotFound();
+        }
+
+        // Passer l'objet space dans ViewData
+        ViewData["JsonSpace"] = Newtonsoft.Json.JsonConvert.SerializeObject(space);
+
+        Console.WriteLine(ViewData["JsonSpace"]);
+
+        return View();
     }
 }

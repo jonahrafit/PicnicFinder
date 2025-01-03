@@ -1,6 +1,6 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using FrontOffice.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 
 namespace FrontOffice.Controllers;
@@ -12,12 +12,13 @@ public class SpaceController : Controller
 
     private readonly IConfiguration _configuration;
 
-
     public SpaceController(ILogger<SpaceController> logger, IConfiguration configuration)
     {
         _configuration = configuration;
         _logger = logger;
-        _apiBaseUrl = _configuration["ServerSettings:ApiBaseUrl"] ?? throw new ArgumentNullException(nameof(configuration));
+        _apiBaseUrl =
+            _configuration["ServerSettings:ApiBaseUrl"]
+            ?? throw new ArgumentNullException(nameof(configuration));
     }
 
     public async Task<IActionResult> Index(int page = 1, int pageSize = 5)
@@ -51,7 +52,6 @@ public class SpaceController : Controller
         return View();
     }
 
-
     public async Task<IActionResult> Details(int id)
     {
         var url = $"{_apiBaseUrl}/Space/{id}"; // URL pour obtenir les détails de l'espace par ID
@@ -84,7 +84,6 @@ public class SpaceController : Controller
         return View();
     }
 
-
     public IActionResult Privacy()
     {
         return View();
@@ -93,6 +92,8 @@ public class SpaceController : Controller
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return View(
+            new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier }
+        );
     }
 }

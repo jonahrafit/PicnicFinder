@@ -12,6 +12,16 @@
                         Des espaces
                     </a>
                 </li>
+                <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Reservation") ? "active" : "")">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">
+                        Mes réservations
+                    </a>
+                </li>
+                <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Favorite") ? "active" : "")">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Favorite" asp-action="Index">
+                        Mes favoris
+                    </a>
+                </li>
                 <li class="nav-item ml-auto">
                     <div class="input-group" style="height: 30px;"> <!-- Ajustez la hauteur ici -->
                         <div class="input-group-prepend">
@@ -26,18 +36,17 @@
 
             </ul>
 
-
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <form action="@Url.Action("Logout", "Auth")" method="post">
+                    <form action="@Url.Action("Index", "Auth")" method="post">
                         <button type="submit" class="btn btn-link nav-link text-dark">Me Connecter</button>
                     </form>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <form action="@Url.Action("Logout", "Auth")" method="post">
                         <button type="submit" class="btn btn-link nav-link text-dark">Créer un compte</button>
                     </form>
-                </li>
+                </li> -->
             </ul>
         </div>
     </div>

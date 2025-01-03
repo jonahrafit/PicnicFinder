@@ -11,25 +11,21 @@ public class ReservationsController : Controller
 {
     private readonly IConfiguration _configuration;
     private readonly ReservationService _reservationService;
-    private readonly AdminBOContext _dbContext;
 
     public ReservationsController(
         IConfiguration configuration,
-        ILogger<HomeController> logger,
-        AdminBOContext dbContext
+        ReservationService reservationService
     )
     {
         _configuration = configuration;
-        _dbContext = dbContext;
-        _reservationService = new ReservationService(_configuration, _dbContext);
+        _reservationService = reservationService;
     }
 
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> Index()
     {
-        // var reservations = await _reservationService.GetReservationsAsync();
-        // return View("Basic", reservations);
-        return View("Basic");
+        var reservations = await _reservationService.GetAllReservationsAsync();
+        return View("Basic", reservations);
     }
 
     [Authorize(Roles = "OWNER")]
@@ -57,14 +53,9 @@ public class ReservationsController : Controller
         return View();
     }
 
-    // POST: Reservation/Create
-    [HttpPost]
-    [ValidateAntiForgeryToken]
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> Create(
-        [Bind(
-            "Id,OwnerId,Name,Latitude,Longitude,Capacity,Photos,Description,Status,CreatedAt,UpdatedAt"
-        )]
+        [Bind("EmployeeId,SpaceId,ReservationDate,StartDate,EndDate,Status")]
             Reservation reservation
     )
     {
@@ -93,17 +84,8 @@ public class ReservationsController : Controller
         return View(reservation);
     }
 
-    // POST: Reservation/Edit/5
-    [HttpPost]
-    [ValidateAntiForgeryToken]
     [Authorize(Roles = "OWNER")]
-    public async Task<IActionResult> Edit(
-        long id,
-        [Bind(
-            "Id,OwnerId,Name,Latitude,Longitude,Capacity,Photos,Description,Status,CreatedAt,UpdatedAt"
-        )]
-            Reservation reservation
-    )
+    public async Task<IActionResult> Edit(long id, Reservation reservation)
     {
         if (id != reservation.Id)
         {
@@ -114,11 +96,11 @@ public class ReservationsController : Controller
         {
             try
             {
-                await _reservationService.UpdateReservationAsync(reservation);
+                await _reservationService.UpdateReservationAsync(id, reservation);
             }
             catch
             {
-                if (!await _reservationService.ReservationExistsAsync(reservation.Id))
+                if (await _reservationService.GetReservationByIdAsync(reservation.Id) == null)
                 {
                     return NotFound();
                 }
@@ -151,7 +133,6 @@ public class ReservationsController : Controller
     }
 
     // POST: Reservation/Delete/5
-    [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> DeleteConfirmed(long id)

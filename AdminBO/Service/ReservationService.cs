@@ -1,133 +1,104 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using AdminBO.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
-namespace AdminBO.Services;
-
-public class ReservationService
+namespace AdminBO.Services
 {
-    private readonly IConfiguration _configuration;
-    private readonly AdminBOContext _dbContext;
-
-    public ReservationService(IConfiguration configuration, AdminBOContext dbContext)
+    public class ReservationService
     {
-        _configuration = configuration;
-        _dbContext = dbContext;
-    }
+        private readonly IConfiguration _configuration;
+        private readonly AdminBOContext _context;
 
-    // Retourner tous les espaces
-    public async Task<List<Reservation>> GetReservationsAsync()
-    {
-        return await _dbContext.Reservations // Sauter les éléments précédents
-        .ToListAsync();
-    } // Retourner tous les espaces
-
-    // ___________________________
-    // ___________________________
-    // ___________________________
-    public async Task<List<Reservation>> GetReservationsPagedAsync(int page, int pageSize)
-    {
-        return await _dbContext
-            .Reservations.Skip((page - 1) * pageSize) // Sauter les éléments précédents
-            .Take(pageSize) // Prendre seulement la page actuelle
-            .ToListAsync();
-    }
-
-    public async Task<int> GetTotalReservationsCountAsync()
-    {
-        return await _dbContext.Reservations.CountAsync();
-    }
-
-    public async Task<List<Reservation>> GetAllReservationsAsyncByOwner(long employeeId)
-    {
-        Console.WriteLine(employeeId);
-        try
+        public ReservationService(IConfiguration configuration, AdminBOContext dbContext)
         {
-            if (_dbContext == null)
-            {
-                throw new NullReferenceException(
-                    "Le contexte de la base de données (_dbContext) est null."
-                );
-            }
+            _configuration = configuration;
+            _context = dbContext;
+        }
 
-            if (_dbContext.Reservations == null)
-            {
-                throw new NullReferenceException("La table Reservation dans le contexte est null.");
-            }
+        // Create a new reservation
+        public async Task<Reservation> CreateReservationAsync(Reservation reservation)
+        {
+            _context.Set<Reservation>().Add(reservation);
+            await _context.SaveChangesAsync();
+            return reservation;
+        }
 
-            // Récupérer les espaces associés au propriétaire spécifié
-            return await _dbContext
-                .Reservations.Where(s => s.EmployeeId == employeeId) // Utiliser l'ID du propriétaire
+        public async Task<List<Reservation>> GetReservationsPagedAsyncByClient(
+            int page,
+            int pageSize,
+            long idUser
+        )
+        {
+            return await _context
+                .Reservations.Where(r => r.EmployeeId == idUser) // Filtrer par EmployeeId
+                .OrderBy(r => r.Id)
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
                 .ToListAsync();
         }
-        catch (Exception ex)
+
+        //____________________________________________________
+
+        public async Task<int> GetTotalReservationsCountAsync()
         {
-            Console.WriteLine($"Error: {ex.Message}");
-            Console.WriteLine($"Stack Trace: {ex.StackTrace}");
-            throw;
-        }
-    }
-
-    // Retourner un espace par ID
-    public async Task<Reservation?> GetReservationByIdAsync(long id)
-    {
-        return await _dbContext.Reservations.FirstOrDefaultAsync(s => s.Id == id);
-    }
-
-    public async Task<Reservation?> GetReservationByIdAsyncByOwner(long id)
-    {
-        return await _dbContext.Reservations.FirstOrDefaultAsync(s => s.Id == id);
-    }
-
-    // Cr�er un nouvel espace
-    public async Task CreateReservationAsync(Reservation space)
-    {
-        if (space == null)
-        {
-            throw new ArgumentNullException(nameof(space), "Reservation cannot be null.");
+            return await _context.Reservations.CountAsync();
         }
 
-        try
+        // Retrieve all reservations
+        public async Task<List<Reservation>> GetAllReservationsAsync()
         {
-            // Add the space to the context and save changes
-            _dbContext.Reservations.Add(space);
-            await _dbContext.SaveChangesAsync();
+            return await _context.Set<Reservation>().Include(r => r.Employee).ToListAsync();
         }
-        catch (Exception ex)
+
+        // Retrieve a single reservation by ID
+        public async Task<Reservation?> GetReservationByIdAsync(long id)
         {
-            // Log the exception
-            Console.WriteLine($"Error occurred while creating space: {ex.Message}");
-            // Rethrow the exception if needed
-            throw;
+            return await _context
+                .Set<Reservation>()
+                .Include(r => r.Employee)
+                .Include(r => r.Space)
+                .FirstOrDefaultAsync(r => r.Id == id);
         }
-    }
 
-    // Mettre � jour un espace
-    public async Task UpdateReservationAsync(Reservation space)
-    {
-        _dbContext.Update(space);
-        await _dbContext.SaveChangesAsync();
-    }
-
-    // Supprimer un espace
-    public async Task DeleteReservationAsync(long id)
-    {
-        var space = await _dbContext.Reservations.FindAsync(id);
-        if (space != null)
+        // Update an existing reservation
+        public async Task<Reservation?> UpdateReservationAsync(
+            long id,
+            Reservation updatedReservation
+        )
         {
-            _dbContext.Reservations.Remove(space);
-            await _dbContext.SaveChangesAsync();
-        }
-    }
+            var existingReservation = await GetReservationByIdAsync(id);
+            if (existingReservation == null)
+            {
+                return null;
+            }
 
-    // V�rifier si un espace existe
-    public async Task<bool> ReservationExistsAsync(long id)
-    {
-        return await _dbContext.Reservations.AnyAsync(e => e.Id == id);
+            existingReservation.EmployeeId = updatedReservation.EmployeeId;
+            existingReservation.SpaceId = updatedReservation.SpaceId;
+            existingReservation.ReservationDate = updatedReservation.ReservationDate;
+            existingReservation.StartDate = updatedReservation.StartDate;
+            existingReservation.EndDate = updatedReservation.EndDate;
+            existingReservation.Status = updatedReservation.Status;
+
+            _context.Set<Reservation>().Update(existingReservation);
+            await _context.SaveChangesAsync();
+
+            return existingReservation;
+        }
+
+        // Delete a reservation
+        public async Task<bool> DeleteReservationAsync(long id)
+        {
+            var reservation = await GetReservationByIdAsync(id);
+            if (reservation == null)
+            {
+                return false;
+            }
+
+            _context.Set<Reservation>().Remove(reservation);
+            await _context.SaveChangesAsync();
+
+            return true;
+        }
     }
 }
