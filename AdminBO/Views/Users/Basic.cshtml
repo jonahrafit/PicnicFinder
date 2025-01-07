@@ -14,7 +14,7 @@
           <th>Nom</th>
           <th>Phone</th>
           <th>Role</th>
-          <th>Status</th>
+          <!-- <th>Status</th> -->
           <th>Actions</th>
         </tr>
       </thead>
@@ -25,9 +25,8 @@
             <td>@user.Email</td>
             <td>@user.Name</td>
             <td>@user.Phone</td>
-            <td>
-              <span class="badge bg-label-@(user.Status.ToString().ToLower()) me-1">@user.Status</span>
-            </td>
+            <td>@user.Role</td>
+            <!-- <td>@user.Status</td> -->
             <td>
               <div class="dropdown">
                 <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">

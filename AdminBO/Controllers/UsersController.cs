@@ -28,6 +28,10 @@ public class UsersController : BaseController
     public async Task<IActionResult> Index()
     {
         var users = await _userService.GetAllUsersAsync();
+        foreach (var user in users)
+        {
+            Console.WriteLine(user.ToString());
+        }
         return View("Basic", users);
     }
 

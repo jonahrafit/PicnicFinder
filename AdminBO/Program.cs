@@ -1,4 +1,5 @@
 using System.Text;
+using AdminBO.Controllers;
 using AdminBO.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -75,7 +76,6 @@ builder.Services.AddCors(options =>
         }
     );
 });
-
 var app = builder.Build();
 
 // Application des politiques CORS

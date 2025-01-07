@@ -1,6 +1,12 @@
+
+@inject IHttpContextAccessor httpContextAccessor
+@using System.Security.Claims
+
 @{
-  TempData.Keep();
-  string? currentPage = ViewContext.HttpContext.Request.Path;
+    TempData.Keep();
+    string? currentPage = ViewContext.HttpContext.Request.Path;
+    var userRole = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Role)?.Value;
+    Console.WriteLine(userRole);
 }
 
 <!-- Menu -->
@@ -26,31 +32,43 @@
 
   <ul class="menu-inner py-1">
 
-    <li class='menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Dashboards/") ? " active open" : "")'>
-      <a asp-controller="Dashboards" asp-action="Index" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-home-smile"></i>
-        <div class="text-truncate" data-i18n="Cards">Dashboard</div>
-      </a>
-    </li>
-    <li class='menu-item@(currentPage == "/Users/Index" ? " active" : "")'>
-      <a asp-controller="Users" asp-action="Index" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-user"></i>
-        <div>Proprietaire</div>
-      </a>
-    </li>
-    <li class='menu-item@(currentPage == "/Spaces/Index" ? " active" : "")'>
-      <a asp-controller="Spaces" asp-action="Index" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-compass"></i>
-        <div>Les éspaces</div>
-      </a>
-    </li>
+   
+  <ul class="menu-inner py-1">
+    @if (httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+    {   
+        <li class='menu-item@(currentPage.EndsWith("/") || currentPage.StartsWith("/Dashboards/") ? " active open" : "")'>
+            <a asp-controller="Dashboards" asp-action="Index" class="menu-link">
+              <i class="menu-icon tf-icons bx bx-home-smile"></i>
+                <div class="text-truncate" data-i18n="Cards">Dashboard</div>
+            </a>
+        </li>
 
-    <li class='menu-item@(currentPage == "/Reservations/Index" ? " active" : "")'>
-      <a asp-controller="Reservations" asp-action="Index" class="menu-link">
-        <i class="menu-icon tf-icons bx bx-conversation"></i>
-        <div>Réservations</div>
-      </a>
-    </li>
+        @if (userRole == "ADMIN")
+        {
+            <li class='menu-item@(currentPage == "/Users/Index" ? " active" : "")'>
+                <a asp-controller="Users" asp-action="Index" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-user"></i>
+                    <div>Propriétaire</div>
+                </a>
+            </li>
+        }
+        
+        @if (userRole == "OWNER")
+        {
+            <li class='menu-item@(currentPage == "/Spaces/Index" ? " active" : "")'>
+                <a asp-controller="Spaces" asp-action="Index" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-compass"></i>
+                    <div>Les éspaces</div>
+                </a>
+            </li>
+            <li class='menu-item@(currentPage == "/Reservations/Index" ? " active" : "")'>
+                <a asp-controller="Reservations" asp-action="Index" class="menu-link">
+                    <i class="menu-icon tf-icons bx bx-conversation"></i>
+                    <div>Réservations</div>
+                </a>
+            </li>
+        }
+    }
 
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
     <li class='menu-item@(currentPage == "/Cards/Basic" ? " active" : "")'>
@@ -162,6 +180,6 @@
         </li>
       </ul>
     </li>
-    </ul>
+  </ul>
 </aside>
 </Menu>

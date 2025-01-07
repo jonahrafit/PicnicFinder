@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
@@ -21,6 +22,24 @@ namespace AdminBO.Controllers
             // Par exemple, vous pouvez l'extraire des claims du jeton JWT.
             var userIdClaim = User?.FindFirst("UserId")?.Value;
             return userIdClaim != null ? long.Parse(userIdClaim) : 0;
+        }
+
+        public string GetCurrentUsername()
+        {
+            return User?.FindFirst("Username")?.Value ?? "Unknown";
+        }
+
+        public string GetCurrentUserRole()
+        {
+            return User?.FindFirst("Role")?.Value ?? "Unknown";
+        }
+
+        public (string Username, string Role) GetCurrentUserInfo()
+        {
+            var username = User?.FindFirst(ClaimTypes.Name)?.Value;
+            var role = User?.FindFirst(ClaimTypes.Role)?.Value;
+
+            return (username ?? "Unknown", role ?? "Unknown");
         }
     }
 }
