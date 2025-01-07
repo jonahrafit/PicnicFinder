@@ -60,11 +60,26 @@ document.addEventListener('DOMContentLoaded', function () {
         userSection.style.display = "none";
     }
 
-    logoutButton.addEventListener('click', function () {
-        localStorage.removeItem("jwt");
-        loginSection.style.display = "flex";
-        userSection.style.display = "none";
-        // window.location.reload();  // Recharger la page pour réinitialiser l'état
+    logoutButton.addEventListener('click', async function () {
+        try {
+            const response = await fetch('/Auth/Logout', {
+                method: 'GET', // La méthode correspond à celle de votre API
+                credentials: 'include', // Inclut les cookies dans la requête
+            });
+
+            if (response.ok) {
+                localStorage.removeItem("jwt"); // Supprimer le JWT du localStorage
+                loginSection.style.display = "flex";
+                userSection.style.display = "none";
+                localhost.removeItem("jwt");
+                console.log("Déconnexion réussie !");
+            } else {
+                // Gérer les erreurs éventuelles
+                console.error("Erreur lors de la déconnexion :", response.statusText);
+            }
+        } catch (error) {
+            console.error("Erreur réseau :", error);
+        }
     });
 
     // Gestion de la soumission du formulaire de connexion

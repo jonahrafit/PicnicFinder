@@ -86,10 +86,7 @@ namespace AdminBO.Controllers.Api
             space.OwnerId = GetCurrentUserId();
             try
             {
-                // Récupérer l'ID de l'utilisateur actuellement authentifié
                 var currentUserId = GetCurrentUserId();
-
-                // Récupérer l'utilisateur à partir de la base de données
                 var owner = await _userService.GetUserByIdAsync(currentUserId);
 
                 if (owner == null)
@@ -97,11 +94,9 @@ namespace AdminBO.Controllers.Api
                     return Unauthorized("Utilisateur non trouvé.");
                 }
 
-                // Assigner l'owner à l'espace
                 space.Owner = owner;
                 await _spaceService.CreateSpaceAsync(space);
 
-                // Retourner l'espace créé avec un code de statut 201
                 return CreatedAtAction(nameof(GetSpace), new { id = space.Id }, space);
             }
             catch (Exception ex)

@@ -1,24 +1,68 @@
-@model List<AdminBO.Models.User>
-
-@{
-  ViewData["Title"] = "Réservations";
-}
-
 <h3 class="pb-1 mb-6 text-muted">Liste des réservations</h3>
-<div class="row g-6" data-masonry='{"percentPosition": true }'>
-  @for (int i = 0; i < 7; i++)
-  {
-    <div class="col-sm-6 col-lg-4">
-      <div class="card p-4">
-        <figure class="p-4 mb-0">
-          <blockquote class="blockquote">
-            <p>A well-known quote, contained in a blockquote element.</p>
-          </blockquote>
-          <figcaption class="blockquote-footer mb-0 text-muted">
-            Someone famous in <cite title="Source Title">Source Title</cite>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  }
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Employee ID</th>
+                <th scope="col">Space ID</th>
+                <th scope="col">Reservation Date</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">End Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Approbation</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model.Reservations)
+            {
+                <tr>
+                    <td>@reservation.Id</td>
+                    <td>@reservation.EmployeeId</td>
+                    <td>@reservation.SpaceId</td>
+                    <td>@reservation.ReservationDate.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                    <td>@reservation.StartDate.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                    <td>@reservation.EndDate.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                    <td>
+                        @if (reservation.Status != null)
+                        {
+                            <span class="badge 
+                                @(reservation.Status.ToString() == "PENDING" ? "bg-warning text-dark" : 
+                                  reservation.Status.ToString() == "APPROVED" ? "bg-success" : 
+                                  reservation.Status.ToString() == "REJECTED" ? "bg-danger" : "bg-secondary")">
+                                @reservation.Status
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Non défini</span>
+                        }
+                    </td>
+                    <td>
+                        @if (reservation.Status.ToString() == "PENDING")
+                        {
+                            <button class="btn btn-success btn-sm" onclick="approveReservation(@reservation.Id)">Approuver</button>
+                            <button class="btn btn-danger btn-sm" onclick="rejectReservation(@reservation.Id)">Refuser</button>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Aucune action</span>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
+
+<script>
+    function approveReservation(reservationId) {
+        alert(`Approbation de la réservation ${reservationId}`);
+        // Ajouter ici la logique pour appeler votre API ou action backend.
+    }
+
+    function rejectReservation(reservationId) {
+        alert(`Refus de la réservation ${reservationId}`);
+        // Ajouter ici la logique pour appeler votre API ou action backend.
+    }
+</script>

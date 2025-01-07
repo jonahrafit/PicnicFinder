@@ -7,19 +7,19 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AdminBO.Controllers;
 
-public class UsersController : Controller
+public class UsersController : BaseController
 {
     private readonly IConfiguration _configuration;
     private readonly UserService _userService;
     private readonly AdminBOContext _dbContext;
 
     public UsersController(
+        ILogger<UsersController> logger,
         IConfiguration configuration,
-        ILogger<HomeController> logger,
         AdminBOContext dbContext
     )
+        : base(logger, configuration)
     {
-        _configuration = configuration;
         _dbContext = dbContext;
         _userService = new UserService(_configuration, _dbContext);
     }

@@ -137,4 +137,43 @@ public class AuthController : BaseController
             );
         }
     }
+
+    public async Task<IActionResult> Logout()
+    {
+        var url = $"{_apiBaseUrl}/auth/logout"; // URL de l'API pour la déconnexion
+        try
+        {
+            // Si nécessaire, vous pouvez envoyer un signal de déconnexion via l'API
+            using (var httpClient = new HttpClient())
+            {
+                // Ici, la méthode POST ou GET dépend de votre API de déconnexion
+                var response = await httpClient.PostAsync(url, null); // S'il n'y a pas de données à envoyer
+                if (response.IsSuccessStatusCode)
+                {
+                    // Si la déconnexion est réussie, supprimez le cookie JWT
+                    Response.Cookies.Delete("jwt");
+                    return Ok("Déconnexion réussie.");
+                }
+                else
+                {
+                    _logger.LogWarning(
+                        $"Déconnexion échouée avec le code d'état : {response.StatusCode}"
+                    );
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(
+                ex,
+                "Une erreur est survenue lors de l'appel de l'API de déconnexion."
+            );
+            // Log l'exception
+            Console.WriteLine($"Erreur : {ex.Message}");
+            // Vous pouvez gérer l'exception ici si besoin
+            throw;
+        }
+
+        return StatusCode(500, "Une erreur est survenue lors de la déconnexion.");
+    }
 }

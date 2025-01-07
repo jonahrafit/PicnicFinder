@@ -4,12 +4,12 @@
 }
 
 <div class="container mt-4">
-    <h2>Liste des Réservations</h2>
+    <h2 class="mb-4">Liste des Réservations</h2>
 
-    <table>
-        <thead>
+    <table class="table table-striped table-hover">
+        <thead class="table-dark">
             <tr>
-                <th>ID de l'espace</th>
+                <th>Espace</th>
                 <th>Date de début</th>
                 <th>Date de fin</th>
                 <th>Statut</th>
@@ -19,13 +19,34 @@
             @foreach (var reservation in Model)
             {
                 <tr>
-                    <td>@reservation.SpaceId</td>
-                    <td>@reservation.StartDate</td>
-                    <td>@reservation.EndDate</td>
-                    <td>@(reservation.Status ?? "Non défini")</td>
+                    <td>@reservation.Space.Name</td>
+                    <td>@reservation.StartDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@reservation.EndDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>
+                        @if (reservation.Status != null)
+                        {
+                            <span class="badge 
+                                @(reservation.Status == "PENDING" ? "bg-warning text-dark" : 
+                                  reservation.Status == "APPROVED" ? "bg-success" : 
+                                  reservation.Status == "REJECTED" ? "bg-danger" : "bg-secondary")">
+                                @reservation.Status
+                            </span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Non défini</span>
+                        }
+                    </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+<script>
+    // Récupérer les données du modèle en JSON
+    const reservations = @Html.Raw(System.Text.Json.JsonSerializer.Serialize(Model));
+
+    // Afficher les données dans la console
+    console.log("Réservations :", reservations);
+</script>
 

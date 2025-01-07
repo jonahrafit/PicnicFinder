@@ -7,25 +7,67 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AdminBO.Controllers;
 
-public class ReservationsController : Controller
+public class ReservationsController : BaseController
 {
     private readonly IConfiguration _configuration;
     private readonly ReservationService _reservationService;
+    private readonly AdminBOContext _dbContext;
 
     public ReservationsController(
+        ILogger<ReservationsController> logger,
         IConfiguration configuration,
-        ReservationService reservationService
+        AdminBOContext dbContext
     )
+        : base(logger, configuration)
     {
-        _configuration = configuration;
-        _reservationService = reservationService;
+        _dbContext = dbContext;
+        _reservationService = new ReservationService(configuration, dbContext);
     }
 
     [Authorize(Roles = "OWNER")]
-    public async Task<IActionResult> Index()
+    public async Task<ActionResult<IEnumerable<Reservation>>> Index(int page = 1, int pageSize = 10)
     {
-        var reservations = await _reservationService.GetAllReservationsAsync();
-        return View("Basic", reservations);
+        Console.WriteLine("-------------------'--------------------");
+        long ownerId = GetCurrentUserId();
+        var reservations = await _reservationService.GetReservationsPagedAsyncByOwner(
+            page,
+            pageSize,
+            ownerId
+        );
+
+        foreach (var reserv in reservations)
+        {
+            Console.WriteLine(reserv.ToString());
+        }
+
+        if (reservations == null || reservations.Count == 0)
+        {
+            return NotFound("Aucun reservation trouvé.");
+        }
+
+        // Récupère la liste des réservations
+        var all_reservations = await _reservationService.GetReservationsAsyncByOwner(ownerId);
+
+        // Si aucune réservation n'est trouvée
+        if (all_reservations == null || all_reservations.Count == 0)
+        {
+            return NotFound("Aucune réservation trouvée.");
+        }
+
+        var totalReservations = reservations.Count;
+
+        var paginationModel = new PaginationModel
+        {
+            CurrentPage = page,
+            TotalItems = totalReservations,
+            ItemsPerPage = pageSize,
+            TotalPages = (int)Math.Ceiling((double)totalReservations / pageSize),
+        };
+
+        Console.WriteLine(paginationModel.ToString());
+        var result = new { Reservations = reservations, Pagination = paginationModel };
+
+        return View("Basic", result);
     }
 
     [Authorize(Roles = "OWNER")]
@@ -51,20 +93,6 @@ public class ReservationsController : Controller
     public IActionResult Create()
     {
         return View();
-    }
-
-    [Authorize(Roles = "OWNER")]
-    public async Task<IActionResult> Create(
-        [Bind("EmployeeId,SpaceId,ReservationDate,StartDate,EndDate,Status")]
-            Reservation reservation
-    )
-    {
-        if (ModelState.IsValid)
-        {
-            await _reservationService.CreateReservationAsync(reservation);
-            return RedirectToAction(nameof(Index));
-        }
-        return View(reservation);
     }
 
     // GET: Reservation/Edit/5
@@ -114,7 +142,6 @@ public class ReservationsController : Controller
         return View(reservation);
     }
 
-    // GET: Reservation/Delete/5
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> Delete(long? id)
     {
@@ -132,7 +159,6 @@ public class ReservationsController : Controller
         return View(reservation);
     }
 
-    // POST: Reservation/Delete/5
     [ValidateAntiForgeryToken]
     [Authorize(Roles = "OWNER")]
     public async Task<IActionResult> DeleteConfirmed(long id)

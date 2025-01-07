@@ -7,17 +7,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AdminBO.Controllers;
 
-public class AuthController : Controller
+public class AuthController : BaseController
 {
     private readonly IConfiguration _configuration;
     private readonly AuthService _authService;
     private readonly AdminBOContext _dbContext;
 
-    public AuthController(IConfiguration configuration, AdminBOContext dbContext)
+    public AuthController(
+        ILogger<AuthController> logger,
+        IConfiguration configuration,
+        AdminBOContext dbContext
+    )
+        : base(logger, configuration)
     {
-        _configuration = configuration;
         _dbContext = dbContext;
-        _authService = new AuthService(_configuration, _dbContext);
+        _authService = new AuthService(configuration, dbContext);
     }
 
     public IActionResult ForgotPasswordBasic() => View();

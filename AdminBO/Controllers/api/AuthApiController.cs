@@ -102,5 +102,16 @@ namespace AdminBO.Controllers.Api
                 return BadRequest($"Erreur: {ex.Message}");
             }
         }
+
+        [Authorize]
+        [HttpGet("logout")]
+        public IActionResult Logout()
+        {
+            if (Request.Cookies.ContainsKey("jwt"))
+            {
+                Response.Cookies.Delete("jwt");
+            }
+            return Ok();
+        }
     }
 }

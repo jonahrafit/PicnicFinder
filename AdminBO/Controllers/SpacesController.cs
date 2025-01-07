@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AdminBO.Controllers;
 
-public class SpacesController : Controller
+public class SpacesController : BaseController
 {
     private readonly IConfiguration _configuration;
     private readonly SpaceService _spaceService;
@@ -15,12 +15,12 @@ public class SpacesController : Controller
     private readonly AdminBOContext _dbContext;
 
     public SpacesController(
+        ILogger<SpacesController> logger,
         IConfiguration configuration,
-        ILogger<HomeController> logger,
         AdminBOContext dbContext
     )
+        : base(logger, configuration)
     {
-        _configuration = configuration;
         _dbContext = dbContext;
         _spaceService = new SpaceService(_configuration, _dbContext);
         _spaceServiceAdoNet = new SpaceServiceAdoNet(_configuration);

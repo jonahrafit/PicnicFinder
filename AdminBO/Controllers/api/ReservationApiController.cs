@@ -43,7 +43,6 @@ namespace AdminBO.Controllers.Api
                 return BadRequest("Les donn�es de l'ereservation ne sont pas valides.");
             }
             reservation.EmployeeId = GetCurrentUserId();
-            Console.WriteLine("------------------------");
             try
             {
                 var currentUserId = GetCurrentUserId();
@@ -76,8 +75,6 @@ namespace AdminBO.Controllers.Api
 
         private long GetCurrentUserId()
         {
-            // Cette m�thode doit �tre impl�ment�e pour r�cup�rer l'ID de l'utilisateur connect�.
-            // Par exemple, vous pouvez l'extraire des claims du jeton JWT.
             var userIdClaim = User?.FindFirst("UserId")?.Value;
             return userIdClaim != null ? long.Parse(userIdClaim) : 0;
         }
@@ -118,8 +115,6 @@ namespace AdminBO.Controllers.Api
 
             return Ok(result);
         }
-
-        // ________________________________________________
 
         // GET: api/Reservation/5
         [HttpGet("{id}")]
