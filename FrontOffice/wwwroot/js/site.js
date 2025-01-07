@@ -1,4 +1,128 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿function parseJwt(token) {
+    const base64Url = token.split('.')[1]; // On récupère la deuxième partie du token JWT
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/'); // Décodage du base64
+    const jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split('')
+            .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+            .join('')
+    );
+    return JSON.parse(jsonPayload); // On retourne les données décodées
+}
 
-// Write your JavaScript code.
+function updateLoginButton(token) {
+    try {
+        const userInfo = parseJwt(token); // Récupère les informations de l'utilisateur à partir du token
+        console.log("--------------userInfo--------------------", userInfo);
+        const loginButton = document.getElementById("loginButton");
+        const logoutButton = document.getElementById("logoutBuutton");
+
+        if (userInfo) {
+            // Mettre à jour le texte du bouton de connexion avec le nom et le rôle de l'utilisateur
+            loginButton.innerHTML = `<span>${userInfo.name} (${userInfo.role})</span>`;
+            loginButton.classList.add("disabled"); // Désactive le bouton de connexion
+            loginButton.removeAttribute("data-bs-toggle");
+            loginButton.removeAttribute("data-bs-target");
+
+            // Afficher le bouton de déconnexion
+            loginButton.style.display = "none";
+            logoutButton.style.display = "inline-block";
+        }
+    } catch (error) {
+        console.error("Erreur lors du décodage du token JWT :", error);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    const token = localStorage.getItem("jwt");
+    console.log("______________________________");
+    const isAuthenticated = token ? true : false;
+    console.log(isAuthenticated);
+    const loginSection = document.getElementById("loginSection");
+    const userSection = document.getElementById("userSection");
+
+    const loginButton = document.getElementById("loginButton");
+    const signupButton = document.getElementById("signupButton");
+    const userInfoButton = document.getElementById("userInfoButton");
+    const logoutButton = document.getElementById("logoutButton");
+
+    if (isAuthenticated) {
+        const userInfo = parseJwt(token);
+        console.log(userInfo);
+        userInfoButton.innerHTML = `${userInfo.Name} (${userInfo.Role})`;
+
+        loginSection.style.display = "none";
+        userSection.style.display = "flex";
+
+        // Mettre à jour le bouton userInfo avec les données utilisateur
+    } else {
+        loginSection.style.display = "flex";
+        userSection.style.display = "none";
+    }
+
+    logoutButton.addEventListener('click', function () {
+        localStorage.removeItem("jwt");
+        loginSection.style.display = "flex";
+        userSection.style.display = "none";
+        // window.location.reload();  // Recharger la page pour réinitialiser l'état
+    });
+
+    // Gestion de la soumission du formulaire de connexion
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        try {
+            // Requête à l'API pour l'authentification
+            const response = await fetch("/Auth/Authenticate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username, password })
+            });
+
+            const result = await response.json();
+            // Stocker le token dans localStorage
+            const token = result.token; // Récupérer le token de la réponse
+            localStorage.setItem('jwt', token);
+
+            if (token) {
+                console.log("Authentification réussie!");
+
+                // Stocker le token dans les cookies
+                document.cookie = `jwt=${token}; path=/;`;
+
+                // Mettre à jour l'interface avec les informations utilisateur
+                updateLoginButton(token);
+
+                // Fermer le modal de connexion si nécessaire
+                const loginModal = document.getElementById("loginModal");
+                if (loginModal) {
+                    const bootstrapModal = bootstrap.Modal.getInstance(loginModal);
+                    bootstrapModal?.hide();
+                }
+            } else {
+                console.log("Authentification échouée!");
+                // Afficher un message d'erreur
+                document.getElementById("loginError").textContent = "Identifiants incorrects.";
+                document.getElementById("loginError").style.display = "block";
+            }
+        } catch (error) {
+            console.error("Erreur lors de la connexion :", error);
+            document.getElementById("loginError").textContent = "Une erreur est survenue.";
+            document.getElementById("loginError").style.display = "block";
+        }
+    });
+
+    // Gestion de la déconnexion
+    logoutButton.addEventListener('click', function () {
+        // Supprimer le token des cookies
+        document.cookie = "jwt=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT";
+
+        // Mettre à jour l'interface pour masquer le bouton de déconnexion et afficher celui de connexion
+        loginButton.style.display = "inline-block";
+        logoutButton.style.display = "none";
+    });
+});

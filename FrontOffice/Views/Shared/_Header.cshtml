@@ -1,3 +1,7 @@
+@{
+    ViewData["Title"] = "Connexion";
+}
+
 <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">PicnicFinder</a>
@@ -8,46 +12,80 @@
         <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
             <ul class="navbar-nav flex-grow-1 align-items-center">
                 <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Space") ? "active" : "")">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Space" asp-action="Index">
-                        Des espaces
-                    </a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Space" asp-action="Index">Des espaces</a>
                 </li>
                 <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Reservation") ? "active" : "")">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">
-                        Mes réservations
-                    </a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">Mes réservations</a>
                 </li>
                 <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Favorite") ? "active" : "")">
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Favorite" asp-action="Index">
-                        Mes favoris
-                    </a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Favorite" asp-action="Index">Mes favoris</a>
                 </li>
                 <li class="nav-item ml-auto">
-                    <div class="input-group" style="height: 30px;"> <!-- Ajustez la hauteur ici -->
+                    <div class="input-group" style="height: 30px;">
                         <div class="input-group-prepend">
                             <span class="input-group-text" style="height: 100%; display: flex; align-items: center;">
-                                <i class="fa fa-search"></i> <!-- Icône de recherche -->
+                                <i class="fa fa-search"></i>
                             </span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Rechercher quelque chose..."
-                            style="height: 100%;">
+                        <input type="text" class="form-control" placeholder="Rechercher quelque chose..." style="height: 100%;">
                     </div>
                 </li>
-
             </ul>
 
-            <ul class="navbar-nav ms-auto">
+            <ul class="navbar-nav ms-auto" id="loginSection" style="display: flex; align-items: center;">
                 <li class="nav-item">
-                    <form action="@Url.Action("Index", "Auth")" method="post">
-                        <button type="submit" class="btn btn-link nav-link text-dark">Me Connecter</button>
-                    </form>
+                    <button id="loginButton" class="btn btn-link nav-link text-dark" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Me Connecter
+                    </button>
                 </li>
-                <!-- <li class="nav-item">
-                    <form action="@Url.Action("Logout", "Auth")" method="post">
-                        <button type="submit" class="btn btn-link nav-link text-dark">Créer un compte</button>
-                    </form>
-                </li> -->
+                <li class="nav-item">
+                    <button id="signupButton" class="btn btn-link nav-link text-dark" data-bs-toggle="modal" data-bs-target="#signupModal">
+                        S'inscrire
+                    </button>
+                </li>
             </ul>
+            <ul class="navbar-nav ms-auto" id="userSection" style="display: none;display: flex; align-items: center;">
+                <li class="nav-item">
+                    <button id="userInfoButton" class="btn btn-link nav-link text-dark" disabled>
+                        <!-- Nom + rôle de l'utilisateur affiché ici -->
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <button id="logoutButton" class="btn btn-link nav-link text-dark">
+                        Se déconnecter
+                    </button>
+                </li>
+            </ul>
+
         </div>
     </div>
 </nav>
+
+<!-- Modal pour le login -->
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-center text-success display-6 mb-4">Connexion</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" method="POST">
+                    <div id="loginError" class="alert alert-danger text-center" style="display: none;"></div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nom d'utilisateur</label>
+                        <input type="text" id="username" name="username" class="form-control" value="jonah.ramanantsafidy@cybernaptics.mg" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" id="password" name="password" class="form-control" value="jonah1234" required />
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Se connecter</button>
+                    <div class="text-center mt-3">
+                        <a href="#" class="text-decoration-none text-success">Mot de passe oublié?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

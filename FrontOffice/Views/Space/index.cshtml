@@ -15,6 +15,65 @@
 
 }
 
+@section Scripts {
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('backDropModal');
+            modal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget; 
+                const spaceId = button.getAttribute('data-space-id');
+                const inputSpaceId = document.getElementById('inputSpaceId');
+                inputSpaceId.value = spaceId || '';
+            });
+
+            const reservationForm = document.getElementById('reservationForm');
+            const saveReservationButton = document.getElementById('saveReservation');
+            const alertMessage = document.createElement('div');
+
+            alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
+            alertMessage.setAttribute('role', 'alert');
+            alertMessage.style.display = 'none';
+
+            // Ajouter l'alerte avant le formulaire
+            reservationForm.prepend(alertMessage);
+
+            saveReservationButton.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const startDateInput = document.getElementById('startDate');
+                const endDateInput = document.getElementById('endDate');
+
+                const startDate = new Date(startDateInput.value);
+                const endDate = new Date(endDateInput.value);
+
+                // Réinitialiser l'alerte
+                alertMessage.style.display = 'none';
+
+                if (!startDateInput.value || !endDateInput.value) {
+                    alertMessage.innerHTML = `
+                        Ces deux champs sont obligatoires !  
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    alertMessage.style.display = 'block';
+                    return;
+                }
+
+                if (endDate <= startDate) {
+                    alertMessage.innerHTML = `
+                        La date de fin doit être supérieure à la date de début !
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    alertMessage.style.display = 'block';
+                    return;
+                }
+
+                // Si tout est valide, soumettre le formulaire
+                reservationForm.submit();
+            });
+        });
+    </script>
+}
+
 <style>
     .filter-container {
         width: 25%;
@@ -83,15 +142,13 @@
     <h1 class="text-center">Les espaces disponibles</h1>
 
     <div class="row mt-4">
-        <!-- Filtre -->
         <div class="col-md-3 filter-container">
             <h5>Filtrer la liste</h5>
-            <form>
+            <!-- <form>
                 <div class="form-group">
                     <label for="filterTitle">Filtrer par Titre:</label>
                     <input type="text" class="form-control" id="filterTitle" placeholder="Ex: Villa Luxueuse">
                 </div>
-                <!-- <div class="form-group">
                     <label for="filterActivities">Filtrer par Activités:</label>
                     <select multiple class="form-control" id="filterActivities">
                         <option value="Piscine">Piscine</option>
@@ -107,9 +164,9 @@
                         <option value="2">Entre 6000 et 8000 Ar</option>
                         <option value="3">Plus de 8000 Ar</option>
                     </select>
-                </div> -->
+                </div>
                 <button type="submit" class="btn btn-primary">Rechercher</button>
-            </form>
+            </form> -->
         </div>
 
         <div class="col-md-9 content-container">
@@ -121,7 +178,7 @@
                         <div class="card">
                             <div class="card-img-container">
                                 <img src="@space.photos[0]" class="card-img-top" alt="Space Image">
-                                <!-- <span class="status-badge">@space.status</span> -->
+                                <span class="status-badge">@space.status</span>
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -130,6 +187,18 @@
                                 <h5 class="card-title">@space.name</h5>
                                 <p class="card-text">@space.description</p>
                                 <p class="capacity">Capacité: @space.capacity personnes</p>
+                            </div>
+                            <div>
+                                <div>
+                                    <button 
+                                        class="btn btn-primary" 
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#backDropModal" 
+                                        data-space-name="@space.name"
+                                        data-space-id="@space.id">
+                                        Réserver
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     }
@@ -180,5 +249,37 @@
                 <p>Aucun espace disponible.</p>
             }
         </div>
+
     </div>
 </div>
+<div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+         <form class="modal-content" id="reservationForm" method="POST" action="@Url.Action("CreateReservation", "Reservation")">
+            <div class="modal-header">                
+                <h5 class="modal-title" id="backDropModalTitle">Faire une réservation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="inputSpaceId" name="SpaceId">
+                <div class="row g-6">
+                    <div id="alertMessage"></div>
+                </div>
+                <div class="row g-6">
+                    <div class="col mb-0">
+                        <label for="startDate" class="form-label">Date de début</label>
+                        <input type="datetime-local" id="startDate" name="StartDate" class="form-control">
+                    </div>
+                    <div class="col mb-0">
+                        <label for="endDate" class="form-label">Date de fin</label>
+                        <input type="datetime-local" id="endDate" name="EndDate" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="submit" class="btn btn-primary" id="saveReservation">Valider la réservation</button>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -45,13 +45,15 @@ public class AuthService
         // Cr�ation du r�le
         var role = user.Role.ToString();
         var userId = user.Id.ToString();
+        var name = user.Name.ToString();
 
         // Cr�ation des claims (incluant le r�le)
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.Name, username),
-            new Claim(ClaimTypes.Role, role),
             new Claim("UserId", userId),
+            new Claim("Role", role),
+            new Claim("Name", name),
         };
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
@@ -66,6 +68,7 @@ public class AuthService
             signingCredentials: credentials
         );
 
+        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
@@ -148,6 +151,38 @@ public class AuthService
             Name = name,
             Role = role,
             Expiration = expiration,
+        };
+    }
+
+    public async Task<UserInfoModel> GetUserInfoFromTokenAsync(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        if (!handler.CanReadToken(token))
+        {
+            throw new ArgumentException("Token invalide.");
+        }
+
+        var jwtToken = handler.ReadJwtToken(token);
+        var userId = jwtToken.Claims.FirstOrDefault(c => c.Type == "userId")?.Value;
+
+        if (string.IsNullOrEmpty(userId))
+        {
+            throw new InvalidOperationException("L'ID utilisateur est manquant dans le token.");
+        }
+
+        var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id.ToString() == userId);
+        if (user == null)
+        {
+            throw new InvalidOperationException("Utilisateur non trouvé.");
+        }
+
+        return new UserInfoModel
+        {
+            UserId = user.Id,
+            Name = user.Name,
+            Email = user.Email,
+            Role = user.Role.ToString(),
+            Phone = user.Phone,
         };
     }
 }

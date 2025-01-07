@@ -5,21 +5,10 @@ using Microsoft.Extensions.Configuration;
 
 namespace FrontOffice.Controllers;
 
-public class SpaceController : Controller
+public class SpaceController : BaseController
 {
-    private readonly ILogger<SpaceController> _logger;
-    private readonly string _apiBaseUrl;
-
-    private readonly IConfiguration _configuration;
-
     public SpaceController(ILogger<SpaceController> logger, IConfiguration configuration)
-    {
-        _configuration = configuration;
-        _logger = logger;
-        _apiBaseUrl =
-            _configuration["ServerSettings:ApiBaseUrl"]
-            ?? throw new ArgumentNullException(nameof(configuration));
-    }
+        : base(logger, configuration) { }
 
     public async Task<IActionResult> Index(int page = 1, int pageSize = 5)
     {
@@ -48,7 +37,7 @@ public class SpaceController : Controller
         // Passer les données à la vue
         ViewData["JsonSpaceList"] = Newtonsoft.Json.JsonConvert.SerializeObject(spaces);
         ViewData["Pagination"] = pagination;
-
+        ViewData["ApiBaseUrl"] = GetApiBaseUrl();
         return View();
     }
 
@@ -81,11 +70,6 @@ public class SpaceController : Controller
 
         Console.WriteLine(ViewData["JsonSpace"]);
 
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
         return View();
     }
 

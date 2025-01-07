@@ -35,15 +35,12 @@ namespace AdminBO.Controllers.Api
                 signinModel.Username,
                 signinModel.Password
             );
-
             if (token == null)
             {
                 return Unauthorized(
                     new { message = "Nom d'utilisateur ou mot de passe incorrect." }
                 );
             }
-
-            // Retourner le token dans le corps de la réponse (au lieu de rediriger)
             return Ok(new { token });
         }
 
@@ -77,6 +74,32 @@ namespace AdminBO.Controllers.Api
             else
             {
                 return BadRequest("Y a un problème lors de l'inscription.");
+            }
+        }
+
+        [Authorize]
+        [HttpGet("user-info")]
+        public async Task<IActionResult> GetUserInfo()
+        {
+            var authorizationHeader = HttpContext.Request.Headers["Authorization"].ToString();
+            if (
+                string.IsNullOrEmpty(authorizationHeader)
+                || !authorizationHeader.StartsWith("Bearer ")
+            )
+            {
+                return BadRequest("Token JWT manquant.");
+            }
+
+            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
+
+            try
+            {
+                var userInfo = await _authService.GetUserInfoFromTokenAsync(token);
+                return Ok(userInfo);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erreur: {ex.Message}");
             }
         }
     }

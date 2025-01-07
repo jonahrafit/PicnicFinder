@@ -2,100 +2,139 @@ using System.Diagnostics;
 using FrontOffice.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace FrontOffice.Controllers;
 
-public class AuthController : Controller
+public class AuthController : BaseController
 {
-    private readonly ILogger<AuthController> _logger;
-    private readonly string _apiBaseUrl;
-
-    private readonly IConfiguration _configuration;
+    public AuthController(ILogger<SpaceController> logger, IConfiguration configuration)
+        : base(logger, configuration) { }
 
     public IActionResult Index()
     {
         return View();
     }
 
-    public AuthController(ILogger<AuthController> logger, IConfiguration configuration)
+    public async Task<IActionResult> Authenticate([FromBody] SigninModel request)
     {
-        _configuration = configuration;
-        _logger = logger;
-        _apiBaseUrl =
-            _configuration["ServerSettings:ApiBaseUrl"]
-            ?? throw new ArgumentNullException(nameof(configuration));
-    }
-
-    // POST: Auth/Authenticate
-    public async Task<IActionResult> Authenticate(string username, string password)
-    {
-        string token = null; // Pour stocker le jeton si l'authentification réussit
-        var url = $"{_apiBaseUrl}/auth/login"; // Remplacez par l'URL de votre API d'authentification
-
+        var url = $"{_apiBaseUrl}/auth/login";
         try
         {
-            // Préparer les données à envoyer
-            var loginData = new { Username = username, Password = password };
+            var loginData = new { Username = request.Username, Password = request.Password };
 
-            // Sérialiser les données en JSON
+            _logger.LogInformation(
+                "Sending authentication request for user: {Username}",
+                request.Username
+            );
+
             var jsonContent = new StringContent(
                 Newtonsoft.Json.JsonConvert.SerializeObject(loginData),
                 System.Text.Encoding.UTF8,
                 "application/json"
             );
 
-            // Envoyer la requête POST
             using (var httpClient = new HttpClient())
             {
                 var response = await httpClient.PostAsync(url, jsonContent);
-
                 if (response.IsSuccessStatusCode)
                 {
-                    // Récupérer le jeton depuis la réponse
                     var responseContent = await response.Content.ReadAsStringAsync();
                     var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(
                         responseContent
                     );
-                    token = result?.token;
+                    var token = result?.token?.ToString();
+
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        // Stockage du token côté client
+                        Response.Cookies.Append(
+                            "jwt",
+                            token,
+                            new CookieOptions
+                            {
+                                HttpOnly = true,
+                                Secure = true,
+                                Expires = DateTimeOffset.Now.AddHours(1),
+                            }
+                        );
+                        return Ok(new { token });
+                    }
                 }
                 else
                 {
                     _logger.LogWarning(
                         $"Authentication failed with status code: {response.StatusCode}"
                     );
-                    ViewBag.ErrorMessage = "Nom d'utilisateur ou mot de passe incorrect.";
-                    ViewData["HideNavbar"] = true;
-                    return View("Index");
                 }
             }
         }
         catch (Exception ex)
         {
             _logger.LogError(ex, "Error occurred while calling the authentication API.");
-            ViewBag.ErrorMessage = "Une erreur est survenue. Veuillez réessayer plus tard.";
-            ViewData["HideNavbar"] = true;
-            return View("Index");
+            // Log the exception
+            Console.WriteLine($"_________________ : {ex.Message}");
+            // Rethrow the exception if needed
+            throw;
         }
 
-        if (string.IsNullOrEmpty(token))
+        return null;
+    }
+
+    public async Task<IActionResult> UserInfo(String token)
+    {
+        var url = $"{_apiBaseUrl}/auth/user-info";
+        try
         {
-            ViewBag.ErrorMessage = "Impossible de récupérer le jeton.";
-            ViewData["HideNavbar"] = true;
-            return View("Index");
-        }
-
-        // Stockage du token côté client (par exemple via un cookie)
-        Response.Cookies.Append(
-            "jwt",
-            token,
-            new CookieOptions
+            using (var httpClient = new HttpClient())
             {
-                HttpOnly = true,
-                Secure = true,
-                Expires = DateTimeOffset.Now.AddHours(1),
-            }
-        );
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-        return RedirectToAction("Index", "Space");
+                var response = await httpClient.GetAsync(url);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    // Désérialisation en type dynamique pour accéder directement aux données JSON
+                    dynamic userInfo = JsonConvert.DeserializeObject(jsonResponse);
+
+                    // Retourner directement la réponse avec l'objet utilisateur extrait
+                    return Ok(
+                        new
+                        {
+                            success = true,
+                            user = new { name = userInfo.name, role = userInfo.role },
+                        }
+                    );
+                }
+                else
+                {
+                    return StatusCode(
+                        (int)response.StatusCode,
+                        new
+                        {
+                            success = false,
+                            message = "Échec de l'authentification.",
+                            details = await response.Content.ReadAsStringAsync(),
+                        }
+                    );
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error: {ex.Message}");
+            Console.WriteLine($"Stack Trace: {ex.StackTrace}");
+            return StatusCode(
+                500,
+                new
+                {
+                    success = false,
+                    message = "Une erreur interne est survenue.",
+                    details = ex.Message,
+                }
+            );
+        }
     }
 }

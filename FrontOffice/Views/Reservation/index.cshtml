@@ -1,0 +1,31 @@
+@model IEnumerable<ReservationViewModel>
+@{
+    ViewData["Title"] = "Réservations";
+}
+
+<div class="container mt-4">
+    <h2>Liste des Réservations</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID de l'espace</th>
+                <th>Date de début</th>
+                <th>Date de fin</th>
+                <th>Statut</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td>@reservation.SpaceId</td>
+                    <td>@reservation.StartDate</td>
+                    <td>@reservation.EndDate</td>
+                    <td>@(reservation.Status ?? "Non défini")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
