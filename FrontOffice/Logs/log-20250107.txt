@@ -1501,3 +1501,26 @@ System.Net.Http.HttpRequestException: Connection refused (localhost:5055)
 2025-01-07 14:58:09.311 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 23.7939ms
 2025-01-07 14:58:09.311 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
 2025-01-07 14:58:09.312 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 30.7386ms
+2025-01-07 18:58:50.741 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-07 18:58:50.741 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-07 18:58:50.745 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-07 18:58:50.749 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-07 18:58:50.752 +03:00 [INF] Executed ViewResult - view Index executed in 5.9588ms.
+2025-01-07 18:58:50.753 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 6.7443ms
+2025-01-07 18:58:50.753 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-07 18:58:50.754 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 12.9107ms
+2025-01-07 18:58:50.797 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-07 18:58:50.816 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - null null
+2025-01-07 18:58:50.860 +03:00 [INF] Sending file. Request path: '/FrontOffice.styles.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/obj/Debug/net8.0/scopedcss/bundle/FrontOffice.styles.css'
+2025-01-07 18:58:50.861 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - 200 1080 text/css 44.8187ms
+2025-01-07 18:58:50.870 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-07 18:58:50.871 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 73.9195ms
+2025-01-07 18:58:50.958 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-07 18:58:50.959 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-07 18:58:50.961 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-07 18:58:50.964 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 5.1426ms
+2025-01-07 18:58:50.963 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-07 18:58:50.966 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 6.9368ms
+2025-01-07 18:58:50.988 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=lqC6JTHm4JTaZ3bIF1EuyFr8fQ6BPjuwxRL3Fe6TamE - null null
+2025-01-07 18:58:50.992 +03:00 [INF] The file /js/site.js was not modified
+2025-01-07 18:58:50.994 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=lqC6JTHm4JTaZ3bIF1EuyFr8fQ6BPjuwxRL3Fe6TamE - 304 null text/javascript 5.4118ms

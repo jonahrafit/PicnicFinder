@@ -1,3 +1,10 @@
+@inject IHttpContextAccessor httpContextAccessor
+@using System.Security.Claims
+
+@{
+    var name = httpContextAccessor.HttpContext.User.Identity.Name;
+    Console.WriteLine(name);
+}
 @{
   ViewData["Title"] = "Tableau de bord - Analytique";
 }
@@ -8,8 +15,260 @@
   <script src="~/vendor/libs/apex-charts/apexcharts.js"></script>
 }
 @section PageScripts {
-  <script src="~/js/dashboards-analytics.js"></script>
+  <script>
+    'use strict';
+
+    (function () {
+      const cardColor = config.colors.cardColor;
+      const headingColor = config.colors.headingColor;
+      const legendColor = config.colors.bodyColor;
+      const labelColor = config.colors.textMuted;
+      const borderColor = config.colors.borderColor;
+
+      document.addEventListener('DOMContentLoaded', () => {
+        // Get the current year
+        const currentYear = new Date().getFullYear();
+
+        // Get the year of the previous year
+        const previousYear = currentYear - 1;
+
+        // Get the dropdown element
+        const dropdown = document.getElementById("year-dropdown");
+        const yearButton = document.getElementById("year-button");
+
+        // Loop through the previous 3 years
+        for (let i = previousYear; i >= previousYear - 5; i--) {
+          const li = document.createElement("li");
+            const a = document.createElement("a");
+            a.classList.add("dropdown-item");
+            a.href = "javascript:void(0);";
+            a.dataset.year = i;  // Set the year as a data attribute
+            a.textContent = i;  // Set the text to the year
+            li.appendChild(a);  // Append the <a> to the <li>
+            dropdown.appendChild(li);  // Append the <li> to the dropdown
+        }
+        
+        const dropdownItems = document.querySelectorAll('.dropdown-item');
+        dropdownItems.forEach(item => {
+          item.addEventListener('click', (event) => {
+            event.preventDefault();
+
+            // Récupérer l'année sélectionnée
+            const year = item.getAttribute('data-year');
+            console.log(`Année sélectionnée : ${year || 'Aucune'}`);
+
+            yearButton.textContent = `${year || 'Aucune'}`;
+            // Appeler la fonction avec l'année sélectionnée
+            getReservationsData(year);
+          });
+        });
+
+        // Appeler avec un état initial vide
+        getReservationsData(null); // Aucun filtre d'année sélectionné par défaut
+      });
+
+      const getReservationsData = async (year) => {
+        try {
+          const yearParam = year ? `?year=${year}` : ''; // Construire la query string
+          const response = await fetch(`/Reservations/GetReservationsData${yearParam}`);
+
+          if (!response.ok) {
+            throw new Error(`Erreur HTTP: ${response.status}`);
+          }
+
+          const data = await response.json();
+          console.log('Données reçues:', data);
+
+          // Transformation des données
+          const months = data.map(item => item.monthYear);
+          const pendingData = data.map(item => item.pendingReservations);
+          const confirmedData = data.map(item => item.confirmedReservations);
+          const cancelledData = data.map(item => item.cancelledReservations);
+
+          if(yearParam != '') {
+            const response2 = await fetch(`/Reservations/GetReservationGrowth${yearParam}`);
+
+            if (!response2.ok) {
+              throw new Error(`Erreur HTTP: ${response2.status}`);
+            }
+
+            const data2 = await response2.json();
+            console.log('Données reçues:', data2);
+
+             // Vérifier que la croissance est un nombre valide
+            if (!isNaN(data2.growthPercentage)) {
+                // Afficher le texte de croissance avec le nombre
+                const growthTextElement = document.getElementById('growth_data_text');
+                const growthNumberElement = document.getElementById('growth_data_number');
+                
+                growthNumberElement.innerText = data2.growthPercentage.toFixed(2);
+                growthTextElement.classList.remove('d-none');
+            } else {
+                console.error('Croissance invalide reçue');
+            }
+            renderGrowthChart(data2);
+          }
+
+          renderReservationLineChart(months, pendingData, confirmedData, cancelledData);
+        } catch (error) {
+          console.error("Erreur lors de la récupération des données :", error.message);
+        }
+      };
+
+      const renderGrowthChart = (growdata) => {
+        const growthChartEl = document.querySelector('#growthChart'),
+          growthChartOptions = {
+            series: [growdata],
+            labels: ['Croissance'],
+            chart: {
+              height: 240,
+              type: 'radialBar'
+            },
+            plotOptions: {
+              radialBar: {
+                size: 150,
+                offsetY: 10,
+                startAngle: -150,
+                endAngle: 150,
+                hollow: {
+                  size: '55%'
+                },
+                track: {
+                  background: cardColor,
+                  strokeWidth: '100%'
+                },
+                dataLabels: {
+                  name: {
+                    offsetY: 15,
+                    color: legendColor,
+                    fontSize: '15px',
+                    fontWeight: '500',
+                    fontFamily: 'Public Sans'
+                  },
+                  value: {
+                    offsetY: -25,
+                    color: headingColor,
+                    fontSize: '22px',
+                    fontWeight: '500',
+                    fontFamily: 'Public Sans'
+                  }
+                }
+              }
+            },
+            colors: [config.colors.primary],
+            fill: {
+              type: 'gradient',
+              gradient: {
+                shade: 'dark',
+                shadeIntensity: 0.5,
+                gradientToColors: [config.colors.primary],
+                inverseColors: true,
+                opacityFrom: 1,
+                opacityTo: 0.6,
+                stops: [30, 70, 100]
+              }
+            },
+            stroke: {
+              dashArray: 5
+            },
+            grid: {
+              padding: {
+                top: -35,
+                bottom: -10
+              }
+            },
+            states: {
+              hover: {
+                filter: {
+                  type: 'none'
+                }
+              },
+              active: {
+                filter: {
+                  type: 'none'
+                }
+              }
+            }
+        };
+
+        if (typeof growthChartEl !== undefined && growthChartEl !== null) {
+          const growthChart = new ApexCharts(growthChartEl, growthChartOptions);
+          growthChart.render();
+        }
+      };
+
+      const renderReservationLineChart = (months, pendingData,confirmedData, cancelledData) => {
+        const totalRevenueChartEl = document.querySelector('#totalRevenueChart');
+        if (!totalRevenueChartEl) {
+          console.warn("Élément graphique '#totalRevenueChart' introuvable.");
+          return;
+        }
+        const totalRevenueChartOptions = {
+          series: [
+            { name: "Confirmées", data: confirmedData },
+            { name: "En attente", data: pendingData },
+            { name: "Annulées", data: cancelledData }
+          ],
+          chart: {
+            height: 317,
+            type: 'line', // Passer à 'line' pour un graphique linéaire
+            toolbar: { show: false }
+          },
+          stroke: {
+            curve: 'smooth', // Courbe lissée pour la ligne
+            width: 3, // Largeur de la ligne
+            lineCap: 'round', // Arrondi aux bords
+            colors: [config.colors.primary, config.colors.info, config.colors.danger] // Couleur des lignes
+          },
+          colors: [config.colors.primary, config.colors.info, config.colors.danger], // Couleur des lignes
+          dataLabels: { enabled: false },
+          legend: {
+            show: true,
+            horizontalAlign: 'left',
+            position: 'top',
+            markers: { height: 8, width: 8, radius: 12, offsetX: -5 },
+            fontSize: '13px',
+            labels: { colors: legendColor }
+          },
+          grid: {
+            strokeDashArray: 7,
+            borderColor: borderColor,
+            padding: { top: 0, bottom: -8, left: 20, right: 20 }
+          },
+          xaxis: {
+            categories: months, // Mois ou autres catégories
+            labels: { style: { fontSize: '13px', colors: labelColor } }
+          },
+          yaxis: {
+            labels: { 
+              style: { fontSize: '13px', colors: labelColor },
+              formatter: function(value) {
+                // Formater l'axe des ordonnées pour afficher des entiers uniquement
+                return Math.round(value); // Arrondi à l'entier le plus proche
+              }
+             }
+          },
+          markers: {
+            size: 5, // Taille des marqueurs (points sur les lignes)
+            colors: [config.colors.primary, config.colors.info, config.colors.danger], // Couleur des points
+            strokeColor: 'white', // Couleur du bord des points
+            strokeWidth: 2
+          }
+        };
+
+        // Supprimer l'ancien graphique s'il existe
+        if (totalRevenueChartEl._chartInstance) {
+          totalRevenueChartEl._chartInstance.destroy();
+        }
+
+        const totalRevenueChart = new ApexCharts(totalRevenueChartEl, totalRevenueChartOptions);
+        totalRevenueChartEl._chartInstance = totalRevenueChart;
+        totalRevenueChart.render();
+      };
+    })();
+  </script>
 }
+
 
 <div class="row">
   <!-- En-tête du Tableau de bord -->
@@ -18,9 +277,10 @@
       <div class="d-flex align-items-start row">
         <div class="col-sm-7">
           <div class="card-body">
-            <h5 class="card-title text-primary mb-3">Félicitations John ! 🎉</h5>
-            <p class="mb-6">Vous avez réalisé 72% de ventes en plus aujourd'hui.<br>Vérifiez votre nouveau badge dans votre profil.</p>
-            <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir les Badges</a>
+            <h5 class="card-title text-primary mb-3">Bonjour ! 🎉</h5>
+            <p class="mb-6">VVous avez connu une belle activité aujourd'hui.<br> Consultez votre profil pour voir vos dernières réalisations.
+            </p>
+            <!-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir les Badges</a> -->
           </div>
         </div>
         <div class="col-sm-5 text-center text-sm-left">
@@ -32,7 +292,6 @@
     </div>
   </div>
 
-  <!-- Profit et Ventes -->
   <div class="col-xxl-4 col-lg-12">
     <div class="row">
       <div class="col-lg-6 col-md-12 col-6 mb-6">
@@ -89,21 +348,19 @@
           <div class="card-body px-xl-9">
             <div class="text-center mb-6">
               <div class="btn-group">
-                <button type="button" class="btn btn-outline-primary">
-                  <script>document.write(new Date().getFullYear() - 1)</script>
+                <button type="button" class="btn btn-outline-primary" id="year-button">
+                  <script>document.write(new Date().getFullYear())</script>
                 </button>
                 <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
                   <span class="visually-hidden">Activer le menu déroulant</span>
                 </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:void(0);">2021</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);">2020</a></li>
-                  <li><a class="dropdown-item" href="javascript:void(0);">2019</a></li>
+                <ul id="year-dropdown" class="dropdown-menu">
+                  <li><a class="dropdown-item" href="javascript:void(0);" data-year="">Sélectionnez une année</a></li>
                 </ul>
               </div>
             </div>
             <div id="growthChart"></div>
-            <div class="text-center fw-medium my-6">62% de Croissance en terme de réservation</div>
+            <div class="text-center fw-medium my-6 d-none" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
           </div>
         </div>
       </div>

@@ -71,6 +71,21 @@ public class ReservationsController : BaseController
     }
 
     [Authorize(Roles = "OWNER")]
+    public IActionResult GetReservationsData(string? year)
+    {
+        var data = _reservationService.GetReservationsByYearOrLast12Months(year);
+        return Json(data);
+    }
+
+    [Authorize(Roles = "OWNER")]
+    public async Task<ActionResult<double>> GetReservationGrowth(string year)
+    {
+        double growth = await _reservationService.CalculateReservationGrowthAsync(year);
+        return Ok(growth);
+    }
+
+    // ________________________________________________
+    [Authorize(Roles = "OWNER")]
     // GET: Reservation/Details/5
     public async Task<IActionResult> Details(long? id)
     {
