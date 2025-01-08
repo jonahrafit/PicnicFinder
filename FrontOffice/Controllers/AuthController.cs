@@ -140,17 +140,22 @@ public class AuthController : BaseController
 
     public async Task<IActionResult> Logout()
     {
-        var url = $"{_apiBaseUrl}/auth/logout"; // URL de l'API pour la déconnexion
+        var url = $"{_apiBaseUrl}/auth/logout";
         try
         {
-            // Si nécessaire, vous pouvez envoyer un signal de déconnexion via l'API
+            // Récupérer le token JWT à partir du cookie ou du stockage local
+            var token = Request.Cookies["jwt"]; // ou utilisez LocalStorage pour les applications SPA
+
             using (var httpClient = new HttpClient())
             {
-                // Ici, la méthode POST ou GET dépend de votre API de déconnexion
-                var response = await httpClient.PostAsync(url, null); // S'il n'y a pas de données à envoyer
+                // Ajouter le token JWT dans l'en-tête Authorization
+                httpClient.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                var response = await httpClient.PostAsync(url, null);
+
                 if (response.IsSuccessStatusCode)
                 {
-                    // Si la déconnexion est réussie, supprimez le cookie JWT
                     Response.Cookies.Delete("jwt");
                     return Ok("Déconnexion réussie.");
                 }
@@ -168,9 +173,8 @@ public class AuthController : BaseController
                 ex,
                 "Une erreur est survenue lors de l'appel de l'API de déconnexion."
             );
-            // Log l'exception
+
             Console.WriteLine($"Erreur : {ex.Message}");
-            // Vous pouvez gérer l'exception ici si besoin
             throw;
         }
 

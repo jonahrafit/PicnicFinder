@@ -14,12 +14,12 @@
                 <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Space") ? "active" : "")">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Space" asp-action="Index">Des espaces</a>
                 </li>
-                <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Reservation") ? "active" : "")">
+                <li id="my-favorite" class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Reservation") ? "active" : "")">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">Mes réservations</a>
                 </li>
-                <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Favorite") ? "active" : "")">
+                <!-- <li class="nav-item @((ViewData["ActiveMenu"]?.ToString() == "Favorite") ? "active" : "")">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Favorite" asp-action="Index">Mes favoris</a>
-                </li>
+                </li> -->
                 <li class="nav-item ml-auto">
                     <div class="input-group" style="height: 30px;">
                         <div class="input-group-prepend">
@@ -82,9 +82,67 @@
                     </div>
                     <button type="submit" class="btn btn-success w-100">Se connecter</button>
                     <div class="text-center mt-3">
-                        <a href="#" class="text-decoration-none text-success">Mot de passe oublié?</a>
+                        <!-- <a href="#" class="text-decoration-none text-success">Mot de passe oublié?</a> -->
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal pour l'inscription -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="text-center text-success display-6 mb-4">Inscription</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm" method="POST">
+                    <div id="signupError" class="alert alert-danger text-center" style="display: none;"></div>
+                    <div class="mb-3">
+                        <label for="fullName" class="form-label">Nom complet</label>
+                        <input type="text" id="fullName" name="fullName" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Adresse e-mail</label>
+                        <input type="email" id="email" name="email" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Nom d'utilisateur</label>
+                        <input type="text" id="username" name="username" class="form-control" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Mot de passe</label>
+                        <input type="password" id="password" name="password" class="form-control" value="jonah1234" required />
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Confirmer le mot de passe</label>
+                        <input type="password" id="password_reatpe" name="password_reatpe" class="form-control" value="jonah1234" required />
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success w-100">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de déconnexion -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutModalLabel">Confirmer la déconnexion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Êtes-vous sûr de vouloir vous déconnecter ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" id="confirmLogoutButton" class="btn btn-danger">Confirmer</button>
             </div>
         </div>
     </div>

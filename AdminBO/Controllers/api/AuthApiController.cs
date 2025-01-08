@@ -104,7 +104,7 @@ namespace AdminBO.Controllers.Api
         }
 
         [Authorize]
-        [HttpGet("logout")]
+        [HttpPost("logout")]
         public IActionResult Logout()
         {
             if (Request.Cookies.ContainsKey("jwt"))

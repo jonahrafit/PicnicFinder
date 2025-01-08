@@ -41,7 +41,6 @@ public class AuthController : BaseController
             return View("LoginBasic");
         }
 
-        // Stockage du token côté client (par exemple via un cookie)
         Response.Cookies.Append(
             "jwt",
             token,

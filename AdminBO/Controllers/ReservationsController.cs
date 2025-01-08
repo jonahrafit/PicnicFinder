@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Threading.Tasks;
 using AdminBO.Models;
+using AdminBO.Models.formBody;
 using AdminBO.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -82,6 +83,46 @@ public class ReservationsController : BaseController
     {
         double growth = await _reservationService.CalculateReservationGrowthAsync(year);
         return Ok(growth);
+    }
+
+    [Authorize(Roles = "OWNER")]
+    public IActionResult UpdateStatus([FromBody] ReservationStatusUpdateRequest request)
+    {
+        // Rechercher la réservation par ID et vérifier l'employeeId
+        var reservation = _dbContext.Reservations.FirstOrDefault(r =>
+            r.Id == request.ReservationId && r.EmployeeId == request.EmployeeId
+        );
+        if (reservation == null)
+        {
+            return NotFound(
+                new { Message = "Réservation non trouvée ou l'employé ne correspond pas." }
+            );
+        }
+
+        // Convertir le statut en énumération
+        if (!Enum.TryParse(typeof(ReservationStatus), request.Status, true, out var status))
+        {
+            return BadRequest(new { Message = $"Statut '{request.Status}' invalide." });
+        }
+
+        // Mettre à jour le statut
+        reservation.Status = (ReservationStatus)status;
+
+        // Sauvegarder les modifications
+        try
+        {
+            _dbContext.SaveChanges();
+            return Ok(
+                new { Message = "Statut mis à jour avec succès.", Reservation = reservation }
+            );
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(
+                500,
+                new { Message = "Erreur lors de la mise à jour.", Error = ex.Message }
+            );
+        }
     }
 
     // ________________________________________________

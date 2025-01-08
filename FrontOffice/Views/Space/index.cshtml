@@ -12,13 +12,26 @@
     int pageSize = pagination?.itemsPerPage ?? 10;
 
     var pagedSpaces = spaces?.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(); // Espaces paginés
-
 }
 
 @section Scripts {
     <script>
          document.addEventListener('DOMContentLoaded', function () {
+             const alertMessage = document.createElement('div');
+ 
+             alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
+             alertMessage.setAttribute('role', 'alert');
+             alertMessage.style.display = 'none';
             const modal = document.getElementById('backDropModal');
+            const token = localStorage.getItem("jwt");
+            const isAuthenticated = token ? true : false;
+            if(!isAuthenticated){
+                alertMessage.innerHTML = `
+                        Il faut se connécter avant de faire une réservation !!!  
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    alertMessage.style.display = 'block';
+            }
             modal.addEventListener('show.bs.modal', function (event) {
                 const button = event.relatedTarget; 
                 const spaceId = button.getAttribute('data-space-id');
@@ -28,47 +41,53 @@
 
             const reservationForm = document.getElementById('reservationForm');
             const saveReservationButton = document.getElementById('saveReservation');
-            const alertMessage = document.createElement('div');
+            const buttonValideReservation = document.getElementById('button-valide-reservation');
 
-            alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
-            alertMessage.setAttribute('role', 'alert');
-            alertMessage.style.display = 'none';
-
-            // Ajouter l'alerte avant le formulaire
             reservationForm.prepend(alertMessage);
 
             saveReservationButton.addEventListener('click', function (event) {
                 event.preventDefault();
-
-                const startDateInput = document.getElementById('startDate');
-                const endDateInput = document.getElementById('endDate');
-
-                const startDate = new Date(startDateInput.value);
-                const endDate = new Date(endDateInput.value);
-
-                // Réinitialiser l'alerte
-                alertMessage.style.display = 'none';
-
-                if (!startDateInput.value || !endDateInput.value) {
+                if(!isAuthenticated){
+                    buttonValideReservation.disabled = true;
                     alertMessage.innerHTML = `
-                        Ces deux champs sont obligatoires !  
+                        Il faut se connécter avant de faire une réservation !!!  
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     `;
                     alertMessage.style.display = 'block';
-                    return;
+                }
+                else {
+                    buttonValideReservation.disabled = false;
+                    const startDateInput = document.getElementById('startDate');
+                    const endDateInput = document.getElementById('endDate');
+    
+                    const startDate = new Date(startDateInput.value);
+                    const endDate = new Date(endDateInput.value);
+    
+                    // Réinitialiser l'alerte
+                    alertMessage.style.display = 'none';
+    
+                    if (!startDateInput.value || !endDateInput.value) {
+                        alertMessage.innerHTML = `
+                            Ces deux champs sont obligatoires !  
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+                        alertMessage.style.display = 'block';
+                        return;
+                    }
+    
+                    if (endDate <= startDate) {
+                        alertMessage.innerHTML = `
+                            La date de fin doit être supérieure à la date de début !
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+                        alertMessage.style.display = 'block';
+                        return;
+                    }
+    
+                    // Si tout est valide, soumettre le formulaire
+                    reservationForm.submit();
                 }
 
-                if (endDate <= startDate) {
-                    alertMessage.innerHTML = `
-                        La date de fin doit être supérieure à la date de début !
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    `;
-                    alertMessage.style.display = 'block';
-                    return;
-                }
-
-                // Si tout est valide, soumettre le formulaire
-                reservationForm.submit();
             });
         });
     </script>
@@ -252,6 +271,7 @@
 
     </div>
 </div>
+
 <div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
     <div class="modal-dialog">
          <form class="modal-content" id="reservationForm" method="POST" action="@Url.Action("CreateReservation", "Reservation")">
@@ -277,7 +297,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" class="btn btn-primary" id="saveReservation">Valider la réservation</button>
+                <button type="submit" id="button-valide-reservation" class="btn btn-primary" id="saveReservation">Valider la réservation</button>
             </div>
         </form>
     </div>

@@ -96,13 +96,13 @@
             console.log('Données reçues:', data2);
 
              // Vérifier que la croissance est un nombre valide
-            if (!isNaN(data2.growthPercentage)) {
+            if (!isNaN(data2)) {
                 // Afficher le texte de croissance avec le nombre
                 const growthTextElement = document.getElementById('growth_data_text');
                 const growthNumberElement = document.getElementById('growth_data_number');
                 
-                growthNumberElement.innerText = data2.growthPercentage.toFixed(2);
-                growthTextElement.classList.remove('d-none');
+                growthNumberElement.innerText = data2.toFixed(2);
+                // growthTextElement.classList.remove('d-none');
             } else {
                 console.error('Croissance invalide reçue');
             }
@@ -278,7 +278,7 @@
         <div class="col-sm-7">
           <div class="card-body">
             <h5 class="card-title text-primary mb-3">Bonjour ! 🎉</h5>
-            <p class="mb-6">VVous avez connu une belle activité aujourd'hui.<br> Consultez votre profil pour voir vos dernières réalisations.
+            <p class="mb-6">Vous avez connu une belle activité aujourd'hui.<br> Consultez votre profil pour voir vos dernières réalisations.
             </p>
             <!-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir les Badges</a> -->
           </div>
@@ -325,7 +325,6 @@
     </div>
   </div>
 
-  <!-- Revenus Totaux -->
   <div class="col-12 col-xxl-8">
     <div class="card">
       <div class="row row-bordered g-0">
@@ -360,7 +359,7 @@
               </div>
             </div>
             <div id="growthChart"></div>
-            <div class="text-center fw-medium my-6 d-none" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
+            <div class="text-center fw-medium my-6" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
           </div>
         </div>
       </div>

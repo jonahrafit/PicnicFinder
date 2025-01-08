@@ -24,7 +24,6 @@ function updateLoginButton(token) {
             loginButton.removeAttribute("data-bs-toggle");
             loginButton.removeAttribute("data-bs-target");
 
-            // Afficher le bouton de déconnexion
             loginButton.style.display = "none";
             logoutButton.style.display = "inline-block";
         }
@@ -45,6 +44,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const signupButton = document.getElementById("signupButton");
     const userInfoButton = document.getElementById("userInfoButton");
     const logoutButton = document.getElementById("logoutButton");
+    const myFavorite = document.getElementById("my-favorite");
+    const logoutModal = new bootstrap.Modal(document.getElementById('logoutModal'));
+    const confirmLogoutButton = document.getElementById('confirmLogoutButton');
 
     if (isAuthenticated) {
         const userInfo = parseJwt(token);
@@ -53,26 +55,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
         loginSection.style.display = "none";
         userSection.style.display = "flex";
-
-        // Mettre à jour le bouton userInfo avec les données utilisateur
+        myFavorite.style.display = "block";
     } else {
         loginSection.style.display = "flex";
         userSection.style.display = "none";
+        myFavorite.style.display = "none";
     }
 
-    logoutButton.addEventListener('click', async function () {
+    // Ajouter un écouteur d'événement au bouton de déconnexion
+    logoutButton.addEventListener('click', function () {
+        // Ouvrir le modal de déconnexion
+        logoutModal.show();
+    });
+
+    // Ajouter un écouteur d'événement au bouton de confirmation de déconnexion
+    confirmLogoutButton.addEventListener('click', async function () {
         try {
+            // Fermer le modal après la confirmation
+            logoutModal.hide();
             const response = await fetch('/Auth/Logout', {
                 method: 'GET', // La méthode correspond à celle de votre API
                 credentials: 'include', // Inclut les cookies dans la requête
             });
-
+            console.log(response);
             if (response.ok) {
                 localStorage.removeItem("jwt"); // Supprimer le JWT du localStorage
+                console.log("Déconnexion réussie !");
                 loginSection.style.display = "flex";
                 userSection.style.display = "none";
-                localhost.removeItem("jwt");
-                console.log("Déconnexion réussie !");
+                myFavorite.style.display = "none";
             } else {
                 // Gérer les erreurs éventuelles
                 console.error("Erreur lors de la déconnexion :", response.statusText);
@@ -104,6 +115,8 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('jwt', token);
 
             if (token) {
+
+                location.reload();
                 console.log("Authentification réussie!");
 
                 // Stocker le token dans les cookies

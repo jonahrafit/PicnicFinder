@@ -221,9 +221,6 @@ namespace AdminBO.Services
             int currentYearReservations = await GetTotalReservationsByYearAsync(currentYear);
             int lastYearReservations = await GetTotalReservationsByYearAsync(currentYear - 1);
 
-            Console.WriteLine(currentYearReservations);
-            Console.WriteLine(lastYearReservations);
-
             // Calculer la croissance en pourcentage
             double growthPercentage = 0;
 
@@ -244,11 +241,12 @@ namespace AdminBO.Services
                 growthPercentage = -100; // Croissance négative, aucune réservation cette année
             }
 
-            Console.WriteLine(growthPercentage);
             return growthPercentage;
         }
 
         // _______________________
+        // ______________________
+        // ______________________
         // ______________________
         public async Task<List<Reservation>> GetAllReservationsAsync()
         {
