@@ -10,11 +10,30 @@
     <p class="lead text-center">@space.description</p>
 
     <div class="row">
-        <div class="col-md-6">
-            <!-- Informations principales -->
-            <div class="card mb-4">
+        <div class="col-md-8">
+            <!-- Photos -->
+            <h3>Photos:</h3>
+            <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+               @foreach (var photo in space.photos)
+                {
+                    <div class="carousel-item">
+                        <img src="@photo" class="d-block w-100" alt="Image 1">
+                    </div>
+                }
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+        </div>
+        <div class="col-md-4">
                 <div class="card-body">
-                    <h5 class="card-title">Details</h5>
                     <!-- <p><strong>Capacity:</strong> @space.capacity</p>
                     <p><strong>Status:</strong> @space.status</p>
                     <p><strong>Created At:</strong> @space.createdAt</p>
@@ -23,25 +42,12 @@
                     <p><strong>Latitude:</strong> @space.latitude</p>
                     <p><strong>Longitude:</strong> @space.longitude</p>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <!-- Photos -->
-            <h3>Photos:</h3>
-            <ul class="list-unstyled">
-                @foreach (var photo in space.photos)
-                {
-                    <li>
-                        <img src="@photo" class="img-fluid rounded mb-3" alt="Space Image">
-                    </li>
-                }
-            </ul>
         </div>
     </div>
 
     <!-- Owner info -->
     <div class="mt-4">
-        @if (space.owner != null)
+        @if (space.ownerId != null)
         {
             <p><strong>Owner ID:</strong> @space.ownerId</p>
         }
@@ -51,3 +57,4 @@
         }
     </div>
 </div>
+

@@ -330,8 +330,6 @@
             .replace(' ', ''); // Retirer l'espace entre l'heure et la date
     }
 
-    
-    // Fonction pour obtenir le mois et l'année
     function getMonthYearText(month, year) {
         const months = [
             "Janvier", "Février", "Mars", "Avril", "Mai", "Juin", 
@@ -340,7 +338,6 @@
         return `${months[month - 1]} ${year}`;
     }
     
-    // Fonction pour convertir le statut numérique en texte
     function getStatusText(status) {
         switch (status) {
             case 0:
@@ -364,7 +361,6 @@
             const { jsPDF } = window.jspdf;
             const doc = new jsPDF();
 
-            // Ajouter un titre en gras
             doc.setFont('helvetica', 'bold');
             doc.setFontSize(16);
             doc.text('Liste des Réservations', 20, 20);  // Titre principal

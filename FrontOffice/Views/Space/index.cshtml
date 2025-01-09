@@ -236,32 +236,28 @@
                 <div class="card-columns">
                     @foreach (var space in pagedSpaces)
                     {
-                        <div class="card">
-                            <div class="card-img-container">
+                        <div class="card shadow-lg rounded-3">
+                            <div class="card-img-container overflow-hidden rounded-top">
                                 <img src="@space.photos[0]" class="card-img-top" alt="Space Image">
-                                <!-- <span class="status-badge">@space.status</span> -->
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <a href="@Url.Action("Details", "Space", new { id = space.id })">@space.name</a>
+                            <div class="card-body text-center">
+                                <h5 class="card-title mb-3">
+                                    <a href="@Url.Action("Details", "Space", new { id = space.id })" class="text-decoration-none text-dark">@space.name</a>
                                 </h5>
-                                <h5 class="card-title">@space.name</h5>
-                                <p class="card-text">@space.description</p>
-                                <p class="capacity">Capacité: @space.capacity personnes</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <button 
-                                        class="btn btn-primary" 
-                                        data-bs-toggle="modal" 
-                                        data-bs-target="#backDropModal" 
-                                        data-space-name="@space.name"
-                                        data-space-id="@space.id">
-                                        Réserver
-                                    </button>
-                                </div>
+                                <p class="card-text mb-3">@space.description</p>
+                                <p class="capacity mb-4">Capacité : @space.capacity personnes</p>
+
+                                <button 
+                                    class="btn btn-primary w-50" 
+                                    data-bs-toggle="modal" 
+                                    data-bs-target="#backDropModal" 
+                                    data-space-name="@space.name"
+                                    data-space-id="@space.id">
+                                    Réserver
+                                </button>
                             </div>
                         </div>
+
                     }
                 </div>
 

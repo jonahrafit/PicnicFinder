@@ -62,12 +62,22 @@ public class ReservationController : BaseController
             List<ReservationViewModel>
         >(reservationsJson);
 
+        var paginationJson = result?.pagination?.ToString();
+        var pagination = Newtonsoft.Json.JsonConvert.DeserializeObject<PaginationModel>(
+            paginationJson
+        );
+
         // Passer les données à la vue
         ViewData["JsonReservationList"] = reservations;
         ViewData["Pagination"] = result?.pagination;
 
+        var viewModel = new ViewModelReservationList
+        {
+            Reservations = reservations,
+            Pagination = pagination,
+        };
         // Retourner la vue
-        return View(reservations);
+        return View(viewModel);
     }
 
     [HttpPost]
