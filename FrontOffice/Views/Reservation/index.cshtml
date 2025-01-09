@@ -10,8 +10,8 @@
         <thead class="table-dark">
             <tr>
                 <th>Espace</th>
-                <th>Date de début</th>
-                <th>Date de fin</th>
+                <th>Date d'entrée</th>
+                <th>Date de sortie</th>
                 <th>Statut</th>
             </tr>
         </thead>
@@ -20,15 +20,15 @@
             {
                 <tr>
                     <td>@reservation.Space.Name</td>
-                    <td>@reservation.StartDate.ToString("dd/MM/yyyy HH:mm")</td>
-                    <td>@reservation.EndDate.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@reservation.StartDate.ToString("ddd dd/MM/yyyy HH'h'")</td>
+                    <td>@reservation.EndDate.ToString("ddd dd/MM/yyyy HH'h'")</td>
                     <td>
                         @if (reservation.Status != null)
                         {
                             <span class="badge 
                                 @(reservation.Status == "PENDING" ? "bg-warning text-dark" : 
-                                  reservation.Status == "APPROVED" ? "bg-success" : 
-                                  reservation.Status == "REJECTED" ? "bg-danger" : "bg-secondary")">
+                                  reservation.Status == "CONFIRMED" ? "bg-success" : 
+                                  reservation.Status == "CANCELLED" ? "bg-danger" : "bg-secondary")">
                                 @reservation.Status
                             </span>
                         }

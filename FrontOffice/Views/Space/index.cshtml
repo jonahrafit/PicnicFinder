@@ -18,14 +18,59 @@
     <script>
          document.addEventListener('DOMContentLoaded', function () {
              const alertMessage = document.createElement('div');
- 
              alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
              alertMessage.setAttribute('role', 'alert');
              alertMessage.style.display = 'none';
             const modal = document.getElementById('backDropModal');
+
+
+            function updateDurationDisplay() {
+                const startDateInput = document.getElementById("startDate").value;
+                const endDateInput = document.getElementById("endDate").value;
+                const durationDisplay = document.getElementById("durationDisplay");
+
+                if (startDateInput && endDateInput) {
+                    const startDate = new Date(startDateInput);
+                    const endDate = new Date(endDateInput);
+                    if (endDate > startDate) {
+                        const duration = endDate - startDate;
+                        const hours = Math.floor(duration / (1000 * 60 * 60));
+                        const days = Math.floor(hours / 24);
+                        const remainingHours = hours % 24;
+
+                        // Afficher la durée
+                        const durationText = days > 0 
+                            ? `${days}j et ${remainingHours}h`
+                            : `${hours}h`;
+                        durationDisplay.textContent = `Durée : ${durationText}`;
+
+                        // Vérifier si la durée est inférieure à 3 heures
+                        if (hours < 3) {
+                            alertMessage.textContent = "La durée doit être d'au moins 3 heures.";
+                            durationDisplay.style.color = "red";
+                        } else {
+                            alertMessage.textContent = "";
+                            durationDisplay.style.color = "green";
+                        }
+                    } else {
+                        alertMessage.textContent = "La date de fin doit être supérieure à la date de début.";
+                        durationDisplay.textContent = "";
+                    }
+                }
+            }
+
+            // Ajouter des écouteurs d'événements pour la mise à jour en temps réel
+            document.getElementById("startDate").addEventListener("change", updateDurationDisplay);
+            document.getElementById("endDate").addEventListener("change", updateDurationDisplay);
+
+            const reservationForm = document.getElementById('reservationForm');
+            const saveReservationButton = document.getElementById('saveReservation');
+            const buttonValideReservation = document.getElementById('button-valide-reservation');
+
             const token = localStorage.getItem("jwt");
             const isAuthenticated = token ? true : false;
             if(!isAuthenticated){
+                buttonValideReservation.disabled = true;
                 alertMessage.innerHTML = `
                         Il faut se connécter avant de faire une réservation !!!  
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -38,10 +83,6 @@
                 const inputSpaceId = document.getElementById('inputSpaceId');
                 inputSpaceId.value = spaceId || '';
             });
-
-            const reservationForm = document.getElementById('reservationForm');
-            const saveReservationButton = document.getElementById('saveReservation');
-            const buttonValideReservation = document.getElementById('button-valide-reservation');
 
             reservationForm.prepend(alertMessage);
 
@@ -89,6 +130,7 @@
                 }
 
             });
+
         });
     </script>
 }
@@ -197,7 +239,7 @@
                         <div class="card">
                             <div class="card-img-container">
                                 <img src="@space.photos[0]" class="card-img-top" alt="Space Image">
-                                <span class="status-badge">@space.status</span>
+                                <!-- <span class="status-badge">@space.status</span> -->
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title">
@@ -284,14 +326,26 @@
                 <div class="row g-6">
                     <div id="alertMessage"></div>
                 </div>
-                <div class="row g-6">
-                    <div class="col mb-0">
-                        <label for="startDate" class="form-label">Date de début</label>
-                        <input type="datetime-local" id="startDate" name="StartDate" class="form-control">
+
+                <div class="modal-body">
+                    <input type="hidden" id="inputSpaceId" name="SpaceId">
+                    <div class="row g-6">
+                        <div id="alertMessage" class="text-danger"></div>
                     </div>
-                    <div class="col mb-0">
-                        <label for="endDate" class="form-label">Date de fin</label>
-                        <input type="datetime-local" id="endDate" name="EndDate" class="form-control">
+
+                    <div class="row g-6">
+                        <h3 id="durationDisplay"></h3>
+                    </div>
+
+                    <div class="row g-6">
+                        <div class="col mb-0">
+                            <label for="startDate" class="form-label">Date de début</label>
+                            <input type="datetime-local" id="startDate" name="StartDate" class="form-control">
+                        </div>
+                        <div class="col mb-0">
+                            <label for="endDate" class="form-label">Date de fin</label>
+                            <input type="datetime-local" id="endDate" name="EndDate" class="form-control">
+                        </div>
                     </div>
                 </div>
             </div>

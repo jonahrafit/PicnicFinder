@@ -48,7 +48,8 @@
     "highlight.js": "~11.9.0",
     "jquery": "~3.7.1",
     "masonry-layout": "~4.2.2",
-    "perfect-scrollbar": "~1.5.5"
+    "perfect-scrollbar": "~1.5.5",
+    "sass": "^1.76.0"
   },
   "devDependencies": {
     "@babel/core": "~7.23.9",

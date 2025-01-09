@@ -26,37 +26,34 @@ public class ReservationsController : BaseController
     }
 
     [Authorize(Roles = "OWNER")]
-    public async Task<ActionResult<IEnumerable<Reservation>>> Index(int page = 1, int pageSize = 10)
+    public async Task<ActionResult<IEnumerable<ViewReservation>>> Index(
+        int page = 1,
+        int pageSize = 3,
+        int monthFilter = 0,
+        int yearFilter = 2025,
+        string status = "TOUS"
+    )
     {
-        Console.WriteLine("-------------------'--------------------");
         long ownerId = GetCurrentUserId();
-        var reservations = await _reservationService.GetReservationsPagedAsyncByOwner(
-            page,
-            pageSize,
-            ownerId
+        ViewData["monthFilter"] = monthFilter;
+        ViewData["statusFilter"] = status;
+        ViewData["yearFilter"] = yearFilter;
+
+        // Appel de la méthode GetAllReservationsByFilter avec pagination
+        var allReservations = _reservationService.GetAllReservationsByFilter(
+            ownerId,
+            monthFilter,
+            yearFilter,
+            status
         );
 
-        foreach (var reserv in reservations)
-        {
-            Console.WriteLine(reserv.ToString());
-        }
+        // Pagination des résultats
+        var totalReservations = allReservations.Count;
 
-        if (reservations == null || reservations.Count == 0)
-        {
-            return NotFound("Aucun reservation trouvé.");
-        }
+        // Appliquer la pagination sur la liste des réservations
+        var pagedReservations = allReservations.Skip((page - 1) * pageSize).Take(pageSize).ToList();
 
-        // Récupère la liste des réservations
-        var all_reservations = await _reservationService.GetReservationsAsyncByOwner(ownerId);
-
-        // Si aucune réservation n'est trouvée
-        if (all_reservations == null || all_reservations.Count == 0)
-        {
-            return NotFound("Aucune réservation trouvée.");
-        }
-
-        var totalReservations = reservations.Count;
-
+        // Créer le modèle de pagination
         var paginationModel = new PaginationModel
         {
             CurrentPage = page,
@@ -65,9 +62,12 @@ public class ReservationsController : BaseController
             TotalPages = (int)Math.Ceiling((double)totalReservations / pageSize),
         };
 
-        Console.WriteLine(paginationModel.ToString());
-        var result = new { Reservations = reservations, Pagination = paginationModel };
+        // Résultat combiné
+        var result = new { Reservations = pagedReservations, Pagination = paginationModel };
 
+        // Passer l'ownerId à la vue
+        ViewData["ownerId"] = ownerId;
+        ViewData["totalReservations"] = totalReservations;
         return View("Basic", result);
     }
 
@@ -99,21 +99,45 @@ public class ReservationsController : BaseController
             );
         }
 
+        // Récupérer l'employé à partir de l'EmployeeId
+        var employee = _dbContext.Users.FirstOrDefault(e => e.Id == request.EmployeeId);
+        if (employee == null)
+        {
+            return NotFound(new { Message = "Employé non trouvé." });
+        }
+
         // Convertir le statut en énumération
         if (!Enum.TryParse(typeof(ReservationStatus), request.Status, true, out var status))
         {
             return BadRequest(new { Message = $"Statut '{request.Status}' invalide." });
         }
 
-        // Mettre à jour le statut
+        // Mettre à jour le statut de la réservation
         reservation.Status = (ReservationStatus)status;
 
         // Sauvegarder les modifications
         try
         {
             _dbContext.SaveChanges();
+
+            // Si l'opération réussit, envoyer un e-mail à l'employé
+            bool send_mail = EmailService.SendEmail(
+                employee.Email, // Utilisez l'email de l'employé
+                "Mise à jour de votre réservation",
+                $"Votre réservation a été mise à jour avec le statut : {reservation.Status}. Merci pour votre patience."
+            );
+
+            if (!send_mail)
+            {
+                return StatusCode(500, new { Message = "Erreur lors de l'envoi de l'e-mail." });
+            }
+
             return Ok(
-                new { Message = "Statut mis à jour avec succès.", Reservation = reservation }
+                new
+                {
+                    Message = "Statut mis à jour avec succès et e-mail envoyé.",
+                    Reservation = reservation,
+                }
             );
         }
         catch (Exception ex)
@@ -125,6 +149,28 @@ public class ReservationsController : BaseController
         }
     }
 
+    [Authorize(Roles = "OWNER")]
+    public async Task<ActionResult<IEnumerable<ViewReservation>>> AllReservationToPdf(
+        int monthFilter = 0,
+        int yearFilter = 2025,
+        string status = "TOUS"
+    )
+    {
+        long ownerId = GetCurrentUserId();
+
+        var allReservations = _reservationService.GetAllReservationsByFilter(
+            ownerId,
+            monthFilter,
+            yearFilter,
+            status
+        );
+
+        return allReservations;
+    }
+
+    // ________________________________________________
+    // ________________________________________________
+    // ________________________________________________
     // ________________________________________________
     [Authorize(Roles = "OWNER")]
     // GET: Reservation/Details/5

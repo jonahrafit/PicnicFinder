@@ -676,3 +676,26 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JAr
 2025-01-08 19:17:39.679 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 39.4827ms
 2025-01-08 19:17:39.680 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
 2025-01-08 19:17:39.680 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=1 - 200 null text/html; charset=utf-8 41.6543ms
+2025-01-08 21:53:41.160 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-08 21:53:41.170 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-08 21:53:41.175 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-08 21:53:41.196 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-08 21:53:41.215 +03:00 [INF] Executed ViewResult - view Index executed in 34.218ms.
+2025-01-08 21:53:41.216 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 38.7052ms
+2025-01-08 21:53:41.216 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-08 21:53:41.217 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 58.2928ms
+2025-01-08 21:53:41.229 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-08 21:53:41.229 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - null null
+2025-01-08 21:53:41.232 +03:00 [INF] The file /FrontOffice.styles.css was not modified
+2025-01-08 21:53:41.233 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - 304 null text/css 3.9768ms
+2025-01-08 21:53:41.262 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-08 21:53:41.262 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 33.5782ms
+2025-01-08 21:53:41.311 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-08 21:53:41.312 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-08 21:53:41.323 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-08 21:53:41.326 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 14.1507ms
+2025-01-08 21:53:41.327 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=EBd3GhQgmBE1sheYu_Q4wQHaxI32ZVEqeBAaItlkXnk - null null
+2025-01-08 21:53:41.328 +03:00 [INF] The file /js/site.js was not modified
+2025-01-08 21:53:41.327 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-08 21:53:41.330 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=EBd3GhQgmBE1sheYu_Q4wQHaxI32ZVEqeBAaItlkXnk - 304 null text/javascript 3.335ms
+2025-01-08 21:53:41.330 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 18.4206ms

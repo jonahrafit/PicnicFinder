@@ -54,9 +54,12 @@ namespace AdminBO.Services
                 return new List<Reservation>();
             }
 
-            var reservationsQuery = _context.Reservations.Where(reservation =>
-                spaces.Select(space => space.Id).Contains(reservation.SpaceId)
-            );
+            var reservationsQuery = _context
+                .Reservations.Include(r => r.Employee)
+                .Include(r => r.Space)
+                .Where(reservation =>
+                    spaces.Select(space => space.Id).Contains(reservation.SpaceId)
+                );
 
             return await reservationsQuery.ToListAsync();
         }
@@ -156,9 +159,7 @@ namespace AdminBO.Services
                     if (!string.IsNullOrEmpty(year) && int.TryParse(year, out int parsedYear))
                     {
                         command.Parameters.AddWithValue("@Year", parsedYear);
-                        // Construire et afficher la requête SQL finale
-                        string sqlQuery = query.Replace("@Year", parsedYear.ToString());
-                        // Console.WriteLine("SQL Query: " + sqlQuery);
+                        // string sqlQuery = query.Replace("@Year", parsedYear.ToString());
                     }
 
                     connection.Open();
@@ -233,15 +234,101 @@ namespace AdminBO.Services
             else if (lastYearReservations == 0 && currentYearReservations > 0)
             {
                 // Si aucune réservation l'année précédente mais des réservations cette année
-                growthPercentage = 100; // Croissance de 100% (nouveaux départs)
+                growthPercentage = 100;
             }
             else
             {
                 // Cas où aucune réservation n'est présente pour l'année en cours
-                growthPercentage = -100; // Croissance négative, aucune réservation cette année
+                growthPercentage = 0; // aucune réservation cette année
             }
 
             return growthPercentage;
+        }
+
+        // Construire la requête sans modifier manuellement la chaîne SQL
+
+        public List<ViewReservation> GetAllReservationsByFilter(
+            long ownerId,
+            int monthFilter,
+            int yearFilter,
+            string status
+        )
+        {
+            var reservations = new List<ViewReservation>();
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                // Construction de la requête SQL de base
+                string query =
+                    "SELECT r.Id, r.EmployeeId, r.EmployeeName,r.OwnerId, r.OwnerName,r.SpaceId, r.SpaceName, r.ReservationDate, r.StartDate, r.EndDate, r.Status, r.OwnerId "
+                    + "FROM View_Reservation r "
+                    + "WHERE r.OwnerId = @OwnerId AND YEAR(r.StartDate) = @YearFilter";
+                if (monthFilter > 0)
+                {
+                    query += " AND MONTH(r.StartDate) = @MonthFilter";
+                }
+                if (status != "TOUS")
+                {
+                    query += " AND r.Status = @Status";
+                }
+
+                // Exécution de la requête avec paramètres
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@OwnerId", ownerId);
+                    command.Parameters.AddWithValue("@YearFilter", yearFilter);
+
+                    if (monthFilter > 0)
+                    {
+                        command.Parameters.AddWithValue("@MonthFilter", monthFilter);
+                    }
+                    if (status != "TOUS")
+                    {
+                        command.Parameters.AddWithValue(
+                            "@Status",
+                            Enum.Parse<ReservationStatus>(status)
+                        );
+                    }
+                    // // Afficher la requête finale avec les valeurs des paramètres
+                    // Console.WriteLine("Requête SQL :");
+                    // Console.WriteLine(query);
+
+                    // Console.WriteLine("Valeurs des paramètres :");
+                    // foreach (SqlParameter parameter in command.Parameters)
+                    // {
+                    //     Console.WriteLine($"{parameter.ParameterName} = {parameter.Value}");
+                    // }
+
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ViewReservation temp = new ViewReservation
+                            {
+                                Id = Convert.ToInt64(reader["Id"]),
+                                EmployeeId = Convert.ToInt64(reader["EmployeeId"]),
+                                EmployeeName = reader["EmployeeName"].ToString(),
+                                OwnerId = Convert.ToInt64(reader["OwnerId"]),
+                                OwnerName = reader["OwnerName"].ToString(),
+                                SpaceId = Convert.ToInt64(reader["SpaceId"]),
+                                SpaceName = reader["SpaceName"].ToString(),
+                                ReservationDate = Convert.ToDateTime(reader["ReservationDate"]),
+                                StartDate = Convert.ToDateTime(reader["StartDate"]),
+                                EndDate = Convert.ToDateTime(reader["EndDate"]),
+                                Status = (ReservationStatus)
+                                    Enum.Parse(
+                                        typeof(ReservationStatus),
+                                        reader["Status"].ToString()
+                                    ),
+                            };
+                            reservations.Add(temp);
+                        }
+                    }
+                }
+            }
+
+            return reservations;
         }
 
         // _______________________
