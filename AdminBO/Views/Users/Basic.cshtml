@@ -4,8 +4,22 @@
   ViewData["Title"] = "Proprietaires";
 }
 <!-- Bootstrap Table with Header - Light -->
-<div class="card">
-  <h5 class="card-header">Listes des Proprietaires</h5>
+
+<div class="row">
+  <div class="d-flex justify-between align-items-center">
+    <div class="col-2">
+      <h5 class="card-header">Listes des Propriétaires</h5>
+    </div>
+    <div class="col-4">
+      <!-- Bouton pour ouvrir le modal -->
+      <button class="btn btn-primary d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#importCsvModal">
+        <i class='bx bx-file' style="margin-right: 8px;"></i>
+        Importer CSV
+      </button>
+    </div>
+  </div>
+</div>
+
   <div class="table-responsive text-nowrap">
     <table class="table">
       <thead class="table-light">
@@ -42,5 +56,29 @@
         }
       </tbody>
     </table>
+  </div>
+
+
+<div class="modal fade" id="importCsvModal" tabindex="-1" aria-labelledby="importCsvModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="importCsvModalLabel">Importer un fichier CSV</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Importer un fichier CSV pour pouvoir insérer les données des utilisateurs.</p>
+        <form id="importCsvForm" action="/Users/ImportCsv" method="POST" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label for="csvFile" class="form-label">Choisir un fichier CSV</label>
+            <input type="file" class="form-control" id="csvFile" name="file" accept=".csv">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        <button type="submit" form="importCsvForm" class="btn btn-primary">Importer</button>
+      </div>
+    </div>
   </div>
 </div>

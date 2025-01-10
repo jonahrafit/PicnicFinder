@@ -64,6 +64,7 @@ builder
 builder.Services.AddScoped<MenuService>();
 builder.Services.AddScoped<SpaceService>();
 builder.Services.AddScoped<ReservationService>();
+builder.Services.AddScoped<CsvImportService>();
 
 // Configuration de CORS
 builder.Services.AddCors(options =>

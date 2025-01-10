@@ -11,9 +11,11 @@ public class UsersController : BaseController
 {
     private readonly IConfiguration _configuration;
     private readonly UserService _userService;
+    private readonly CsvImportService _csvImportService;
     private readonly AdminBOContext _dbContext;
 
     public UsersController(
+        CsvImportService csvImportService,
         ILogger<UsersController> logger,
         IConfiguration configuration,
         AdminBOContext dbContext
@@ -22,6 +24,35 @@ public class UsersController : BaseController
     {
         _dbContext = dbContext;
         _userService = new UserService(_configuration, _dbContext);
+        _csvImportService = csvImportService;
+    }
+
+    [Authorize(Roles = "ADMIN")]
+    public async Task<IActionResult> ImportCsv([FromForm] IFormFile file)
+    {
+        if (file == null || file.Length == 0)
+        {
+            return BadRequest("Le fichier CSV est requis.");
+        }
+        // Vérification de l'extension
+        var fileExtension = Path.GetExtension(file.FileName);
+        if (!string.Equals(fileExtension, ".csv", StringComparison.OrdinalIgnoreCase))
+        {
+            return BadRequest("Seuls les fichiers avec l'extension .csv sont autorisés.");
+        }
+        try
+        {
+            using var stream = file.OpenReadStream();
+            await _csvImportService.ImportUsersFromCsvAsync(stream);
+
+            // Ajouter un message de succès dans TempData
+            TempData["SuccessMessage"] = "Importation réussie.";
+            return RedirectToAction("Index");
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, $"Une erreur est survenue : {ex.Message}");
+        }
     }
 
     [Authorize(Roles = "ADMIN")]

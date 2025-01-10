@@ -47,7 +47,6 @@ public class UserService
         }
     }
 
-    // Mettre � jour un euser
     public async Task UpdateUserAsync(User user)
     {
         _context.Update(user);

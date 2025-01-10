@@ -121,7 +121,7 @@
                         <td>
                             @if (reservation.Status.ToString() == "PENDING")
                             {
-                                <button class="btn btn-success btn-sm text-dark" onclick="approveReservation(@reservation.Id, @reservation.EmployeeId)">Approuver</button>
+                                <button class="btn btn-success btn-sm text-dark" onclick="approveReservation(@reservation.Id, @reservation.EmployeeId)">Approuver</button><br>
                                 <button class="btn btn-danger btn-sm text-dark" onclick="rejectReservation(@reservation.Id, @reservation.EmployeeId)">Refuser</button>
                             }
                             else

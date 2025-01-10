@@ -3,7 +3,8 @@
 
 @{
     var name = httpContextAccessor.HttpContext.User.Identity.Name;
-    Console.WriteLine(name);
+    var userRole = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Role)?.Value;
+    Console.WriteLine(userRole);
 }
 @{
   ViewData["Title"] = "Tableau de bord - Analytique";
@@ -292,7 +293,7 @@
     </div>
   </div>
 
-  <div class="col-xxl-4 col-lg-12">
+  <!-- <div class="col-xxl-4 col-lg-12">
     <div class="row">
       <div class="col-lg-6 col-md-12 col-6 mb-6">
         <div class="card h-100">
@@ -323,51 +324,56 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-12 col-xxl-8">
-    <div class="card">
-      <div class="row row-bordered g-0">
-        <div class="col-lg-8">
-          <div class="card-header d-flex align-items-center justify-content-between">
-            <h5 class="m-0 me-2">Nombre des réservations</h5>
-            <div class="dropdown">
-              <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown">
-                <i class="bx bx-dots-vertical-rounded bx-lg text-muted"></i>
-              </button>
-              <div class="dropdown-menu dropdown-menu-end">
-                <a class="dropdown-item" href="javascript:void(0);">Actualiser</a>
-                <a class="dropdown-item" href="javascript:void(0);">Partager</a>
+  </div> -->
+@if (httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+  {   
+    @if (userRole == "OWNER")
+    {
+        <div class="col-12 col-xxl-8">
+          <div class="card">
+            <div class="row row-bordered g-0">
+              <div class="col-lg-8">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                  <h5 class="m-0 me-2">Nombre des réservations</h5>
+                  <div class="dropdown">
+                    <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown">
+                      <i class="bx bx-dots-vertical-rounded bx-lg text-muted"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                      <a class="dropdown-item" href="javascript:void(0);">Actualiser</a>
+                      <a class="dropdown-item" href="javascript:void(0);">Partager</a>
+                    </div>
+                  </div>
+                </div>
+                <div id="totalRevenueChart" class="px-3"></div>
+              </div>
+              <div class="col-lg-4 d-flex align-items-center">
+                <div class="card-body px-xl-9">
+                  <div class="text-center mb-6">
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-outline-primary" id="year-button">
+                        <script>document.write(new Date().getFullYear())</script>
+                      </button>
+                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                        <span class="visually-hidden">Activer le menu déroulant</span>
+                      </button>
+                      <ul id="year-dropdown" class="dropdown-menu">
+                        <li><a class="dropdown-item" href="javascript:void(0);" data-year="">Sélectionnez une année</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div id="growthChart"></div>
+                  <div class="text-center fw-medium my-6" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
+                </div>
               </div>
             </div>
           </div>
-          <div id="totalRevenueChart" class="px-3"></div>
         </div>
-        <div class="col-lg-4 d-flex align-items-center">
-          <div class="card-body px-xl-9">
-            <div class="text-center mb-6">
-              <div class="btn-group">
-                <button type="button" class="btn btn-outline-primary" id="year-button">
-                  <script>document.write(new Date().getFullYear())</script>
-                </button>
-                <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
-                  <span class="visually-hidden">Activer le menu déroulant</span>
-                </button>
-                <ul id="year-dropdown" class="dropdown-menu">
-                  <li><a class="dropdown-item" href="javascript:void(0);" data-year="">Sélectionnez une année</a></li>
-                </ul>
-              </div>
-            </div>
-            <div id="growthChart"></div>
-            <div class="text-center fw-medium my-6" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+    }  
+  }
 
   <!-- Paiements et Transactions -->
-  <div class="col-12 col-md-8 col-lg-12 col-xxl-4">
+  <!-- <div class="col-12 col-md-8 col-lg-12 col-xxl-4">
     <div class="row">
       <div class="col-6 mb-6">
         <div class="card h-100">
@@ -397,7 +403,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
 <!-- Statistiques des Commandes -->
 <!-- <div class="row">
