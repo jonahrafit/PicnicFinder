@@ -16,19 +16,16 @@ public class UserService
         _context = dbContext;
     }
 
-    // Retourner tous les eusers
     public async Task<List<User>> GetAllUsersAsync()
     {
         return await _context.Users.ToListAsync();
     }
 
-    // Retourner un euser par ID
     public async Task<User?> GetUserByIdAsync(long id)
     {
         return await _context.Users.FirstOrDefaultAsync(s => s.Id == id);
     }
 
-    // Créer un nouvel euser
     public async Task CreateUserAsync(User user)
     {
         if (user == null)
@@ -53,7 +50,6 @@ public class UserService
         await _context.SaveChangesAsync();
     }
 
-    // Supprimer un euser
     public async Task DeleteUserAsync(long id)
     {
         var user = await _context.Users.FindAsync(id);
@@ -64,7 +60,6 @@ public class UserService
         }
     }
 
-    // V�rifier si un euser existe
     public async Task<bool> UserExistsAsync(long id)
     {
         return await _context.Users.AnyAsync(e => e.Id == id);

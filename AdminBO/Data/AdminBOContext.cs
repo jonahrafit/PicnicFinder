@@ -7,11 +7,14 @@ public class AdminBOContext : DbContext
 
     private readonly IConfiguration _configuration;
     public DbSet<User> Users { get; set; }
-    public DbSet<Space> Space { get; set; }
+    public DbSet<Space> Spaces { get; set; }
     public DbSet<Reservation> Reservations { get; set; }
     public DbSet<Report> Reports { get; set; }
     public DbSet<Menu> Menus { get; set; }
     public DbSet<Favorite> Favorites { get; set; }
+    public DbSet<SpaceActivity> SpaceActivities { get; set; }
+    public DbSet<CategoryActivity> CategoryActivities { get; set; }
+    public DbSet<SpaceActivityLink> SpaceActivityLinks { get; set; }
 
     public AdminBOContext(DbContextOptions<AdminBOContext> options, IConfiguration configuration)
         : base(options)
@@ -21,7 +24,6 @@ public class AdminBOContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        // Si la chaîne de connexion n'est pas configurée via AddDbContext
         if (!optionsBuilder.IsConfigured)
         {
             optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
@@ -67,5 +69,37 @@ public class AdminBOContext : DbContext
             .WithMany() // Il n'y a pas de collection inverse dans User
             .HasForeignKey(s => s.OwnerId) // Clé étrangère dans Space
             .OnDelete(DeleteBehavior.Restrict);
+
+        modelBuilder.Entity<SpaceActivity>()
+            .HasOne(sa => sa.CategoryActivity)
+            .WithMany()
+            .HasForeignKey(sa => sa.CategoryId)
+            .OnDelete(DeleteBehavior.Restrict); // Restriction sur la suppression d'une catégorie liée
+
+         modelBuilder.Entity<SpaceActivityLink>()
+            .HasKey(sal => new { sal.SpaceId, sal.SpaceActivityId });
+
+        modelBuilder.Entity<SpaceActivityLink>()
+            .HasOne(sal => sal.Space)
+            .WithMany(s => s.SpaceActivityLinks)
+            .HasForeignKey(sal => sal.SpaceId);
+
+        modelBuilder.Entity<SpaceActivityLink>()
+            .HasOne(sal => sal.SpaceActivity)
+            .WithMany(sa => sa.SpaceActivityLinks)
+            .HasForeignKey(sal => sal.SpaceActivityId);
+
+        // AJOUT INDEX POUR OPTIMISER LA REQUETTE
+        modelBuilder.Entity<Space>()
+            .HasIndex(s => new { s.Latitude, s.Longitude })
+            .IsUnique(false);
+
+        modelBuilder.Entity<SpaceActivity>()
+            .HasIndex(sa => sa.Name)
+            .IsUnique(false);
+
+        modelBuilder.Entity<CategoryActivity>()
+            .HasIndex(ca => ca.Name)
+            .IsUnique();
     }
 }

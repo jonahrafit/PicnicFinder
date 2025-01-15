@@ -1,0 +1,250 @@
+@model List<SpaceActivity>
+
+@{
+  ViewData["Title"] = "Modification des espaces";
+}
+
+<style>
+  .multiselect-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+  }
+
+  .dropdown-menu {
+      width: 100%;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none; /* Masquer le menu déroulant par défaut */
+      position: absolute;
+      top: 100%;
+      z-index: 1000;
+  }
+
+  .multiselect-container.active .dropdown-menu {
+      display: block; /* Afficher le menu lorsque le conteneur est actif */
+  }
+
+  .selected-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 5px;
+  }
+
+  .tag {
+      background-color: #0d6efd;
+      color: #fff;
+      border-radius: 5px;
+      padding: 3px 8px;
+      font-size: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+  }
+
+  .tag .remove-btn {
+      cursor: pointer;
+      font-weight: bold;
+      color: #fff;
+  }
+
+  .dropdown-item {
+      cursor: pointer;
+  }
+</style>
+
+<div class="row">
+  <div class="col-xxl">
+    <div class="card mb-6">
+      <div class="card-header d-flex align-items-center justify-content-between">
+        <h5 class="mb-0">Formulaire de modification d'un espace</h5>
+        <small class="text-muted float-end">Remplissez les informations requises</small>
+      </div>
+      <div class="card-body">
+        <form method="post" enctype="multipart/form-data" action="/Spaces/CreateSpace" id="createSpaceForm">
+        <input type="hidden" id="selected-activities" name="ActivityIds" value="">
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="name">Titre</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-home"></i></span>
+                <input type="text" class="form-control" id="name"
+                  min="-90" max="90" name="Name" placeholder="Titre de l'espace" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="latitude">Latitude</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-map"></i></span>
+                <input type="number" step="any" class="form-control" id="latitude" value="48.1234"
+                  min="-180" max="180" name="Latitude" placeholder="Latitude" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Champ Longitude -->
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="longitude">Longitude</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-map"></i></span>
+                <input type="number" step="any" class="form-control" id="longitude" value="-73.5678" name="Longitude" placeholder="Longitude" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Champ Capacité -->
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="capacity">Capacité</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-users"></i></span>
+                <input type="number" class="form-control" id="capacity" name="Capacity" placeholder="Capacité de l'espace" min="1" required />
+              </div>
+            </div>
+          </div>
+
+          <!-- Champ Photos -->
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="photos">Photos</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-image"></i></span>
+                <input type="file" class="form-control" id="photos" name="Photos" accept=".jpg,.png,.gif" multiple/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Champ Description -->
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="description">Description</label>
+            <div class="col-sm-10">
+              <div class="input-group input-group-merge">
+                <span class="input-group-text"><i class="bx bx-info-circle"></i></span>
+                <textarea class="form-control" id="description" name="Description" placeholder="Description de l'espace"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sélection des Activités -->
+          <div class="row mb-6">
+            <label class="col-sm-2 col-form-label" for="activities">Activités</label>
+            <div class="col-sm-10">
+              <div class="multiselect-container">
+                <div class="selected-tags"></div>
+                <input type="text" id="multiselect-input" class="form-control" placeholder="Rechercher et sélectionner...">
+                <ul class="dropdown-menu" id="multiselect-options">
+                    @foreach (var activity in Model)
+                    {
+                      <li data-value="@activity.Id" class="dropdown-item">@activity.Name</li>
+                    }
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bouton de Soumission -->
+          <div class="row justify-content-end">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-primary">Modifier l'espace</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const $input = $('#multiselect-input');
+    const $options = $('#multiselect-options');
+    const $tags = $('.selected-tags');
+    const $container = $('.multiselect-container');
+    const $selectedActivities = $('#selected-activities');
+
+    const updateDropdown = (searchTerm) => {
+        const term = searchTerm.toLowerCase();
+        $options.children().each(function () {
+            const text = $(this).text().toLowerCase();
+            $(this).toggle(text.includes(term));
+        });
+    };
+
+    const addTag = (text, value) => {
+        const exists = $tags.find(`[data-value="${value}"]`).length > 0;
+        if (!exists) {
+            const $tag = $(`
+                <div class="tag" data-value="${value}">
+                    ${text} <span class="remove-btn">&times;</span>
+                </div>
+            `);
+            $tags.append($tag);
+            updateSelectedActivities(value);
+        }
+    };
+
+    const removeTag = (value) => {
+        $tags.find(`[data-value="${value}"]`).remove();
+        updateSelectedActivities(value, true);
+    };
+
+    const updateSelectedActivities = (value, isRemoval = false) => {
+        let selectedActivities = $selectedActivities.val().split(',').filter(v => v.length > 0);
+        if (isRemoval) {
+            selectedActivities = selectedActivities.filter(v => v !== value.toString());
+        } else {
+            if (!selectedActivities.includes(value.toString())) {
+                selectedActivities.push(value);
+            }
+        }
+        $selectedActivities.val(selectedActivities.join(','));
+    };
+
+    // Afficher/masquer le menu déroulant
+    $input.on('focus', function () {
+        $container.addClass('active');
+    });
+
+    $(document).on('click', function (e) {
+        if (!$(e.target).closest('.multiselect-container').length) {
+            $container.removeClass('active');
+        }
+    });
+
+    // Rechercher et filtrer les options
+    $input.on('input', function () {
+        const searchTerm = $(this).val();
+        updateDropdown(searchTerm);
+    });
+
+    // Ajouter une option sélectionnée
+    $options.on('click', 'li', function () {
+        const text = $(this).text();
+        const value = $(this).data('value');
+        addTag(text, value);
+
+        // Ajouter l'ID de l'activité dans le champ caché
+        let selectedActivities = $('#selected-activities').val().split(',');
+        if (!selectedActivities.includes(value.toString())) {
+            selectedActivities.push(value);
+        }
+        $('#selected-activities').val(selectedActivities.join(','));
+
+        $input.val('');
+        updateDropdown('');
+        $container.removeClass('active');
+    });
+
+    // Supprimer un tag sélectionné
+    $tags.on('click', '.remove-btn', function () {
+        const value = $(this).closest('.tag').data('value');
+        removeTag(value);
+    });
+    
+});
+</script>

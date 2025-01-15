@@ -84,6 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 loginSection.style.display = "flex";
                 userSection.style.display = "none";
                 myFavorite.style.display = "none";
+                // Redirection vers la page d'accueil
+                window.location.href = '/';
             } else {
                 // Gérer les erreurs éventuelles
                 console.error("Erreur lors de la déconnexion :", response.statusText);

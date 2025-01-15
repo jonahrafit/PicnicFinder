@@ -1,0 +1,32 @@
+2025-01-13 07:23:12.969 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-13 07:23:13.149 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-13 07:23:13.154 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-13 07:23:13.156 +03:00 [INF] Hosting environment: Development
+2025-01-13 07:23:13.156 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-13 07:23:35.412 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-13 07:23:35.424 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-13 07:23:35.444 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-13 07:23:35.479 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-13 07:23:35.497 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-13 07:23:35.604 +03:00 [INF] Executed ViewResult - view Index executed in 108.1763ms.
+2025-01-13 07:23:35.612 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 131.7126ms
+2025-01-13 07:23:35.613 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-13 07:23:35.618 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 207.3971ms
+2025-01-13 07:23:35.626 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - null null
+2025-01-13 07:23:35.627 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - null null
+2025-01-13 07:23:35.626 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-13 07:23:35.648 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-13 07:23:35.648 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/css/site.css'
+2025-01-13 07:23:35.654 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 28.4535ms
+2025-01-13 07:23:35.656 +03:00 [INF] Sending file. Request path: '/FrontOffice.styles.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/obj/Debug/net8.0/scopedcss/bundle/FrontOffice.styles.css'
+2025-01-13 07:23:35.656 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - 200 329 text/css 29.6372ms
+2025-01-13 07:23:35.661 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - 200 1080 text/css 34.2976ms
+2025-01-13 07:23:35.720 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-13 07:23:35.722 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-13 07:23:35.723 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 2.6636ms
+2025-01-13 07:23:35.738 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-13 07:23:35.740 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-13 07:23:35.741 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 2.5947ms
+2025-01-13 07:23:35.754 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=1oFwiEIIPSHxXsbG_IdgXBqbMPhkaBRpmNL55U-fy0c - null null
+2025-01-13 07:23:35.755 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/js/site.js'
+2025-01-13 07:23:35.755 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=1oFwiEIIPSHxXsbG_IdgXBqbMPhkaBRpmNL55U-fy0c - 200 7004 text/javascript 1.5032ms

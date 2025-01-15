@@ -10,7 +10,7 @@ public class SpaceController : BaseController
     public SpaceController(ILogger<SpaceController> logger, IConfiguration configuration)
         : base(logger, configuration) { }
 
-    public async Task<IActionResult> Index(int page = 1, int pageSize = 5)
+    public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
     {
         var url = $"{_apiBaseUrl}/Space?page={page}&pageSize={pageSize}"; // URL avec pagination
         string jsonData = "[]";
@@ -34,10 +34,15 @@ public class SpaceController : BaseController
         var spaces = result?.spaces ?? new List<dynamic>();
         var pagination = result?.pagination;
 
+        Console.WriteLine("-----------------------------------");
+        Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(spaces));
+        Console.WriteLine("-----------------------------------");
+
         // Passer les données à la vue
         ViewData["JsonSpaceList"] = Newtonsoft.Json.JsonConvert.SerializeObject(spaces);
         ViewData["Pagination"] = pagination;
         ViewData["ApiBaseUrl"] = GetApiBaseUrl();
+        ViewData["ImageBaseUrl"] = GetImageBaseUrl();
         return View();
     }
 

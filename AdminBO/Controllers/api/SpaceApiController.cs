@@ -1,14 +1,15 @@
 using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt; // Pour 'JwtSecurityToken', 'JwtSecurityTokenHandler'
+using System.Globalization;
+using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using AdminBO.Models;
 using AdminBO.Services;
-using Microsoft.AspNetCore.Authorization; // Pour 'AuthorizeAttribute'
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens; // Pour 'SymmetricSecurityKey', 'SigningCredentials', etc.
+using Microsoft.IdentityModel.Tokens;
 
 namespace AdminBO.Controllers.Api
 {
@@ -17,6 +18,7 @@ namespace AdminBO.Controllers.Api
     public class SpaceApiController : Controller
     {
         private readonly SpaceService _spaceService;
+        private readonly SpaceActivityService _spaceActivityService;
         private readonly UserService _userService;
         private readonly IConfiguration _configuration;
         private readonly AdminBOContext _dbContext;
@@ -27,6 +29,7 @@ namespace AdminBO.Controllers.Api
             _dbContext = dbContext;
             _userService = new UserService(_configuration, _dbContext);
             _spaceService = new SpaceService(_configuration, _dbContext);
+            _spaceActivityService = new SpaceActivityService(_configuration, _dbContext);
         }
 
         // GET: api/Space
@@ -43,6 +46,21 @@ namespace AdminBO.Controllers.Api
                 return NotFound("Aucun espace trouvé.");
             }
 
+            // LIST ACTIVITY
+            var viewSpaceWithActivities = new List<ViewSpaceWithActivities>();
+            foreach (var space in spaces)
+            {
+                var spaceWithActivities = new ViewSpaceWithActivities
+                {
+                    space = space,
+                    SpaceActivities =
+                        await _spaceActivityService.GetAllSpaceActivityNameBySpaceIdAsync(space.Id),
+                };
+
+                viewSpaceWithActivities.Add(spaceWithActivities);
+            }
+
+            // PAGINATION
             // Nombre total d'espaces
             var totalSpaces = await _spaceService.GetTotalSpacesCountAsync();
 
@@ -56,7 +74,7 @@ namespace AdminBO.Controllers.Api
             };
 
             // Retourner les données paginées et la pagination dans les en-têtes ou le corps de la réponse
-            var result = new { Spaces = spaces, Pagination = paginationModel };
+            var result = new { Spaces = viewSpaceWithActivities, Pagination = paginationModel };
 
             return Ok(result);
         }
@@ -73,43 +91,8 @@ namespace AdminBO.Controllers.Api
             return Ok(space);
         }
 
-        // POST: api/Space
-        [HttpPost]
-        [Authorize(Roles = "OWNER")] // Seuls les utilisateurs avec le r�le "OWNER" peuvent cr�er un espace
-        public async Task<ActionResult<Space>> CreateSpace([FromBody] Space space)
-        {
-            if (space == null)
-            {
-                return BadRequest("Les donn�es de l'espace ne sont pas valides.");
-            }
-
-            space.OwnerId = GetCurrentUserId();
-            try
-            {
-                var currentUserId = GetCurrentUserId();
-                var owner = await _userService.GetUserByIdAsync(currentUserId);
-
-                if (owner == null)
-                {
-                    return Unauthorized("Utilisateur non trouvé.");
-                }
-
-                space.Owner = owner;
-                await _spaceService.CreateSpaceAsync(space);
-
-                return CreatedAtAction(nameof(GetSpace), new { id = space.Id }, space);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erreur lors de la création de l'espace : {ex.Message}");
-                return StatusCode(500, "Une erreur interne est survenue.");
-            }
-        }
-
         private long GetCurrentUserId()
         {
-            // Cette m�thode doit �tre impl�ment�e pour r�cup�rer l'ID de l'utilisateur connect�.
-            // Par exemple, vous pouvez l'extraire des claims du jeton JWT.
             var userIdClaim = User?.FindFirst("UserId")?.Value;
             return userIdClaim != null ? long.Parse(userIdClaim) : 0;
         }

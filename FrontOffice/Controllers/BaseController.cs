@@ -28,5 +28,11 @@ namespace FrontOffice.Controllers
         {
             return _configuration.GetValue<string>("ServerSettings:ApiBaseUrl");
         }
+        
+        // Méthode utilitaire pour obtenir une configuration
+        protected string GetImageBaseUrl()
+        {
+            return _configuration.GetValue<string>("ServerSettings:ImageBaseUrl");
+        }
     }
 }

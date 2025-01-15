@@ -93,6 +93,11 @@ namespace AdminBO.Services
             return await _context.Reservations.CountAsync();
         }
 
+        public async Task<int> GetTotalReservationsCountAsyncByClient(long employeeId)
+        {
+            return await _context.Reservations.Where(r => r.EmployeeId == employeeId).CountAsync();
+        }
+
         string BuildReservationQuery(string year)
         {
             // Définir la structure de base du CTE en fonction de la présence de l'année
@@ -289,15 +294,6 @@ namespace AdminBO.Services
                             Enum.Parse<ReservationStatus>(status)
                         );
                     }
-                    // // Afficher la requête finale avec les valeurs des paramètres
-                    // Console.WriteLine("Requête SQL :");
-                    // Console.WriteLine(query);
-
-                    // Console.WriteLine("Valeurs des paramètres :");
-                    // foreach (SqlParameter parameter in command.Parameters)
-                    // {
-                    //     Console.WriteLine($"{parameter.ParameterName} = {parameter.Value}");
-                    // }
 
                     connection.Open();
                     using (var reader = command.ExecuteReader())

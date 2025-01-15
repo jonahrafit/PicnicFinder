@@ -56,6 +56,9 @@ public class Space
     [Required]
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
+    // Ajoutez cette propriété pour la relation avec SpaceActivity
+    public ICollection<SpaceActivityLink> SpaceActivityLinks { get; set; }
+    
     public override string ToString()
     {
         return $"Id: {Id}, "

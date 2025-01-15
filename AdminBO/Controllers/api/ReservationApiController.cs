@@ -99,7 +99,10 @@ namespace AdminBO.Controllers.Api
             }
 
             // Nombre total d'ereservations
-            var totalReservations = await _reservationService.GetTotalReservationsCountAsync();
+            var totalReservations =
+                await _reservationService.GetTotalReservationsCountAsyncByClient(
+                    GetCurrentUserId()
+                );
 
             // Création d'un objet de pagination
             var paginationModel = new PaginationModel

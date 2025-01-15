@@ -1,7 +1,9 @@
+using System.Globalization;
 using System.Text;
 using AdminBO.Controllers;
 using AdminBO.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -65,6 +67,13 @@ builder.Services.AddScoped<MenuService>();
 builder.Services.AddScoped<SpaceService>();
 builder.Services.AddScoped<ReservationService>();
 builder.Services.AddScoped<CsvImportService>();
+builder.Services.AddScoped<SpaceActivityService>();
+
+// Configuration des routes
+builder.Services.Configure<FormOptions>(options =>
+{
+    options.MultipartBodyLengthLimit = 104857600; // 100 MB, ajustez selon vos besoins
+});
 
 // Configuration de CORS
 builder.Services.AddCors(options =>
@@ -106,15 +115,21 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
-// Middleware pour injecter le JWT depuis les cookies
+CultureInfo.DefaultThreadCurrentCulture = CultureInfo.InvariantCulture;
+CultureInfo.DefaultThreadCurrentUICulture = CultureInfo.InvariantCulture;
+
 app.Use(
     async (context, next) =>
     {
         var token = context.Request.Cookies["jwt"];
         if (!string.IsNullOrEmpty(token))
         {
+            Log.Information($"Token trouvé : {token}");
             context.Request.Headers["Authorization"] = $"Bearer {token}";
-            Log.Information("JWT injecté dans l'en-tête Authorization.");
+        }
+        else
+        {
+            Log.Warning("Aucun JWT trouvé dans les cookies.");
         }
         await next();
     }
@@ -123,7 +138,6 @@ app.Use(
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Configuration des routes
 app.MapControllerRoute(name: "default", pattern: "{controller=Auth}/{action=LoginBasic}/{id?}");
 
 // Démarrage de l'application

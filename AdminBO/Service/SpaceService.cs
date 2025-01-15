@@ -24,14 +24,14 @@ public class SpaceService
     public async Task<List<Space>> GetSpacesPagedAsync(int page, int pageSize)
     {
         return await _dbContext
-            .Space.Skip((page - 1) * pageSize) // Sauter les éléments précédents
+            .Spaces.Skip((page - 1) * pageSize)
             .Take(pageSize) // Prendre seulement la page actuelle
             .ToListAsync();
     }
 
     public async Task<int> GetTotalSpacesCountAsync()
     {
-        return await _dbContext.Space.CountAsync();
+        return await _dbContext.Spaces.CountAsync();
     }
 
     public async Task<List<Space>> GetAllSpacesAsyncByOwner(long ownerId)
@@ -46,14 +46,14 @@ public class SpaceService
                 );
             }
 
-            if (_dbContext.Space == null)
+            if (_dbContext.Spaces == null)
             {
                 throw new NullReferenceException("La table Space dans le contexte est null.");
             }
 
             // Récupérer les espaces associés au propriétaire spécifié
             return await _dbContext
-                .Space.Where(s => s.OwnerId == ownerId) // Utiliser l'ID du propriétaire
+                .Spaces.Where(s => s.OwnerId == ownerId) // Utiliser l'ID du propriétaire
                 .ToListAsync();
         }
         catch (Exception ex)
@@ -67,12 +67,12 @@ public class SpaceService
     // Retourner un espace par ID
     public async Task<Space?> GetSpaceByIdAsync(long id)
     {
-        return await _dbContext.Space.Include(s => s.Owner).FirstOrDefaultAsync(s => s.Id == id);
+        return await _dbContext.Spaces.Include(s => s.Owner).FirstOrDefaultAsync(s => s.Id == id);
     }
 
     public async Task<Space?> GetSpaceByIdAsyncByOwner(long id)
     {
-        return await _dbContext.Space.FirstOrDefaultAsync(s => s.Id == id);
+        return await _dbContext.Spaces.FirstOrDefaultAsync(s => s.Id == id);
     }
 
     // Cr�er un nouvel espace
@@ -90,7 +90,7 @@ public class SpaceService
             space.UpdatedAt = DateTime.UtcNow;
 
             // Add the space to the context and save changes
-            _dbContext.Space.Add(space);
+            _dbContext.Spaces.Add(space);
             await _dbContext.SaveChangesAsync();
         }
         catch (Exception ex)
@@ -112,10 +112,10 @@ public class SpaceService
     // Supprimer un espace
     public async Task DeleteSpaceAsync(long id)
     {
-        var space = await _dbContext.Space.FindAsync(id);
+        var space = await _dbContext.Spaces.FindAsync(id);
         if (space != null)
         {
-            _dbContext.Space.Remove(space);
+            _dbContext.Spaces.Remove(space);
             await _dbContext.SaveChangesAsync();
         }
     }
@@ -123,6 +123,6 @@ public class SpaceService
     // V�rifier si un espace existe
     public async Task<bool> SpaceExistsAsync(long id)
     {
-        return await _dbContext.Space.AnyAsync(e => e.Id == id);
+        return await _dbContext.Spaces.AnyAsync(e => e.Id == id);
     }
 }

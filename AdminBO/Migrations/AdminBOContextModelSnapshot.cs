@@ -21,6 +21,27 @@ namespace AdminBO.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("AdminBO.Models.CategoryActivity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Name")
+                        .IsUnique();
+
+                    b.ToTable("CategoryActivities");
+                });
+
             modelBuilder.Entity("AdminBO.Models.Favorite", b =>
                 {
                     b.Property<long>("Id")
@@ -181,7 +202,48 @@ namespace AdminBO.Migrations
 
                     b.HasIndex("OwnerId");
 
-                    b.ToTable("Space");
+                    b.HasIndex("Latitude", "Longitude");
+
+                    b.ToTable("Spaces");
+                });
+
+            modelBuilder.Entity("AdminBO.Models.SpaceActivity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("CategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("Name");
+
+                    b.ToTable("SpaceActivities");
+                });
+
+            modelBuilder.Entity("AdminBO.Models.SpaceActivityLink", b =>
+                {
+                    b.Property<long>("SpaceId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("SpaceActivityId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("SpaceId", "SpaceActivityId");
+
+                    b.HasIndex("SpaceActivityId");
+
+                    b.ToTable("SpaceActivityLinks");
                 });
 
             modelBuilder.Entity("AdminBO.Models.User", b =>
@@ -266,6 +328,46 @@ namespace AdminBO.Migrations
                         .IsRequired();
 
                     b.Navigation("Owner");
+                });
+
+            modelBuilder.Entity("AdminBO.Models.SpaceActivity", b =>
+                {
+                    b.HasOne("AdminBO.Models.CategoryActivity", "CategoryActivity")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CategoryActivity");
+                });
+
+            modelBuilder.Entity("AdminBO.Models.SpaceActivityLink", b =>
+                {
+                    b.HasOne("AdminBO.Models.SpaceActivity", "SpaceActivity")
+                        .WithMany("SpaceActivityLinks")
+                        .HasForeignKey("SpaceActivityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("AdminBO.Models.Space", "Space")
+                        .WithMany("SpaceActivityLinks")
+                        .HasForeignKey("SpaceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Space");
+
+                    b.Navigation("SpaceActivity");
+                });
+
+            modelBuilder.Entity("AdminBO.Models.Space", b =>
+                {
+                    b.Navigation("SpaceActivityLinks");
+                });
+
+            modelBuilder.Entity("AdminBO.Models.SpaceActivity", b =>
+                {
+                    b.Navigation("SpaceActivityLinks");
                 });
 #pragma warning restore 612, 618
         }

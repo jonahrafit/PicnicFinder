@@ -16,4 +16,4 @@ FROM
 JOIN 
     Users e ON r.EmployeeId = e.Id
 JOIN 
-    Space s ON r.SpaceId = s.Id;
+    Spaces s ON r.SpaceId = s.Id;

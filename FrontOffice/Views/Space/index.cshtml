@@ -10,6 +10,7 @@
     int pageNumber = pagination?.currentPage ?? 1; // Si aucune pagination, on commence par la page 1
     int totalPages = pagination?.totalPages ?? 1;
     int pageSize = pagination?.itemsPerPage ?? 5;
+    int totalItems = pagination?.totalItems ?? 0;
 
     var pagedSpaces = spaces?.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(); // Espaces paginés
 }
@@ -239,67 +240,76 @@
                     {
                         <div class="card shadow-lg rounded-3">
                             <div class="card-img-container overflow-hidden rounded-top">
-                                <img src="@space.photos[0]" class="card-img-top" alt="Space Image">
+                                <img src="@($"{ViewData["ImageBaseUrl"]}/{space.space.photos[0]}")" class="card-img-top" alt="Space Image">
                             </div>
                             <div class="card-body text-center">
-                                <h5 class="card-title mb-3">
-                                    <a href="@Url.Action("Details", "Space", new { id = space.id })" class="text-decoration-none text-dark">@space.name</a>
-                                </h5>
-                                <p class="card-text mb-3">@space.description</p>
-                                <p class="capacity mb-4">Capacité : @space.capacity personnes</p>
+                                <h5 class="card-title mb-3">@space.space.name</h5>
+                                <div>
+                                    @foreach (var activity in space.spaceActivities)
+                                    {
+                                        <p style="display: inline-block; padding: 0.25em 0.4em; font-size: 75%; font-weight: 700; line-height: 0.9; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; background-color: #6c757d; color: #fff; margin: 2px 0;">
+                                            @activity
+                                        </p>
+                                    }
+                                </div>
 
-                                <button 
-                                    class="btn btn-primary w-50" 
-                                    data-bs-toggle="modal" 
-                                    data-bs-target="#backDropModal" 
-                                    data-space-name="@space.name"
-                                    data-space-id="@space.id">
-                                    Réserver
-                                </button>
+                                <div>
+                                    <a href="@Url.Action("Details", "Space", new { id = space.space.id })" >
+                                    <button class="btn btn-info">
+                                    Voir détails
+                                    </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
-
                     }
                 </div>
+                <br>
+                <div class="row justify-content">
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <h5 class="pb-1 mb-6">On trouve (@totalItems) resultat(s)</h5>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-end">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                @if (pageNumber > 1)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=1" aria-label="First">
+                                            <span aria-hidden="true">&laquo;&laquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                        </a>
+                                    </li>
+                                }
 
-                <div class="pagination mt-4">
-                    <ul class="pagination">
-                        @if (pageNumber > 1)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="?page=1" aria-label="First">
-                                    <span aria-hidden="true">&laquo;&laquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                        }
+                                @for (int i = 12; i <= totalPages; i++)
+                                {
+                                    <li class="page-item @(i == pageNumber ? " active"
+                                        : "" )">
+                                        <a class="page-link" href="?page=@i">@i</a>
+                                    </li>
+                                }
 
-                        @for (int i = 1; i <= totalPages; i++)
-                        {
-                            <li class="page-item @(i == pageNumber ? " active"
-                                : "" )">
-                                <a class="page-link" href="?page=@i">@i</a>
-                            </li>
-                        }
-
-                        @if (pageNumber < totalPages)
-                        {
-                            <li class="page-item">
-                                <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?page=@totalPages" aria-label="Last">
-                                    <span aria-hidden="true">&raquo;&raquo;</span>
-                                </a>
-                            </li>
-                        }
-                    </ul>
+                                @if (pageNumber < totalPages)
+                                {
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page=@totalPages" aria-label="Last">
+                                            <span aria-hidden="true">&raquo;&raquo;</span>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             }
             else
@@ -307,50 +317,5 @@
                 <p>Aucun espace disponible.</p>
             }
         </div>
-
     </div>
 </div>
-
-<div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
-    <div class="modal-dialog">
-         <form class="modal-content" id="reservationForm" method="POST" action="@Url.Action("CreateReservation", "Reservation")">
-            <div class="modal-header">                
-                <h5 class="modal-title" id="backDropModalTitle">Faire une réservation</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <input type="hidden" id="inputSpaceId" name="SpaceId">
-                <div class="row g-6">
-                    <div id="alertMessage"></div>
-                </div>
-
-                <div class="modal-body">
-                    <input type="hidden" id="inputSpaceId" name="SpaceId">
-                    <div class="row g-6">
-                        <div id="alertMessage" class="text-danger"></div>
-                    </div>
-
-                    <div class="row g-6">
-                        <h3 id="durationDisplay"></h3>
-                    </div>
-
-                    <div class="row g-6">
-                        <div class="col mb-0">
-                            <label for="startDate" class="form-label">Date de début</label>
-                            <input type="datetime-local" id="startDate" name="StartDate" class="form-control">
-                        </div>
-                        <div class="col mb-0">
-                            <label for="endDate" class="form-label">Date de fin</label>
-                            <input type="datetime-local" id="endDate" name="EndDate" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" id="button-valide-reservation" class="btn btn-primary" id="saveReservation">Valider la réservation</button>
-            </div>
-        </form>
-    </div>
-</div>
-

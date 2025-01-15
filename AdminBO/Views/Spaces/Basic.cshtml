@@ -11,27 +11,35 @@
 <div class="row mb-12 g-6">
   @foreach (var space in Model)
   {
-    <div class="col-md-6 col-lg-4">
-      <div class="card h-100">
-        <div class="card-body">
-          <h5 class="card-title">@space.Name</h5>
-          <h6 class="card-subtitle">Capacité maximale : @space.Capacity</h6>
+    <div class="col-md-6 col-xl-3">
+      <a href="#">
+        <div class="card bg-dark border-0 text-white">
+          @if (space.Photos != null && space.Photos.Any())
+          {
+            <div class="card-img" style="background-image: url('@Url.Content("~/img/" + space.Photos[0])'); background-size: cover; background-position: center; height: 200px; position: relative;">
+              <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));"></div>
+            </div>
+          }
+          else
+          {
+            <div class="card-img" style="background-image: url('~/img/backgrounds/18.jpg'); background-size: cover; background-position: center; height: 200px; position: relative;">
+              <div class="overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));"></div>
+            </div>
+          }
+          <div class="card-img-overlay">
+            <h5 class="card-title text-white">@space.Name</h5>
+            <p class="card-text">@space.Description</p>
+          </div>
         </div>
-        <!-- Affiche la première image si elle existe -->
-        @if (space.Photos != null && space.Photos.Any())
-        {
-          <img class="img-fluid" src="@space.Photos[0]" alt="Card image cap" />
-        }
-        else
-        {
-          <img class="img-fluid" src="~/img/backgrounds/18.jpg" alt="Card image cap" />
-        }
-        <div class="card-body">
-          <p class="card-text">@space.Description</p>
-          <a href="javascript:void(0);" class="card-link">Voir fiche</a>
-          @* <a href="javascript:void(0);" class="card-link">Another link</a> *@
-        </div>
-      </div>
+      </a>
     </div>
   }
+
+  <div class="col-md-6 col-xl-3">
+    <div class="card bg-dark border-0 text-white d-flex justify-content-center align-items-center" style="height: 200px;">
+      <a href="/Spaces/CreateForm" class="btn btn-primary btn-lg">
+        <i class="bx bx-plus"></i>
+      </a>
+    </div>
+  </div>
 </div>
