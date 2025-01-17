@@ -11,8 +11,8 @@
     int totalPages = pagination?.totalPages ?? 1;
     int pageSize = pagination?.itemsPerPage ?? 5;
     int totalItems = pagination?.totalItems ?? 0;
-
-    var pagedSpaces = spaces?.Skip((pageNumber - 1) * pageSize).Take(pageSize).ToList(); // Espaces paginés
+    Console.WriteLine("*************************");
+    Console.WriteLine(spaces);
 }
 
 @section Scripts {
@@ -204,118 +204,92 @@
     <h1 class="text-center">Les espaces disponibles</h1>
 
     <div class="row mt-3">
-        <div class="col-md-2 filter-container">
-            <h5>Filtrer la liste</h5>
-            <form>
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Rechercher quelque chose..." style="height: 100%;">
-                </div>
-                <!-- <div>
-                    <label for="filterActivities">Filtrer par Activités:</label>
-                    <select multiple class="form-control" id="filterActivities">
-                        <option value="Piscine">Piscine</option>
-                        <option value="Tennis">Tennis</option>
-                        <option value="Salle de réception">Salle de réception</option>
-                        <option value="Salle de sport">Salle de sport</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="filterPrice">Filtrer par Prix:</label>
-                    <select class="form-control" id="filterPrice">
-                        <option value="1">Moins de 6000 Ar</option>
-                        <option value="2">Entre 6000 et 8000 Ar</option>
-                        <option value="3">Plus de 8000 Ar</option>
-                    </select>
-                </div> -->
-                <br>
-                <button type="submit" class="btn btn-primary">Rechercher</button>
-            </form>
-        </div>
-
-        <div class="col-md-10 content-container">
-            @if (pagedSpaces != null && pagedSpaces.Any())
-            {
-                <div class="card-columns">
-                    @foreach (var space in pagedSpaces)
-                    {
-                        <div class="card shadow-lg rounded-3">
-                            <div class="card-img-container overflow-hidden rounded-top">
-                                <img src="@($"{ViewData["ImageBaseUrl"]}/{space.space.photos[0]}")" class="card-img-top" alt="Space Image">
+        @if (spaces != null && spaces.Any())
+        {
+            <div class="row justify-content-center">
+                @foreach (var space in spaces)
+                {
+                    <div class="card shadow-lg rounded-3 m-2">
+                        <div class="card-img-container overflow-hidden rounded-top">
+                            <img src="@($"{ViewData["ImageBaseUrl"]}/{space.space.photos[0]}")"
+                                 class="card-img-top img-fluid"
+                                 style="height: 200px; object-fit: cover;"
+                                 alt="Space Image">
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title mb-3">@space.space.name</h5>
+                            <div>
+                                @foreach (var activity in space.spaceActivities)
+                                {
+                                    <p style="display: inline-block; padding: 0.25em 0.4em; font-size: 75%; font-weight: 700; line-height: 0.9; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; background-color: #6c757d; color: #fff; margin: 2px 0;">
+                                        @activity
+                                    </p>
+                                }
                             </div>
-                            <div class="card-body text-center">
-                                <h5 class="card-title mb-3">@space.space.name</h5>
-                                <div>
-                                    @foreach (var activity in space.spaceActivities)
-                                    {
-                                        <p style="display: inline-block; padding: 0.25em 0.4em; font-size: 75%; font-weight: 700; line-height: 0.9; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; background-color: #6c757d; color: #fff; margin: 2px 0;">
-                                            @activity
-                                        </p>
-                                    }
-                                </div>
 
-                                <div>
-                                    <a href="@Url.Action("Details", "Space", new { id = space.space.id })" >
+                            <div>
+                                <a href="@Url.Action("Details", "Space", new { id = space.space.id })">
                                     <button class="btn btn-info">
-                                    Voir détails
+                                        Voir détails
                                     </button>
-                                    </a>
-                                </div>
+                                </a>
                             </div>
                         </div>
-                    }
-                </div>
-                <br>
-                <div class="row justify-content">
-                    <div class="col-md-4 d-flex justify-content-end">
-                        <h5 class="pb-1 mb-6">On trouve (@totalItems) resultat(s)</h5>
                     </div>
-                    <div class="col-md-4 d-flex justify-content-end">
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination">
-                                @if (pageNumber > 1)
-                                {
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page=1" aria-label="First">
-                                            <span aria-hidden="true">&laquo;&laquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                        </a>
-                                    </li>
-                                }
+                }
+            </div>
 
-                                @for (int i = 12; i <= totalPages; i++)
-                                {
-                                    <li class="page-item @(i == pageNumber ? " active"
-                                        : "" )">
-                                        <a class="page-link" href="?page=@i">@i</a>
-                                    </li>
-                                }
-
-                                @if (pageNumber < totalPages)
-                                {
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
-                                            <span aria-hidden="true">&raquo;</span>
-                                        </a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="?page=@totalPages" aria-label="Last">
-                                            <span aria-hidden="true">&raquo;&raquo;</span>
-                                        </a>
-                                    </li>
-                                }
-                            </ul>
-                        </nav>
-                    </div>
+            <div class="row my-4 justify-content-between">
+                <div class="col-md-4 d-flex justify-content-start">
+                    <h5 class="pb-1 mb-6">On trouve (@totalItems) resultat(s)</h5>
                 </div>
-            }
-            else
-            {
-                <p>Aucun espace disponible.</p>
-            }
-        </div>
+                <div class="col-md-4 d-flex justify-content-end">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination justify-content-center">
+                            @if (pageNumber > 1)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1" aria-label="First">
+                                        <span aria-hidden="true">&laquo;&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            }
+
+                            @for (int i = 1; i <= totalPages; i++)
+                            {
+                                <li class="page-item @(i == pageNumber ? " active" : "")">
+                                    <a class="page-link" href="?page=@i">@i</a>
+                                </li>
+                            }
+
+                            @if (pageNumber < totalPages)
+                            {
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=@totalPages" aria-label="Last">
+                                        <span aria-hidden="true">&raquo;&raquo;</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+
+        }
+        else
+        {
+            <p>Aucun espace disponible.</p>
+        }
     </div>
 </div>

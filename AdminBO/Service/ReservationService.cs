@@ -44,6 +44,23 @@ namespace AdminBO.Services
                 .ToListAsync();
         }
 
+        public async Task<List<Reservation>> GetApprovedReservationsByMonthAndYearAsync(
+            int month,
+            int year
+        )
+        {
+            return await _context
+                .Reservations.Where(r =>
+                    r.Status == ReservationStatus.CONFIRMED
+                    && // Comparaison avec l'énumérateur
+                    r.StartDate.Month == month
+                    && r.StartDate.Year == year
+                )
+                .Include(r => r.Space) // Inclure les données liées
+                .OrderBy(r => r.StartDate) // Optionnel, pour trier par date de début
+                .ToListAsync();
+        }
+
         public async Task<List<Reservation>> GetReservationsAsyncByOwner(long ownerId)
         {
             var spaces = await _spaceService.GetAllSpacesAsyncByOwner(ownerId);

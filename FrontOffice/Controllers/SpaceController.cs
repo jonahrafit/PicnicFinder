@@ -10,9 +10,9 @@ public class SpaceController : BaseController
     public SpaceController(ILogger<SpaceController> logger, IConfiguration configuration)
         : base(logger, configuration) { }
 
-    public async Task<IActionResult> Index(int page = 1, int pageSize = 10)
+    public async Task<IActionResult> Index(int page = 1, int pageSize = 3)
     {
-        var url = $"{_apiBaseUrl}/Space?page={page}&pageSize={pageSize}"; // URL avec pagination
+        var url = $"{_apiBaseUrl}/Space?page={page}&pageSize={pageSize}";
         string jsonData = "[]";
         try
         {
@@ -27,16 +27,12 @@ public class SpaceController : BaseController
             _logger.LogError(ex, "Error occurred while calling the API.");
         }
 
-        // Désérialisation de la réponse
         var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(jsonData);
-
+        // Console.WriteLine("___________________________");
+        // Console.WriteLine(result);
         // Récupérer les espaces et la pagination
         var spaces = result?.spaces ?? new List<dynamic>();
         var pagination = result?.pagination;
-
-        Console.WriteLine("-----------------------------------");
-        Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(spaces));
-        Console.WriteLine("-----------------------------------");
 
         // Passer les données à la vue
         ViewData["JsonSpaceList"] = Newtonsoft.Json.JsonConvert.SerializeObject(spaces);
@@ -70,10 +66,9 @@ public class SpaceController : BaseController
             return NotFound();
         }
 
-        // Passer le JSON brut dans ViewData
-        ViewData["JsonSpace"] = Newtonsoft.Json.JsonConvert.SerializeObject(space);
-
-        Console.WriteLine(ViewData["JsonSpace"]);
+        ViewData["JsonSpace"] = jsonData;
+        ViewData["ImageBaseUrl"] = GetImageBaseUrl();
+        ViewBag.SpaceDetails = space; // Passer le JSON désérialisé dynamiquement
 
         return View();
     }

@@ -52,7 +52,7 @@ namespace AdminBO.Controllers.Api
             {
                 var spaceWithActivities = new ViewSpaceWithActivities
                 {
-                    space = space,
+                    Space = space,
                     SpaceActivities =
                         await _spaceActivityService.GetAllSpaceActivityNameBySpaceIdAsync(space.Id),
                 };
@@ -73,9 +73,7 @@ namespace AdminBO.Controllers.Api
                 TotalPages = (int)Math.Ceiling((double)totalSpaces / pageSize),
             };
 
-            // Retourner les données paginées et la pagination dans les en-têtes ou le corps de la réponse
             var result = new { Spaces = viewSpaceWithActivities, Pagination = paginationModel };
-
             return Ok(result);
         }
 
@@ -84,11 +82,21 @@ namespace AdminBO.Controllers.Api
         public async Task<ActionResult<Space>> GetSpace(long id)
         {
             var space = await _spaceService.GetSpaceByIdAsyncByOwner(id);
+
             if (space == null)
             {
                 return NotFound($"Espace avec l'ID {id} non trouv�.");
             }
-            return Ok(space);
+
+            List<SpaceActivity> spaceActivities = new List<SpaceActivity>();
+            var spaceDetailsWithActivities = new ViewDetailsSpaceWithActivities
+            {
+                Space = space,
+                SpaceActivities =
+                    await _spaceActivityService.GetAllSpaceActivityLinksBySpaceIdAsync(space.Id),
+            };
+
+            return Ok(spaceDetailsWithActivities);
         }
 
         private long GetCurrentUserId()

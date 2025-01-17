@@ -10,7 +10,7 @@ VALUES
 
 -- Insertion des activités dans la table Activities
 INSERT INTO SpaceActivities (Name, CategoryId) VALUES
-('Piscine', 1),  -- Activité sportive
+('Piscine', 1),
 ('Terrain de football', 1),
 ('Basketball', 1),
 ('Volleyball', 1),

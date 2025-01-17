@@ -1,43 +1,245 @@
 @{
     var spaceDataJson = ViewData["JsonSpace"] as string;
-    var space = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(spaceDataJson);
+
+	var spaceDetails = ViewBag.SpaceDetails;
+	Console.WriteLine(spaceDetails);
 }
+
+@section Scripts {
+    <script>
+         document.addEventListener('DOMContentLoaded', function () {
+             const alertMessage = document.createElement('div');
+             alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
+             alertMessage.setAttribute('role', 'alert');
+             alertMessage.style.display = 'none';
+            const modal = document.getElementById('backDropModal');
+
+
+            function updateDurationDisplay() {
+                const startDateInput = document.getElementById("startDate").value;
+                const endDateInput = document.getElementById("endDate").value;
+                const durationDisplay = document.getElementById("durationDisplay");
+
+                if (startDateInput && endDateInput) {
+                    const startDate = new Date(startDateInput);
+                    const endDate = new Date(endDateInput);
+                    if (endDate > startDate) {
+                        const duration = endDate - startDate;
+                        const hours = Math.floor(duration / (1000 * 60 * 60));
+                        const days = Math.floor(hours / 24);
+                        const remainingHours = hours % 24;
+
+                        // Afficher la durée
+                        const durationText = days > 0 
+                            ? `${days}j et ${remainingHours}h`
+                            : `${hours}h`;
+                        durationDisplay.textContent = `Durée : ${durationText}`;
+
+                        // Vérifier si la durée est inférieure à 3 heures
+                        if (hours < 3) {
+                            alertMessage.textContent = "La durée doit être d'au moins 3 heures.";
+                            durationDisplay.style.color = "red";
+                        } else {
+                            alertMessage.textContent = "";
+                            durationDisplay.style.color = "green";
+                        }
+                    } else {
+                        alertMessage.textContent = "La date de fin doit être supérieure à la date de début.";
+                        durationDisplay.textContent = "";
+                    }
+                }
+            }
+
+            // Ajouter des écouteurs d'événements pour la mise à jour en temps réel
+            document.getElementById("startDate").addEventListener("change", updateDurationDisplay);
+            document.getElementById("endDate").addEventListener("change", updateDurationDisplay);
+
+            const reservationForm = document.getElementById('reservationForm');
+            const saveReservationButton = document.getElementById('saveReservation');
+            const buttonValideReservation = document.getElementById('button-valide-reservation');
+
+            const token = localStorage.getItem("jwt");
+            const isAuthenticated = token ? true : false;
+            if(!isAuthenticated){
+                buttonValideReservation.disabled = true;
+                alertMessage.innerHTML = `
+                        Il faut se connécter avant de faire une réservation !!!  
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    alertMessage.style.display = 'block';
+            }
+            modal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget; 
+                const spaceId = button.getAttribute('data-space-id');
+                const inputSpaceId = document.getElementById('inputSpaceId');
+                inputSpaceId.value = spaceId || '';
+            });
+
+            reservationForm.prepend(alertMessage);
+
+            saveReservationButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                if(!isAuthenticated){
+                    buttonValideReservation.disabled = true;
+                    alertMessage.innerHTML = `
+                        Il faut se connécter avant de faire une réservation !!!  
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    alertMessage.style.display = 'block';
+                }
+                else {
+                    buttonValideReservation.disabled = false;
+                    const startDateInput = document.getElementById('startDate');
+                    const endDateInput = document.getElementById('endDate');
+    
+                    const startDate = new Date(startDateInput.value);
+                    const endDate = new Date(endDateInput.value);
+    
+                    // Réinitialiser l'alerte
+                    alertMessage.style.display = 'none';
+    
+                    if (!startDateInput.value || !endDateInput.value) {
+                        alertMessage.innerHTML = `
+                            Ces deux champs sont obligatoires !  
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+                        alertMessage.style.display = 'block';
+                        return;
+                    }
+    
+                    if (endDate <= startDate) {
+                        alertMessage.innerHTML = `
+                            La date de fin doit être supérieure à la date de début !
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+                        alertMessage.style.display = 'block';
+                        return;
+                    }
+    
+                    // Si tout est valide, soumettre le formulaire
+                    reservationForm.submit();
+                }
+
+            });
+
+        });
+    </script>
+}
+
 <div class="container mt-5">
-    <!-- Titre principal -->
-    <h1 class="text-center">@space.name</h1>
-
-    <!-- Description -->
-    <p class="lead text-center">@space.description</p>
-
-    <div class="row">
-        <div class="col-md-8">
-            <!-- Photos -->
-            <h3>Photos:</h3>
-            <img src="@space.photos[0]" class="d-block w-100" alt="Image 1">
+    <div class="container-fluid p-0">
+        <div class="mb-3">
+		    <button type="button" class="btn btn-outline-secondary">
+            	<span class="tf-icons bx bx-bell bx-18px me-2"></span>Retour
+          	</button>
+		</div>
+		<div class="mb-3 d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 d-inline align-middle">@spaceDetails.space.name</h1>
+                <a class="badge bg-dark text-white ms-2" href="/Space">
+                   Voir les listes des espaces
+                </a>
+            </div>
+            <div>
+                <button type="button"
+					class="btn btn-outline-secondary"
+					data-bs-toggle="modal" 
+                    data-bs-target="#backDropModal" 
+                    data-space-name="@@spaceDetails.space.name"
+                    data-space-id="@@spaceDetails.space.id"">
+                    <span class="tf-icons bx bx-bell bx-18px me-2"></span>Réserver cette Espace
+                </button>
+            </div>
         </div>
-        <div class="col-md-4">
-                <div class="card-body">
-                    <!-- <p><strong>Capacity:</strong> @space.capacity</p>
-                    <p><strong>Status:</strong> @space.status</p>
-                    <p><strong>Created At:</strong> @space.createdAt</p>
-                    <p><strong>Updated At:</strong> @space.updatedAt</p> -->
-                    <h6 class="mt-3">Location:</h6>
-                    <p><strong>Latitude:</strong> @space.latitude</p>
-                    <p><strong>Longitude:</strong> @space.longitude</p>
+
+		<div class="row">
+			<div class="col-md-4 col-xl-3">
+				<div class="card mb-3">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Quelques détails</h5>
+					</div>
+					<div class="card-body text-center">
+						<h5 class="h6 card-title">A propos</h5>
+						<ul class="list-unstyled mb-0">
+					    	<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Latitude @spaceDetails.space.latitude </li>
+						    <li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> Longitude @spaceDetails.space.longitude </li>
+					    </ul>
+					</div>
+					<hr class="my-0" />
+					<div class="card-body">
+						<h5 class="h6 card-title">Dés activités</h5>
+                        @foreach (var activity in spaceDetails.spaceActivities)
+                        {
+							<span class="badge bg-primary me-1 my-1">@activity.name</span>
+						}
+					</div>
+					<hr class="my-0" />
+					<div class="card-body">
+						<h5 class="h6 card-title">A propos</h5>
+						<p class="lead text-center">@spaceDetails.space.description</p>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in <a href="#">San Francisco, SA</a></li>
+							<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Works at <a href="#">GitHub</a></li>
+							<li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From <a href="#">Boston</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-8 col-xl-9">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Activities</h5>
+					</div>
+					<div class="card-body h-100">
+    					<div class="overflow-hidden" style="height: 300px;">
+    					    <img src="@($"{ViewData["ImageBaseUrl"]}/{spaceDetails.space.photos[0]}")" class="w-100 h-100 object-fit-cover" alt="Image 1">
+    					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<div class="modal fade" id="backDropModal" data-bs-backdrop="static" tabindex="-1">
+    <div class="modal-dialog">
+         <form class="modal-content" id="reservationForm" method="POST" action="@Url.Action("CreateReservation", "Reservation")">
+            <div class="modal-header">                
+                <h5 class="modal-title" id="backDropModalTitle">Faire une réservation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="inputSpaceId" name="SpaceId">
+                <div class="row g-6">
+                    <div id="alertMessage"></div>
                 </div>
-        </div>
-    </div>
 
-    <!-- Owner info -->
-    <div class="mt-4">
-        @if (space.ownerId != null)
-        {
-            <p><strong>Owner ID:</strong> @space.ownerId</p>
-        }
-        else
-        {
-            <p><strong>Owner:</strong> No owner assigned.</p>
-        }
+                <div class="modal-body">
+                    <input type="hidden" id="inputSpaceId" name="SpaceId">
+                    <div class="row g-6">
+                        <div id="alertMessage" class="text-danger"></div>
+                    </div>
+
+                    <div class="row g-6">
+                        <h3 id="durationDisplay"></h3>
+                    </div>
+
+                    <div class="row g-6">
+                        <div class="col mb-0">
+                            <label for="startDate" class="form-label">Date de début</label>
+                            <input type="datetime-local" id="startDate" name="StartDate" class="form-control">
+                        </div>
+                        <div class="col mb-0">
+                            <label for="endDate" class="form-label">Date de fin</label>
+                            <input type="datetime-local" id="endDate" name="EndDate" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fermer</button>
+                <button type="submit" id="button-valide-reservation" class="btn btn-primary" id="saveReservation">Valider la réservation</button>
+            </div>
+        </form>
     </div>
 </div>
-

@@ -29,7 +29,6 @@
       document.addEventListener('DOMContentLoaded', () => {
         // Get the current year
         const currentYear = new Date().getFullYear();
-
         // Get the year of the previous year
         const previousYear = currentYear - 1;
 
@@ -65,7 +64,66 @@
         });
 
         // Appeler avec un état initial vide
-        getReservationsData(null); // Aucun filtre d'année sélectionné par défaut
+        getReservationsData(null); 
+        
+			  async function fetchReservations(month, year) {
+          // Remplacez par l'URL réelle de votre API
+          const response = await fetch(`http://localhost:5055/api/reservation/${month}/${year}`);
+          const data = await response.json();
+          return data.map((reservation) => {
+            const date = new Date(reservation.startDate);
+            const year = date.getUTCFullYear();
+            const month = String(date.getUTCMonth() + 1).padStart(2, "0");
+            const day = String(date.getUTCDate()).padStart(2, "0");
+            return `${year}-${month}-${day}`;
+          });
+        }
+
+        async function initializeCalendar() {
+          // Définit le mois et l'année actuels comme valeurs par défaut
+          const today = new Date();
+          const currentMonth = today.getMonth() + 1; // Mois courant (base 1)
+          const currentYear = today.getFullYear();
+
+          // Appel à fetchReservations pour récupérer les données
+          const highlightedDates = await fetchReservations(currentMonth, currentYear);
+
+          // Initialisation de Flatpickr avec les dates surlignées et alerte de changement de mois
+          const flatpickrInstance = document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+            nextArrow: "<span title=\"Next month\">&raquo;</span>",
+
+            onDayCreate: (dObj, dStr, fp, dayElem) => {
+              const date = dayElem.dateObj;
+              const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+              if (highlightedDates.includes(formattedDate)) {
+                dayElem.classList.add("highlighted");
+              }
+            },
+            onMonthChange: (selectedDates, dateStr, instance) => {
+              // Afficher une alerte lorsque le mois/année change
+              const selectedMonth = instance.currentMonth + 1; // Mois sélectionné (base 1)
+              const selectedYear = instance.currentYear;
+
+              // Recharger les réservations pour le mois sélectionné
+              fetchReservations(selectedMonth, selectedYear).then((newHighlightedDates) => {
+                instance.redraw();
+                instance.config.onDayCreate = (dObj, dStr, fp, dayElem) => {
+                  const date = dayElem.dateObj;
+                  const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+
+                  if (newHighlightedDates.includes(formattedDate)) {
+                    dayElem.classList.add("highlighted");
+                  }
+                };
+              });
+            }
+          });
+        }
+
+        initializeCalendar();
       });
 
       const getReservationsData = async (year) => {
@@ -266,21 +324,29 @@
         totalRevenueChartEl._chartInstance = totalRevenueChart;
         totalRevenueChart.render();
       };
+
     })();
   </script>
 }
 
+<style>
+  /* Style pour les jours surlignés */
+  .highlighted {
+    background-color: #ffde59 !important;
+    color: #000 !important;
+    border-radius: 50%;
+  }
+</style>
 
 <div class="row">
   <!-- En-tête du Tableau de bord -->
   <div class="col-xxl-8 mb-6">
-    <div class="card">
+    <div class="card mb-6">
       <div class="d-flex align-items-start row">
         <div class="col-sm-7">
           <div class="card-body">
             <h5 class="card-title text-primary mb-3">Bonjour ! 🎉</h5>
-            <p class="mb-6">Vous avez connu une belle activité aujourd'hui.<br> Consultez votre profil pour voir vos dernières réalisations.
-            </p>
+            <p class="mb-6">Vous avez connu une belle activité aujourd'hui.<br> Consultez votre profil pour voir vos dernières réalisations.</p>
             <!-- <a href="javascript:;" class="btn btn-sm btn-outline-primary">Voir les Badges</a> -->
           </div>
         </div>
@@ -291,141 +357,69 @@
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- <div class="col-xxl-4 col-lg-12">
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="~/img/icons/unicons/chart-success.png" alt="succès graphique" class="rounded">
+    @if (httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
+    {   
+      @if (userRole == "OWNER")
+      {
+        <div class="card">
+          <div class="row row-bordered g-0">
+            <div class="col-lg-8">
+              <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="m-0 me-2">Nombre des réservations</h5>
+                <div class="dropdown">
+                  <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown">
+                    <i class="bx bx-dots-vertical-rounded bx-lg text-muted"></i>
+                  </button>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="javascript:void(0);">Actualiser</a>
+                    <a class="dropdown-item" href="javascript:void(0);">Partager</a>
+                  </div>
+                </div>
               </div>
+              <div id="totalRevenueChart" class="px-3"></div>
             </div>
-            <p class="mb-1">Profit</p>
-            <h4 class="card-title mb-3">Ar 1 ,628</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +72.80%</small>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-12 col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="~/img/icons/unicons/wallet-info.png" alt="informations portefeuille" class="rounded">
-              </div>
-            </div>
-            <p class="mb-1">Ventes</p>
-            <h4 class="card-title mb-3">Ar 4 679</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +28.42%</small>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-@if (httpContextAccessor.HttpContext.User.Identity.IsAuthenticated)
-  {   
-    @if (userRole == "OWNER")
-    {
-        <div class="col-12 col-xxl-8">
-          <div class="card">
-            <div class="row row-bordered g-0">
-              <div class="col-lg-8">
-                <div class="card-header d-flex align-items-center justify-content-between">
-                  <h5 class="m-0 me-2">Nombre des réservations</h5>
-                  <div class="dropdown">
-                    <button class="btn p-0" type="button" id="totalRevenue" data-bs-toggle="dropdown">
-                      <i class="bx bx-dots-vertical-rounded bx-lg text-muted"></i>
+            <div class="col-lg-4 d-flex align-items-center">
+              <div class="card-body px-xl-9">
+                <div class="text-center mb-6">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-outline-primary" id="year-button">
+                      <script>document.write(new Date().getFullYear())</script>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-end">
-                      <a class="dropdown-item" href="javascript:void(0);">Actualiser</a>
-                      <a class="dropdown-item" href="javascript:void(0);">Partager</a>
-                    </div>
+                    <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+                      <span class="visually-hidden">Activer le menu déroulant</span>
+                    </button>
+                    <ul id="year-dropdown" class="dropdown-menu">
+                      <li><a class="dropdown-item" href="javascript:void(0);" data-year="">Sélectionnez une année</a></li>
+                    </ul>
                   </div>
                 </div>
-                <div id="totalRevenueChart" class="px-3"></div>
-              </div>
-              <div class="col-lg-4 d-flex align-items-center">
-                <div class="card-body px-xl-9">
-                  <div class="text-center mb-6">
-                    <div class="btn-group">
-                      <button type="button" class="btn btn-outline-primary" id="year-button">
-                        <script>document.write(new Date().getFullYear())</script>
-                      </button>
-                      <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
-                        <span class="visually-hidden">Activer le menu déroulant</span>
-                      </button>
-                      <ul id="year-dropdown" class="dropdown-menu">
-                        <li><a class="dropdown-item" href="javascript:void(0);" data-year="">Sélectionnez une année</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div id="growthChart"></div>
-                  <div class="text-center fw-medium my-6" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
-                </div>
+                <div id="growthChart"></div>
+                <div class="text-center fw-medium my-6" id="growth_data_text"><span id="growth_data_number"></span>% de Croissance en terme de <b> réservation Confirmés </b> par rapport à l'année précedente</div>
               </div>
             </div>
           </div>
         </div>
-    }  
-  }
-
-  <!-- Paiements et Transactions -->
-  <!-- <div class="col-12 col-md-8 col-lg-12 col-xxl-4">
-    <div class="row">
-      <div class="col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="~/img/icons/unicons/paypal.png" alt="paypal" class="rounded">
-              </div>
-            </div>
-            <p class="mb-1">Paiements</p>
-            <h4 class="card-title mb-3">Ar 2 456</h4>
-            <small class="text-danger fw-medium"><i class='bx bx-down-arrow-alt'></i> -14.82%</small>
-          </div>
-        </div>
-      </div>
-      <div class="col-6 mb-6">
-        <div class="card h-100">
-          <div class="card-body">
-            <div class="card-title d-flex align-items-start justify-content-between mb-4">
-              <div class="avatar flex-shrink-0">
-                <img src="~/img/icons/unicons/cc-primary.png" alt="Carte de Crédit" class="rounded">
-              </div>
-            </div>
-            <p class="mb-1">Transactions</p>
-            <h4 class="card-title mb-3">Ar 1 ,857</h4>
-            <small class="text-success fw-medium"><i class='bx bx-up-arrow-alt'></i> +28.14%</small>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-<!-- Statistiques des Commandes -->
-<!-- <div class="row">
-  <div class="col-12">
-    <div class="card h-100">
-      <div class="card-header d-flex justify-content-between">
-        <h5 class="mb-1">Statistiques des Commandes</h5>
-        <p class="card-subtitle">42.82k Ventes Totales</p>
-        <div class="dropdown">
-          <button class="btn text-muted p-0" type="button" id="orederStatistics" data-bs-toggle="dropdown">
-            <i class="bx bx-dots-vertical-rounded bx-lg"></i>
-          </button>
-          <div class="dropdown-menu dropdown-menu-end">
-            <a class="dropdown-item" href="javascript:void(0);">Tout Sélectionner</a>
-            <a class="dropdown-item" href="javascript:void(0);">Actualiser</a>
-            <a class="dropdown-item" href="javascript:void(0);">Partager</a>
-          </div>
-        </div>
-      </div>
-      <div id="orderStatisticsChart"></div>
-    </div>
+      }  
+    }
   </div>
-</div> -->
+
+  <div class="col-xxl-4 col-lg-12">
+    <div class="row">
+			<div class="col-12  d-flex order-1 order-xxl-1">
+				<div class="card flex-fill">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Calendar</h5>
+					</div>
+					<div class="card-body d-flex">
+							<div class="chart">
+								<div id="datetimepicker-dashboard"></div>
+							</div>
+					</div>
+          <div class="card-footer">
+						<h5 class="card-title mb-0">Réservation</h5>
+					</div>
+				</div>
+			</div>
+    </div>
   </div>
 </div>

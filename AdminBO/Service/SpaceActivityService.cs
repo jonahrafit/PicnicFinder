@@ -36,9 +36,10 @@ public class SpaceActivityService
 
             var command = new SqlCommand(
                 @"
-                SELECT sa.* 
+                SELECT sa.Id,sa.Name, ca.Id as CategoryId, ca.Name as CategoryName
                 FROM SpaceActivityLinks sal
                 INNER JOIN SpaceActivities sa ON sal.SpaceActivityId = sa.Id
+                LEFT JOIN CategoryActivities ca ON sa.CategoryId = ca.Id
                 WHERE sal.SpaceId = @SpaceId",
                 connection
             );
@@ -53,6 +54,12 @@ public class SpaceActivityService
                     {
                         Id = reader.GetInt64(0),
                         Name = reader.GetString(1),
+                        CategoryId = reader.GetInt64(reader.GetOrdinal("CategoryId")),
+                        CategoryActivity = new CategoryActivity
+                        {
+                            Id = reader.GetInt64(reader.GetOrdinal("CategoryId")),
+                            Name = reader.GetString(reader.GetOrdinal("CategoryName")),
+                        },
                     };
 
                     spaceActivities.Add(spaceActivity);
@@ -97,10 +104,14 @@ public class SpaceActivityService
         {
             await connection.OpenAsync();
 
-            var command = new SqlCommand(
-                "SELECT * FROM SpaceActivities WHERE Id = @Id",
-                connection
-            );
+            var query =
+                @"
+            SELECT sa.Id, sa.Name, sa.CategoryId, ca.Name AS CategoryName
+            FROM SpaceActivities sa
+            LEFT JOIN CategoryActivities ca ON sa.CategoryId = ca.Id
+            WHERE sa.Id = @Id";
+
+            var command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@Id", id);
 
             using (var reader = await command.ExecuteReaderAsync())
@@ -111,7 +122,12 @@ public class SpaceActivityService
                     {
                         Id = reader.GetInt64(reader.GetOrdinal("Id")),
                         Name = reader.GetString(reader.GetOrdinal("Name")),
-                        // Ajoutez d'autres colonnes si nécessaire
+                        CategoryId = reader.GetInt64(reader.GetOrdinal("CategoryId")),
+                        CategoryActivity = new CategoryActivity
+                        {
+                            Id = reader.GetInt64(reader.GetOrdinal("CategoryId")),
+                            Name = reader.GetString(reader.GetOrdinal("CategoryName")),
+                        },
                     };
                 }
             }
