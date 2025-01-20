@@ -14,7 +14,6 @@
              alertMessage.style.display = 'none';
             const modal = document.getElementById('backDropModal');
 
-
             function updateDurationDisplay() {
                 const startDateInput = document.getElementById("startDate").value;
                 const endDateInput = document.getElementById("endDate").value;
@@ -145,8 +144,8 @@
 					class="btn btn-outline-secondary"
 					data-bs-toggle="modal" 
                     data-bs-target="#backDropModal" 
-                    data-space-name="@@spaceDetails.space.name"
-                    data-space-id="@@spaceDetails.space.id"">
+                    data-space-name="@spaceDetails.space.name"
+                    data-space-id="@spaceDetails.space.id"">
                     <span class="tf-icons bx bx-bell bx-18px me-2"></span>Réserver cette Espace
                 </button>
             </div>

@@ -83,6 +83,7 @@ public class ReservationController : BaseController
     [HttpPost]
     public async Task<IActionResult> CreateReservation(ReservationViewModel model)
     {
+        Console.WriteLine(model.ToString());
         if (!ModelState.IsValid)
         {
             RedirectToAction("Index", "Space");
@@ -110,7 +111,6 @@ public class ReservationController : BaseController
                     ReservationDate = DateTime.UtcNow,
                     StartDate = model.StartDate,
                     EndDate = model.EndDate,
-                    Status = "PENDING",
                 };
                 Console.WriteLine(requestData);
 

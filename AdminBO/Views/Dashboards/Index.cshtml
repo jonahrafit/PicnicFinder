@@ -4,7 +4,6 @@
 @{
     var name = httpContextAccessor.HttpContext.User.Identity.Name;
     var userRole = httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Role)?.Value;
-    Console.WriteLine(userRole);
 }
 @{
   ViewData["Title"] = "Tableau de bord - Analytique";
@@ -26,7 +25,7 @@
       const labelColor = config.colors.textMuted;
       const borderColor = config.colors.borderColor;
 
-      document.addEventListener('DOMContentLoaded', () => {
+      document.addEventListener("DOMContentLoaded", () => {
         // Get the current year
         const currentYear = new Date().getFullYear();
         // Get the year of the previous year
@@ -52,8 +51,6 @@
         dropdownItems.forEach(item => {
           item.addEventListener('click', (event) => {
             event.preventDefault();
-
-            // Récupérer l'année sélectionnée
             const year = item.getAttribute('data-year');
             console.log(`Année sélectionnée : ${year || 'Aucune'}`);
 
@@ -64,11 +61,11 @@
         });
 
         // Appeler avec un état initial vide
-        getReservationsData(null); 
-        
-			  async function fetchReservations(month, year) {
-          // Remplacez par l'URL réelle de votre API
-          const response = await fetch(`http://localhost:5055/api/reservation/${month}/${year}`);
+        getReservationsData(null);
+
+        // Fonction pour récupérer les réservations pour un mois et une année donnés
+        async function fetchReservations(month, year) {
+          const response = await fetch(`/api/reservation/${month}/${year}`);
           const data = await response.json();
           return data.map((reservation) => {
             const date = new Date(reservation.startDate);
@@ -80,46 +77,53 @@
         }
 
         async function initializeCalendar() {
-          // Définit le mois et l'année actuels comme valeurs par défaut
+          // Définit les valeurs par défaut du mois et de l'année actuels
           const today = new Date();
-          const currentMonth = today.getMonth() + 1; // Mois courant (base 1)
-          const currentYear = today.getFullYear();
+          let currentMonth = today.getMonth() + 1; // Base 1
+          let currentYear = today.getFullYear();
 
-          // Appel à fetchReservations pour récupérer les données
-          const highlightedDates = await fetchReservations(currentMonth, currentYear);
+          // Appel initial pour charger les dates surlignées
+          let highlightedDates = await fetchReservations(currentMonth, currentYear);
 
-          // Initialisation de Flatpickr avec les dates surlignées et alerte de changement de mois
+          // Initialisation de Flatpickr
           const flatpickrInstance = document.getElementById("datetimepicker-dashboard").flatpickr({
             inline: true,
-            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-            nextArrow: "<span title=\"Next month\">&raquo;</span>",
-
+            prevArrow: "<span title='Previous month'>&laquo;</span>",
+            nextArrow: "<span title='Next month'>&raquo;</span>",
             onDayCreate: (dObj, dStr, fp, dayElem) => {
               const date = dayElem.dateObj;
               const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
-
               if (highlightedDates.includes(formattedDate)) {
                 dayElem.classList.add("highlighted");
               }
             },
-            onMonthChange: (selectedDates, dateStr, instance) => {
-              // Afficher une alerte lorsque le mois/année change
-              const selectedMonth = instance.currentMonth + 1; // Mois sélectionné (base 1)
-              const selectedYear = instance.currentYear;
+            onMonthChange: async (selectedDates, dateStr, instance) => {
+              // Met à jour le mois et l'année sélectionnés
+              currentMonth = instance.currentMonth + 1; // Base 1
+              currentYear = instance.currentYear;
 
-              // Recharger les réservations pour le mois sélectionné
-              fetchReservations(selectedMonth, selectedYear).then((newHighlightedDates) => {
-                instance.redraw();
-                instance.config.onDayCreate = (dObj, dStr, fp, dayElem) => {
-                  const date = dayElem.dateObj;
-                  const formattedDate = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+              // Recharge les données des réservations pour le mois et l'année sélectionnés
+              highlightedDates = await fetchReservations(currentMonth, currentYear);
+              instance.redraw();
+            },
+          });
 
-                  if (newHighlightedDates.includes(formattedDate)) {
-                    dayElem.classList.add("highlighted");
-                  }
-                };
-              });
-            }
+          // Écouteur pour le changement d'année (input dans la barre de Flatpickr)
+          document.querySelector(".cur-year").addEventListener("change", async (event) => {
+            currentYear = parseInt(event.target.value, 10);
+
+            // Recharge les données des réservations pour le mois et l'année mis à jour
+            highlightedDates = await fetchReservations(currentMonth, currentYear);
+            flatpickrInstance.redraw();
+          });
+
+          // Écouteur pour le changement de mois (dropdown dans la barre de Flatpickr)
+          document.querySelector(".flatpickr-monthDropdown-months").addEventListener("change", async (event) => {
+            currentMonth = parseInt(event.target.value, 10) + 1; // Base 1
+
+            // Recharge les données des réservations pour le mois et l'année mis à jour
+            highlightedDates = await fetchReservations(currentMonth, currentYear);
+            flatpickrInstance.redraw();
           });
         }
 
@@ -408,16 +412,16 @@
 			<div class="col-12  d-flex order-1 order-xxl-1">
 				<div class="card flex-fill">
 					<div class="card-header">
-						<h5 class="card-title mb-0">Calendar</h5>
+						<h5 class="card-title mb-0">Calendrier</h5>
 					</div>
 					<div class="card-body d-flex">
 							<div class="chart">
 								<div id="datetimepicker-dashboard"></div>
 							</div>
 					</div>
-          <div class="card-footer">
+          <!-- <div class="card-footer">
 						<h5 class="card-title mb-0">Réservation</h5>
-					</div>
+					</div> -->
 				</div>
 			</div>
     </div>

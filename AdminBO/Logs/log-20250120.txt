@@ -1,0 +1,661 @@
+2025-01-20 06:45:56.619 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/logout - null 0
+2025-01-20 06:45:56.625 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:45:56.628 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-01-20 06:45:56.634 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-01-20 06:45:56.645 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/logout - 401 0 null 25.494ms
+2025-01-20 06:48:28.342 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/logout - null 0
+2025-01-20 06:48:28.342 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:48:28.345 +03:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2025-01-20 06:48:28.346 +03:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-01-20 06:48:28.347 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/logout - 401 0 null 5.6111ms
+2025-01-20 06:48:34.383 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login - application/json; charset=utf-8 59
+2025-01-20 06:48:34.384 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:48:34.384 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-01-20 06:48:34.385 +03:00 [INF] Route matched with {action = "Authenticate", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-01-20 06:48:34.679 +03:00 [INF] Executed DbCommand (16ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-01-20 06:48:34.928 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-20 06:48:34.929 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO) in 542.0728ms
+2025-01-20 06:48:34.929 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-01-20 06:48:34.929 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login - 200 null application/json; charset=utf-8 546.0774ms
+2025-01-20 06:48:39.019 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=5 - null null
+2025-01-20 06:48:39.019 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:48:39.020 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetReservations (AdminBO)'
+2025-01-20 06:48:39.021 +03:00 [INF] Route matched with {action = "GetReservations", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetReservations(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:48:39.059 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__idUser_0='?' (DbType = Int64), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[EmployeeId], [r0].[EndDate], [r0].[ReservationDate], [r0].[SpaceId], [r0].[StartDate], [r0].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM (
+    SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status]
+    FROM [Reservations] AS [r]
+    WHERE [r].[EmployeeId] = @__idUser_0
+    ORDER BY [r].[Id]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [r0]
+INNER JOIN [Spaces] AS [s] ON [r0].[SpaceId] = [s].[Id]
+ORDER BY [r0].[Id]
+2025-01-20 06:48:39.069 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__employeeId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Reservations] AS [r]
+WHERE [r].[EmployeeId] = @__employeeId_0
+2025-01-20 06:48:39.074 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType3`2[[System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[PaginationModel, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:48:39.076 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetReservations (AdminBO) in 55.6383ms
+2025-01-20 06:48:39.077 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetReservations (AdminBO)'
+2025-01-20 06:48:39.077 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=5 - 200 null application/json; charset=utf-8 58.933ms
+2025-01-20 06:48:59.202 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-01-20 06:48:59.203 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:48:59.209 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-01-20 06:48:59.210 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-01-20 06:48:59.227 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-01-20 06:48:59.288 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Spaces] AS [s]
+2025-01-20 06:48:59.289 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.Collections.Generic.List`1[[ViewSpaceWithActivities, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[PaginationModel, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:48:59.289 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 77.7984ms
+2025-01-20 06:48:59.290 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-01-20 06:48:59.290 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 200 null application/json; charset=utf-8 88.007ms
+2025-01-20 06:48:59.611 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/IMG_20250114_061708_627.jpg - null null
+2025-01-20 06:48:59.782 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/471627686_939844261456643_3093904225100835945_n.jpg - null null
+2025-01-20 06:48:59.783 +03:00 [INF] Sending file. Request path: '/img/471627686_939844261456643_3093904225100835945_n.jpg'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/img/471627686_939844261456643_3093904225100835945_n.jpg'
+2025-01-20 06:48:59.784 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/471627686_939844261456643_3093904225100835945_n.jpg - 200 47137 image/jpeg 1.6438ms
+2025-01-20 06:48:59.799 +03:00 [INF] Sending file. Request path: '/img/IMG_20250114_061708_627.jpg'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/img/IMG_20250114_061708_627.jpg'
+2025-01-20 06:48:59.799 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/IMG_20250114_061708_627.jpg - 200 4301430 image/jpeg 188.3299ms
+2025-01-20 06:48:59.864 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/120826421.jpg - null null
+2025-01-20 06:48:59.865 +03:00 [INF] Sending file. Request path: '/img/120826421.jpg'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/img/120826421.jpg'
+2025-01-20 06:48:59.865 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/120826421.jpg - 200 152101 image/jpeg 1.2311ms
+2025-01-20 06:49:03.050 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=2&pageSize=3 - null null
+2025-01-20 06:49:03.051 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:49:03.052 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-01-20 06:49:03.052 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-01-20 06:49:03.058 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_0 ROWS ONLY
+2025-01-20 06:49:03.066 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Spaces] AS [s]
+2025-01-20 06:49:03.067 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.Collections.Generic.List`1[[ViewSpaceWithActivities, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[PaginationModel, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:49:03.067 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 15.2755ms
+2025-01-20 06:49:03.068 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-01-20 06:49:03.068 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=2&pageSize=3 - 200 null application/json; charset=utf-8 17.7641ms
+2025-01-20 06:49:03.253 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/Capture d’écran du 2024-11-14 04-52-54.png - null null
+2025-01-20 06:49:03.255 +03:00 [INF] Sending file. Request path: '/img/Capture d’écran du 2024-11-14 04-52-54.png'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/img/Capture d’écran du 2024-11-14 04-52-54.png'
+2025-01-20 06:49:03.255 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/Capture d’écran du 2024-11-14 04-52-54.png - 200 169711 image/png 1.7872ms
+2025-01-20 06:49:03.432 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/S.Andrianina20250112_074327_🔥hazavana🔥 (2) (1).png - null null
+2025-01-20 06:49:03.491 +03:00 [INF] Sending file. Request path: '/img/S.Andrianina20250112_074327_🔥hazavana🔥 (2) (1).png'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/img/S.Andrianina20250112_074327_🔥hazavana🔥 (2) (1).png'
+2025-01-20 06:49:03.491 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/S.Andrianina20250112_074327_🔥hazavana🔥 (2) (1).png - 200 7183723 image/png 59.2682ms
+2025-01-20 06:49:06.534 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-01-20 06:49:06.534 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:49:06.534 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-01-20 06:49:06.535 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-01-20 06:49:06.541 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-01-20 06:49:06.551 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Spaces] AS [s]
+2025-01-20 06:49:06.551 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.Collections.Generic.List`1[[ViewSpaceWithActivities, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[PaginationModel, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:49:06.552 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 16.8473ms
+2025-01-20 06:49:06.553 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-01-20 06:49:06.554 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 200 null application/json; charset=utf-8 20.4192ms
+2025-01-20 06:49:10.664 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/logout - null 0
+2025-01-20 06:49:10.664 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:49:10.665 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Logout (AdminBO)'
+2025-01-20 06:49:10.667 +03:00 [INF] Route matched with {action = "Logout", controller = "AuthApi"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Logout() on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-01-20 06:49:10.682 +03:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2025-01-20 06:49:10.685 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Logout (AdminBO) in 17.0004ms
+2025-01-20 06:49:10.685 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Logout (AdminBO)'
+2025-01-20 06:49:10.686 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/logout - 200 0 null 22.2737ms
+2025-01-20 06:49:18.375 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Auth/Logout - null null
+2025-01-20 06:49:18.378 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:49:18.379 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.Logout (AdminBO)'
+2025-01-20 06:49:18.383 +03:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Logout() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-01-20 06:49:18.400 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-01-20 06:49:18.412 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 16.1947ms.
+2025-01-20 06:49:18.413 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.Logout (AdminBO) in 27.1923ms
+2025-01-20 06:49:18.413 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.Logout (AdminBO)'
+2025-01-20 06:49:18.413 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Auth/Logout - 200 null text/html; charset=utf-8 38.2925ms
+2025-01-20 06:49:18.485 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/site.css - null null
+2025-01-20 06:49:18.487 +03:00 [INF] The file /css/site.css was not modified
+2025-01-20 06:49:18.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/site.css - 304 null text/css 2.8806ms
+2025-01-20 06:49:18.505 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - null null
+2025-01-20 06:49:18.506 +03:00 [INF] Sending file. Request path: '/vendor/fonts/boxicons.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/fonts/boxicons.css'
+2025-01-20 06:49:18.506 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - 200 86298 text/css 1.0923ms
+2025-01-20 06:49:18.509 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-01-20 06:49:18.511 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-01-20 06:49:18.511 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 1.7293ms
+2025-01-20 06:49:18.512 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - null null
+2025-01-20 06:49:18.512 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - null null
+2025-01-20 06:49:18.513 +03:00 [INF] Sending file. Request path: '/vendor/css/theme-default.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/css/theme-default.css'
+2025-01-20 06:49:18.513 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - 200 29661 text/css 1.0459ms
+2025-01-20 06:49:18.512 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - null null
+2025-01-20 06:49:18.514 +03:00 [INF] Sending file. Request path: '/vendor/js/helpers.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/js/helpers.js'
+2025-01-20 06:49:18.514 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - 200 34158 text/javascript 2.0515ms
+2025-01-20 06:49:18.512 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - null null
+2025-01-20 06:49:18.516 +03:00 [INF] Sending file. Request path: '/vendor/libs/jquery/jquery.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/libs/jquery/jquery.js'
+2025-01-20 06:49:18.517 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - 200 327945 text/javascript 4.4044ms
+2025-01-20 06:49:18.524 +03:00 [INF] Sending file. Request path: '/vendor/js/bootstrap.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/js/bootstrap.js'
+2025-01-20 06:49:18.525 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - 200 353217 text/javascript 12.341ms
+2025-01-20 06:49:18.720 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - null null
+2025-01-20 06:49:18.721 +03:00 [INF] The file /css/flatpickr.min.css was not modified
+2025-01-20 06:49:18.722 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - 304 null text/css 2.5149ms
+2025-01-20 06:49:18.725 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2025-01-20 06:49:18.727 +03:00 [INF] Sending file. Request path: '/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'
+2025-01-20 06:49:18.720 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/material_blue.css - null null
+2025-01-20 06:49:18.732 +03:00 [INF] The file /css/material_blue.css was not modified
+2025-01-20 06:49:18.732 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - null null
+2025-01-20 06:49:18.734 +03:00 [INF] Sending file. Request path: '/js/flatpickr.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/js/flatpickr.js'
+2025-01-20 06:49:18.734 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - 200 50679 text/javascript 2.1507ms
+2025-01-20 06:49:18.732 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/material_blue.css - 304 null text/css 12.2493ms
+2025-01-20 06:49:18.729 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 200 45790 text/javascript 3.8556ms
+2025-01-20 06:49:18.881 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - null null
+2025-01-20 06:49:18.882 +03:00 [INF] CORS policy execution successful.
+2025-01-20 06:49:18.883 +03:00 [INF] Sending file. Request path: '/vendor/fonts/boxicons/boxicons.woff2'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/fonts/boxicons/boxicons.woff2'
+2025-01-20 06:49:18.884 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - 200 115680 font/woff2 2.7318ms
+2025-01-20 06:49:20.886 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - application/x-www-form-urlencoded 239
+2025-01-20 06:49:20.887 +03:00 [INF] CORS policy execution successful.
+2025-01-20 06:49:20.888 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:49:20.889 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-01-20 06:49:20.889 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String) on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-01-20 06:49:20.893 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-01-20 06:49:21.196 +03:00 [INF] Executing RedirectResult, redirecting to /Dashboards/Index.
+2025-01-20 06:49:21.196 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.Authenticate (AdminBO) in 307.1012ms
+2025-01-20 06:49:21.196 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-01-20 06:49:21.197 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - 302 0 null 310.5254ms
+2025-01-20 06:49:21.202 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-01-20 06:49:21.202 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:49:21.203 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:49:21.203 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-01-20 06:49:21.205 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 06:49:21.213 +03:00 [INF] Executed ViewResult - view Index executed in 9.4585ms.
+2025-01-20 06:49:21.213 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 9.8211ms
+2025-01-20 06:49:21.214 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:49:21.214 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 11.8425ms
+2025-01-20 06:49:21.486 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - null null
+2025-01-20 06:49:21.487 +03:00 [INF] Sending file. Request path: '/vendor/libs/apex-charts/apexcharts.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/libs/apex-charts/apexcharts.js'
+2025-01-20 06:49:21.487 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - 200 502462 text/javascript 1.733ms
+2025-01-20 06:49:21.640 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 06:49:21.641 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:49:21.642 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:49:21.642 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:49:21.657 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:49:21.659 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:49:21.659 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 16.1628ms
+2025-01-20 06:49:21.659 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:49:21.660 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 19.6218ms
+2025-01-20 06:49:23.534 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Spaces/Index - null null
+2025-01-20 06:49:23.534 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:49:23.535 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.SpacesController.Index (AdminBO)'
+2025-01-20 06:49:23.545 +03:00 [INF] Route matched with {action = "Index", controller = "Spaces"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.Nullable`1[System.Int64]) on controller AdminBO.Controllers.SpacesController (AdminBO).
+2025-01-20 06:49:23.569 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ownerId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+WHERE [s].[OwnerId] = @__ownerId_0
+2025-01-20 06:49:23.574 +03:00 [INF] Executing ViewResult, running view Basic.
+2025-01-20 06:49:23.591 +03:00 [INF] Executed ViewResult - view Basic executed in 19.2941ms.
+2025-01-20 06:49:23.592 +03:00 [INF] Executed action AdminBO.Controllers.SpacesController.Index (AdminBO) in 46.2531ms
+2025-01-20 06:49:23.592 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.SpacesController.Index (AdminBO)'
+2025-01-20 06:49:23.593 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Spaces/Index - 200 null text/html; charset=utf-8 58.8809ms
+2025-01-20 06:49:23.656 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/masonry/masonry.js - null null
+2025-01-20 06:49:23.657 +03:00 [INF] Sending file. Request path: '/vendor/libs/masonry/masonry.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/libs/masonry/masonry.js'
+2025-01-20 06:49:23.658 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/masonry/masonry.js - 200 70956 text/javascript 1.1687ms
+2025-01-20 06:49:30.087 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/Index - null null
+2025-01-20 06:49:30.090 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:49:30.091 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-01-20 06:49:30.091 +03:00 [INF] Route matched with {action = "Index", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ViewReservation]]] Index(Int32, Int32, Int32, Int32, System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 06:49:30.107 +03:00 [INF] Executing ViewResult, running view Basic.
+2025-01-20 06:49:30.117 +03:00 [INF] Executed ViewResult - view Basic executed in 10.4898ms.
+2025-01-20 06:49:30.117 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.Index (AdminBO) in 26.0421ms
+2025-01-20 06:49:30.118 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-01-20 06:49:30.118 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/Index - 200 null text/html; charset=utf-8 31.1391ms
+2025-01-20 06:49:33.616 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/Index?page=1&pageSize=3&monthFilter=&status=&yearFilter=2024 - null null
+2025-01-20 06:49:33.617 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:49:33.618 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-01-20 06:49:33.619 +03:00 [INF] Route matched with {action = "Index", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ViewReservation]]] Index(Int32, Int32, Int32, Int32, System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 06:49:33.630 +03:00 [INF] Executing ViewResult, running view Basic.
+2025-01-20 06:49:33.650 +03:00 [INF] Executed ViewResult - view Basic executed in 19.563ms.
+2025-01-20 06:49:33.650 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.Index (AdminBO) in 30.3295ms
+2025-01-20 06:49:33.650 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-01-20 06:49:33.651 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/Index?page=1&pageSize=3&monthFilter=&status=&yearFilter=2024 - 200 null text/html; charset=utf-8 34.0174ms
+2025-01-20 06:49:45.266 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/AllReservationToPdf?monthFilter=0&yearFilter=2024&status=TOUS - null null
+2025-01-20 06:49:45.267 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:49:45.267 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.AllReservationToPdf (AdminBO)'
+2025-01-20 06:49:45.274 +03:00 [INF] Route matched with {action = "AllReservationToPdf", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ViewReservation]]] AllReservationToPdf(Int32, Int32, System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 06:49:45.277 +03:00 [INF] Executing ObjectResult, writing value of type 'System.Collections.Generic.List`1[[ViewReservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:49:45.286 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.AllReservationToPdf (AdminBO) in 11.8259ms
+2025-01-20 06:49:45.286 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.AllReservationToPdf (AdminBO)'
+2025-01-20 06:49:45.286 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/AllReservationToPdf?monthFilter=0&yearFilter=2024&status=TOUS - 200 null application/json; charset=utf-8 20.0407ms
+2025-01-20 06:50:00.684 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/Index?page=1&pageSize=3&monthFilter=&status=&yearFilter= - null null
+2025-01-20 06:50:00.685 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:00.686 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-01-20 06:50:00.686 +03:00 [INF] Route matched with {action = "Index", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ViewReservation]]] Index(Int32, Int32, Int32, Int32, System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 06:50:00.688 +03:00 [INF] Executing ViewResult, running view Basic.
+2025-01-20 06:50:00.703 +03:00 [INF] Executed ViewResult - view Basic executed in 14.9012ms.
+2025-01-20 06:50:00.704 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.Index (AdminBO) in 18.0398ms
+2025-01-20 06:50:00.704 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-01-20 06:50:00.705 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/Index?page=1&pageSize=3&monthFilter=&status=&yearFilter= - 200 null text/html; charset=utf-8 20.8664ms
+2025-01-20 06:50:07.401 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-01-20 06:50:07.402 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:07.404 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:50:07.405 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-01-20 06:50:07.405 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 06:50:07.409 +03:00 [INF] Executed ViewResult - view Index executed in 3.8429ms.
+2025-01-20 06:50:07.409 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 4.393ms
+2025-01-20 06:50:07.410 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:50:07.410 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 8.4906ms
+2025-01-20 06:50:07.805 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 06:50:07.805 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:07.808 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:07.809 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:07.817 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:07.820 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:07.820 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 11.1957ms
+2025-01-20 06:50:07.820 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:07.820 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 15.4599ms
+2025-01-20 06:50:12.102 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-01-20 06:50:12.103 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:12.103 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:50:12.103 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-01-20 06:50:12.104 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 06:50:12.106 +03:00 [INF] Executed ViewResult - view Index executed in 2.2423ms.
+2025-01-20 06:50:12.107 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 2.9327ms
+2025-01-20 06:50:12.107 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:50:12.107 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 5.3036ms
+2025-01-20 06:50:12.307 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 06:50:12.308 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:12.309 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:12.309 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:12.312 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:12.315 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:12.318 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 9.0663ms
+2025-01-20 06:50:12.320 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:12.321 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 13.8422ms
+2025-01-20 06:50:25.328 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/12/2024 - null null
+2025-01-20 06:50:25.329 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:25.330 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:25.330 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:25.333 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:25.334 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:25.335 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 4.7757ms
+2025-01-20 06:50:25.336 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:25.336 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/12/2024 - 200 null application/json; charset=utf-8 7.9788ms
+2025-01-20 06:50:26.393 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/11/2024 - null null
+2025-01-20 06:50:26.394 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:26.395 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:26.396 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:26.403 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:26.404 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:26.405 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 8.7687ms
+2025-01-20 06:50:26.405 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:26.411 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/11/2024 - 200 null application/json; charset=utf-8 17.4133ms
+2025-01-20 06:50:26.860 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/10/2024 - null null
+2025-01-20 06:50:26.860 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:26.861 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:26.861 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:26.864 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:26.867 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:26.868 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 6.756ms
+2025-01-20 06:50:26.870 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:26.871 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/10/2024 - 200 null application/json; charset=utf-8 11.8081ms
+2025-01-20 06:50:28.370 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/11/2024 - null null
+2025-01-20 06:50:28.371 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:28.372 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:28.372 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:28.376 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:28.376 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:28.376 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 3.6331ms
+2025-01-20 06:50:28.377 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:28.377 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/11/2024 - 200 null application/json; charset=utf-8 6.5954ms
+2025-01-20 06:50:28.594 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/12/2024 - null null
+2025-01-20 06:50:28.595 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:28.595 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:28.596 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:28.600 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:28.603 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:28.603 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 6.8766ms
+2025-01-20 06:50:28.604 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:28.604 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/12/2024 - 200 null application/json; charset=utf-8 10.3431ms
+2025-01-20 06:50:29.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 06:50:29.195 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:50:29.196 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:29.196 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:50:29.199 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:50:29.201 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:50:29.201 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 4.4736ms
+2025-01-20 06:50:29.201 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:50:29.202 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 6.8396ms
+2025-01-20 06:51:22.580 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-01-20 06:51:22.580 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:51:22.581 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:51:22.581 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-01-20 06:51:22.581 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 06:51:22.583 +03:00 [INF] Executed ViewResult - view Index executed in 1.6811ms.
+2025-01-20 06:51:22.583 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 1.9452ms
+2025-01-20 06:51:22.583 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 06:51:22.584 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 3.7718ms
+2025-01-20 06:51:23.178 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 06:51:23.178 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 06:51:23.179 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:51:23.179 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 06:51:23.184 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 06:51:23.190 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 06:51:23.191 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 11.2591ms
+2025-01-20 06:51:23.191 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 06:51:23.191 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 13.6629ms
+2025-01-20 06:51:23.406 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - null null
+2025-01-20 06:51:23.409 +03:00 [INF] Sending file. Request path: '/img/favicon/favicon.ico'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/img/favicon/favicon.ico'
+2025-01-20 06:51:23.411 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - 200 1393 image/x-icon 4.9359ms
+2025-01-20 06:51:50.746 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login - application/json 74
+2025-01-20 06:51:50.747 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:51:50.747 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-01-20 06:51:50.747 +03:00 [INF] Route matched with {action = "Authenticate", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-01-20 06:51:50.750 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-01-20 06:51:51.008 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-20 06:51:51.009 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO) in 261.3208ms
+2025-01-20 06:51:51.009 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-01-20 06:51:51.009 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login - 200 null application/json; charset=utf-8 262.8637ms
+2025-01-20 06:52:20.525 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - application/json null
+2025-01-20 06:52:20.525 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:52:20.526 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (CLIENT)
+2025-01-20 06:52:20.526 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-01-20 06:52:20.527 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - 403 0 null 2.0251ms
+2025-01-20 06:52:28.452 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - application/json null
+2025-01-20 06:52:28.457 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:52:28.457 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (CLIENT)
+2025-01-20 06:52:28.458 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-01-20 06:52:28.459 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - 403 0 null 6.823ms
+2025-01-20 06:52:40.333 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login - application/json 74
+2025-01-20 06:52:40.334 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:52:40.334 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-01-20 06:52:40.335 +03:00 [INF] Route matched with {action = "Authenticate", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-01-20 06:52:40.340 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-01-20 06:52:40.610 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-20 06:52:40.611 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO) in 276.24ms
+2025-01-20 06:52:40.612 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-01-20 06:52:40.613 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login - 200 null application/json; charset=utf-8 279.3113ms
+2025-01-20 06:53:01.468 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - application/json null
+2025-01-20 06:53:01.468 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 06:53:01.469 +03:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (CLIENT)
+2025-01-20 06:53:01.470 +03:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-01-20 06:53:01.470 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - 403 0 null 1.9189ms
+2025-01-20 06:53:50.801 +03:00 [INF] Application is shutting down...
+2025-01-20 06:54:40.301 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-01-20 06:54:40.479 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-01-20 06:54:40.521 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-01-20 06:54:40.653 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-01-20 06:54:40.674 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-01-20 06:54:40.676 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-01-20 06:54:40.702 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-01-20 06:54:40.736 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-01-20 06:54:40.750 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-01-20 06:54:40.837 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-20 06:54:41.037 +03:00 [INF] Now listening on: http://localhost:5055
+2025-01-20 06:54:41.042 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-20 06:54:41.049 +03:00 [INF] Hosting environment: Development
+2025-01-20 06:54:41.050 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO
+2025-01-20 07:08:35.408 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - application/json null
+2025-01-20 07:08:35.417 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-20 07:08:35.469 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-01-20 07:08:35.586 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetReservations (AdminBO)'
+2025-01-20 07:08:35.639 +03:00 [INF] Route matched with {action = "GetReservations", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetReservations(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 07:08:36.692 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[@__idUser_0='?' (DbType = Int64), @__p_1='?' (DbType = Int32), @__p_2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r0].[Id], [r0].[EmployeeId], [r0].[EndDate], [r0].[ReservationDate], [r0].[SpaceId], [r0].[StartDate], [r0].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM (
+    SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status]
+    FROM [Reservations] AS [r]
+    WHERE [r].[EmployeeId] = @__idUser_0
+    ORDER BY [r].[Id]
+    OFFSET @__p_1 ROWS FETCH NEXT @__p_2 ROWS ONLY
+) AS [r0]
+INNER JOIN [Spaces] AS [s] ON [r0].[SpaceId] = [s].[Id]
+ORDER BY [r0].[Id]
+2025-01-20 07:08:36.728 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-01-20 07:08:36.743 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetReservations (AdminBO) in 1096.0353ms
+2025-01-20 07:08:36.747 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetReservations (AdminBO)'
+2025-01-20 07:08:36.760 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation?page=1&pageSize=4 - 404 null text/plain; charset=utf-8 1354.3165ms
+2025-01-20 07:11:44.313 +03:00 [INF] Application is shutting down...
+2025-01-20 07:12:21.749 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-01-20 07:12:21.836 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-01-20 07:12:21.865 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-01-20 07:12:21.954 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-01-20 07:12:21.968 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-01-20 07:12:21.971 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-01-20 07:12:21.988 +03:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-01-20 07:12:22.017 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-01-20 07:12:22.029 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-01-20 07:12:22.105 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-20 07:12:22.283 +03:00 [INF] Now listening on: http://localhost:5055
+2025-01-20 07:12:22.288 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-20 07:12:22.290 +03:00 [INF] Hosting environment: Development
+2025-01-20 07:12:22.290 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO
+2025-01-20 07:12:35.207 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-01-20 07:12:35.221 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-20 07:12:35.317 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:12:35.448 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 07:12:35.487 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-01-20 07:12:35.509 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 07:12:35.801 +03:00 [INF] Executed ViewResult - view Index executed in 300.0837ms.
+2025-01-20 07:12:35.805 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 316.3128ms
+2025-01-20 07:12:35.806 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 07:12:35.812 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 608.7018ms
+2025-01-20 07:12:36.094 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-01-20 07:12:36.172 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-01-20 07:12:36.174 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 80.3334ms
+2025-01-20 07:12:36.342 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - null null
+2025-01-20 07:12:36.361 +03:00 [INF] Sending file. Request path: '/vendor/libs/apex-charts/apexcharts.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/libs/apex-charts/apexcharts.js'
+2025-01-20 07:12:36.375 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - 200 502462 text/javascript 22.6023ms
+2025-01-20 07:12:36.709 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 07:12:36.713 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:12:36.727 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 07:12:36.771 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 07:12:37.600 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 07:12:37.782 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 07:12:37.914 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 1142.5453ms
+2025-01-20 07:12:37.915 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 07:12:37.922 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 1213.3687ms
+2025-01-20 07:26:30.200 +03:00 [INF] Application is shutting down...
+2025-01-20 07:27:18.179 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-01-20 07:27:18.463 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-01-20 07:27:18.534 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-01-20 07:27:18.889 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-01-20 07:27:18.951 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-01-20 07:27:18.979 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-01-20 07:27:19.014 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-01-20 07:27:19.080 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-01-20 07:27:19.117 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-01-20 07:27:19.300 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-20 07:27:19.925 +03:00 [INF] Now listening on: http://localhost:5055
+2025-01-20 07:27:19.944 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-20 07:27:19.950 +03:00 [INF] Hosting environment: Development
+2025-01-20 07:27:19.959 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO
+2025-01-20 07:28:53.848 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-01-20 07:28:53.880 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-20 07:28:54.016 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:28:54.203 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 07:28:54.234 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-01-20 07:28:54.253 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 07:28:54.513 +03:00 [INF] Executed ViewResult - view Index executed in 265.5714ms.
+2025-01-20 07:28:54.517 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 282.4386ms
+2025-01-20 07:28:54.518 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-01-20 07:28:54.523 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 678.5888ms
+2025-01-20 07:28:54.630 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-01-20 07:28:54.705 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-01-20 07:28:54.707 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 76.6937ms
+2025-01-20 07:28:55.337 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - null null
+2025-01-20 07:28:55.342 +03:00 [INF] Sending file. Request path: '/vendor/libs/apex-charts/apexcharts.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/AdminBO/wwwroot/vendor/libs/apex-charts/apexcharts.js'
+2025-01-20 07:28:55.343 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - 200 502462 text/javascript 6.2578ms
+2025-01-20 07:28:55.725 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - null null
+2025-01-20 07:28:55.727 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - null null
+2025-01-20 07:28:55.729 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:28:55.730 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:28:55.754 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-01-20 07:28:55.768 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 07:28:55.804 +03:00 [INF] Route matched with {action = "GetReservationsData", controller = "Reservations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetReservationsData(System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 07:28:55.817 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-01-20 07:28:56.752 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-01-20 07:28:57.010 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 07:28:57.198 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 1379.7333ms
+2025-01-20 07:28:57.200 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-01-20 07:28:57.208 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/1/2025 - 200 null application/json; charset=utf-8 1480.8385ms
+2025-01-20 07:28:57.721 +03:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[ReservationStats, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 07:28:57.727 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO) in 1911.2233ms
+2025-01-20 07:28:57.728 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-01-20 07:28:57.729 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - 200 null application/json; charset=utf-8 2004.8337ms
+2025-01-20 07:29:05.447 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData?year=2024 - null null
+2025-01-20 07:29:05.452 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:29:05.459 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-01-20 07:29:05.459 +03:00 [INF] Route matched with {action = "GetReservationsData", controller = "Reservations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetReservationsData(System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 07:29:05.523 +03:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[ReservationStats, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-01-20 07:29:05.527 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO) in 66.7286ms
+2025-01-20 07:29:05.528 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-01-20 07:29:05.532 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData?year=2024 - 200 null application/json; charset=utf-8 85.6359ms
+2025-01-20 07:29:05.538 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationGrowth?year=2024 - null null
+2025-01-20 07:29:05.539 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjEiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggT1dORVIiLCJleHAiOjE3MzczNDg1NjEsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.qm12tuyrJXeBGaLhZ_0GiijdfT0NM091fxq_Y_G7Ros
+2025-01-20 07:29:05.540 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.GetReservationGrowth (AdminBO)'
+2025-01-20 07:29:05.551 +03:00 [INF] Route matched with {action = "GetReservationGrowth", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Double]] GetReservationGrowth(System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-01-20 07:29:05.625 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Double'.
+2025-01-20 07:29:05.632 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.GetReservationGrowth (AdminBO) in 78.3234ms
+2025-01-20 07:29:05.632 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.GetReservationGrowth (AdminBO)'
+2025-01-20 07:29:05.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationGrowth?year=2024 - 200 null application/json; charset=utf-8 95.2657ms

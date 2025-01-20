@@ -44,8 +44,10 @@ public class Reservation
     // Surcharge de ToString()
     public override string ToString()
     {
-        return $"Reservation [Id={Id}, EmployeeId={EmployeeId}, Client name ={Employee.ToString()}, SpaceId={SpaceId}, "
-            + $"Space name ={Space.ToString()}, ReservationDate={ReservationDate}, StartDate={StartDate}, "
+        return $"Reservation [Id={Id}, EmployeeId={EmployeeId}, "
+            + $"Client name ={Employee?.ToString() ?? "N/A"}, "
+            + $"SpaceId={SpaceId}, Space name ={Space?.ToString() ?? "N/A"}, "
+            + $"ReservationDate={ReservationDate}, StartDate={StartDate}, "
             + $"EndDate={EndDate}, Status={Status}]";
     }
 }

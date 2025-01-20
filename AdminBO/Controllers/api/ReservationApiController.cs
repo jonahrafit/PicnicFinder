@@ -38,25 +38,38 @@ namespace AdminBO.Controllers.Api
             [FromBody] Reservation reservation
         )
         {
+            Console.WriteLine("---------------1------------");
+            Console.WriteLine(
+                $"Reservation reçu : Id={reservation?.Id}, SpaceId={reservation?.SpaceId}, Dates={reservation?.StartDate} - {reservation?.EndDate}"
+            );
+
             if (reservation == null)
             {
-                return BadRequest("Les donn�es de l'ereservation ne sont pas valides.");
+                return BadRequest("Les données de la réservation ne sont pas valides.");
             }
+
             reservation.EmployeeId = GetCurrentUserId();
+
             try
             {
                 var currentUserId = GetCurrentUserId();
-                Console.WriteLine(currentUserId);
-                var client = await _userService.GetUserByIdAsync(currentUserId);
+                Console.WriteLine($"Current User Id: {currentUserId}");
 
-                Console.WriteLine(client.ToString());
+                var client = await _userService.GetUserByIdAsync(currentUserId);
                 if (client == null)
                 {
                     return Unauthorized("Utilisateur non trouvé.");
                 }
 
+                Console.WriteLine($"Client trouvé : {client}");
+
                 var space = await _spaceService.GetSpaceByIdAsync(reservation.SpaceId);
-                Console.WriteLine(space.ToString());
+                if (space == null)
+                {
+                    return NotFound("Espace non trouvé.");
+                }
+
+                Console.WriteLine($"Espace trouvé : {space}");
                 reservation.Space = space;
 
                 await _reservationService.CreateReservationAsync(reservation);
@@ -68,7 +81,7 @@ namespace AdminBO.Controllers.Api
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Erreur lors de la création de l'ereservation : {ex.Message}");
+                Console.WriteLine($"Erreur lors de la création de la réservation : {ex.Message}");
                 return StatusCode(500, "Une erreur interne est survenue.");
             }
         }

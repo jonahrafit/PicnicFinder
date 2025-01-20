@@ -1,0 +1,558 @@
+2025-01-19 19:33:31.935 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 19:33:32.233 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 19:33:32.239 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 19:33:32.240 +03:00 [INF] Hosting environment: Development
+2025-01-19 19:33:32.240 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 19:33:33.957 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 19:33:33.987 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 19:33:34.064 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 19:33:34.180 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 19:33:36.851 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 19:33:37.224 +03:00 [INF] Executed ViewResult - view Index executed in 374.8098ms.
+2025-01-19 19:33:37.230 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 3027.0775ms
+2025-01-19 19:33:37.232 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 19:33:37.241 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 3287.8321ms
+2025-01-19 19:33:37.572 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-19 19:33:37.597 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - null null
+2025-01-19 19:33:37.603 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - null null
+2025-01-19 19:33:37.683 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/css/site.css'
+2025-01-19 19:33:37.684 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/site.css?v=36iuhqxdlJOrUMbc-mTc4Whe7F5rgw5sarO7tiDybmw - 200 329 text/css 87.4827ms
+2025-01-19 19:33:37.688 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-19 19:33:37.689 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 117.9257ms
+2025-01-19 19:33:37.689 +03:00 [INF] Sending file. Request path: '/FrontOffice.styles.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/obj/Debug/net8.0/scopedcss/bundle/FrontOffice.styles.css'
+2025-01-19 19:33:37.690 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=-94H1ISs4Y-5Qw4gC3ds-BuT0GaIiQTppmeZ5AnCTMU - 200 1080 text/css 87.3497ms
+2025-01-19 19:33:37.857 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-19 19:33:37.858 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-19 19:33:37.859 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=1oFwiEIIPSHxXsbG_IdgXBqbMPhkaBRpmNL55U-fy0c - null null
+2025-01-19 19:33:37.860 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/js/site.js'
+2025-01-19 19:33:37.860 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=1oFwiEIIPSHxXsbG_IdgXBqbMPhkaBRpmNL55U-fy0c - 200 7004 text/javascript 1.3382ms
+2025-01-19 19:33:37.861 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-19 19:33:37.863 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 5.4565ms
+2025-01-19 19:33:37.863 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-19 19:33:37.868 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 10.4508ms
+2025-01-19 20:19:10.415 +03:00 [INF] Application is shutting down...
+2025-01-19 20:30:18.346 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 20:30:18.893 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 20:30:18.900 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 20:30:18.901 +03:00 [INF] Hosting environment: Development
+2025-01-19 20:30:18.902 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 20:38:26.268 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 20:38:26.304 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 20:38:26.369 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 20:38:26.457 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 20:38:27.619 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 20:38:28.088 +03:00 [INF] Executed ViewResult - view Index executed in 476.0141ms.
+2025-01-19 20:38:28.094 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1635.7517ms
+2025-01-19 20:38:28.096 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 20:38:28.126 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1861.5616ms
+2025-01-19 20:38:28.580 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-19 20:38:28.739 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-19 20:38:28.745 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 172.8405ms
+2025-01-19 20:38:28.918 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-19 20:38:28.918 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-19 20:38:28.921 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-19 20:38:28.922 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-19 20:38:28.934 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 15.4794ms
+2025-01-19 20:38:28.934 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 16.3767ms
+2025-01-19 20:38:30.912 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/favicon.ico - null null
+2025-01-19 20:38:30.914 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/favicon.ico'
+2025-01-19 20:38:30.924 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/favicon.ico - 200 5430 image/x-icon 11.7341ms
+2025-01-19 20:38:34.340 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - application/json 59
+2025-01-19 20:38:34.343 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-01-19 20:38:34.364 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-01-19 20:38:34.506 +03:00 [INF] Sending authentication request for user: client1@example.com
+2025-01-19 20:38:35.578 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-01-19 20:38:35.635 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Authenticate (FrontOffice) in 1254.2984ms
+2025-01-19 20:38:35.636 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-01-19 20:38:35.637 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - 200 null application/json; charset=utf-8 1296.7786ms
+2025-01-19 20:38:35.654 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 20:38:35.657 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 20:38:35.658 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 20:38:35.693 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 20:38:35.705 +03:00 [INF] Executed ViewResult - view Index executed in 12.8872ms.
+2025-01-19 20:38:35.706 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 47.8498ms
+2025-01-19 20:38:35.707 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 20:38:35.709 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 54.8188ms
+2025-01-19 21:50:36.957 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 21:50:36.958 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 21:50:36.969 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 21:50:36.985 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 14.6141ms
+2025-01-19 21:50:36.986 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 21:50:36.987 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 21:50:37.063 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 105.8457ms
+2025-01-19 21:50:48.960 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 21:50:48.962 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 21:50:48.967 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 21:50:49.032 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 21:50:49.048 +03:00 [INF] Executed ViewResult - view Index executed in 71.8445ms.
+2025-01-19 21:50:49.049 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 73.996ms
+2025-01-19 21:50:49.049 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 21:50:49.050 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 90.4392ms
+2025-01-19 21:50:49.082 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-19 21:50:49.084 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-19 21:50:49.085 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 2.7992ms
+2025-01-19 21:50:49.726 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-19 21:50:49.727 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-19 21:50:49.735 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-19 21:50:49.735 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 8.5701ms
+2025-01-19 21:50:49.740 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-19 21:50:49.753 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 26.3117ms
+2025-01-19 21:50:52.036 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 21:50:52.037 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 21:50:52.037 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 21:50:52.038 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 0.9675ms
+2025-01-19 21:50:52.039 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 21:50:52.039 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 21:50:52.047 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 11.0962ms
+2025-01-19 21:50:53.484 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 21:50:53.485 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 21:50:53.485 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 21:50:53.485 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 21:50:53.487 +03:00 [INF] Executed ViewResult - view Index executed in 1.7035ms.
+2025-01-19 21:50:53.488 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 2.8637ms
+2025-01-19 21:50:53.489 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 21:50:53.489 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 4.8793ms
+2025-01-19 21:50:54.501 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 21:50:54.505 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 21:50:54.505 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 21:50:55.630 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 21:50:55.656 +03:00 [INF] Executed ViewResult - view Index executed in 26.9606ms.
+2025-01-19 21:50:55.659 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1152.8093ms
+2025-01-19 21:50:55.660 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 21:50:55.661 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1159.6972ms
+2025-01-19 21:50:58.923 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-01-19 21:50:58.925 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 21:50:58.933 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 21:50:59.077 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-19 21:50:59.137 +03:00 [INF] Executed ViewResult - view Details executed in 60.2262ms.
+2025-01-19 21:50:59.138 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 204.0756ms
+2025-01-19 21:50:59.138 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 21:50:59.140 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 216.3851ms
+2025-01-19 21:51:10.954 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 97
+2025-01-19 21:51:10.955 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 21:51:10.968 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 21:51:11.019 +03:00 [INF] Executing ViewResult, running view CreateReservation.
+2025-01-19 21:51:11.021 +03:00 [ERR] The view 'CreateReservation' was not found. Searched locations: ["/Views/Reservation/CreateReservation.cshtml","/Views/Shared/CreateReservation.cshtml"]
+2025-01-19 21:51:11.034 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 63.7866ms
+2025-01-19 21:51:11.037 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 21:51:11.038 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'CreateReservation' was not found. The following locations were searched:
+/Views/Reservation/CreateReservation.cshtml
+/Views/Shared/CreateReservation.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 21:51:11.084 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 500 null text/html; charset=utf-8 130.5633ms
+2025-01-19 21:58:46.356 +03:00 [INF] Application is shutting down...
+2025-01-19 21:59:08.023 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 21:59:08.619 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 21:59:08.652 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 21:59:08.671 +03:00 [INF] Hosting environment: Development
+2025-01-19 21:59:08.681 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 21:59:26.762 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 21:59:26.778 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 21:59:26.811 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 21:59:26.877 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 21:59:26.908 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 21:59:27.143 +03:00 [INF] Executed ViewResult - view Index executed in 219.8066ms.
+2025-01-19 21:59:27.155 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 275.4348ms
+2025-01-19 21:59:27.158 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 21:59:27.165 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 404.8226ms
+2025-01-19 21:59:33.633 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 21:59:33.638 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 21:59:33.661 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 21:59:34.606 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 21:59:34.746 +03:00 [INF] Executed ViewResult - view Index executed in 141.2143ms.
+2025-01-19 21:59:34.750 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1088.0267ms
+2025-01-19 21:59:34.752 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 21:59:34.756 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1124.1972ms
+2025-01-19 21:59:37.931 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2 - null null
+2025-01-19 21:59:37.935 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 21:59:37.936 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 21:59:38.088 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 21:59:38.120 +03:00 [INF] Executed ViewResult - view Index executed in 32.0312ms.
+2025-01-19 21:59:38.124 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 187.6108ms
+2025-01-19 21:59:38.126 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 21:59:38.131 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2 - 200 null text/html; charset=utf-8 199.4366ms
+2025-01-19 21:59:39.916 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/6 - null null
+2025-01-19 21:59:39.917 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 21:59:39.940 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 21:59:40.079 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-19 21:59:40.196 +03:00 [INF] Executed ViewResult - view Details executed in 118.5562ms.
+2025-01-19 21:59:40.205 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 247.5299ms
+2025-01-19 21:59:40.220 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 21:59:40.223 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/6 - 200 null text/html; charset=utf-8 306.0495ms
+2025-01-19 21:59:51.593 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 97
+2025-01-19 21:59:51.596 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 21:59:51.613 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 21:59:51.664 +03:00 [INF] Executing ViewResult, running view CreateReservation.
+2025-01-19 21:59:51.673 +03:00 [ERR] The view 'CreateReservation' was not found. Searched locations: ["/Views/Reservation/CreateReservation.cshtml","/Views/Shared/CreateReservation.cshtml"]
+2025-01-19 21:59:51.686 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 72.1856ms
+2025-01-19 21:59:51.689 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 21:59:51.692 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The view 'CreateReservation' was not found. The following locations were searched:
+/Views/Reservation/CreateReservation.cshtml
+/Views/Shared/CreateReservation.cshtml
+   at Microsoft.AspNetCore.Mvc.ViewEngines.ViewEngineResult.EnsureSuccessful(IEnumerable`1 originalLocations)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor.ExecuteAsync(ActionContext context, ViewResult result)
+   at Microsoft.AspNetCore.Mvc.ViewResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|30_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 21:59:51.783 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 500 null text/html; charset=utf-8 189.9915ms
+2025-01-19 22:03:03.658 +03:00 [INF] Application is shutting down...
+2025-01-19 22:03:41.144 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 22:03:41.436 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 22:03:41.441 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 22:03:41.442 +03:00 [INF] Hosting environment: Development
+2025-01-19 22:03:41.442 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 22:03:46.979 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 22:03:46.997 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 22:03:47.031 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:03:47.105 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 22:03:47.142 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:03:47.291 +03:00 [INF] Executed ViewResult - view Index executed in 155.1246ms.
+2025-01-19 22:03:47.300 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 193.7691ms
+2025-01-19 22:03:47.303 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:03:47.310 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 332.2849ms
+2025-01-19 22:03:51.143 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 22:03:51.147 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 22:03:51.169 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:03:51.574 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:03:51.660 +03:00 [INF] Executed ViewResult - view Index executed in 87.7867ms.
+2025-01-19 22:03:51.662 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 492.3297ms
+2025-01-19 22:03:51.663 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 22:03:51.665 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 523.0544ms
+2025-01-19 22:03:54.688 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-01-19 22:03:54.691 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:03:54.702 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:03:54.761 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-19 22:03:54.837 +03:00 [INF] Executed ViewResult - view Details executed in 78.6757ms.
+2025-01-19 22:03:54.839 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 135.1853ms
+2025-01-19 22:03:54.848 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:03:54.852 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 163.9999ms
+2025-01-19 22:04:06.961 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 97
+2025-01-19 22:04:06.964 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 22:04:06.985 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:04:07.088 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-01-19 22:04:07.089 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 104.0443ms
+2025-01-19 22:04:07.090 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 22:04:07.090 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 129.633ms
+2025-01-19 22:04:07.096 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 22:04:07.097 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:04:07.111 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:04:07.166 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 54.5353ms
+2025-01-19 22:04:07.168 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:04:07.171 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 22:04:07.262 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 165.2792ms
+2025-01-19 22:08:19.364 +03:00 [INF] Application is shutting down...
+2025-01-19 22:08:41.012 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 22:08:41.516 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 22:08:41.526 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 22:08:41.545 +03:00 [INF] Hosting environment: Development
+2025-01-19 22:08:41.551 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 22:11:17.279 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 22:11:17.297 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 22:11:17.334 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:11:17.402 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 22:11:17.440 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:11:17.598 +03:00 [INF] Executed ViewResult - view Index executed in 166.9593ms.
+2025-01-19 22:11:17.611 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 208.0026ms
+2025-01-19 22:11:17.612 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:11:17.619 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 341.2432ms
+2025-01-19 22:11:21.385 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 22:11:21.389 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 22:11:21.410 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:11:22.305 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:11:22.448 +03:00 [INF] Executed ViewResult - view Index executed in 144.9874ms.
+2025-01-19 22:11:22.452 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 1041.7358ms
+2025-01-19 22:11:22.456 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 22:11:22.463 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 1079.203ms
+2025-01-19 22:11:24.642 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-01-19 22:11:24.646 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:11:24.667 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:11:24.756 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-19 22:11:24.904 +03:00 [INF] Executed ViewResult - view Details executed in 152.3982ms.
+2025-01-19 22:11:24.913 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 244.6392ms
+2025-01-19 22:11:24.914 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:11:24.916 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 273.82ms
+2025-01-19 22:11:41.793 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 97
+2025-01-19 22:11:41.801 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 22:11:41.821 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:11:41.871 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-01-19 22:11:41.872 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 50.0487ms
+2025-01-19 22:11:41.872 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 22:11:41.874 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 80.4279ms
+2025-01-19 22:11:41.881 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 22:11:41.882 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:11:41.891 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:11:41.937 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 43.2918ms
+2025-01-19 22:11:41.943 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:11:41.944 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 22:11:42.027 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 146.1884ms
+2025-01-19 22:14:05.853 +03:00 [INF] Application is shutting down...
+2025-01-19 22:14:17.762 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 22:14:17.984 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 22:14:17.989 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 22:14:17.993 +03:00 [INF] Hosting environment: Development
+2025-01-19 22:14:17.993 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 22:14:25.561 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 22:14:25.581 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 22:14:25.627 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:14:25.722 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 22:14:25.761 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:14:25.938 +03:00 [INF] Executed ViewResult - view Index executed in 184.9916ms.
+2025-01-19 22:14:25.950 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 225.2971ms
+2025-01-19 22:14:25.951 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:14:25.958 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 399.6376ms
+2025-01-19 22:14:26.696 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2025-01-19 22:14:26.697 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - null null
+2025-01-19 22:14:26.859 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'
+2025-01-19 22:14:26.861 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - 200 327261 text/plain 164.0934ms
+2025-01-19 22:14:26.862 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map'
+2025-01-19 22:14:26.877 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - 200 449111 text/plain 186.3979ms
+2025-01-19 22:14:30.141 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-19 22:14:30.145 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 22:14:30.187 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:14:30.559 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:14:30.637 +03:00 [INF] Executed ViewResult - view Index executed in 78.5022ms.
+2025-01-19 22:14:30.639 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 450.7626ms
+2025-01-19 22:14:30.640 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-19 22:14:30.642 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 500.6334ms
+2025-01-19 22:14:33.663 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-01-19 22:14:33.665 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:14:33.673 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:14:33.749 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-19 22:14:33.860 +03:00 [INF] Executed ViewResult - view Details executed in 114.0817ms.
+2025-01-19 22:14:33.861 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 186.4979ms
+2025-01-19 22:14:33.861 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:14:33.862 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 199.0023ms
+2025-01-19 22:14:51.721 +03:00 [INF] Application is shutting down...
+2025-01-19 22:15:06.605 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 22:15:06.970 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 22:15:06.977 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 22:15:06.978 +03:00 [INF] Hosting environment: Development
+2025-01-19 22:15:06.979 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 22:15:09.758 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-01-19 22:15:09.787 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 22:15:09.879 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:15:09.994 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-19 22:15:10.524 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-19 22:15:10.862 +03:00 [INF] Executed ViewResult - view Details executed in 346.0389ms.
+2025-01-19 22:15:10.866 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 870.9411ms
+2025-01-19 22:15:10.868 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-19 22:15:10.876 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 1124.0062ms
+2025-01-19 22:15:29.182 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 74
+2025-01-19 22:15:29.187 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 22:15:29.229 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:15:29.294 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-01-19 22:15:29.296 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 63.9481ms
+2025-01-19 22:15:29.296 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-01-19 22:15:29.298 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 115.7891ms
+2025-01-19 22:15:29.306 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 22:15:29.309 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:15:29.318 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:15:29.417 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 86.3282ms
+2025-01-19 22:15:29.418 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:15:29.420 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 22:15:29.504 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 198.883ms
+2025-01-19 22:16:14.317 +03:00 [INF] Application is shutting down...
+2025-01-19 22:16:27.714 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-19 22:16:28.324 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-19 22:16:28.331 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-19 22:16:28.332 +03:00 [INF] Hosting environment: Development
+2025-01-19 22:16:28.333 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-19 22:16:46.024 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-19 22:16:46.042 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-19 22:16:46.090 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:16:46.159 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-19 22:16:46.185 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-19 22:16:46.328 +03:00 [INF] Executed ViewResult - view Index executed in 146.3773ms.
+2025-01-19 22:16:46.339 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 178.3516ms
+2025-01-19 22:16:46.339 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-19 22:16:46.346 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 323.8094ms
+2025-01-19 22:16:47.609 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 22:16:47.629 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:16:47.690 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:16:48.054 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 354.0338ms
+2025-01-19 22:16:48.055 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:16:48.058 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 22:16:48.154 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 546.1343ms
+2025-01-19 22:17:40.561 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-01-19 22:17:40.564 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:17:40.565 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-01-19 22:17:40.616 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 51.4359ms
+2025-01-19 22:17:40.619 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-01-19 22:17:40.623 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-01-19 22:17:40.652 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 90.8148ms
