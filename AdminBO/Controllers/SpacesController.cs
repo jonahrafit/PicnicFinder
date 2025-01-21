@@ -26,10 +26,10 @@ public class SpacesController : BaseController
         : base(logger, configuration)
     {
         _dbContext = dbContext;
-        _spaceService = new SpaceService(_configuration, _dbContext);
-        _userService = new UserService(_configuration, _dbContext);
-        _spaceActivityService = new SpaceActivityService(_configuration, _dbContext);
-        _spaceServiceAdoNet = new SpaceServiceAdoNet(_configuration);
+        _spaceService = new SpaceService(base._configuration, _dbContext);
+        _userService = new UserService(base._configuration, _dbContext);
+        _spaceActivityService = new SpaceActivityService(base._configuration, _dbContext);
+        _spaceServiceAdoNet = new SpaceServiceAdoNet(base._configuration);
     }
 
     [Authorize(Roles = "ADMIN, OWNER")]
@@ -38,29 +38,32 @@ public class SpacesController : BaseController
         var userIdClaim = HttpContext.User.FindFirst("UserId")?.Value;
         if (string.IsNullOrEmpty(userIdClaim))
         {
-            throw new Exception("Utilisateur non authentifié ou ID d'utilisateur manquant.");
+            throw new Exception("Utilisateur non authentifié ou ID d'utilisateur manquant");
         }
         long owner_Id = long.Parse(userIdClaim);
         var spaces = await _spaceService.GetAllSpacesAsyncByOwner(owner_Id);
         return View("Basic", spaces);
     }
 
-    // GET: Space/Details/5
-    [Authorize(Roles = "ADMIN, OWNER")]
-    public async Task<IActionResult> Details(long? id)
+    public async Task<ActionResult<Space>> Details(long id)
     {
-        if (id == null)
-        {
-            return NotFound();
-        }
+        var space = await _spaceService.GetSpaceByIdAsyncByOwner(id);
 
-        var space = await _spaceService.GetSpaceByIdAsync(id.Value);
         if (space == null)
         {
-            return NotFound();
+            return NotFound($"Espace avec l'ID {id} non trouv�.");
         }
 
-        return View(space);
+        List<SpaceActivity> spaceActivities = new List<SpaceActivity>();
+        var spaceDetailsWithActivities = new ViewDetailsSpaceWithActivities
+        {
+            Space = space,
+            SpaceActivities = _spaceActivityService.GetAllSpaceActivityLinksBySpaceIdAsync(
+                space.Id
+            ),
+        };
+
+        return View(spaceDetailsWithActivities);
     }
 
     // GET: Space/Create
@@ -187,15 +190,15 @@ public class SpacesController : BaseController
         {
             return BadRequest(new { error = "Invalid format for Latitude or Longitude." });
         }
-        
+
         long[] activityIdsArray = new long[0];
 
         if (!string.IsNullOrEmpty(spaceForm.ActivityIds))
         {
             try
             {
-                activityIdsArray = spaceForm.ActivityIds
-                    .Split(',')
+                activityIdsArray = spaceForm
+                    .ActivityIds.Split(',')
                     .Select(id => Convert.ToInt64(id))
                     .ToArray();
             }
@@ -216,10 +219,8 @@ public class SpacesController : BaseController
         try
         {
             var activities = await _dbContext
-                .SpaceActivities
-                .Where(activity => activityIdsArray.Contains((long)activity.Id))  // Assurez-vous que types sont compatibles
+                .SpaceActivities.Where(activity => activityIdsArray.Contains((long)activity.Id)) // Assurez-vous que types sont compatibles
                 .ToListAsync();
-
 
             Console.WriteLine("-------------2---------------");
             Console.WriteLine(activities.Count());
@@ -228,13 +229,13 @@ public class SpacesController : BaseController
                 Console.WriteLine(activity.ToString());
             }
             Console.WriteLine("----------------------------");
-            
+
             // Vérifiez si tous les IDs fournis existent dans la base de données
             if (activities.Count != activityIdsArray.Length)
             {
                 return BadRequest("Certains IDs d'activités ne sont pas valides.");
             }
-            
+
             // Vous pouvez aussi vérifier si tous les IDs sont présents
             if (activityIdsArray.Except(activities.Select(a => a.Id)).Any())
             {
@@ -276,7 +277,7 @@ public class SpacesController : BaseController
                 Status = Enum.Parse<SpaceStatus>("PENDING", true),
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
-                Owner = owner
+                Owner = owner,
             };
 
             Console.WriteLine("-------------5---------------");
@@ -284,16 +285,22 @@ public class SpacesController : BaseController
             Console.WriteLine("----------------------------");
 
             // Ajout des liens entre Space et SpaceActivity (relation many-to-many)
-            var spaceActivityLinks = activities.Select(activity => new SpaceActivityLink
-            {
-                Space = space,
-                SpaceActivity = activity
-            }).ToList();
+            var spaceActivityLinks = activities
+                .Select(activity => new SpaceActivityLink
+                {
+                    Space = space,
+                    SpaceActivity = activity,
+                })
+                .ToList();
 
-            Console.WriteLine($"Number of SpaceActivityLinks to be added: {spaceActivityLinks.Count}");
+            Console.WriteLine(
+                $"Number of SpaceActivityLinks to be added: {spaceActivityLinks.Count}"
+            );
             foreach (var link in spaceActivityLinks)
             {
-                Console.WriteLine($"SpaceId: {link.SpaceId}, SpaceActivityId: {link.SpaceActivityId}");
+                Console.WriteLine(
+                    $"SpaceId: {link.SpaceId}, SpaceActivityId: {link.SpaceActivityId}"
+                );
             }
 
             _dbContext.SpaceActivityLinks.AddRange(spaceActivityLinks);

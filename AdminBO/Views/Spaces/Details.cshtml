@@ -1,0 +1,65 @@
+@model ViewDetailsSpaceWithActivities
+
+<div class="container mt-5">
+    <div class="container-fluid p-0">
+        <div class="mb-3">
+		    <button type="button" class="btn btn-outline-secondary">
+            	<span class="tf-icons bx bx-left-arrow-circle bx-18px me-2"></span>Retour
+          	</button>
+		</div>
+		<div class="mb-3 d-flex justify-content-between align-items-center">
+            <div>
+                <h1 class="h3 d-inline align-middle">@Model.Space.Name</h1>
+                <a class="badge bg-dark text-white ms-2" href="/Spaces/Index">
+                   Voir les listes des espaces
+                </a>
+            </div>
+        </div>
+
+		<div class="row">
+			<div class="col-md-4 col-xl-3">
+				<div class="card mb-3">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Quelques détails</h5>
+					</div>
+					<div class="card-body text-center">
+						<ul class="list-unstyled mb-0">
+					    	<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Latitude @Model.Space.Latitude </li>
+						    <li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> Longitude @Model.Space.Longitude </li>
+					    </ul>
+					</div>
+					<hr class="my-0" />
+					<div class="card-body">
+						<h5 class="h6 card-title">Dés activités</h5>
+                        @foreach (var activity in Model.SpaceActivities)
+                        {
+							<span class="badge bg-primary me-1 my-1">@activity.Name</span>
+						}
+					</div>
+					<hr class="my-0" />
+					<div class="card-body">
+						<h5 class="h6 card-title">A propos</h5>
+						<p class="lead text-center">@Model.Space.Description</p>
+						<ul class="list-unstyled mb-0">
+							<li class="mb-1"><span data-feather="home" class="feather-sm me-1"></span> Lives in <a href="#">San Francisco, SA</a></li>
+							<li class="mb-1"><span data-feather="briefcase" class="feather-sm me-1"></span> Works at <a href="#">GitHub</a></li>
+							<li class="mb-1"><span data-feather="map-pin" class="feather-sm me-1"></span> From <a href="#">Boston</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-8 col-xl-9">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="card-title mb-0">Activities</h5>
+					</div>
+					<div class="card-body h-100">
+    					<div class="overflow-hidden" style="height: 300px;">
+    					    <img src="@($"/img/{@Model.Space.Photos[0]}")" class="w-100 h-100 object-fit-cover" alt="Image 1">
+    					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
