@@ -26,45 +26,54 @@ public class SpaceActivityService
         return await _context.SpaceActivities.ToListAsync();
     }
 
-    public async Task<List<SpaceActivity>> GetAllSpaceActivityLinksBySpaceIdAsync(long spaceId)
+    public List<SpaceActivity> GetAllSpaceActivityLinksBySpaceIdAsync(long spaceId)
     {
         var spaceActivities = new List<SpaceActivity>();
-
-        using (var connection = new SqlConnection(_connectionString))
+        try
         {
-            await connection.OpenAsync();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                connection.Open();
 
-            var command = new SqlCommand(
-                @"
+                Console.WriteLine("Database connection successful.");
+
+                var command = new SqlCommand(
+                    @"
                 SELECT sa.Id,sa.Name, ca.Id as CategoryId, ca.Name as CategoryName
                 FROM SpaceActivityLinks sal
                 INNER JOIN SpaceActivities sa ON sal.SpaceActivityId = sa.Id
                 LEFT JOIN CategoryActivities ca ON sa.CategoryId = ca.Id
                 WHERE sal.SpaceId = @SpaceId",
-                connection
-            );
+                    connection
+                );
 
-            command.Parameters.AddWithValue("@SpaceId", spaceId);
+                command.Parameters.AddWithValue("@SpaceId", spaceId);
 
-            using (var reader = await command.ExecuteReaderAsync())
-            {
-                while (await reader.ReadAsync())
+                using (var reader = command.ExecuteReader())
                 {
-                    var spaceActivity = new SpaceActivity
+                    while (reader.Read())
                     {
-                        Id = reader.GetInt64(0),
-                        Name = reader.GetString(1),
-                        CategoryId = reader.GetInt64(reader.GetOrdinal("CategoryId")),
-                        CategoryActivity = new CategoryActivity
+                        var spaceActivity = new SpaceActivity
                         {
-                            Id = reader.GetInt64(reader.GetOrdinal("CategoryId")),
-                            Name = reader.GetString(reader.GetOrdinal("CategoryName")),
-                        },
-                    };
+                            Id = reader.GetInt64(0),
+                            Name = reader.GetString(1),
+                            CategoryId = reader.GetInt64(reader.GetOrdinal("CategoryId")),
+                            CategoryActivity = new CategoryActivity
+                            {
+                                Id = reader.GetInt64(reader.GetOrdinal("CategoryId")),
+                                Name = reader.GetString(reader.GetOrdinal("CategoryName")),
+                            },
+                        };
 
-                    spaceActivities.Add(spaceActivity);
+                        spaceActivities.Add(spaceActivity);
+                    }
                 }
             }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Database connection failed: {ex.Message}");
+            throw;
         }
 
         return spaceActivities;
@@ -75,7 +84,7 @@ public class SpaceActivityService
         var spaceActivities = new List<String>();
         using (var connection = new SqlConnection(_connectionString))
         {
-            await connection.OpenAsync();
+            connection.Open();
             var command = new SqlCommand(
                 @"
                 SELECT sa.Name 
@@ -102,7 +111,7 @@ public class SpaceActivityService
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            await connection.OpenAsync();
+            connection.Open();
 
             var query =
                 @"
@@ -146,7 +155,7 @@ public class SpaceActivityService
 
         using (var connection = new SqlConnection(_connectionString))
         {
-            await connection.OpenAsync();
+            connection.Open();
 
             var command = new SqlCommand(
                 "INSERT INTO SpaceActivities (Name) VALUES (@Name); SELECT SCOPE_IDENTITY();",
@@ -172,7 +181,7 @@ public class SpaceActivityService
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            await connection.OpenAsync();
+            connection.Open();
 
             var command = new SqlCommand(
                 "UPDATE SpaceActivities SET Name = @Name WHERE Id = @Id",
@@ -191,7 +200,7 @@ public class SpaceActivityService
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            await connection.OpenAsync();
+            connection.Open();
 
             var command = new SqlCommand("DELETE FROM SpaceActivities WHERE Id = @Id", connection);
             command.Parameters.AddWithValue("@Id", id);
@@ -205,7 +214,7 @@ public class SpaceActivityService
     {
         using (var connection = new SqlConnection(_connectionString))
         {
-            await connection.OpenAsync();
+            connection.Open();
 
             var command = new SqlCommand(
                 "SELECT COUNT(1) FROM SpaceActivities WHERE Id = @Id",

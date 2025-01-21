@@ -92,8 +92,9 @@ namespace AdminBO.Controllers.Api
             var spaceDetailsWithActivities = new ViewDetailsSpaceWithActivities
             {
                 Space = space,
-                SpaceActivities =
-                    await _spaceActivityService.GetAllSpaceActivityLinksBySpaceIdAsync(space.Id),
+                SpaceActivities = _spaceActivityService.GetAllSpaceActivityLinksBySpaceIdAsync(
+                    space.Id
+                ),
             };
 
             return Ok(spaceDetailsWithActivities);

@@ -162,3 +162,102 @@ Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JAr
 2025-01-20 06:49:10.722 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 2.9999ms
 2025-01-20 06:49:10.723 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
 2025-01-20 06:49:10.723 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 4.783ms
+2025-01-20 10:05:25.233 +03:00 [INF] Application is shutting down...
+2025-01-20 10:06:05.961 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-20 10:06:06.753 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-20 10:06:06.820 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-20 10:06:06.830 +03:00 [INF] Hosting environment: Development
+2025-01-20 10:06:06.836 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-20 10:08:15.002 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-20 10:08:15.021 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-20 10:08:15.073 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-20 10:08:15.150 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-20 10:08:15.179 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 10:08:15.318 +03:00 [INF] Executed ViewResult - view Index executed in 144.3128ms.
+2025-01-20 10:08:15.327 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 176.5029ms
+2025-01-20 10:08:15.328 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-20 10:08:15.339 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 339.0222ms
+2025-01-20 10:08:15.417 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-20 10:08:15.531 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-20 10:08:15.533 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 116.7219ms
+2025-01-20 10:08:15.563 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-20 10:08:15.568 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-20 10:08:15.572 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-20 10:08:15.573 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 5.0141ms
+2025-01-20 10:08:15.588 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-20 10:08:15.591 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 27.3114ms
+2025-01-20 10:08:15.827 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - null null
+2025-01-20 10:08:15.834 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map'
+2025-01-20 10:08:15.841 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css.map - 200 449111 text/plain 8.5384ms
+2025-01-20 10:08:16.256 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - null null
+2025-01-20 10:08:16.267 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'
+2025-01-20 10:08:16.270 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - 200 327261 text/plain 13.3011ms
+2025-01-20 10:08:16.923 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-20 10:08:16.927 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-20 10:08:16.959 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-20 10:08:17.623 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 10:08:17.739 +03:00 [INF] Executed ViewResult - view Index executed in 117.4142ms.
+2025-01-20 10:08:17.745 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 765.3897ms
+2025-01-20 10:08:17.747 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-20 10:08:17.749 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 826.1062ms
+2025-01-20 10:08:20.428 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/3 - null null
+2025-01-20 10:08:20.430 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-20 10:08:20.448 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-20 10:08:20.620 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-20 10:08:20.722 +03:00 [INF] Executed ViewResult - view Details executed in 102.591ms.
+2025-01-20 10:08:20.722 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 266.7128ms
+2025-01-20 10:08:20.724 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-20 10:08:20.725 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/3 - 200 null text/html; charset=utf-8 297.7783ms
+2025-01-20 13:10:20.445 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-01-20 13:10:20.717 +03:00 [INF] Now listening on: http://localhost:5179
+2025-01-20 13:10:20.723 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-01-20 13:10:20.725 +03:00 [INF] Hosting environment: Development
+2025-01-20 13:10:20.725 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice
+2025-01-20 13:32:41.585 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/3 - null null
+2025-01-20 13:32:41.622 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-01-20 13:32:41.763 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-20 13:32:42.016 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-20 13:32:42.973 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-20 13:32:43.487 +03:00 [INF] Executed ViewResult - view Details executed in 496.5842ms.
+2025-01-20 13:32:43.533 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 1496.4346ms
+2025-01-20 13:32:43.537 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-20 13:32:43.562 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/3 - 200 null text/html; charset=utf-8 1980.1962ms
+2025-01-20 13:32:43.623 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-01-20 13:32:43.677 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - null null
+2025-01-20 13:32:43.760 +03:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/jquery/dist/jquery.min.js'
+2025-01-20 13:32:43.760 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css'
+2025-01-20 13:32:43.776 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/css/bootstrap.min.css - 200 162720 text/css 146.2017ms
+2025-01-20 13:32:43.764 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 200 89501 text/javascript 87.5616ms
+2025-01-20 13:32:44.004 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-01-20 13:32:44.005 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-20 13:32:44.009 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-01-20 13:32:44.012 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 13:32:44.027 +03:00 [INF] Executed ViewResult - view Index executed in 16.6881ms.
+2025-01-20 13:32:44.037 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 26.527ms
+2025-01-20 13:32:44.047 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-01-20 13:32:44.060 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 56.1604ms
+2025-01-20 13:32:44.098 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-01-20 13:32:44.101 +03:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js'
+2025-01-20 13:32:44.102 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78468 text/javascript 3.8919ms
+2025-01-20 13:32:44.113 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=1oFwiEIIPSHxXsbG_IdgXBqbMPhkaBRpmNL55U-fy0c - null null
+2025-01-20 13:32:44.114 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/js/site.js'
+2025-01-20 13:32:44.114 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=1oFwiEIIPSHxXsbG_IdgXBqbMPhkaBRpmNL55U-fy0c - 200 7004 text/javascript 1.2838ms
+2025-01-20 13:32:45.664 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/favicon.ico - null null
+2025-01-20 13:32:45.667 +03:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: '/home/jonah/Documents/MASTER/MBDS/PicnicFinder/FrontOffice/wwwroot/favicon.ico'
+2025-01-20 13:32:45.667 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/favicon.ico - 200 5430 image/x-icon 2.8947ms
+2025-01-20 13:33:34.952 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-01-20 13:33:34.954 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-20 13:33:34.965 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-20 13:33:35.201 +03:00 [INF] Executing ViewResult, running view Index.
+2025-01-20 13:33:35.262 +03:00 [INF] Executed ViewResult - view Index executed in 62.849ms.
+2025-01-20 13:33:35.263 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 297.0085ms
+2025-01-20 13:33:35.263 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-01-20 13:33:35.263 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 311.9532ms
+2025-01-20 13:46:58.014 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/3 - null null
+2025-01-20 13:46:58.018 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-20 13:46:58.020 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-01-20 13:46:58.095 +03:00 [INF] Executing ViewResult, running view Details.
+2025-01-20 13:46:58.097 +03:00 [INF] Executed ViewResult - view Details executed in 2.9098ms.
+2025-01-20 13:46:58.098 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 76.622ms
+2025-01-20 13:46:58.098 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-01-20 13:46:58.098 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/3 - 200 null text/html; charset=utf-8 83.8808ms
