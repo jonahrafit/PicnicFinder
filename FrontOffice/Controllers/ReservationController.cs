@@ -121,7 +121,7 @@ public class ReservationController : BaseController
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("Index", "Reservation"); // Redirection vers l'Index
+                    return RedirectToAction("Index", "Reservation");
                 }
                 else
                 {

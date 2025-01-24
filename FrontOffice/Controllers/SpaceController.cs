@@ -68,7 +68,8 @@ public class SpaceController : BaseController
 
         ViewData["JsonSpace"] = jsonData;
         ViewData["ImageBaseUrl"] = GetImageBaseUrl();
-        ViewBag.SpaceDetails = space; // Passer le JSON désérialisé dynamiquement
+        ViewData["ApiBaseUrl"] = GetApiBaseUrl();
+        ViewBag.SpaceDetails = space;
 
         return View();
     }

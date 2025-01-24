@@ -344,10 +344,6 @@ namespace AdminBO.Services
             return reservations;
         }
 
-        // _______________________
-        // ______________________
-        // ______________________
-        // ______________________
         public async Task<List<Reservation>> GetAllReservationsAsync()
         {
             return await _context.Set<Reservation>().Include(r => r.Employee).ToListAsync();
@@ -401,6 +397,61 @@ namespace AdminBO.Services
             await _context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<bool> CheckApprovedReservationExistsAsync(
+            int day,
+            int month,
+            int year,
+            int spaceId
+        )
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    await connection.OpenAsync();
+
+                    // Construire la date complète à partir du jour, mois, et année
+                    var date = new DateTime(year, month, day);
+
+                    // Définir la requête
+                    string query =
+                        @"
+                SELECT COUNT(*)
+                FROM Reservations
+                WHERE SpaceId = @SpaceId
+                AND CAST(startDate AS DATE) = @Date
+                AND Status = @Status";
+
+                    string finalQuery = query
+                        .Replace("@SpaceId", spaceId.ToString())
+                        .Replace("@Date", date.ToString("yyyy-MM-dd"))
+                        .Replace("@Status", ((int)ReservationStatus.CONFIRMED).ToString());
+
+                    // Console.WriteLine("Final Query: " + finalQuery);
+                    using (var command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@SpaceId", spaceId);
+                        command.Parameters.AddWithValue("@Date", date.ToString("yyyy-MM-dd")); // Passer la date complète
+                        command.Parameters.AddWithValue(
+                            "@Status",
+                            ((int)ReservationStatus.CONFIRMED).ToString()
+                        );
+
+                        // Exécuter la requête
+                        var result = await command.ExecuteScalarAsync();
+
+                        // Retourner true si la réservation existe, sinon false
+                        return Convert.ToInt32(result) > 0;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Log exception (you can also throw it or handle it as per your requirements)
+                    throw new ApplicationException("Error checking reservation", ex);
+                }
+            }
         }
     }
 }

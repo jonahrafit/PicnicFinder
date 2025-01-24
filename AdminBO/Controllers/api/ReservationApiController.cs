@@ -160,5 +160,31 @@ namespace AdminBO.Controllers.Api
             );
             return Ok(reservation);
         }
+
+        [HttpGet("{day}/{month}/{year}/{spaceId}")]
+        public async Task<ActionResult<bool>> GetApprovedReservationExistsAsync(
+            int day,
+            int month,
+            int year,
+            int spaceId
+        )
+        {
+            // Validate month
+            if (month < 1 || month > 12)
+            {
+                return BadRequest("Month must be between 1 and 12.");
+            }
+
+            // Call the service to check if any approved reservation exists
+            var reservationExists = await _reservationService.CheckApprovedReservationExistsAsync(
+                day,
+                month,
+                year,
+                spaceId
+            );
+
+            // Return the result
+            return Ok(reservationExists);
+        }
     }
 }
