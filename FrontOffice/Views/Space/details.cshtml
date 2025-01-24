@@ -1,17 +1,46 @@
 @{
     var spaceDataJson = ViewData["JsonSpace"] as string;
-
 	var spaceDetails = ViewBag.SpaceDetails;
-	Console.WriteLine(spaceDetails);
 }
 
 @section Scripts {
     <script>
-         document.addEventListener('DOMContentLoaded', function () {
-             const alertMessage = document.createElement('div');
-             alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
-             alertMessage.setAttribute('role', 'alert');
-             alertMessage.style.display = 'none';
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiBaseUrl = "@ViewData["ApiBaseUrl"]";
+            const reservationForm = document.getElementById('reservationForm');
+            const buttonValideReservation = document.getElementById('button-valide-reservation');
+            const alertMessage = document.createElement('div');
+
+            const token = localStorage.getItem("jwt");
+            const isAuthenticated = token ? true : false;
+
+            if(!isAuthenticated){
+                buttonValideReservation.disabled = true;
+                alertMessage.innerHTML = `
+                        Il faut se connécter avant de faire une réservation !!!  
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    alertMessage.style.display = 'block';
+            }
+            
+            const flatpickrInstance = document.getElementById("datetimepicker-dashboard").flatpickr({
+                inline: true, 
+                dateFormat: "Y-m-d",
+                prevArrow: "<span title='Previous month'>&laquo;</span>",
+                nextArrow: "<span title='Next month'>&raquo;</span>",
+                minDate: new Date(new Date().setDate(new Date().getDate() + 1)), // Désactive les dates avant demain
+                onChange: function (selectedDates) {
+                    if (selectedDates.length === 0) {
+                        buttonValideReservation.disabled = true; // Désactiver si aucune date n'est sélectionnée
+                    } else {
+                        buttonValideReservation.disabled = false; // Activer si une date est sélectionnée
+                    }
+                }
+            });
+
+            alertMessage.classList.add('alert', 'alert-danger', 'alert-dismissible', 'fade', 'show');
+            alertMessage.setAttribute('role', 'alert');
+            alertMessage.style.display = 'none';
             const modal = document.getElementById('backDropModal');
 
             function updateDurationDisplay() {
@@ -49,34 +78,27 @@
                 }
             }
 
-            // Ajouter des écouteurs d'événements pour la mise à jour en temps réel
             document.getElementById("startDate").addEventListener("change", updateDurationDisplay);
             document.getElementById("endDate").addEventListener("change", updateDurationDisplay);
 
-            const reservationForm = document.getElementById('reservationForm');
-            const saveReservationButton = document.getElementById('saveReservation');
-            const buttonValideReservation = document.getElementById('button-valide-reservation');
-
-            const token = localStorage.getItem("jwt");
-            const isAuthenticated = token ? true : false;
-            if(!isAuthenticated){
-                buttonValideReservation.disabled = true;
-                alertMessage.innerHTML = `
-                        Il faut se connécter avant de faire une réservation !!!  
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    `;
-                    alertMessage.style.display = 'block';
-            }
             modal.addEventListener('show.bs.modal', function (event) {
                 const button = event.relatedTarget; 
                 const spaceId = button.getAttribute('data-space-id');
                 const inputSpaceId = document.getElementById('inputSpaceId');
+                console.log("--------input space id-----------");
+                console.log(inputSpaceId);
                 inputSpaceId.value = spaceId || '';
             });
 
             reservationForm.prepend(alertMessage);
 
-            saveReservationButton.addEventListener('click', function (event) {
+            async function fetchReservations(day, month, year, space_id) {
+                const response = await fetch(`${apiBaseUrl}/reservation/${day}/${month}/${year}/${space_id}`);
+                const data = await response.json();
+                return data;
+            }
+
+            buttonValideReservation.addEventListener('click',async function (event) {
                 event.preventDefault();
                 if(!isAuthenticated){
                     buttonValideReservation.disabled = true;
@@ -88,40 +110,66 @@
                 }
                 else {
                     buttonValideReservation.disabled = false;
-                    const startDateInput = document.getElementById('startDate');
-                    const endDateInput = document.getElementById('endDate');
-    
-                    const startDate = new Date(startDateInput.value);
-                    const endDate = new Date(endDateInput.value);
-    
-                    // Réinitialiser l'alerte
-                    alertMessage.style.display = 'none';
-    
-                    if (!startDateInput.value || !endDateInput.value) {
-                        alertMessage.innerHTML = `
-                            Ces deux champs sont obligatoires !  
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        `;
-                        alertMessage.style.display = 'block';
-                        return;
-                    }
-    
-                    if (endDate <= startDate) {
-                        alertMessage.innerHTML = `
-                            La date de fin doit être supérieure à la date de début !
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        `;
-                        alertMessage.style.display = 'block';
-                        return;
-                    }
-    
-                    // Si tout est valide, soumettre le formulaire
-                    reservationForm.submit();
-                }
+                    const selectedDate = flatpickrInstance.selectedDates[0];
+                    if (selectedDate) {
+                        const space_id = document.getElementById('inputSpaceId').value;
+                        const year = selectedDate.getFullYear();
+                        const month = String(selectedDate.getMonth() + 1).padStart(2, "0");
+                        const day = String(selectedDate.getDate()).padStart(2, "0");
+                        const formattedSelectedDate = `${year}-${month}-${day}`;
 
+                        try {
+                            let already_reserved = await fetchReservations(day, month, year, space_id);
+                            console.log("----------++++++------------");
+                            console.log("Réservations confirmées :", already_reserved);
+                            alert("----------++++++------------");
+                            alert("Réservations confirmées :", already_reserved);
+
+                            // Vérifiez si la date sélectionnée est déjà réservée
+                            if (already_reserved) {
+                                console.log("La date sélectionnée est déjà réservée :", formattedSelectedDate);
+                                buttonValideReservation.disabled = true;
+                                alertMessage.innerHTML = `
+                                    La date sélectionnée est déjà réservée
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                `;
+                                alertMessage.style.display = 'block';
+                            } else {
+                                const startDateInput = document.getElementById('startDate');
+                                const endDateInput = document.getElementById('endDate');
+    
+                                const startDate = new Date(selectedDate);
+                                startDate.setHours(8, 0, 0, 0); // Définit l'heure à 08:00
+                                const endDate = new Date(selectedDate);
+                                endDate.setHours(18, 0, 0, 0); // Définit l'heure à 18:00
+
+                                // Appliquer les valeurs formatées aux champs d'entrée
+                                startDateInput.value = formatDateTimeLocal(startDate); // Conversion au format datetime-local
+                                endDateInput.value = formatDateTimeLocal(endDate);  
+                                alertMessage.style.display = 'none';
+
+                                reservationForm.submit();
+                            }
+                        } catch (error) {
+                            console.error("Erreur lors de la récupération des réservations :", error);
+                        }
+                    }
+                }
             });
 
+            // Fonction pour formater la date au format datetime-local
+            function formatDateTimeLocal(date) {
+                const year = date.getFullYear();
+                const month = String(date.getMonth() + 1).padStart(2, '0'); // Mois de 1 à 12
+                const day = String(date.getDate()).padStart(2, '0'); // Jour
+                const hours = String(date.getHours()).padStart(2, '0'); // Heures
+                const minutes = String(date.getMinutes()).padStart(2, '0'); // Minutes
+                return `${year}-${month}-${day}T${hours}:${minutes}`;
+            }
+            
+
         });
+
     </script>
 }
 
@@ -215,6 +263,8 @@
 
                 <div class="modal-body">
                     <input type="hidden" id="inputSpaceId" name="SpaceId">
+                    <input type="hidden" id="startDate" name="StartDate" class="form-control">
+                    <input type="hidden" id="endDate" name="EndDate" class="form-control">
                     <div class="row g-6">
                         <div id="alertMessage" class="text-danger"></div>
                     </div>
@@ -224,20 +274,15 @@
                     </div>
 
                     <div class="row g-6">
-                        <div class="col mb-0">
-                            <label for="startDate" class="form-label">Date de début</label>
-                            <input type="datetime-local" id="startDate" name="StartDate" class="form-control">
-                        </div>
-                        <div class="col mb-0">
-                            <label for="endDate" class="form-label">Date de fin</label>
-                            <input type="datetime-local" id="endDate" name="EndDate" class="form-control">
-                        </div>
-                    </div>
+						<div class="chart">
+						    <div id="datetimepicker-dashboard"></div>
+					    </div>
+				    </div>  
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Fermer</button>
-                <button type="submit" id="button-valide-reservation" class="btn btn-primary" id="saveReservation">Valider la réservation</button>
+                <button id="button-valide-reservation" class="btn btn-primary">Valider la réservation</button>
             </div>
         </form>
     </div>
