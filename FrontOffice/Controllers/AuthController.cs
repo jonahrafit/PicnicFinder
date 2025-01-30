@@ -180,4 +180,74 @@ public class AuthController : BaseController
 
         return StatusCode(500, "Une erreur est survenue lors de la déconnexion.");
     }
+
+    public async Task<IActionResult> Signup([FromBody] SignupModel request)
+    {
+        var url = $"{_apiBaseUrl}/auth/signup";
+        try
+        {
+            var signupData = new
+            {
+                Email = request.Username,
+                Password = request.Password,
+                Role = "CLIENT",
+                Phone = request.Phone,
+                Name = request.Name,
+            };
+
+            _logger.LogInformation(
+                "Sending authentication request for user: {Username}",
+                request.Username
+            );
+
+            var jsonContent = new StringContent(
+                Newtonsoft.Json.JsonConvert.SerializeObject(signupData),
+                System.Text.Encoding.UTF8,
+                "application/json"
+            );
+
+            using (var httpClient = new HttpClient())
+            {
+                var response = await httpClient.PostAsync(url, jsonContent);
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = await response.Content.ReadAsStringAsync();
+                    var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(
+                        responseContent
+                    );
+                    var token = result?.token?.ToString();
+
+                    if (!string.IsNullOrEmpty(token))
+                    {
+                        // Stockage du token côté client
+                        Response.Cookies.Append(
+                            "jwt",
+                            token,
+                            new CookieOptions
+                            {
+                                HttpOnly = true,
+                                Secure = true,
+                                Expires = DateTimeOffset.Now.AddHours(1),
+                            }
+                        );
+                        return Ok(new { token });
+                    }
+                }
+                else
+                {
+                    _logger.LogWarning($"SIGNUP failed with status code: {response.StatusCode}");
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error occurred while calling the authentication API.");
+            // Log the exception
+            Console.WriteLine($"_________________ : {ex.Message}");
+            // Rethrow the exception if needed
+            throw;
+        }
+
+        return null;
+    }
 }

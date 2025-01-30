@@ -27,53 +27,18 @@ public class AuthService
 
     public async Task<string> AuthenticateAsync(string username, string password)
     {
-        var secretKey = _configuration["Jwt:SecretKey"];
-
-        if (string.IsNullOrEmpty(secretKey))
-        {
-            throw new InvalidOperationException("La cl� secr�te JWT n'est pas configur�e.");
-        }
-
         // R�cup�ration de l'utilisateur depuis la base de donn�es
         var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == username);
 
         if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
         {
-            return null; // Mauvais identifiants
+            return null;
         }
-
-        // Cr�ation du r�le
-        var role = user.Role.ToString();
-        var userId = user.Id.ToString();
-        var name = user.Name.ToString();
-
-        // Cr�ation des claims (incluant le r�le)
-        var claims = new List<Claim>
-        {
-            new Claim(ClaimTypes.Name, username),
-            new Claim(ClaimTypes.Role, role),
-            new Claim("UserId", userId),
-            new Claim("Role", role),
-            new Claim("Name", name),
-        };
-
-        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
-        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
-
-        // G�n�ration du token JWT
-        var token = new JwtSecurityToken(
-            issuer: "localhost",
-            audience: "localhost",
-            claims: claims,
-            expires: DateTime.Now.AddHours(1),
-            signingCredentials: credentials
-        );
-
-        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        var tokenString = generateTokenString(user);
+        return tokenString;
     }
 
-    public async Task<bool> SignupAsync(
+    public async Task<string> SignupAsync(
         string email,
         string password,
         string role,
@@ -81,19 +46,19 @@ public class AuthService
         string name
     )
     {
-        // V�rifier si l'utilisateur existe d�j�
         var existingUser = await _dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
+
         if (existingUser != null)
         {
             // L'utilisateur existe d�j�
-            return false;
+            return null;
         }
 
         // Convertir le r�le string en UserRole
         if (!Enum.TryParse<UserRole>(role, true, out var userRole))
         {
             // Si la conversion �choue, retourner false
-            return false;
+            return null;
         }
 
         // Hacher le mot de passe
@@ -108,6 +73,7 @@ public class AuthService
             Phone = phone,
             Name = name,
         };
+
         // Envoyer un email de confirmation
         bool send_mail = EmailService.SendEmail(
             user.Email,
@@ -122,10 +88,10 @@ public class AuthService
             // Ajouter l'utilisateur � la base de donn�es
             await _dbContext.Users.AddAsync(user);
             await _dbContext.SaveChangesAsync();
-            return true;
+            return generateTokenString(user);
         }
 
-        return false;
+        return null;
     }
 
     public TokenModel DecodeToken(string token)
@@ -185,5 +151,45 @@ public class AuthService
             Role = user.Role.ToString(),
             Phone = user.Phone,
         };
+    }
+
+    public string generateTokenString(User user)
+    {
+        var secretKey = _configuration["Jwt:SecretKey"];
+
+        if (string.IsNullOrEmpty(secretKey))
+        {
+            throw new InvalidOperationException("La cl� secr�te JWT n'est pas configur�e.");
+        }
+
+        // Cr�ation du r�le
+        var role = user.Role.ToString();
+        var userId = user.Id.ToString();
+        var name = user.Name.ToString();
+
+        // Cr�ation des claims (incluant le r�le)
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.Name, user.Email),
+            new Claim(ClaimTypes.Role, role),
+            new Claim("UserId", userId),
+            new Claim("Role", role),
+            new Claim("Name", name),
+        };
+
+        var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+        var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
+
+        // G�n�ration du token JWT
+        var token = new JwtSecurityToken(
+            issuer: "localhost",
+            audience: "localhost",
+            claims: claims,
+            expires: DateTime.Now.AddHours(1),
+            signingCredentials: credentials
+        );
+
+        var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+        return tokenString;
     }
 }
