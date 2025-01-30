@@ -73,16 +73,13 @@
         }
     }
   
-    <!-- Components -->
-    <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
-    <!-- Cards -->
+    <!-- <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>
     <li class='menu-item@(currentPage == "/Cards/Basic" ? " active" : "")'>
       <a asp-controller="Cards" asp-action="Basic" class="menu-link">
         <i class="menu-icon tf-icons bx bx-collection"></i>
         <div class="text-truncate" data-i18n="Cards">Cards</div>
       </a>
     </li>
-    <!-- User interface -->
     <li class='menu-item@(currentPage.StartsWith("/Ui") ? " active open" : "")'>
       <a href="javascript:void(0)" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-box"></i>
@@ -187,9 +184,7 @@
       </ul>
     </li>
 
-    <!-- Forms & Tables -->
     <li class="menu-header small text-uppercase"><span class="menu-header-text">Forms &amp; Tables</span></li>
-    <!-- Forms -->
     <li class='menu-item@(currentPage.StartsWith("/Forms") ? " active open" : "")'>
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon tf-icons bx bx-detail"></i>
@@ -225,7 +220,7 @@
           </a>
         </li>
       </ul>
-    </li>
+    </li> -->
   </ul>
   
 </aside>

@@ -59,7 +59,7 @@ namespace AdminBO.Controllers.Api
                 return BadRequest("Veuillez fournir toutes les informations nécessaires.");
             }
 
-            var result = await _authService.SignupAsync(
+            var token = await _authService.SignupAsync(
                 model.Email,
                 model.Password,
                 model.Role,
@@ -67,9 +67,9 @@ namespace AdminBO.Controllers.Api
                 model.Name
             );
 
-            if (result)
+            if (token != null)
             {
-                return Ok("Inscription réussie. Un email de confirmation a été envoyé.");
+                return Ok(new { token });
             }
             else
             {

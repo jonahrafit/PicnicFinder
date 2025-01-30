@@ -106,11 +106,6 @@ namespace AdminBO.Controllers.Api
                 GetCurrentUserId()
             );
 
-            if (reservations == null || reservations.Count == 0)
-            {
-                return NotFound("Aucun ereservation trouvé.");
-            }
-
             // Nombre total d'ereservations
             var totalReservations =
                 await _reservationService.GetTotalReservationsCountAsyncByClient(

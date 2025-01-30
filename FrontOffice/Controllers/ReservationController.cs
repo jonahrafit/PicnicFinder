@@ -38,7 +38,7 @@ public class ReservationController : BaseController
                     if (response.IsSuccessStatusCode)
                     {
                         jsonData = await response.Content.ReadAsStringAsync();
-                        // Console.WriteLine($"Response Content: {jsonData}");
+                        Console.WriteLine($"Response Content: {jsonData}");
                     }
                     else
                     {
