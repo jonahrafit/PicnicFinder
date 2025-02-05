@@ -1,0 +1,1135 @@
+2025-02-05 06:39:05.826 +03:00 [ERR] Erreur pendant la migration de la base de données : A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+2025-02-05 06:39:05.993 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-05 06:39:06.148 +03:00 [INF] Creating key {3fc1df2d-e179-4e93-ac51-b1e025841649} with creation date 2025-02-05 03:39:06Z, activation date 2025-02-05 03:39:06Z, and expiration date 2025-05-06 03:39:06Z.
+2025-02-05 06:39:06.165 +03:00 [WRN] No XML encryptor configured. Key {3fc1df2d-e179-4e93-ac51-b1e025841649} may be persisted to storage in unencrypted form.
+2025-02-05 06:39:06.172 +03:00 [INF] Writing data to file '/home/jonah/.aspnet/DataProtection-Keys/key-3fc1df2d-e179-4e93-ac51-b1e025841649.xml'.
+2025-02-05 06:39:06.240 +03:00 [INF] Now listening on: http://localhost:5055
+2025-02-05 06:39:06.247 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-05 06:39:06.248 +03:00 [INF] Hosting environment: Development
+2025-02-05 06:39:06.249 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/PicnicFinder/AdminBO
+2025-02-05 06:39:20.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/ - null null
+2025-02-05 06:39:20.448 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-05 06:39:20.516 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 06:39:20.578 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 06:39:20.616 +03:00 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 06:39:20.646 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-02-05 06:39:20.966 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 328.7799ms.
+2025-02-05 06:39:20.975 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.LoginBasic (AdminBO) in 357.601ms
+2025-02-05 06:39:20.976 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 06:39:20.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/ - 200 null text/html; charset=utf-8 556.1984ms
+2025-02-05 06:39:21.052 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/site.css - null null
+2025-02-05 06:39:21.103 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - null null
+2025-02-05 06:39:21.118 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - null null
+2025-02-05 06:39:21.119 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/material_blue.css - null null
+2025-02-05 06:39:21.129 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-02-05 06:39:21.142 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - null null
+2025-02-05 06:39:21.156 +03:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/css/site.css'
+2025-02-05 06:39:21.155 +03:00 [INF] Sending file. Request path: '/css/material_blue.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/css/material_blue.css'
+2025-02-05 06:39:21.160 +03:00 [INF] Sending file. Request path: '/vendor/fonts/boxicons.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/fonts/boxicons.css'
+2025-02-05 06:39:21.162 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - 200 86298 text/css 43.1172ms
+2025-02-05 06:39:21.156 +03:00 [INF] Sending file. Request path: '/css/flatpickr.min.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/css/flatpickr.min.css'
+2025-02-05 06:39:21.164 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/material_blue.css - 200 19308 text/css 45.013ms
+2025-02-05 06:39:21.162 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/site.css - 200 19132 text/css 110.8197ms
+2025-02-05 06:39:21.166 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - 200 16166 text/css 62.6985ms
+2025-02-05 06:39:21.170 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - null null
+2025-02-05 06:39:21.174 +03:00 [INF] Sending file. Request path: '/vendor/libs/perfect-scrollbar/perfect-scrollbar.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/perfect-scrollbar/perfect-scrollbar.css'
+2025-02-05 06:39:21.183 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - 200 5020 text/css 13.3012ms
+2025-02-05 06:39:21.195 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - null null
+2025-02-05 06:39:21.170 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/demo.css - null null
+2025-02-05 06:39:21.213 +03:00 [INF] Sending file. Request path: '/css/demo.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/css/demo.css'
+2025-02-05 06:39:21.222 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/demo.css - 200 3026 text/css 52.1097ms
+2025-02-05 06:39:21.212 +03:00 [INF] Sending file. Request path: '/vendor/js/helpers.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/js/helpers.js'
+2025-02-05 06:39:21.168 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - null null
+2025-02-05 06:39:21.241 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-02-05 06:39:21.234 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - 200 34158 text/javascript 38.5086ms
+2025-02-05 06:39:21.243 +03:00 [INF] Sending file. Request path: '/vendor/css/pages/page-auth.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/css/pages/page-auth.css'
+2025-02-05 06:39:21.168 +03:00 [INF] Sending file. Request path: '/vendor/css/theme-default.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/css/theme-default.css'
+2025-02-05 06:39:21.245 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - 200 29661 text/css 102.8975ms
+2025-02-05 06:39:21.241 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 112.8462ms
+2025-02-05 06:39:21.245 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - 200 15204 text/css 76.8109ms
+2025-02-05 06:39:21.249 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/config.js - null null
+2025-02-05 06:39:21.258 +03:00 [INF] Sending file. Request path: '/js/config.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/js/config.js'
+2025-02-05 06:39:21.263 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/config.js - 200 771 text/javascript 16.4814ms
+2025-02-05 06:39:21.326 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - null null
+2025-02-05 06:39:21.327 +03:00 [INF] Sending file. Request path: '/vendor/libs/jquery/jquery.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/jquery/jquery.js'
+2025-02-05 06:39:21.328 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - 200 327945 text/javascript 2.2467ms
+2025-02-05 06:39:21.347 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - null null
+2025-02-05 06:39:21.350 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - null null
+2025-02-05 06:39:21.370 +03:00 [INF] Sending file. Request path: '/vendor/js/bootstrap.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/js/bootstrap.js'
+2025-02-05 06:39:21.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - null null
+2025-02-05 06:39:21.386 +03:00 [INF] Sending file. Request path: '/vendor/js/menu.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/js/menu.js'
+2025-02-05 06:39:21.394 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - 200 26134 text/javascript 38.2889ms
+2025-02-05 06:39:21.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2025-02-05 06:39:21.386 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - 200 353217 text/javascript 35.077ms
+2025-02-05 06:39:21.365 +03:00 [INF] Sending file. Request path: '/vendor/libs/popper/popper.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/popper/popper.js'
+2025-02-05 06:39:21.454 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/site.js - null null
+2025-02-05 06:39:21.455 +03:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/js/site.js'
+2025-02-05 06:39:21.455 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/site.js - 200 223 text/javascript 1.4843ms
+2025-02-05 06:39:21.464 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - 200 26221 text/javascript 66.9668ms
+2025-02-05 06:39:21.466 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - null null
+2025-02-05 06:39:21.464 +03:00 [INF] Sending file. Request path: '/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/perfect-scrollbar/perfect-scrollbar.js'
+2025-02-05 06:39:21.477 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 200 45790 text/javascript 121.1687ms
+2025-02-05 06:39:21.464 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/main.js - null null
+2025-02-05 06:39:21.479 +03:00 [INF] Sending file. Request path: '/js/main.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/js/main.js'
+2025-02-05 06:39:21.480 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/main.js - 200 3846 text/javascript 16.1545ms
+2025-02-05 06:39:21.482 +03:00 [INF] Sending file. Request path: '/js/flatpickr.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/js/flatpickr.js'
+2025-02-05 06:39:21.494 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - 200 50679 text/javascript 27.9637ms
+2025-02-05 06:39:22.245 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - null null
+2025-02-05 06:39:22.247 +03:00 [INF] CORS policy execution successful.
+2025-02-05 06:39:22.250 +03:00 [INF] Sending file. Request path: '/vendor/fonts/boxicons/boxicons.woff2'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/fonts/boxicons/boxicons.woff2'
+2025-02-05 06:39:22.256 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - 200 115680 font/woff2 11.3251ms
+2025-02-05 06:39:22.603 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - null null
+2025-02-05 06:39:22.604 +03:00 [INF] Sending file. Request path: '/img/favicon/favicon.ico'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/img/favicon/favicon.ico'
+2025-02-05 06:39:22.605 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - 200 1393 image/x-icon 1.8271ms
+2025-02-05 06:40:34.688 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - application/x-www-form-urlencoded 239
+2025-02-05 06:40:34.689 +03:00 [INF] CORS policy execution successful.
+2025-02-05 06:40:34.693 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 06:40:34.698 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-02-05 06:40:34.736 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String) on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 06:40:49.801 +03:00 [ERR] An error occurred using the connection to database 'AdminBO_db' on server 'localhost'.
+2025-02-05 06:40:49.840 +03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'AdminBOContext'.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2025-02-05 06:40:49.857 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.Authenticate (AdminBO) in 15120.918ms
+2025-02-05 06:40:49.858 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-02-05 06:40:49.863 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.SqlClient.SqlException (0x80131904): A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: TCP Provider, error: 40 - Could not open a connection to SQL Server)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.Connect(ServerInfo serverInfo, SqlInternalConnectionTds connHandler, Boolean ignoreSniOpenTimeout, Int64 timerExpire, SqlConnectionString connectionOptions, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.WaitForPendingOpen()
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternalAsync(Boolean errorsExpected, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenAsync(CancellationToken cancellationToken, Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at AdminBO.Services.AuthService.AuthenticateAsync(String username, String password) in /home/jonah/Documents/MASTER/PicnicFinder/AdminBO/Service/AuthService.cs:line 31
+   at AdminBO.Controllers.AuthController.Authenticate(String username, String password) in /home/jonah/Documents/MASTER/PicnicFinder/AdminBO/Controllers/AuthController.cs:line 36
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_6>d.MoveNext() in /home/jonah/Documents/MASTER/PicnicFinder/AdminBO/Program.cs:line 134
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:00000000-0000-0000-0000-000000000000
+2025-02-05 06:40:49.939 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - 500 null text/html; charset=utf-8 15250.9258ms
+2025-02-05 06:40:50.038 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/favicon.ico - null null
+2025-02-05 06:40:50.042 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 06:40:50.045 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/favicon.ico - 404 0 null 6.8049ms
+2025-02-05 06:40:50.047 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5055/favicon.ico, Response status code: 404
+2025-02-05 06:41:22.097 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/ - null null
+2025-02-05 06:41:22.097 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 06:41:22.098 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 06:41:22.099 +03:00 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 06:41:22.100 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-02-05 06:41:22.112 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 12.06ms.
+2025-02-05 06:41:22.116 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.LoginBasic (AdminBO) in 16.5429ms
+2025-02-05 06:41:22.116 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 06:41:22.118 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/ - 200 null text/html; charset=utf-8 19.3782ms
+2025-02-05 07:34:04.169 +03:00 [INF] Application is shutting down...
+2025-02-05 07:38:07.492 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-02-05 07:38:07.637 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-05 07:38:07.677 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-02-05 07:38:07.833 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-02-05 07:38:07.860 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-02-05 07:38:07.863 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-02-05 07:38:07.878 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-02-05 07:38:07.920 +03:00 [INF] Applying migration '20250101125136_InitialMigration'.
+2025-02-05 07:38:08.023 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Menus] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [Url] nvarchar(max) NOT NULL,
+    [Roles] nvarchar(max) NOT NULL,
+    [IsActive] bit NOT NULL,
+    CONSTRAINT [PK_Menus] PRIMARY KEY ([Id])
+);
+2025-02-05 07:38:08.028 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Reports] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Date] datetime2 NOT NULL,
+    [TotalReservations] bigint NOT NULL,
+    [PopularSpaces] bigint NOT NULL,
+    [OwnerPerformance] bigint NOT NULL,
+    CONSTRAINT [PK_Reports] PRIMARY KEY ([Id])
+);
+2025-02-05 07:38:08.031 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Users] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Email] nvarchar(max) NOT NULL,
+    [Password] nvarchar(max) NOT NULL,
+    [Role] int NOT NULL,
+    [Phone] nvarchar(max) NOT NULL,
+    [Name] nvarchar(max) NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Users] PRIMARY KEY ([Id])
+);
+2025-02-05 07:38:08.036 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Space] (
+    [Id] bigint NOT NULL IDENTITY,
+    [OwnerId] bigint NOT NULL,
+    [Name] nvarchar(100) NOT NULL,
+    [Latitude] float NOT NULL,
+    [Longitude] float NOT NULL,
+    [Capacity] int NOT NULL,
+    [Photos] nvarchar(max) NOT NULL,
+    [Description] nvarchar(max) NULL,
+    [Status] int NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    [UpdatedAt] datetime2 NOT NULL,
+    CONSTRAINT [PK_Space] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Space_Users_OwnerId] FOREIGN KEY ([OwnerId]) REFERENCES [Users] ([Id]) ON DELETE CASCADE
+);
+2025-02-05 07:38:08.042 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Favorites] (
+    [Id] bigint NOT NULL IDENTITY,
+    [UserId] bigint NOT NULL,
+    [SpaceId] bigint NOT NULL,
+    [CreatedAt] datetime2 NOT NULL,
+    CONSTRAINT [PK_Favorites] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Favorites_Space_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Space] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Favorites_Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);
+2025-02-05 07:38:08.047 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Reservations] (
+    [Id] bigint NOT NULL IDENTITY,
+    [EmployeeId] bigint NOT NULL,
+    [SpaceId] bigint NOT NULL,
+    [ReservationDate] datetime2 NOT NULL,
+    [StartDate] datetime2 NOT NULL,
+    [EndDate] datetime2 NOT NULL,
+    [Status] int NOT NULL,
+    CONSTRAINT [PK_Reservations] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Reservations_Space_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Space] ([Id]) ON DELETE NO ACTION,
+    CONSTRAINT [FK_Reservations_Users_EmployeeId] FOREIGN KEY ([EmployeeId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION
+);
+2025-02-05 07:38:08.049 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Favorites_SpaceId] ON [Favorites] ([SpaceId]);
+2025-02-05 07:38:08.052 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Favorites_UserId] ON [Favorites] ([UserId]);
+2025-02-05 07:38:08.054 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reservations_EmployeeId] ON [Reservations] ([EmployeeId]);
+2025-02-05 07:38:08.056 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Reservations_SpaceId] ON [Reservations] ([SpaceId]);
+2025-02-05 07:38:08.059 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Space_OwnerId] ON [Space] ([OwnerId]);
+2025-02-05 07:38:08.063 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250101125136_InitialMigration', N'9.0.0');
+2025-02-05 07:38:08.064 +03:00 [INF] Applying migration '20250101151942_adminBoContextModify'.
+2025-02-05 07:38:08.097 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Space] DROP CONSTRAINT [FK_Space_Users_OwnerId];
+2025-02-05 07:38:08.102 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Space] ADD CONSTRAINT [FK_Space_Users_OwnerId] FOREIGN KEY ([OwnerId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION;
+2025-02-05 07:38:08.104 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250101151942_adminBoContextModify', N'9.0.0');
+2025-02-05 07:38:08.104 +03:00 [INF] Applying migration '20250103042104_updateReservation'.
+2025-02-05 07:38:08.126 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250103042104_updateReservation', N'9.0.0');
+2025-02-05 07:38:08.127 +03:00 [INF] Applying migration '20250103053734_updateReservationAgain'.
+2025-02-05 07:38:08.177 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250103053734_updateReservationAgain', N'9.0.0');
+2025-02-05 07:38:08.177 +03:00 [INF] Applying migration '20250103061717_updateReservationAgain2'.
+2025-02-05 07:38:08.207 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250103061717_updateReservationAgain2', N'9.0.0');
+2025-02-05 07:38:08.211 +03:00 [INF] Applying migration '20250113045847_AddActivitiesToSpace'.
+2025-02-05 07:38:08.315 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Favorites] DROP CONSTRAINT [FK_Favorites_Space_SpaceId];
+2025-02-05 07:38:08.326 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Reservations] DROP CONSTRAINT [FK_Reservations_Space_SpaceId];
+2025-02-05 07:38:08.329 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Space] DROP CONSTRAINT [FK_Space_Users_OwnerId];
+2025-02-05 07:38:08.338 +03:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Space] DROP CONSTRAINT [PK_Space];
+2025-02-05 07:38:08.968 +03:00 [INF] Executed DbCommand (628ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[Space]', N'Spaces', 'OBJECT';
+2025-02-05 07:38:08.971 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[Spaces].[IX_Space_OwnerId]', N'IX_Spaces_OwnerId', 'INDEX';
+2025-02-05 07:38:08.976 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Spaces] ADD CONSTRAINT [PK_Spaces] PRIMARY KEY ([Id]);
+2025-02-05 07:38:08.979 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [SpaceActivities] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(max) NOT NULL,
+    [SpaceId] bigint NULL,
+    CONSTRAINT [PK_SpaceActivities] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_SpaceActivities_Spaces_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Spaces] ([Id])
+);
+2025-02-05 07:38:08.982 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_SpaceActivities_SpaceId] ON [SpaceActivities] ([SpaceId]);
+2025-02-05 07:38:08.985 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Favorites] ADD CONSTRAINT [FK_Favorites_Spaces_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Spaces] ([Id]) ON DELETE NO ACTION;
+2025-02-05 07:38:08.987 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Reservations] ADD CONSTRAINT [FK_Reservations_Spaces_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Spaces] ([Id]) ON DELETE NO ACTION;
+2025-02-05 07:38:08.991 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [Spaces] ADD CONSTRAINT [FK_Spaces_Users_OwnerId] FOREIGN KEY ([OwnerId]) REFERENCES [Users] ([Id]) ON DELETE NO ACTION;
+2025-02-05 07:38:08.992 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250113045847_AddActivitiesToSpace', N'9.0.0');
+2025-02-05 07:38:08.993 +03:00 [INF] Applying migration '20250113055410_AddCategorieToSpace'.
+2025-02-05 07:38:09.041 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] ADD [CategoryId] bigint NOT NULL DEFAULT CAST(0 AS bigint);
+2025-02-05 07:38:09.044 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [CategoryActivities] (
+    [Id] bigint NOT NULL IDENTITY,
+    [Name] nvarchar(100) NOT NULL,
+    CONSTRAINT [PK_CategoryActivities] PRIMARY KEY ([Id])
+);
+2025-02-05 07:38:09.047 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_SpaceActivities_CategoryId] ON [SpaceActivities] ([CategoryId]);
+2025-02-05 07:38:09.051 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] ADD CONSTRAINT [FK_SpaceActivities_CategoryActivities_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [CategoryActivities] ([Id]) ON DELETE CASCADE;
+2025-02-05 07:38:09.052 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250113055410_AddCategorieToSpace', N'9.0.0');
+2025-02-05 07:38:09.053 +03:00 [INF] Applying migration '20250114104219_AddRelationsForSpaceActivity'.
+2025-02-05 07:38:09.109 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] DROP CONSTRAINT [FK_SpaceActivities_CategoryActivities_CategoryId];
+2025-02-05 07:38:09.111 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] DROP CONSTRAINT [FK_SpaceActivities_Spaces_SpaceId];
+2025-02-05 07:38:09.159 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var0 sysname;
+SELECT @var0 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SpaceActivities]') AND [c].[name] = N'Name');
+IF @var0 IS NOT NULL EXEC(N'ALTER TABLE [SpaceActivities] DROP CONSTRAINT [' + @var0 + '];');
+ALTER TABLE [SpaceActivities] ALTER COLUMN [Name] nvarchar(450) NOT NULL;
+2025-02-05 07:38:09.161 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Spaces_Latitude_Longitude] ON [Spaces] ([Latitude], [Longitude]);
+2025-02-05 07:38:09.163 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_SpaceActivities_Name] ON [SpaceActivities] ([Name]);
+2025-02-05 07:38:09.167 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX [IX_CategoryActivities_Name] ON [CategoryActivities] ([Name]);
+2025-02-05 07:38:09.170 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] ADD CONSTRAINT [FK_SpaceActivities_CategoryActivities_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [CategoryActivities] ([Id]) ON DELETE NO ACTION;
+2025-02-05 07:38:09.174 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] ADD CONSTRAINT [FK_SpaceActivities_Spaces_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Spaces] ([Id]) ON DELETE CASCADE;
+2025-02-05 07:38:09.176 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250114104219_AddRelationsForSpaceActivity', N'9.0.0');
+2025-02-05 07:38:09.181 +03:00 [INF] Applying migration '20250114110947_AddSpaceActivityLInk'.
+2025-02-05 07:38:09.234 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+ALTER TABLE [SpaceActivities] DROP CONSTRAINT [FK_SpaceActivities_Spaces_SpaceId];
+2025-02-05 07:38:09.236 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DROP INDEX [IX_SpaceActivities_SpaceId] ON [SpaceActivities];
+2025-02-05 07:38:09.262 +03:00 [INF] Executed DbCommand (25ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @var1 sysname;
+SELECT @var1 = [d].[name]
+FROM [sys].[default_constraints] [d]
+INNER JOIN [sys].[columns] [c] ON [d].[parent_column_id] = [c].[column_id] AND [d].[parent_object_id] = [c].[object_id]
+WHERE ([d].[parent_object_id] = OBJECT_ID(N'[SpaceActivities]') AND [c].[name] = N'SpaceId');
+IF @var1 IS NOT NULL EXEC(N'ALTER TABLE [SpaceActivities] DROP CONSTRAINT [' + @var1 + '];');
+ALTER TABLE [SpaceActivities] DROP COLUMN [SpaceId];
+2025-02-05 07:38:09.265 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [SpaceActivityLinks] (
+    [SpaceId] bigint NOT NULL,
+    [SpaceActivityId] bigint NOT NULL,
+    CONSTRAINT [PK_SpaceActivityLinks] PRIMARY KEY ([SpaceId], [SpaceActivityId]),
+    CONSTRAINT [FK_SpaceActivityLinks_SpaceActivities_SpaceActivityId] FOREIGN KEY ([SpaceActivityId]) REFERENCES [SpaceActivities] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_SpaceActivityLinks_Spaces_SpaceId] FOREIGN KEY ([SpaceId]) REFERENCES [Spaces] ([Id]) ON DELETE CASCADE
+);
+2025-02-05 07:38:09.268 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_SpaceActivityLinks_SpaceActivityId] ON [SpaceActivityLinks] ([SpaceActivityId]);
+2025-02-05 07:38:09.271 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20250114110947_AddSpaceActivityLInk', N'9.0.0');
+2025-02-05 07:38:09.292 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-02-05 07:38:09.374 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-05 07:38:09.583 +03:00 [INF] Now listening on: http://localhost:5055
+2025-02-05 07:38:09.589 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-05 07:38:09.591 +03:00 [INF] Hosting environment: Development
+2025-02-05 07:38:09.591 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/PicnicFinder/AdminBO
+2025-02-05 07:38:16.932 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/ - null null
+2025-02-05 07:38:16.943 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-05 07:38:17.007 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:38:17.077 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 07:38:17.125 +03:00 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 07:38:17.155 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-02-05 07:38:17.397 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 253.6785ms.
+2025-02-05 07:38:17.400 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.LoginBasic (AdminBO) in 273.6744ms
+2025-02-05 07:38:17.400 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 07:38:17.408 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/ - 200 null text/html; charset=utf-8 479.873ms
+2025-02-05 07:38:17.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-02-05 07:38:17.434 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/site.css - null null
+2025-02-05 07:38:17.443 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - null null
+2025-02-05 07:38:17.447 +03:00 [INF] The file /css/site.css was not modified
+2025-02-05 07:38:17.447 +03:00 [INF] The file /css/flatpickr.min.css was not modified
+2025-02-05 07:38:17.444 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/material_blue.css - null null
+2025-02-05 07:38:17.444 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - null null
+2025-02-05 07:38:17.450 +03:00 [INF] The file /vendor/libs/jquery/jquery.js was not modified
+2025-02-05 07:38:17.450 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - 304 null text/javascript 6.2509ms
+2025-02-05 07:38:17.451 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - null null
+2025-02-05 07:38:17.452 +03:00 [INF] The file /vendor/js/bootstrap.js was not modified
+2025-02-05 07:38:17.452 +03:00 [INF] The file /css/material_blue.css was not modified
+2025-02-05 07:38:17.453 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/material_blue.css - 304 null text/css 8.8811ms
+2025-02-05 07:38:17.455 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/site.css - 304 null text/css 21.8158ms
+2025-02-05 07:38:17.456 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - 304 null text/css 13.3173ms
+2025-02-05 07:38:17.460 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - 304 null text/javascript 8.2829ms
+2025-02-05 07:38:17.475 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - null null
+2025-02-05 07:38:17.476 +03:00 [INF] The file /vendor/fonts/boxicons.css was not modified
+2025-02-05 07:38:17.476 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - 304 null text/css 1.0708ms
+2025-02-05 07:38:17.484 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - null null
+2025-02-05 07:38:17.485 +03:00 [INF] The file /vendor/css/theme-default.css was not modified
+2025-02-05 07:38:17.490 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/demo.css - null null
+2025-02-05 07:38:17.492 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - null null
+2025-02-05 07:38:17.499 +03:00 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.css was not modified
+2025-02-05 07:38:17.493 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - null null
+2025-02-05 07:38:17.493 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - 304 null text/css 6.8206ms
+2025-02-05 07:38:17.495 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - null null
+2025-02-05 07:38:17.493 +03:00 [INF] The file /css/demo.css was not modified
+2025-02-05 07:38:17.512 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/demo.css - 304 null text/css 22.4884ms
+2025-02-05 07:38:17.504 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - 304 null text/css 11.8687ms
+2025-02-05 07:38:17.507 +03:00 [INF] The file /vendor/css/pages/page-auth.css was not modified
+2025-02-05 07:38:17.513 +03:00 [INF] The file /vendor/js/helpers.js was not modified
+2025-02-05 07:38:17.520 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - 304 null text/javascript 24.8871ms
+2025-02-05 07:38:17.518 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - 304 null text/css 24.9374ms
+2025-02-05 07:38:17.528 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/config.js - null null
+2025-02-05 07:38:17.529 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - null null
+2025-02-05 07:38:17.532 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2025-02-05 07:38:17.538 +03:00 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.js was not modified
+2025-02-05 07:38:17.535 +03:00 [INF] The file /js/config.js was not modified
+2025-02-05 07:38:17.535 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-02-05 07:38:17.537 +03:00 [INF] The file /vendor/libs/popper/popper.js was not modified
+2025-02-05 07:38:17.532 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - null null
+2025-02-05 07:38:17.546 +03:00 [INF] The file /vendor/js/menu.js was not modified
+2025-02-05 07:38:17.543 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/config.js - 304 null text/javascript 14.9193ms
+2025-02-05 07:38:17.550 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/site.js - null null
+2025-02-05 07:38:17.551 +03:00 [INF] The file /js/site.js was not modified
+2025-02-05 07:38:17.541 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 304 null text/javascript 7.4974ms
+2025-02-05 07:38:17.548 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - 304 null text/javascript 15.3192ms
+2025-02-05 07:38:17.545 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 111.2552ms
+2025-02-05 07:38:17.567 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/main.js - null null
+2025-02-05 07:38:17.567 +03:00 [INF] The file /js/main.js was not modified
+2025-02-05 07:38:17.546 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - 304 null text/javascript 16.6056ms
+2025-02-05 07:38:17.574 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - null null
+2025-02-05 07:38:17.578 +03:00 [INF] The file /js/flatpickr.js was not modified
+2025-02-05 07:38:17.552 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/site.js - 304 null text/javascript 2.2461ms
+2025-02-05 07:38:17.579 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - 304 null text/javascript 4.8098ms
+2025-02-05 07:38:17.580 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/main.js - 304 null text/javascript 13.0244ms
+2025-02-05 07:38:17.605 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - null null
+2025-02-05 07:38:17.608 +03:00 [INF] CORS policy execution successful.
+2025-02-05 07:38:17.610 +03:00 [INF] The file /vendor/fonts/boxicons/boxicons.woff2 was not modified
+2025-02-05 07:38:17.613 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - 304 null font/woff2 7.96ms
+2025-02-05 07:38:17.701 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - null null
+2025-02-05 07:38:17.701 +03:00 [INF] The file /img/favicon/favicon.ico was not modified
+2025-02-05 07:38:17.702 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - 304 null image/x-icon 1.055ms
+2025-02-05 07:38:21.426 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - application/x-www-form-urlencoded 239
+2025-02-05 07:38:21.426 +03:00 [INF] CORS policy execution successful.
+2025-02-05 07:38:21.429 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:38:21.432 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-02-05 07:38:21.458 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String) on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 07:38:21.985 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-02-05 07:38:22.016 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-02-05 07:38:22.036 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 20.742ms.
+2025-02-05 07:38:22.038 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.Authenticate (AdminBO) in 578.9409ms
+2025-02-05 07:38:22.039 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-02-05 07:38:22.047 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - 200 null text/html; charset=utf-8 620.7649ms
+2025-02-05 07:38:28.986 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Auth/RegisterBasic - null null
+2025-02-05 07:38:28.992 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:38:28.997 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.RegisterBasic (AdminBO)'
+2025-02-05 07:38:29.002 +03:00 [INF] Route matched with {action = "RegisterBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RegisterBasic() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 07:38:29.006 +03:00 [INF] Executing ViewResult, running view RegisterBasic.
+2025-02-05 07:38:29.021 +03:00 [INF] Executed ViewResult - view RegisterBasic executed in 16.6082ms.
+2025-02-05 07:38:29.021 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.RegisterBasic (AdminBO) in 18.3485ms
+2025-02-05 07:38:29.021 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.RegisterBasic (AdminBO)'
+2025-02-05 07:38:29.022 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Auth/RegisterBasic - 200 null text/html; charset=utf-8 35.7286ms
+2025-02-05 07:38:41.090 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Auth/LoginBasic - null null
+2025-02-05 07:38:41.092 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:38:41.093 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 07:38:41.093 +03:00 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 07:38:41.094 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-02-05 07:38:41.096 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 2.1511ms.
+2025-02-05 07:38:41.097 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.LoginBasic (AdminBO) in 2.9791ms
+2025-02-05 07:38:41.097 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 07:38:41.097 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Auth/LoginBasic - 200 null text/html; charset=utf-8 6.817ms
+2025-02-05 07:51:28.501 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/signup - application/json 145
+2025-02-05 07:51:28.502 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:51:28.503 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO)'
+2025-02-05 07:51:28.519 +03:00 [INF] Route matched with {action = "Signup", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(SignupModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-02-05 07:51:29.052 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2025-02-05 07:51:33.764 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Name], [Password], [Phone], [Role], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-02-05 07:51:33.870 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-05 07:51:33.917 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO) in 5396.8754ms
+2025-02-05 07:51:33.917 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO)'
+2025-02-05 07:51:33.918 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/signup - 200 null application/json; charset=utf-8 5416.8252ms
+2025-02-05 07:52:06.523 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/signin - application/json 69
+2025-02-05 07:52:06.527 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:52:06.528 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/signin - 404 0 null 4.8219ms
+2025-02-05 07:52:06.529 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5055/api/auth/signin, Response status code: 404
+2025-02-05 07:52:14.106 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/signin - application/json 72
+2025-02-05 07:52:14.106 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:52:14.106 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/signin - 404 0 null 0.8864ms
+2025-02-05 07:52:14.107 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: POST http://localhost:5055/api/auth/signin, Response status code: 404
+2025-02-05 07:52:23.838 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login - application/json 72
+2025-02-05 07:52:23.840 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:52:23.840 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-02-05 07:52:23.851 +03:00 [INF] Route matched with {action = "Authenticate", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-02-05 07:52:23.872 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-02-05 07:52:24.194 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-05 07:52:24.195 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO) in 341.3126ms
+2025-02-05 07:52:24.196 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-02-05 07:52:24.196 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login - 200 null application/json; charset=utf-8 358.1979ms
+2025-02-05 07:57:30.102 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/signup - application/json 157
+2025-02-05 07:57:30.102 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:57:30.103 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO)'
+2025-02-05 07:57:30.103 +03:00 [INF] Route matched with {action = "Signup", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(SignupModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-02-05 07:57:30.108 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2025-02-05 07:57:36.060 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Name], [Password], [Phone], [Role], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-02-05 07:57:36.063 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-05 07:57:36.066 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO) in 5962.9948ms
+2025-02-05 07:57:36.068 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO)'
+2025-02-05 07:57:36.069 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/signup - 200 null application/json; charset=utf-8 5966.9883ms
+2025-02-05 07:57:51.679 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Auth/LoginBasic - null null
+2025-02-05 07:57:51.690 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:57:51.691 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 07:57:51.691 +03:00 [INF] Route matched with {action = "LoginBasic", controller = "Auth"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoginBasic() on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 07:57:51.692 +03:00 [INF] Executing ViewResult, running view LoginBasic.
+2025-02-05 07:57:51.711 +03:00 [INF] Executed ViewResult - view LoginBasic executed in 19.0398ms.
+2025-02-05 07:57:51.711 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.LoginBasic (AdminBO) in 19.9346ms
+2025-02-05 07:57:51.711 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.LoginBasic (AdminBO)'
+2025-02-05 07:57:51.713 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Auth/LoginBasic - 200 null text/html; charset=utf-8 34.4777ms
+2025-02-05 07:57:51.846 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/site.css - null null
+2025-02-05 07:57:51.856 +03:00 [INF] The file /css/site.css was not modified
+2025-02-05 07:57:51.858 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/site.css - 304 null text/css 11.0816ms
+2025-02-05 07:57:51.873 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-02-05 07:57:51.884 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - null null
+2025-02-05 07:57:51.890 +03:00 [INF] The file /vendor/libs/jquery/jquery.js was not modified
+2025-02-05 07:57:51.891 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - 304 null text/javascript 7.928ms
+2025-02-05 07:57:51.891 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - null null
+2025-02-05 07:57:51.891 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - null null
+2025-02-05 07:57:51.892 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/material_blue.css - null null
+2025-02-05 07:57:51.892 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - null null
+2025-02-05 07:57:51.902 +03:00 [INF] The file /css/material_blue.css was not modified
+2025-02-05 07:57:51.897 +03:00 [INF] The file /vendor/js/bootstrap.js was not modified
+2025-02-05 07:57:51.900 +03:00 [INF] The file /css/flatpickr.min.css was not modified
+2025-02-05 07:57:51.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - 304 null text/css 13.2176ms
+2025-02-05 07:57:51.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - 304 null text/javascript 12.758ms
+2025-02-05 07:57:51.904 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/material_blue.css - 304 null text/css 11.6461ms
+2025-02-05 07:57:51.903 +03:00 [INF] The file /vendor/fonts/boxicons.css was not modified
+2025-02-05 07:57:51.917 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - 304 null text/css 24.6895ms
+2025-02-05 07:57:51.919 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-02-05 07:57:51.926 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 53.0621ms
+2025-02-05 07:57:51.939 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - null null
+2025-02-05 07:57:51.942 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - null null
+2025-02-05 07:57:51.952 +03:00 [INF] The file /vendor/css/pages/page-auth.css was not modified
+2025-02-05 07:57:51.952 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - 304 null text/css 10.2338ms
+2025-02-05 07:57:51.952 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - null null
+2025-02-05 07:57:51.953 +03:00 [INF] The file /vendor/js/helpers.js was not modified
+2025-02-05 07:57:51.953 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - 304 null text/javascript 0.6343ms
+2025-02-05 07:57:51.946 +03:00 [INF] The file /vendor/css/theme-default.css was not modified
+2025-02-05 07:57:51.953 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - 304 null text/css 14.4482ms
+2025-02-05 07:57:51.962 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/config.js - null null
+2025-02-05 07:57:51.942 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/demo.css - null null
+2025-02-05 07:57:51.941 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - null null
+2025-02-05 07:57:51.971 +03:00 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.css was not modified
+2025-02-05 07:57:51.974 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - 304 null text/css 33.1213ms
+2025-02-05 07:57:51.969 +03:00 [INF] The file /js/config.js was not modified
+2025-02-05 07:57:51.981 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2025-02-05 07:57:51.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/config.js - 304 null text/javascript 23.6874ms
+2025-02-05 07:57:51.973 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - null null
+2025-02-05 07:57:51.995 +03:00 [INF] The file /vendor/libs/popper/popper.js was not modified
+2025-02-05 07:57:51.996 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - 304 null text/javascript 23.1452ms
+2025-02-05 07:57:51.970 +03:00 [INF] The file /css/demo.css was not modified
+2025-02-05 07:57:52.005 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/demo.css - 304 null text/css 62.646ms
+2025-02-05 07:57:51.991 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - null null
+2025-02-05 07:57:51.987 +03:00 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.js was not modified
+2025-02-05 07:57:52.008 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 304 null text/javascript 26.7824ms
+2025-02-05 07:57:52.007 +03:00 [INF] The file /vendor/js/menu.js was not modified
+2025-02-05 07:57:52.013 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/main.js - null null
+2025-02-05 07:57:52.016 +03:00 [INF] The file /js/main.js was not modified
+2025-02-05 07:57:52.014 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/site.js - null null
+2025-02-05 07:57:52.023 +03:00 [INF] The file /js/site.js was not modified
+2025-02-05 07:57:52.013 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - null null
+2025-02-05 07:57:52.028 +03:00 [INF] The file /js/flatpickr.js was not modified
+2025-02-05 07:57:52.028 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - 304 null text/javascript 14.8369ms
+2025-02-05 07:57:52.018 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/main.js - 304 null text/javascript 5.0025ms
+2025-02-05 07:57:52.015 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - 304 null text/javascript 24.5773ms
+2025-02-05 07:57:52.026 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/site.js - 304 null text/javascript 13.6385ms
+2025-02-05 07:57:52.062 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - null null
+2025-02-05 07:57:52.068 +03:00 [INF] CORS policy execution successful.
+2025-02-05 07:57:52.068 +03:00 [INF] The file /vendor/fonts/boxicons/boxicons.woff2 was not modified
+2025-02-05 07:57:52.071 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - 304 null font/woff2 8.9556ms
+2025-02-05 07:57:52.274 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - null null
+2025-02-05 07:57:52.276 +03:00 [INF] The file /img/favicon/favicon.ico was not modified
+2025-02-05 07:57:52.276 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/favicon/favicon.ico - 304 null image/x-icon 1.578ms
+2025-02-05 07:57:56.123 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - application/x-www-form-urlencoded 239
+2025-02-05 07:57:56.129 +03:00 [INF] CORS policy execution successful.
+2025-02-05 07:57:56.131 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 07:57:56.131 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-02-05 07:57:56.132 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(System.String, System.String) on controller AdminBO.Controllers.AuthController (AdminBO).
+2025-02-05 07:57:56.149 +03:00 [INF] Executed DbCommand (10ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-02-05 07:57:56.501 +03:00 [INF] Executing RedirectResult, redirecting to /Dashboards/Index.
+2025-02-05 07:57:56.502 +03:00 [INF] Executed action AdminBO.Controllers.AuthController.Authenticate (AdminBO) in 369.7902ms
+2025-02-05 07:57:56.502 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.AuthController.Authenticate (AdminBO)'
+2025-02-05 07:57:56.504 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/Auth/Authenticate - 302 0 null 380.7094ms
+2025-02-05 07:57:56.508 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-02-05 07:57:56.512 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 07:57:56.603 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-02-05 07:57:56.605 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-02-05 07:57:56.608 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-05 07:57:56.723 +03:00 [INF] Executed ViewResult - view Index executed in 116.825ms.
+2025-02-05 07:57:56.724 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 118.0432ms
+2025-02-05 07:57:56.724 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-02-05 07:57:56.724 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 216.3094ms
+2025-02-05 07:57:56.768 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apex-charts.css - null null
+2025-02-05 07:57:56.770 +03:00 [INF] Sending file. Request path: '/vendor/libs/apex-charts/apex-charts.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/apex-charts/apex-charts.css'
+2025-02-05 07:57:56.770 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apex-charts.css - 200 18213 text/css 2.1511ms
+2025-02-05 07:57:56.783 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/avatars/1.png - null null
+2025-02-05 07:57:56.800 +03:00 [INF] Sending file. Request path: '/img/avatars/1.png'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/img/avatars/1.png'
+2025-02-05 07:57:56.784 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/illustrations/man-with-laptop.png - null null
+2025-02-05 07:57:56.804 +03:00 [INF] Sending file. Request path: '/img/illustrations/man-with-laptop.png'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/img/illustrations/man-with-laptop.png'
+2025-02-05 07:57:56.803 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/avatars/1.png - 200 14015 image/png 20.039ms
+2025-02-05 07:57:56.809 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/illustrations/man-with-laptop.png - 200 21060 image/png 24.6543ms
+2025-02-05 07:57:56.821 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - null null
+2025-02-05 07:57:56.823 +03:00 [INF] Sending file. Request path: '/vendor/libs/apex-charts/apexcharts.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/apex-charts/apexcharts.js'
+2025-02-05 07:57:56.825 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - 200 502462 text/javascript 4.1487ms
+2025-02-05 07:57:57.181 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/2/2025 - null null
+2025-02-05 07:57:57.182 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 07:57:57.182 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - null null
+2025-02-05 07:57:57.186 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 07:57:57.219 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-02-05 07:57:57.224 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-02-05 07:57:57.238 +03:00 [INF] Route matched with {action = "GetReservationsData", controller = "Reservations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetReservationsData(System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-02-05 07:57:57.252 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-02-05 07:57:57.639 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-02-05 07:57:57.644 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-05 07:57:57.985 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 732.1244ms
+2025-02-05 07:57:57.985 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-02-05 07:57:57.986 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/2/2025 - 200 null application/json; charset=utf-8 804.2644ms
+2025-02-05 07:57:59.624 +03:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[ReservationStats, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-05 07:57:59.631 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO) in 2391.1171ms
+2025-02-05 07:57:59.632 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-02-05 07:57:59.633 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - 200 null application/json; charset=utf-8 2450.8882ms
+2025-02-05 07:58:10.423 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Spaces/Index - null null
+2025-02-05 07:58:10.430 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 07:58:10.439 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.SpacesController.Index (AdminBO)'
+2025-02-05 07:58:10.456 +03:00 [INF] Route matched with {action = "Index", controller = "Spaces"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.Nullable`1[System.Int64]) on controller AdminBO.Controllers.SpacesController (AdminBO).
+2025-02-05 07:58:10.498 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[@__ownerId_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+WHERE [s].[OwnerId] = @__ownerId_0
+2025-02-05 07:58:10.512 +03:00 [INF] Executing ViewResult, running view Basic.
+2025-02-05 07:58:10.558 +03:00 [INF] Executed ViewResult - view Basic executed in 53.9911ms.
+2025-02-05 07:58:10.559 +03:00 [INF] Executed action AdminBO.Controllers.SpacesController.Index (AdminBO) in 102.5617ms
+2025-02-05 07:58:10.561 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.SpacesController.Index (AdminBO)'
+2025-02-05 07:58:10.561 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Spaces/Index - 200 null text/html; charset=utf-8 138.2189ms
+2025-02-05 07:58:10.636 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/masonry/masonry.js - null null
+2025-02-05 07:58:10.641 +03:00 [INF] Sending file. Request path: '/vendor/libs/masonry/masonry.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/masonry/masonry.js'
+2025-02-05 07:58:10.643 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/masonry/masonry.js - 200 70956 text/javascript 6.465ms
+2025-02-05 07:58:12.081 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/Index - null null
+2025-02-05 07:58:12.105 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 07:58:12.108 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-02-05 07:58:12.124 +03:00 [INF] Route matched with {action = "Index", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ViewReservation]]] Index(Int32, Int32, Int32, Int32, System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-02-05 07:58:12.247 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.Index (AdminBO) in 122.014ms
+2025-02-05 07:58:12.249 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-02-05 07:58:12.253 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Data.SqlClient.SqlException (0x80131904): Nom d'objet 'View_Reservation' non valide.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite, String method)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AdminBO.Services.ReservationService.GetAllReservationsByFilter(Int64 ownerId, Int32 monthFilter, Int32 yearFilter, String status) in /home/jonah/Documents/MASTER/PicnicFinder/AdminBO/Service/ReservationService.cs:line 316
+   at AdminBO.Controllers.ReservationsController.Index(Int32 page, Int32 pageSize, Int32 monthFilter, Int32 yearFilter, String status) in /home/jonah/Documents/MASTER/PicnicFinder/AdminBO/Controllers/ReservationsController.cs:line 43
+   at lambda_method259(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Program.<>c.<<<Main>$>b__0_6>d.MoveNext() in /home/jonah/Documents/MASTER/PicnicFinder/AdminBO/Program.cs:line 134
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+ClientConnectionId:fd5fb019-a6e4-4891-8bc2-3dba99ae6f36
+Error Number:208,State:1,Class:16
+2025-02-05 07:58:12.404 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/Index - 500 null text/html; charset=utf-8 323.8212ms
+2025-02-05 07:58:23.742 +03:00 [INF] Application is shutting down...
+2025-02-05 08:02:03.515 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-02-05 08:02:03.665 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-05 08:02:03.707 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-02-05 08:02:03.999 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-02-05 08:02:04.030 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-02-05 08:02:04.034 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-02-05 08:02:04.042 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-02-05 08:02:04.092 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-02-05 08:02:04.113 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-02-05 08:02:04.365 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-05 08:02:04.912 +03:00 [INF] Now listening on: http://localhost:5055
+2025-02-05 08:02:04.933 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-05 08:02:04.939 +03:00 [INF] Hosting environment: Development
+2025-02-05 08:02:04.942 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/PicnicFinder/AdminBO
+2025-02-05 08:16:59.133 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/Index - null null
+2025-02-05 08:16:59.151 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-05 08:16:59.242 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 08:16:59.432 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-02-05 08:16:59.490 +03:00 [INF] Route matched with {action = "Index", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[ViewReservation]]] Index(Int32, Int32, Int32, Int32, System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-02-05 08:16:59.977 +03:00 [INF] Executing ViewResult, running view Basic.
+2025-02-05 08:17:00.475 +03:00 [INF] Executed ViewResult - view Basic executed in 499.385ms.
+2025-02-05 08:17:00.480 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.Index (AdminBO) in 987.8533ms
+2025-02-05 08:17:00.480 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.Index (AdminBO)'
+2025-02-05 08:17:00.488 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/Index - 200 null text/html; charset=utf-8 1359.2761ms
+2025-02-05 08:17:00.532 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/site.css - null null
+2025-02-05 08:17:00.553 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - null null
+2025-02-05 08:17:00.555 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - null null
+2025-02-05 08:17:00.556 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/material_blue.css - null null
+2025-02-05 08:17:00.564 +03:00 [INF] The file /css/material_blue.css was not modified
+2025-02-05 08:17:00.556 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - null null
+2025-02-05 08:17:00.558 +03:00 [INF] The file /css/site.css was not modified
+2025-02-05 08:17:00.573 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/site.css - 304 null text/css 41.4916ms
+2025-02-05 08:17:00.575 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - null null
+2025-02-05 08:17:00.568 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/material_blue.css - 304 null text/css 12.5142ms
+2025-02-05 08:17:00.561 +03:00 [INF] The file /css/flatpickr.min.css was not modified
+2025-02-05 08:17:00.571 +03:00 [INF] The file /vendor/fonts/boxicons.css was not modified
+2025-02-05 08:17:00.583 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons.css - 304 null text/css 26.5809ms
+2025-02-05 08:17:00.582 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/flatpickr.min.css - 304 null text/css 26.4985ms
+2025-02-05 08:17:00.578 +03:00 [INF] The file /vendor/css/theme-default.css was not modified
+2025-02-05 08:17:00.590 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/theme-default.css - 304 null text/css 14.3415ms
+2025-02-05 08:17:00.593 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - null null
+2025-02-05 08:17:00.589 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/css/demo.css - null null
+2025-02-05 08:17:00.596 +03:00 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.css was not modified
+2025-02-05 08:17:00.599 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.css - 304 null text/css 6.4829ms
+2025-02-05 08:17:00.598 +03:00 [INF] The file /css/demo.css was not modified
+2025-02-05 08:17:00.602 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/css/demo.css - 304 null text/css 13.8625ms
+2025-02-05 08:17:00.609 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - null null
+2025-02-05 08:17:00.612 +03:00 [INF] The file /vendor/css/pages/page-auth.css was not modified
+2025-02-05 08:17:00.616 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - null null
+2025-02-05 08:17:00.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/pages/page-auth.css - 304 null text/css 5.5812ms
+2025-02-05 08:17:00.617 +03:00 [INF] Sending file. Request path: '/vendor/css/core.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/css/core.css'
+2025-02-05 08:17:00.618 +03:00 [INF] The file /vendor/js/helpers.js was not modified
+2025-02-05 08:17:00.621 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/helpers.js - 304 null text/javascript 4.8809ms
+2025-02-05 08:17:00.621 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/css/core.css - 200 543983 text/css 67.8297ms
+2025-02-05 08:17:00.629 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/config.js - null null
+2025-02-05 08:17:00.632 +03:00 [INF] The file /js/config.js was not modified
+2025-02-05 08:17:00.635 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/config.js - 304 null text/javascript 5.3688ms
+2025-02-05 08:17:00.651 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - null null
+2025-02-05 08:17:00.653 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/avatars/1.png - null null
+2025-02-05 08:17:00.658 +03:00 [INF] Sending file. Request path: '/vendor/libs/jquery/jquery.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/jquery/jquery.js'
+2025-02-05 08:17:00.658 +03:00 [INF] The file /img/avatars/1.png was not modified
+2025-02-05 08:17:00.660 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/jquery/jquery.js - 200 327945 text/javascript 8.9296ms
+2025-02-05 08:17:00.662 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/avatars/1.png - 304 null image/png 9.2179ms
+2025-02-05 08:17:00.704 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - null null
+2025-02-05 08:17:00.706 +03:00 [INF] The file /vendor/libs/popper/popper.js was not modified
+2025-02-05 08:17:00.709 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/popper/popper.js - 304 null text/javascript 4.4411ms
+2025-02-05 08:17:00.712 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - null null
+2025-02-05 08:17:00.721 +03:00 [INF] Sending file. Request path: '/vendor/js/bootstrap.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/js/bootstrap.js'
+2025-02-05 08:17:00.724 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/bootstrap.js - 200 353217 text/javascript 11.9062ms
+2025-02-05 08:17:00.728 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - null null
+2025-02-05 08:17:00.732 +03:00 [INF] The file /vendor/libs/perfect-scrollbar/perfect-scrollbar.js was not modified
+2025-02-05 08:17:00.732 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - null null
+2025-02-05 08:17:00.734 +03:00 [INF] The file /vendor/js/menu.js was not modified
+2025-02-05 08:17:00.738 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/js/menu.js - 304 null text/javascript 5.8941ms
+2025-02-05 08:17:00.737 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/site.js - null null
+2025-02-05 08:17:00.744 +03:00 [INF] The file /js/site.js was not modified
+2025-02-05 08:17:00.748 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/site.js - 304 null text/javascript 11.4458ms
+2025-02-05 08:17:00.735 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/perfect-scrollbar/perfect-scrollbar.js - 304 null text/javascript 7.0212ms
+2025-02-05 08:17:00.746 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/main.js - null null
+2025-02-05 08:17:00.753 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - null null
+2025-02-05 08:17:00.757 +03:00 [INF] The file /js/flatpickr.js was not modified
+2025-02-05 08:17:00.757 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/flatpickr.js - 304 null text/javascript 4.1032ms
+2025-02-05 08:17:00.754 +03:00 [INF] The file /js/main.js was not modified
+2025-02-05 08:17:00.764 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/js/main.js - 304 null text/javascript 17.4104ms
+2025-02-05 08:17:01.049 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - null null
+2025-02-05 08:17:01.055 +03:00 [INF] CORS policy execution successful.
+2025-02-05 08:17:01.063 +03:00 [INF] Sending file. Request path: '/vendor/fonts/boxicons/boxicons.woff2'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/fonts/boxicons/boxicons.woff2'
+2025-02-05 08:17:01.067 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/fonts/boxicons/boxicons.woff2 - 200 115680 font/woff2 17.1996ms
+2025-02-05 08:17:12.696 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Dashboards/Index - null null
+2025-02-05 08:17:12.702 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 08:17:12.708 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-02-05 08:17:12.714 +03:00 [INF] Route matched with {action = "Index", controller = "Dashboards"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller AdminBO.Controllers.DashboardsController (AdminBO).
+2025-02-05 08:17:12.720 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-05 08:17:12.767 +03:00 [INF] Executed ViewResult - view Index executed in 50.7585ms.
+2025-02-05 08:17:12.770 +03:00 [INF] Executed action AdminBO.Controllers.DashboardsController.Index (AdminBO) in 54.6697ms
+2025-02-05 08:17:12.770 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.DashboardsController.Index (AdminBO)'
+2025-02-05 08:17:12.771 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Dashboards/Index - 200 null text/html; charset=utf-8 75.2832ms
+2025-02-05 08:17:12.820 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apex-charts.css - null null
+2025-02-05 08:17:12.822 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - null null
+2025-02-05 08:17:12.820 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/img/illustrations/man-with-laptop.png - null null
+2025-02-05 08:17:12.832 +03:00 [INF] The file /img/illustrations/man-with-laptop.png was not modified
+2025-02-05 08:17:12.834 +03:00 [INF] Sending file. Request path: '/vendor/libs/apex-charts/apexcharts.js'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/AdminBO/wwwroot/vendor/libs/apex-charts/apexcharts.js'
+2025-02-05 08:17:12.825 +03:00 [INF] The file /vendor/libs/apex-charts/apex-charts.css was not modified
+2025-02-05 08:17:12.835 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/img/illustrations/man-with-laptop.png - 304 null image/png 14.8906ms
+2025-02-05 08:17:12.838 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apexcharts.js - 200 502462 text/javascript 15.8106ms
+2025-02-05 08:17:12.841 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/vendor/libs/apex-charts/apex-charts.css - 304 null text/css 20.5511ms
+2025-02-05 08:17:13.109 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - null null
+2025-02-05 08:17:13.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/reservation/2/2025 - null null
+2025-02-05 08:17:13.117 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 08:17:13.119 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 08:17:13.129 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-02-05 08:17:13.129 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-02-05 08:17:13.135 +03:00 [INF] Route matched with {action = "GetReservationsData", controller = "Reservations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetReservationsData(System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-02-05 08:17:13.147 +03:00 [INF] Route matched with {action = "GetApprovedReservationsByMonthAndYear", controller = "ReservationApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Reservation]]] GetApprovedReservationsByMonthAndYearAsync(Int32, Int32) on controller AdminBO.Controllers.Api.ReservationApiController (AdminBO).
+2025-02-05 08:17:13.183 +03:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[ReservationStats, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-05 08:17:13.325 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO) in 187.863ms
+2025-02-05 08:17:13.325 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-02-05 08:17:13.325 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - 200 null application/json; charset=utf-8 216.3759ms
+2025-02-05 08:17:14.394 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[@__month_0='?' (DbType = Int32), @__year_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[EmployeeId], [r].[EndDate], [r].[ReservationDate], [r].[SpaceId], [r].[StartDate], [r].[Status], [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Reservations] AS [r]
+INNER JOIN [Spaces] AS [s] ON [r].[SpaceId] = [s].[Id]
+WHERE [r].[Status] = 1 AND DATEPART(month, [r].[StartDate]) = @__month_0 AND DATEPART(year, [r].[StartDate]) = @__year_1
+ORDER BY [r].[StartDate]
+2025-02-05 08:17:14.442 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[AdminBO.Models.Reservation, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-05 08:17:14.594 +03:00 [INF] Executed action AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO) in 1446.1219ms
+2025-02-05 08:17:14.596 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.ReservationApiController.GetApprovedReservationsByMonthAndYearAsync (AdminBO)'
+2025-02-05 08:17:14.608 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/reservation/2/2025 - 200 null application/json; charset=utf-8 1496.8735ms
+2025-02-05 08:17:23.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - null null
+2025-02-05 08:17:23.112 +03:00 [INF] Token trouvé : eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiam9uYWhyYWZpdC5yYW1AaG90bWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJPV05FUiIsIlVzZXJJZCI6IjIiLCJSb2xlIjoiT1dORVIiLCJOYW1lIjoiSm9uYWggRml0aWEgT1dORVIiLCJleHAiOjE3Mzg3MzUwNzYsImlzcyI6ImxvY2FsaG9zdCIsImF1ZCI6ImxvY2FsaG9zdCJ9.gbr8B1jzxa4w_00i66vkY7IviP7yrsVTDyQif91Uw3Q
+2025-02-05 08:17:23.116 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-02-05 08:17:23.116 +03:00 [INF] Route matched with {action = "GetReservationsData", controller = "Reservations"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetReservationsData(System.String) on controller AdminBO.Controllers.ReservationsController (AdminBO).
+2025-02-05 08:17:23.121 +03:00 [INF] Executing JsonResult, writing value of type 'System.Collections.Generic.List`1[[ReservationStats, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-05 08:17:23.122 +03:00 [INF] Executed action AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO) in 5.1099ms
+2025-02-05 08:17:23.122 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.ReservationsController.GetReservationsData (AdminBO)'
+2025-02-05 08:17:23.123 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/Reservations/GetReservationsData - 200 null application/json; charset=utf-8 11.5313ms
+2025-02-05 08:19:15.765 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/signup - application/json 147
+2025-02-05 08:19:15.767 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 08:19:15.768 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO)'
+2025-02-05 08:19:15.777 +03:00 [INF] Route matched with {action = "Signup", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Signup(SignupModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-02-05 08:19:16.007 +03:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+2025-02-05 08:19:20.486 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Int32), @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([Email], [Name], [Password], [Phone], [Role], [Status])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+2025-02-05 08:19:20.566 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-05 08:19:20.586 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO) in 4808.1174ms
+2025-02-05 08:19:20.587 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Signup (AdminBO)'
+2025-02-05 08:19:20.587 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/signup - 200 null application/json; charset=utf-8 4822.6036ms
+2025-02-05 08:31:22.531 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 08:31:22.532 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 08:31:22.533 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:31:22.542 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 08:31:22.569 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-02-05 08:31:22.570 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-02-05 08:31:23.009 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 08:31:23.015 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 08:31:23.020 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 476.7231ms
+2025-02-05 08:31:23.020 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:31:23.022 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 404 null text/plain; charset=utf-8 490.9329ms
+2025-02-05 08:47:01.323 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 08:47:01.328 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 08:47:01.330 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:47:01.331 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 08:47:01.608 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 08:47:01.613 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 08:47:01.619 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 286.0911ms
+2025-02-05 08:47:01.624 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:47:01.625 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 404 null text/plain; charset=utf-8 302.3012ms
+2025-02-05 08:47:28.521 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 08:47:28.523 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 08:47:28.523 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:47:28.524 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 08:47:28.532 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 08:47:28.534 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 08:47:28.535 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 9.4046ms
+2025-02-05 08:47:28.537 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:47:28.538 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 404 null text/plain; charset=utf-8 16.7951ms
+2025-02-05 08:57:23.984 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 08:57:23.987 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 08:57:23.988 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:57:23.990 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 08:57:24.282 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 08:57:24.284 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 08:57:24.292 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 300.1081ms
+2025-02-05 08:57:24.293 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 08:57:24.294 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 404 null text/plain; charset=utf-8 309.4872ms
+2025-02-05 09:10:17.879 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 09:10:17.887 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:10:17.888 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:10:17.888 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 09:10:18.156 +03:00 [INF] Executed DbCommand (12ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 09:10:18.157 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 09:10:18.158 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 268.5345ms
+2025-02-05 09:10:18.159 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:10:18.159 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 404 null text/plain; charset=utf-8 279.8494ms
+2025-02-05 09:12:52.326 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 09:12:52.327 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:12:52.336 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:12:52.344 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 09:12:52.372 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 09:12:52.380 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 09:12:52.386 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 41.302ms
+2025-02-05 09:12:52.389 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:12:52.394 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 404 null text/plain; charset=utf-8 67.6232ms
+2025-02-05 09:15:14.925 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/spaces - null null
+2025-02-05 09:15:14.930 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:15:14.931 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/spaces - 404 0 null 5.9728ms
+2025-02-05 09:15:14.932 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5055/api/spaces, Response status code: 404
+2025-02-05 09:15:49.835 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5055/api/auth/login - application/json 72
+2025-02-05 09:15:49.840 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:15:49.841 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-02-05 09:15:49.850 +03:00 [INF] Route matched with {action = "Authenticate", controller = "AuthApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller AdminBO.Controllers.Api.AuthApiController (AdminBO).
+2025-02-05 09:15:49.882 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[Name], [u].[Password], [u].[Phone], [u].[Role], [u].[Status]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__username_0
+2025-02-05 09:15:50.222 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-05 09:15:50.223 +03:00 [INF] Executed action AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO) in 372.8308ms
+2025-02-05 09:15:50.224 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.AuthApiController.Authenticate (AdminBO)'
+2025-02-05 09:15:50.226 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5055/api/auth/login - 200 null application/json; charset=utf-8 391.2248ms
+2025-02-05 09:16:23.331 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/spaces - application/json null
+2025-02-05 09:16:23.332 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:16:23.333 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/spaces - 404 0 null 2.67ms
+2025-02-05 09:16:23.335 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5055/api/spaces, Response status code: 404
+2025-02-05 09:16:40.047 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/spaces - application/json null
+2025-02-05 09:16:40.049 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:16:40.051 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/spaces - 404 0 null 3.2238ms
+2025-02-05 09:16:40.052 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5055/api/spaces, Response status code: 404
+2025-02-05 09:17:46.612 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space - application/json null
+2025-02-05 09:17:46.613 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:17:46.614 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:17:46.614 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 09:17:46.619 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 09:17:46.620 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2025-02-05 09:17:46.620 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 5.3097ms
+2025-02-05 09:17:46.620 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:17:46.621 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space - 404 null text/plain; charset=utf-8 8.8166ms
+2025-02-05 09:18:41.253 +03:00 [INF] Application is shutting down...
+2025-02-05 09:19:09.182 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-02-05 09:19:09.333 +03:00 [INF] Acquiring an exclusive lock for migration application. See https://aka.ms/efcore-docs-migrations-lock for more information if this takes too long.
+2025-02-05 09:19:09.400 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_getapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session', @LockMode = 'Exclusive';
+SELECT @result
+2025-02-05 09:19:09.604 +03:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF OBJECT_ID(N'[__EFMigrationsHistory]') IS NULL
+BEGIN
+    CREATE TABLE [__EFMigrationsHistory] (
+        [MigrationId] nvarchar(150) NOT NULL,
+        [ProductVersion] nvarchar(32) NOT NULL,
+        CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+    );
+END;
+2025-02-05 09:19:09.627 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2025-02-05 09:19:09.630 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2025-02-05 09:19:09.639 +03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2025-02-05 09:19:09.678 +03:00 [INF] No migrations were applied. The database is already up to date.
+2025-02-05 09:19:09.700 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+DECLARE @result int;
+EXEC @result = sp_releaseapplock @Resource = '__EFMigrationsLock', @LockOwner = 'Session';
+SELECT @result
+2025-02-05 09:19:09.806 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-05 09:19:10.082 +03:00 [INF] Now listening on: http://localhost:5055
+2025-02-05 09:19:10.090 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-05 09:19:10.091 +03:00 [INF] Hosting environment: Development
+2025-02-05 09:19:10.091 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/PicnicFinder/AdminBO
+2025-02-05 09:22:35.675 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - null null
+2025-02-05 09:22:35.689 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-05 09:22:35.763 +03:00 [WRN] Aucun JWT trouvé dans les cookies.
+2025-02-05 09:22:35.845 +03:00 [INF] Executing endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:22:35.918 +03:00 [INF] Route matched with {action = "GetSpaces", controller = "SpaceApi"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[AdminBO.Models.Space]]] GetSpaces(Int32, Int32) on controller AdminBO.Controllers.Api.SpaceApiController (AdminBO).
+2025-02-05 09:22:36.468 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-02-05 09:22:36.470 +03:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2025-02-05 09:22:37.095 +03:00 [INF] Executed DbCommand (141ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Capacity], [s].[CreatedAt], [s].[Description], [s].[Latitude], [s].[Longitude], [s].[Name], [s].[OwnerId], [s].[Photos], [s].[Status], [s].[UpdatedAt]
+FROM [Spaces] AS [s]
+ORDER BY (SELECT 1)
+OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+2025-02-05 09:22:37.249 +03:00 [INF] Executed DbCommand (14ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Spaces] AS [s]
+2025-02-05 09:22:37.280 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType4`2[[System.Collections.Generic.List`1[[ViewSpaceWithActivities, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[PaginationModel, AdminBO, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-02-05 09:22:37.546 +03:00 [INF] Executed action AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO) in 1618.7188ms
+2025-02-05 09:22:37.550 +03:00 [INF] Executed endpoint 'AdminBO.Controllers.Api.SpaceApiController.GetSpaces (AdminBO)'
+2025-02-05 09:22:37.568 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5055/api/Space?page=1&pageSize=3 - 200 null application/json; charset=utf-8 1896.0538ms

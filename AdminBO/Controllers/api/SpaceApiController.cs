@@ -41,10 +41,10 @@ namespace AdminBO.Controllers.Api
         {
             var spaces = await _spaceService.GetSpacesPagedAsync(page, pageSize);
 
-            if (spaces == null || spaces.Count == 0)
-            {
-                return NotFound("Aucun espace trouvé.");
-            }
+            // if (spaces == null || spaces.Count == 0)
+            // {
+            //     return NotFound("Aucun espace trouvé.");
+            // }
 
             // LIST ACTIVITY
             var viewSpaceWithActivities = new List<ViewSpaceWithActivities>();
