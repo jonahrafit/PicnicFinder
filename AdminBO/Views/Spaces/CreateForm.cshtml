@@ -6,51 +6,53 @@
 
 <style>
   .multiselect-container {
-      position: relative;
-      display: inline-block;
-      width: 100%;
+    position: relative;
+    display: inline-block;
+    width: 100%;
   }
 
   .dropdown-menu {
-      width: 100%;
-      max-height: 200px;
-      overflow-y: auto;
-      display: none; /* Masquer le menu déroulant par défaut */
-      position: absolute;
-      top: 100%;
-      z-index: 1000;
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+    display: none;
+    /* Masquer le menu déroulant par défaut */
+    position: absolute;
+    top: 100%;
+    z-index: 1000;
   }
 
   .multiselect-container.active .dropdown-menu {
-      display: block; /* Afficher le menu lorsque le conteneur est actif */
+    display: block;
+    /* Afficher le menu lorsque le conteneur est actif */
   }
 
   .selected-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 5px;
-      margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 5px;
   }
 
   .tag {
-      background-color: #0d6efd;
-      color: #fff;
-      border-radius: 5px;
-      padding: 3px 8px;
-      font-size: 12px;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
+    background-color: #0d6efd;
+    color: #fff;
+    border-radius: 5px;
+    padding: 3px 8px;
+    font-size: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
   }
 
   .tag .remove-btn {
-      cursor: pointer;
-      font-weight: bold;
-      color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    color: #fff;
   }
 
   .dropdown-item {
-      cursor: pointer;
+    cursor: pointer;
   }
 </style>
 
@@ -63,98 +65,82 @@
       </div>
       <div class="card-body">
         <form method="post" enctype="multipart/form-data" action="/Spaces/CreateSpace" id="createSpaceForm">
-        <input type="hidden" id="selected-activities" name="ActivityIds" value="">
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="name">Titre</label>
-            <div class="col-sm-10">
-              <div class="input-group input-group-merge">
+          <input type="hidden" id="selected-activities" name="ActivityIds" value="">
+          <input type="hidden" step="any" class="form-control" id="latitude" name="Latitude" value=""
+            placeholder="Latitude" readonly required />
+          <input type="hidden" step="any" class="form-control" id="longitude" name="Longitude" value=""
+            placeholder="Longitude" readonly required />
+
+          <div class="row">
+            <div class="col-7 col-md-7 mb-4">
+              <label for="name" class="form-label fs-5">Nom de l'espace</label>
+              <div class="input-group">
                 <span class="input-group-text"><i class="bx bx-home"></i></span>
-                <input type="text" class="form-control" id="name"
-                  min="-90" max="90" name="Name" placeholder="Titre de l'espace" required />
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Nom de l'espace" required />
+              </div>
+            </div>
+
+            <!-- Capacité -->
+            <div class="col-2 col-md-2 mb-4">
+              <label for="capacity" class="form-label fs-5">Capacité</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class='bx bxs-circle-three-quarter'></i></span>
+                <input type="number" class="form-control" id="capacity" name="Capacity"
+                  placeholder="Capacité de l'espace" min="1" required />
               </div>
             </div>
           </div>
 
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="latitude">Latitude</label>
-            <div class="col-sm-10">
-              <div class="input-group input-group-merge">
-                <span class="input-group-text"><i class="bx bx-map"></i></span>
-                <input type="number" step="any" class="form-control" id="latitude" value="48.1234"
-                  min="-180" max="180" name="Latitude" placeholder="Latitude" required />
-              </div>
+          <div class="row">
+            <!-- Localisation (Carte) -->
+            <div class="col-md-7 col-7 mb-4">
+              <label for="map" class="form-label fs-5">Localisation : <span id="lat_longitude"></span></label>
+              <div id="map" style="height: 300px; border-radius: 10px;"></div>
             </div>
-          </div>
 
-          <!-- Champ Longitude -->
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="longitude">Longitude</label>
-            <div class="col-sm-10">
-              <div class="input-group input-group-merge">
-                <span class="input-group-text"><i class="bx bx-map"></i></span>
-                <input type="number" step="any" class="form-control" id="longitude" value="-73.5678" name="Longitude" placeholder="Longitude" required />
+            <!-- Description -->
+            <div class="col-md-5 col-5">
+              <div class="mb-4">
+                <label for="description" class="form-label fs-5">Description</label>
+                <textarea class="form-control" id="description" name="Description" placeholder="Description de l'espace"
+                  rows="4"></textarea>
               </div>
-            </div>
-          </div>
 
-          <!-- Champ Capacité -->
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="capacity">Capacité</label>
-            <div class="col-sm-10">
-              <div class="input-group input-group-merge">
-                <span class="input-group-text"><i class="bx bx-users"></i></span>
-                <input type="number" class="form-control" id="capacity" name="Capacity" placeholder="Capacité de l'espace" min="1" required />
-              </div>
-            </div>
-          </div>
-
-          <!-- Champ Photos -->
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="photos">Photos</label>
-            <div class="col-sm-10">
-              <div class="input-group input-group-merge">
-                <span class="input-group-text"><i class="bx bx-image"></i></span>
-                <input type="file" class="form-control" id="photos" name="Photos" accept=".jpg,.png,.gif" multiple/>
-              </div>
-            </div>
-          </div>
-
-          <!-- Champ Description -->
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="description">Description</label>
-            <div class="col-sm-10">
-              <div class="input-group input-group-merge">
-                <span class="input-group-text"><i class="bx bx-info-circle"></i></span>
-                <textarea class="form-control" id="description" name="Description" placeholder="Description de l'espace"></textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sélection des Activités -->
-          <div class="row mb-6">
-            <label class="col-sm-2 col-form-label" for="activities">Activités</label>
-            <div class="col-sm-10">
-              <div class="multiselect-container">
-                <div class="selected-tags"></div>
-                <input type="text" id="multiselect-input" class="form-control" placeholder="Rechercher et sélectionner...">
-                <ul class="dropdown-menu" id="multiselect-options">
+              <!-- Activités -->
+              <div class="mb-4">
+                <label for="activities" class="form-label fs-5">Activités</label>
+                <div class="multiselect-container">
+                  <div class="selected-tags"></div>
+                  <input type="text" id="multiselect-input" class="form-control"
+                    placeholder="Rechercher et sélectionner..." />
+                  <ul class="dropdown-menu" id="multiselect-options">
                     @foreach (var activity in Model)
                     {
                       <li data-value="@activity.Id" class="dropdown-item">@activity.Name</li>
                     }
-                </ul>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Bouton de Soumission -->
-          <div class="row justify-content-end">
-            <div class="col-sm-10">
-              <button type="submit" class="btn btn-primary">Modifier l'espace</button>
+          <!-- Photos -->
+          <div class="mb-4">
+            <label for="photos" class="form-label fs-5">Photos</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="bx bx-image"></i></span>
+              <input type="file" class="form-control" id="photos" name="Photos" accept=".jpg,.png,.gif" multiple />
             </div>
           </div>
+
+          <!-- Bouton de soumission -->
+          <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-primary px-4">Modifier l'espace</button>
+          </div>
+
         </form>
       </div>
+
     </div>
   </div>
 </div>
@@ -167,84 +153,125 @@
     const $container = $('.multiselect-container');
     const $selectedActivities = $('#selected-activities');
 
+    var default_lat = -18.942164;
+    var default_long = 1127.664074;
+
     const updateDropdown = (searchTerm) => {
-        const term = searchTerm.toLowerCase();
-        $options.children().each(function () {
-            const text = $(this).text().toLowerCase();
-            $(this).toggle(text.includes(term));
-        });
+      const term = searchTerm.toLowerCase();
+      $options.children().each(function () {
+        const text = $(this).text().toLowerCase();
+        $(this).toggle(text.includes(term));
+      });
     };
 
     const addTag = (text, value) => {
-        const exists = $tags.find(`[data-value="${value}"]`).length > 0;
-        if (!exists) {
-            const $tag = $(`
+      const exists = $tags.find(`[data-value="${value}"]`).length > 0;
+      if (!exists) {
+        const $tag = $(`
                 <div class="tag" data-value="${value}">
                     ${text} <span class="remove-btn">&times;</span>
                 </div>
             `);
-            $tags.append($tag);
-            updateSelectedActivities(value);
-        }
+        $tags.append($tag);
+        updateSelectedActivities(value);
+      }
     };
 
     const removeTag = (value) => {
-        $tags.find(`[data-value="${value}"]`).remove();
-        updateSelectedActivities(value, true);
+      $tags.find(`[data-value="${value}"]`).remove();
+      updateSelectedActivities(value, true);
     };
 
     const updateSelectedActivities = (value, isRemoval = false) => {
-        let selectedActivities = $selectedActivities.val().split(',').filter(v => v.length > 0);
-        if (isRemoval) {
-            selectedActivities = selectedActivities.filter(v => v !== value.toString());
-        } else {
-            if (!selectedActivities.includes(value.toString())) {
-                selectedActivities.push(value);
-            }
+      let selectedActivities = $selectedActivities.val().split(',').filter(v => v.length > 0);
+      if (isRemoval) {
+        selectedActivities = selectedActivities.filter(v => v !== value.toString());
+      } else {
+        if (!selectedActivities.includes(value.toString())) {
+          selectedActivities.push(value);
         }
-        $selectedActivities.val(selectedActivities.join(','));
+      }
+      $selectedActivities.val(selectedActivities.join(','));
     };
 
     // Afficher/masquer le menu déroulant
     $input.on('focus', function () {
-        $container.addClass('active');
+      $container.addClass('active');
     });
 
     $(document).on('click', function (e) {
-        if (!$(e.target).closest('.multiselect-container').length) {
-            $container.removeClass('active');
-        }
+      if (!$(e.target).closest('.multiselect-container').length) {
+        $container.removeClass('active');
+      }
     });
 
     // Rechercher et filtrer les options
     $input.on('input', function () {
-        const searchTerm = $(this).val();
-        updateDropdown(searchTerm);
+      const searchTerm = $(this).val();
+      updateDropdown(searchTerm);
     });
 
     // Ajouter une option sélectionnée
     $options.on('click', 'li', function () {
-        const text = $(this).text();
-        const value = $(this).data('value');
-        addTag(text, value);
+      const text = $(this).text();
+      const value = $(this).data('value');
+      addTag(text, value);
 
-        // Ajouter l'ID de l'activité dans le champ caché
-        let selectedActivities = $('#selected-activities').val().split(',');
-        if (!selectedActivities.includes(value.toString())) {
-            selectedActivities.push(value);
-        }
-        $('#selected-activities').val(selectedActivities.join(','));
+      // Ajouter l'ID de l'activité dans le champ caché
+      let selectedActivities = $('#selected-activities').val().split(',');
+      if (!selectedActivities.includes(value.toString())) {
+        selectedActivities.push(value);
+      }
+      $('#selected-activities').val(selectedActivities.join(','));
 
-        $input.val('');
-        updateDropdown('');
-        $container.removeClass('active');
+      $input.val('');
+      updateDropdown('');
+      $container.removeClass('active');
     });
 
     // Supprimer un tag sélectionné
     $tags.on('click', '.remove-btn', function () {
-        const value = $(this).closest('.tag').data('value');
-        removeTag(value);
+      const value = $(this).closest('.tag').data('value');
+      removeTag(value);
     });
-    
-});
+    var map = L.map('map').setView([default_lat, default_long], 17);
+    var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri & OpenStreetMap contributors',
+      maxZoom: 22
+    }).addTo(map);
+
+    // 🏷️ Ajout des labels des lieux
+    var labels = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+      attribution: '&copy; Esri'
+    }).addTo(map);
+
+    // 📍 Marqueur draggable
+    var marker = L.marker([default_lat, default_long], { draggable: true }).addTo(map);
+
+    function updateCoordinates(lat, lng) {
+      document.getElementById("lat_longitude").textContent = '[' + lat + ', ' + lng + ']';
+      document.getElementById("latitude").value = lat;
+      document.getElementById("longitude").value = lng;
+    }
+
+    // 📌 Clic sur la carte pour déplacer le marqueur
+    map.on('click', function (e) {
+      var lat = parseFloat(e.latlng.lat.toFixed(6));
+      var lng = parseFloat(e.latlng.lng.toFixed(6));
+      marker.setLatLng([lat, lng]);
+      updateCoordinates(lat, lng);
+    });
+
+    // 🔄 Déplacement du marqueur
+    marker.on('dragend', function () {
+      var lat = parseFloat(marker.getLatLng().lat.toFixed(6));
+      var lng = parseFloat(marker.getLatLng().lng.toFixed(6));
+      updateCoordinates(lat, lng);
+    });
+
+    // ✅ Forcer le rafraîchissement après le chargement
+    map.on('load', function () {
+      map.invalidateSize();
+    });
+  });
 </script>
