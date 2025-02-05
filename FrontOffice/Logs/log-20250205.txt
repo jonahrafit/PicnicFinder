@@ -308,3 +308,8 @@ System.ArgumentException: Accessed JArray values with invalid key value: "spaces
 2025-02-05 09:22:38.064 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/lib/bootstrap/dist/js/bootstrap.bundle.min.js, Response status code: 404
 2025-02-05 09:22:38.057 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/lib/jquery/dist/jquery.min.js - 404 0 null 5.3574ms
 2025-02-05 09:22:38.071 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/lib/jquery/dist/jquery.min.js, Response status code: 404
+2025-02-05 15:24:41.431 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-05 15:24:41.678 +03:00 [INF] Now listening on: http://localhost:5179
+2025-02-05 15:24:41.682 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-05 15:24:41.683 +03:00 [INF] Hosting environment: Development
+2025-02-05 15:24:41.683 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/PicnicFinder/FrontOffice
