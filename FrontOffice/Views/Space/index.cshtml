@@ -1,6 +1,7 @@
 @{
     ViewData["Title"] = "Les espaces";
     var jsonSpaceList = ViewData["JsonSpaceList"] as string;
+
     var spaces = string.IsNullOrEmpty(jsonSpaceList)
     ? new List<dynamic>()
     : Newtonsoft.Json.JsonConvert.DeserializeObject<List<dynamic>>(jsonSpaceList);
@@ -11,164 +12,285 @@
     int totalPages = pagination?.totalPages ?? 1;
     int pageSize = pagination?.itemsPerPage ?? 5;
     int totalItems = pagination?.totalItems ?? 0;
-    Console.WriteLine("*************************");
-    Console.WriteLine(spaces);
+
+    var spaces_list = spaces;
 }
 
 <style>
-    .filter-container {
-        width: 25%;
-        padding: 20px;
-    }
-
-    .content-container {
-        width: 75%;
-        padding: 20px;
-    }
-
-    .card-columns {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: flex-start;
-    }
-
-    .card {
-        flex: 0 0 30%;
-        max-width: 30%;
-        box-sizing: border-box;
-    }
-
-    .card-img-container {
-        position: relative;
-    }
-
-    .card-img-top {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-
-    .status-badge {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: #007bff;
-        color: white;
-        padding: 5px 10px;
+    .scrollable-checkbox-list {
+        max-height: 60vh;
+        /* Limite la hauteur de l'écran */
+        overflow-y: auto;
+        /* Active le scroll si nécessaire */
+        padding: 10px;
         border-radius: 5px;
-        font-size: 12px;
-        font-weight: bold;
+        background: #f9f9f9;
     }
 
-    .card-body {
-        padding: 15px;
+    .form-check {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+    }
+
+    .form-check:last-child {
+        border-bottom: none;
+    }
+
+    .form-check-input {
+        margin-right: 10px;
+    }
+
+    .form-check-label {
+        flex-grow: 1;
+        /* Permet au texte de prendre toute la place restante */
         text-align: left;
+        /* Alignement à gauche */
     }
 
-    .card-text {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-    }
-
-    .capacity {
+    .badge-count {
+        background-color: #ddd;
+        border-radius: 12px;
+        padding: 2px 2px;
+        font-size: 0.9rem;
         font-weight: bold;
-        color: #007bff;
+        min-width: 30px;
+        text-align: center;
     }
 </style>
-
 <div class="container mt-4">
-    <h1 class="text-center">Les espaces disponibles</h1>
+    <div class="row mt-3 d-flex justify-content-between">
+        <div class="col-4 d-flex justify-content-start">
+            <p class="pb-1 mb-6">(@totalItems) resultat(s) correspond(ent) à votre recherche</p>
+        </div>
+        <div class="col-8 d-flex justify-content-end">
+            <i class="bi bi-search fs-4"></i>
+            <input type="text" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Rechercher ..."
+                aria-label="Rechercher . . .">
+        </div>
+    </div>
 
+    <div class="row mt-0">
+        <div class="col-12">
+            <div class="progress" id="progress-container" style="display: none;height: 4px;">
+                <div id="progress-bar" class="progress-bar bg-primary" role="progressbar" style="width: 0%;"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+        </div>
+    </div>
     <div class="row mt-3">
-        @if (spaces != null && spaces.Any())
-        {
-            <div class="row justify-content-center">
-                @foreach (var space in spaces)
+        <div class="col-3">
+            <div id="row">
+                <input type="text" class="form-control border-0 shadow-none ps-1 ps-sm-2" id="search-activity"
+                    placeholder="Rechercher ..." aria-label="Rechercher . . .">
+            </div>
+            <div id="checkbox-container" class="scrollable-checkbox-list"></div>
+        </div>
+        <div class="col-9">
+            <div class="row mt-3" id="space-container">
+                @if (spaces_list != null && spaces_list.Any())
                 {
-                    <div class="card shadow-lg rounded-3 m-2">
-                        <div class="card-img-container overflow-hidden rounded-top">
-                            <img src="@($"{ViewData["ImageBaseUrl"]}/{space.space.photos[0]}")"
-                                 class="card-img-top img-fluid"
-                                 style="height: 200px; object-fit: cover;"
-                                 alt="Space Image">
-                        </div>
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-3">@space.space.name</h5>
-                            <div>
-                                @foreach (var activity in space.spaceActivities)
-                                {
-                                    <p style="display: inline-block; padding: 0.25em 0.4em; font-size: 75%; font-weight: 700; line-height: 0.9; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; background-color: #6c757d; color: #fff; margin: 2px 0;">
-                                        @activity
-                                    </p>
-                                }
+                    <div class="row justify-content-center">
+                        @foreach (var space in spaces_list)
+                        {
+                            <div class="card-spaces shadow-lg rounded-3 m-2">
+                                <div class="card-spaces-img-container overflow-hidden rounded-top">
+                                    <img src="@($"{ViewData["ImageBaseUrl"]}/{space.space.photos[0]}")"
+                                        class="card-spaces-img-top img-fluid" style="height: 200px; object-fit: cover;"
+                                        alt="Space Image">
+                                </div>
+                                <div class="card-spaces-body text-center">
+                                    <h5 class="card-spaces-title mb-3">@space.space.name</h5>
+                                    <div>
+                                        @foreach (var activity in space.spaceActivities)
+                                        {
+                                            <p
+                                                style="display: inline-block; padding: 0.25em 0.4em; font-size: 75%; font-weight: 700; line-height: 0.9; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 0.25rem; background-color: #6c757d; color: #fff; margin: 2px 0;">
+                                                @activity
+                                            </p>
+                                        }
+                                    </div>
+                                    <div>
+                                        <a href="@Url.Action("Details", "Space", new { id = space.space.id })">
+                                            <button class="btn btn-info">
+                                                Voir détails
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
+                        }
+                    </div>
 
-                            <div>
-                                <a href="@Url.Action("Details", "Space", new { id = space.space.id })">
-                                    <button class="btn btn-info">
-                                        Voir détails
-                                    </button>
-                                </a>
-                            </div>
+                    <div class="row my-4 justify-content-center">
+                        <div class="col-md-4 d-flex justify-content-center">
+                            <nav aria-label="Page navigation">
+                                <ul class="pagination justify-content-center">
+                                    @if (pageNumber > 1)
+                                    {
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page=1" aria-label="First">
+                                                <span aria-hidden="true">&laquo;&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    }
+
+                                    @for (int i = 1; i <= totalPages; i++)
+                                    {
+                                        <li class="page-item @(i == pageNumber ? " active" : "")">
+                                            <a class="page-link" href="?page=@i">@i</a>
+                                        </li>
+                                    }
+
+                                    @if (pageNumber < totalPages)
+                                    {
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page=@totalPages" aria-label="Last">
+                                                <span aria-hidden="true">&raquo;&raquo;</span>
+                                            </a>
+                                        </li>
+                                    }
+                                </ul>
+                            </nav>
                         </div>
                     </div>
+
+                }
+                else
+                {
+                    <p>Aucun espace disponible.</p>
                 }
             </div>
-
-            <div class="row my-4 justify-content-between">
-                <div class="col-md-4 d-flex justify-content-start">
-                    <h5 class="pb-1 mb-6">On trouve (@totalItems) resultat(s)</h5>
-                </div>
-                <div class="col-md-4 d-flex justify-content-end">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination justify-content-center">
-                            @if (pageNumber > 1)
-                            {
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=1" aria-label="First">
-                                        <span aria-hidden="true">&laquo;&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=@(pageNumber - 1)" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                            }
-
-                            @for (int i = 1; i <= totalPages; i++)
-                            {
-                                <li class="page-item @(i == pageNumber ? " active" : "")">
-                                    <a class="page-link" href="?page=@i">@i</a>
-                                </li>
-                            }
-
-                            @if (pageNumber < totalPages)
-                            {
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=@(pageNumber + 1)" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="?page=@totalPages" aria-label="Last">
-                                        <span aria-hidden="true">&raquo;&raquo;</span>
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-
-
-        }
-        else
-        {
-            <p>Aucun espace disponible.</p>
-        }
+        </div>
     </div>
 </div>
+<script>
+    const spaceActivityListJson = '@Html.Raw(ViewData["SpaceActivityListJson"])';
+    const url_image = '@Html.Raw(ViewData["ImageBaseUrl"])';
+    const spaceActivityList = JSON.parse(spaceActivityListJson);  // Parser la chaîne JSON
+
+    let originalSpaces = '@Html.Raw(ViewData["JsonSpaceList"])';
+    let originalSpaces_list = JSON.parse(originalSpaces);
+    let filteredSpaces = originalSpaces_list;
+
+    console.log("Liste des espaces originale:", originalSpaces_list);
+
+    const container = document.getElementById("checkbox-container");
+    const searchInput = document.getElementById("search-activity");
+    const spaceContainer = document.getElementById("space-container");
+
+    // Function to render activities based on the filtered list
+    function renderActivities(filteredActivities) {
+        container.innerHTML = '';  // Clear the container first
+        filteredActivities.forEach(activity => {
+            const div = document.createElement("div");
+            div.classList.add("form-check");
+
+            div.innerHTML = `
+                <input class="form-check-input" type="checkbox" id="activity-${activity.name}">
+                <label class="form-check-label" for="activity-${activity.name}">
+                    ${activity.name}
+                </label>
+                <span class="badge-count">${activity.count}</span>
+            `;
+
+            container.appendChild(div);
+        });
+    }
+
+    // Initialize with all activities
+    renderActivities(spaceActivityList);
+
+    // Listen for input event on the search field
+    searchInput.addEventListener("input", (event) => {
+        const searchTerm = event.target.value.toLowerCase();
+        const filteredActivities = spaceActivityList.filter(activity =>
+            activity.name.toLowerCase().includes(searchTerm)
+        );
+        renderActivities(filteredActivities);
+    });
+
+    container.addEventListener('change', () => {
+        const selectedActivities = Array.from(document.querySelectorAll('.form-check-input:checked'))
+            .map(input => input.nextElementSibling.textContent.trim()); // Récupérer le nom des activités cochées
+
+        console.log("Activités sélectionnées:", selectedActivities);
+
+        // Filtrer les espaces
+        filteredSpaces = originalSpaces_list.filter(space =>
+            space.space && space.spaceActivities && selectedActivities.every(activity => space.spaceActivities.includes(activity))
+        );
+
+        spaceContainer.innerHTML = ""; // Effacer l'affichage
+
+        if (filteredSpaces.length === 0) {
+            spaceContainer.innerHTML = "<p>Aucun espace ne correspond à votre sélection.</p>";
+            return;
+        }
+
+        filteredSpaces.forEach(space => {
+            const spaceCard = `
+            <div class="card-spaces shadow-lg rounded-3 m-2">
+                <div class="card-spaces-img-container overflow-hidden rounded-top">
+                    <img src="${url_image}/${space.space.photos[0]}" class="card-spaces-img-top img-fluid"
+                        style="height: 200px; object-fit: cover;" alt="Space Image">
+                </div>
+                <div class="card-spaces-body text-center">
+                    <h5 class="card-spaces-title mb-3">${space.space.name}</h5>
+                    <div>
+                        ${(space.spaceActivities || []).map(activity =>
+                `<p style="display: inline-block; padding: 0.25em 0.4em; font-size: 75%;
+        font-weight: 700; line-height: 0.9; text-align: center; white-space: nowrap;
+        vertical-align: baseline; border-radius: 0.25rem; background-color: #6c757d;
+        color: #fff; margin: 2px 0;">
+        ${activity}
+    </p>`).join("")
+                }
+                    </div>
+                    <div>
+                        <a href="/Space/Details/${space.space.id}">
+                            <button class="btn btn-info">Voir détails</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+            spaceContainer.innerHTML += spaceCard;
+        });
+    });
+
+    function AfficheProgress() {
+        let progressBar = document.getElementById('progress-bar');
+        let progressContainer = document.getElementById('progress-container');
+        let width = 0;
+
+        // Afficher la barre de progression
+        progressContainer.style.display = 'block';
+
+        let interval = setInterval(function () {
+            if (width >= 100) {
+                clearInterval(interval);
+
+                // Cacher la barre de progression après avoir atteint 100%
+                progressContainer.style.display = 'none';
+            } else {
+                width++;
+                progressBar.style.width = width + '%';
+                progressBar.setAttribute('aria-valuenow', width);
+            }
+        }, 10);
+    }
+
+</script>

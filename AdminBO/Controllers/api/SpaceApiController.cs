@@ -73,7 +73,8 @@ namespace AdminBO.Controllers.Api
                 TotalPages = (int)Math.Ceiling((double)totalSpaces / pageSize),
             };
 
-            var result = new { Spaces = viewSpaceWithActivities, Pagination = paginationModel };
+            var spaceActivityList = await _spaceActivityService.GetAllInViewSpaceAcitivityCount();
+            var result = new { Spaces = viewSpaceWithActivities, Pagination = paginationModel, SpaceActivityList = spaceActivityList };
             return Ok(result);
         }
 
