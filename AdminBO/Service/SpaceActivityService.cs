@@ -226,4 +226,30 @@ public class SpaceActivityService
             return result > 0;
         }
     }
+    public async Task<List<ViewSpaceAcitivityCount>> GetAllInViewSpaceAcitivityCount()
+    {
+        var retour = new List<ViewSpaceAcitivityCount>();
+        using (var connection = new SqlConnection(_connectionString))
+        {
+            connection.Open();
+            var command = new SqlCommand(
+                @"
+                select * from View_Count_Activities",
+                connection
+            );
+
+            using (var reader = await command.ExecuteReaderAsync())
+            {
+                while (await reader.ReadAsync())
+                {
+                    ViewSpaceAcitivityCount temp = new ViewSpaceAcitivityCount();
+                    temp.Id = reader.GetInt64(reader.GetOrdinal("Id"));
+                    temp.Name = reader.GetString(reader.GetOrdinal("Name"));
+                    temp.Count = reader.GetInt32(reader.GetOrdinal("compt"));
+                    retour.Add(temp);
+                }
+            }
+        }
+        return retour;
+    }
 }

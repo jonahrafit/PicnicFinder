@@ -2,6 +2,7 @@ using System.Diagnostics;
 using FrontOffice.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
 
 namespace FrontOffice.Controllers;
 
@@ -28,15 +29,20 @@ public class SpaceController : BaseController
         }
 
         var result = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(jsonData);
-        // Console.WriteLine("___________________________");
-        // Console.WriteLine(result);
         // Récupérer les espaces et la pagination
         var spaces = result?.spaces ?? new List<dynamic>();
         var pagination = result?.pagination;
+        var spaceActivities = result?.spaceActivityList ?? new List<dynamic>();
+        var SpaceActivityListJson = JsonConvert.SerializeObject(spaceActivities);
+
+        // Échapper les apostrophes et autres caractères spéciaux
+        SpaceActivityListJson = SpaceActivityListJson.Replace("'", "\\'");
 
         // Passer les données à la vue
+        ViewData["SpaceActivityListJson"] = SpaceActivityListJson;
         ViewData["JsonSpaceList"] = Newtonsoft.Json.JsonConvert.SerializeObject(spaces);
         ViewData["Pagination"] = pagination;
+        ViewData["SpaceActivityListJson"] = SpaceActivityListJson;
         ViewData["ApiBaseUrl"] = GetApiBaseUrl();
         ViewData["ImageBaseUrl"] = GetImageBaseUrl();
         return View();

@@ -1,0 +1,10 @@
+Email,Password,Role,Phone,Name,Status
+admin1@example.com,password1234,ADMIN,1234567890,Admin One,PENDING_APPROVAL
+admin2@example.com,password1234,ADMIN,1234567891,Admin Two,APPROVED
+admin3@example.com,password1234,ADMIN,1234567892,Admin Three,REJECTED
+client1@example.com,password1234,CLIENT,0987654321,Client One,PENDING_APPROVAL
+client2@example.com,password1234,CLIENT,0987654322,Client Two,APPROVED
+client3@example.com,password1234,CLIENT,0987654323,Client Three,REJECTED
+owner1@example.com,password1234,OWNER,1122334455,Owner One,PENDING_APPROVAL
+owner2@example.com,password1234,OWNER,1122334456,Owner Two,APPROVED
+owner3@example.com,password1234,OWNER,1122334457,Owner Three,REJECTED
