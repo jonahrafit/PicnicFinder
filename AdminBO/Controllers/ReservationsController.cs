@@ -74,7 +74,13 @@ public class ReservationsController : BaseController
     [Authorize(Roles = "OWNER")]
     public IActionResult GetReservationsData(string? year)
     {
-        var data = _reservationService.GetReservationsByYearOrLast12Months(year);
+        var userIdClaim = HttpContext.User.FindFirst("UserId")?.Value;
+        if (string.IsNullOrEmpty(userIdClaim))
+        {
+            throw new Exception("Utilisateur non authentifié ou ID d'utilisateur manquant");
+        }
+        long owner_Id = long.Parse(userIdClaim);
+        var data = _reservationService.GetReservationsByYearOrLast12Months(year, owner_Id);
         return Json(data);
     }
 

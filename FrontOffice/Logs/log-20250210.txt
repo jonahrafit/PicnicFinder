@@ -1,0 +1,547 @@
+2025-02-10 06:40:37.775 +03:00 [INF] User profile is available. Using '/home/jonah/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-02-10 06:40:38.151 +03:00 [INF] Now listening on: http://localhost:5179
+2025-02-10 06:40:38.164 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-02-10 06:40:38.169 +03:00 [INF] Hosting environment: Development
+2025-02-10 06:40:38.169 +03:00 [INF] Content root path: /home/jonah/Documents/MASTER/PicnicFinder/FrontOffice
+2025-02-10 06:41:19.989 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 06:41:20.013 +03:00 [WRN] Failed to determine the https port for redirect.
+2025-02-10 06:41:20.059 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 06:41:20.161 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 06:41:20.198 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:41:20.481 +03:00 [INF] Executed ViewResult - view Index executed in 289.877ms.
+2025-02-10 06:41:20.491 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 327.9565ms
+2025-02-10 06:41:20.491 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 06:41:20.498 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 510.8718ms
+2025-02-10 06:41:20.597 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/all.min.css?v=jTIdiMuX_e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4 - null null
+2025-02-10 06:41:20.611 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/site.css?v=KMfS5qwMK48QoVur8hohEzeE2nrBBzIq_KjbYsVOmGg - null null
+2025-02-10 06:41:20.600 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/bootstrap-icons.css?v=T_pr6kME0u2kGGg_ViYWhe1HvwCZUDnyflrWLVOTjS0 - null null
+2025-02-10 06:41:20.600 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/bootstrap.min.css?v=ky6hUQiSiZG88MCkZBX8ZS3l_8AVjDUgU1e5DGXus4Y - null null
+2025-02-10 06:41:20.680 +03:00 [INF] The file /css/all.min.css was not modified
+2025-02-10 06:41:20.679 +03:00 [INF] The file /css/bootstrap.min.css was not modified
+2025-02-10 06:41:20.681 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/all.min.css?v=jTIdiMuX_e3DGJUGwl3pKSxuc6YOuqtJYkM0bGQESA4 - 304 null text/css 90.9704ms
+2025-02-10 06:41:20.682 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/bootstrap.min.css?v=ky6hUQiSiZG88MCkZBX8ZS3l_8AVjDUgU1e5DGXus4Y - 304 null text/css 87.5565ms
+2025-02-10 06:41:20.686 +03:00 [INF] The file /css/site.css was not modified
+2025-02-10 06:41:20.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/site.css?v=KMfS5qwMK48QoVur8hohEzeE2nrBBzIq_KjbYsVOmGg - 304 null text/css 115.6749ms
+2025-02-10 06:41:20.712 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/flatpickr.css?v=y57s8EkiK7JIpSIjWpMyz8dxk8DGRYDRRzn_CC8SWz0 - null null
+2025-02-10 06:41:20.735 +03:00 [INF] The file /css/flatpickr.css was not modified
+2025-02-10 06:41:20.715 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/flatpickr.min.css - null null
+2025-02-10 06:41:20.739 +03:00 [INF] The file /css/flatpickr.min.css was not modified
+2025-02-10 06:41:20.739 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/flatpickr.min.css - 304 null text/css 23.7675ms
+2025-02-10 06:41:20.751 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/flatpickr.css?v=y57s8EkiK7JIpSIjWpMyz8dxk8DGRYDRRzn_CC8SWz0 - 304 null text/css 24.1703ms
+2025-02-10 06:41:20.759 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=L8wu6_Nwu78_bIb7Hd1sITV92O7BnW8QPZYqtPXPhg0 - null null
+2025-02-10 06:41:20.760 +03:00 [INF] The file /FrontOffice.styles.css was not modified
+2025-02-10 06:41:20.740 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/material_blue.css - null null
+2025-02-10 06:41:20.761 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/FrontOffice.styles.css?v=L8wu6_Nwu78_bIb7Hd1sITV92O7BnW8QPZYqtPXPhg0 - 304 null text/css 1.4521ms
+2025-02-10 06:41:20.763 +03:00 [INF] The file /css/material_blue.css was not modified
+2025-02-10 06:41:20.766 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/material_blue.css - 304 null text/css 25.5629ms
+2025-02-10 06:41:20.770 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/bootstrap.bundle.min.js - null null
+2025-02-10 06:41:20.771 +03:00 [INF] The file /js/bootstrap.bundle.min.js was not modified
+2025-02-10 06:41:20.774 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/site.js?v=Gman-lGNTucMewCY-9gdlkTTBXD1Ho7LIsV5whJvI4k - null null
+2025-02-10 06:41:20.776 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/flatpickr.js - null null
+2025-02-10 06:41:20.777 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/bootstrap.bundle.min.js - 304 null text/javascript 1.6486ms
+2025-02-10 06:41:20.781 +03:00 [INF] The file /js/flatpickr.js was not modified
+2025-02-10 06:41:20.780 +03:00 [INF] The file /js/site.js was not modified
+2025-02-10 06:41:20.782 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/site.js?v=Gman-lGNTucMewCY-9gdlkTTBXD1Ho7LIsV5whJvI4k - 304 null text/javascript 8.4115ms
+2025-02-10 06:41:20.785 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/flatpickr.js - 304 null text/javascript 8.7529ms
+2025-02-10 06:41:20.811 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/jquery.min.js - null null
+2025-02-10 06:41:20.813 +03:00 [INF] The file /js/jquery.min.js was not modified
+2025-02-10 06:41:20.818 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/jquery.min.js - 304 null text/javascript 7.5416ms
+2025-02-10 06:41:20.823 +03:00 [INF] Sending file. Request path: '/css/bootstrap-icons.css'. Physical path: '/home/jonah/Documents/MASTER/PicnicFinder/FrontOffice/wwwroot/css/bootstrap-icons.css'
+2025-02-10 06:41:20.836 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/bootstrap-icons.css?v=T_pr6kME0u2kGGg_ViYWhe1HvwCZUDnyflrWLVOTjS0 - 200 98255 text/css 242.2909ms
+2025-02-10 06:41:21.146 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/favicon.ico - null null
+2025-02-10 06:41:21.161 +03:00 [INF] The file /favicon.ico was not modified
+2025-02-10 06:41:21.168 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/favicon.ico - 304 null image/x-icon 21.5112ms
+2025-02-10 06:43:15.889 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 06:43:15.890 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:43:15.916 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:43:16.487 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:43:16.583 +03:00 [INF] Executed ViewResult - view Index executed in 97.5624ms.
+2025-02-10 06:43:16.585 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 667.7861ms
+2025-02-10 06:43:16.586 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:43:16.587 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 698.1188ms
+2025-02-10 06:43:16.707 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:43:16.709 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 2.1114ms
+2025-02-10 06:43:16.711 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:43:16.745 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:43:16.746 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.9274ms
+2025-02-10 06:43:16.746 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:44:20.429 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 06:44:20.432 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:44:20.433 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:44:20.481 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:44:20.487 +03:00 [INF] Executed ViewResult - view Index executed in 5.6119ms.
+2025-02-10 06:44:20.488 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 54.1493ms
+2025-02-10 06:44:20.489 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:44:20.489 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 60.818ms
+2025-02-10 06:44:20.681 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:44:20.685 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 3.8212ms
+2025-02-10 06:44:20.687 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:44:20.774 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:44:20.774 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.8803ms
+2025-02-10 06:44:20.775 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:44:27.676 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2 - null null
+2025-02-10 06:44:27.676 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:44:27.677 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:44:27.743 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:44:27.747 +03:00 [INF] Executed ViewResult - view Index executed in 3.7321ms.
+2025-02-10 06:44:27.748 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 70.3943ms
+2025-02-10 06:44:27.749 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:44:27.749 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2 - 200 null text/html; charset=utf-8 73.5995ms
+2025-02-10 06:44:27.848 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:44:27.849 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.6749ms
+2025-02-10 06:44:27.850 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:44:27.883 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:44:27.885 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 1.3487ms
+2025-02-10 06:44:27.887 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:44:50.027 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 06:44:50.028 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:44:50.028 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:44:50.061 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:44:50.065 +03:00 [INF] Executed ViewResult - view Index executed in 4.1063ms.
+2025-02-10 06:44:50.068 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 39.3626ms
+2025-02-10 06:44:50.070 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:44:50.071 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 44.2746ms
+2025-02-10 06:44:50.208 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:44:50.212 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 3.3564ms
+2025-02-10 06:44:50.212 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:44:50.271 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:44:50.274 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 2.8677ms
+2025-02-10 06:44:50.275 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:47:20.010 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2025-02-10 06:47:20.010 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:47:20.016 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:47:20.166 +03:00 [INF] Executing ViewResult, running view Details.
+2025-02-10 06:47:20.200 +03:00 [INF] Executed ViewResult - view Details executed in 35.2654ms.
+2025-02-10 06:47:20.201 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 184.2097ms
+2025-02-10 06:47:20.202 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:47:20.203 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 200 null text/html; charset=utf-8 192.9929ms
+2025-02-10 06:48:06.216 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - application/json 61
+2025-02-10 06:48:06.217 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 06:48:06.227 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-02-10 06:48:06.315 +03:00 [INF] Sending authentication request for user: jonahclient@gmail.com
+2025-02-10 06:48:06.924 +03:00 [WRN] Authentication failed with status code: Unauthorized
+2025-02-10 06:48:06.926 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Authenticate (FrontOffice) in 698.7489ms
+2025-02-10 06:48:06.927 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 06:48:06.928 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Cannot return null from an action method with a return type of 'Microsoft.AspNetCore.Mvc.IActionResult'.
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.EnsureActionResultNotNull(ObjectMethodExecutor executor, IActionResult actionResult)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-10 06:48:06.950 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - 500 null text/plain; charset=utf-8 733.3107ms
+2025-02-10 06:48:11.911 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - application/json 59
+2025-02-10 06:48:11.913 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 06:48:11.913 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-02-10 06:48:11.914 +03:00 [INF] Sending authentication request for user: jonahclient@gmail.com
+2025-02-10 06:48:12.216 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-10 06:48:12.281 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Authenticate (FrontOffice) in 367.351ms
+2025-02-10 06:48:12.281 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 06:48:12.281 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - 200 null application/json; charset=utf-8 370.4564ms
+2025-02-10 06:48:12.293 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2025-02-10 06:48:12.295 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:48:12.296 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:48:12.322 +03:00 [INF] Executing ViewResult, running view Details.
+2025-02-10 06:48:12.326 +03:00 [INF] Executed ViewResult - view Details executed in 3.7892ms.
+2025-02-10 06:48:12.328 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 30.7812ms
+2025-02-10 06:48:12.329 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:48:12.331 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 200 null text/html; charset=utf-8 38.072ms
+2025-02-10 06:48:18.686 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 06:48:18.687 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:48:18.695 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:48:18.950 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:48:18.981 +03:00 [INF] Executed ViewResult - view Index executed in 32.6586ms.
+2025-02-10 06:48:18.982 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 286.4767ms
+2025-02-10 06:48:18.983 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:48:18.983 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 296.7984ms
+2025-02-10 06:48:20.893 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/1 - null null
+2025-02-10 06:48:20.895 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:48:20.896 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:48:20.914 +03:00 [INF] Executing ViewResult, running view Details.
+2025-02-10 06:48:20.919 +03:00 [INF] Executed ViewResult - view Details executed in 4.9675ms.
+2025-02-10 06:48:20.920 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 24.2567ms
+2025-02-10 06:48:20.921 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:48:20.921 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/1 - 200 null text/html; charset=utf-8 28.5099ms
+2025-02-10 06:48:27.911 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 74
+2025-02-10 06:48:27.914 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 06:48:27.930 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:48:28.514 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-02-10 06:48:28.514 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 583.64ms
+2025-02-10 06:48:28.514 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 06:48:28.515 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 603.8687ms
+2025-02-10 06:48:28.518 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 06:48:28.518 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:48:28.519 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:48:28.569 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:48:28.586 +03:00 [INF] Executed ViewResult - view Index executed in 16.742ms.
+2025-02-10 06:48:28.587 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 68.178ms
+2025-02-10 06:48:28.587 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:48:28.588 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 69.9289ms
+2025-02-10 06:49:19.216 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 06:49:19.217 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:49:19.218 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:49:19.254 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:49:19.259 +03:00 [INF] Executed ViewResult - view Index executed in 4.409ms.
+2025-02-10 06:49:19.259 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 41.314ms
+2025-02-10 06:49:19.260 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:49:19.260 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 44.1167ms
+2025-02-10 06:49:19.385 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:49:19.386 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.7295ms
+2025-02-10 06:49:19.386 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:49:19.614 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:49:19.614 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.7709ms
+2025-02-10 06:49:19.614 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:49:21.769 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2 - null null
+2025-02-10 06:49:21.770 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:49:21.771 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:49:21.801 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:49:21.811 +03:00 [INF] Executed ViewResult - view Index executed in 9.4324ms.
+2025-02-10 06:49:21.814 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 41.8364ms
+2025-02-10 06:49:21.815 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:49:21.818 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2 - 200 null text/html; charset=utf-8 48.3218ms
+2025-02-10 06:49:21.988 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:49:21.991 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 3.1285ms
+2025-02-10 06:49:22.000 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:49:22.022 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:49:22.026 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 4.4063ms
+2025-02-10 06:49:22.029 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:49:23.365 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-02-10 06:49:23.366 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:49:23.366 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:49:23.387 +03:00 [INF] Executing ViewResult, running view Details.
+2025-02-10 06:49:23.400 +03:00 [INF] Executed ViewResult - view Details executed in 13.4343ms.
+2025-02-10 06:49:23.403 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 36.4804ms
+2025-02-10 06:49:23.405 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 06:49:23.410 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 45.6474ms
+2025-02-10 06:49:30.572 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 74
+2025-02-10 06:49:30.574 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 06:49:30.575 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:49:30.620 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-02-10 06:49:30.621 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 46.3047ms
+2025-02-10 06:49:30.625 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 06:49:30.626 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 54.0872ms
+2025-02-10 06:49:30.634 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 06:49:30.637 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:49:30.638 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:49:30.664 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:49:30.669 +03:00 [INF] Executed ViewResult - view Index executed in 5.5425ms.
+2025-02-10 06:49:30.670 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 32.3639ms
+2025-02-10 06:49:30.671 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:49:30.671 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 37.2281ms
+2025-02-10 06:52:41.541 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 06:52:41.542 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:52:41.542 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:52:41.559 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:52:41.561 +03:00 [INF] Executed ViewResult - view Index executed in 2.2333ms.
+2025-02-10 06:52:41.563 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 19.9999ms
+2025-02-10 06:52:41.563 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:52:41.564 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 23.6132ms
+2025-02-10 06:52:43.183 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 06:52:43.183 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:52:43.183 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 06:52:43.214 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:52:43.219 +03:00 [INF] Executed ViewResult - view Index executed in 4.8008ms.
+2025-02-10 06:52:43.219 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 35.8405ms
+2025-02-10 06:52:43.220 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 06:52:43.220 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 37.5328ms
+2025-02-10 06:52:43.319 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:52:43.320 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.9786ms
+2025-02-10 06:52:43.321 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 06:52:43.587 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 06:52:43.588 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.7977ms
+2025-02-10 06:52:43.589 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 06:52:46.180 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 06:52:46.180 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:52:46.181 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 06:52:46.199 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 06:52:46.203 +03:00 [INF] Executed ViewResult - view Index executed in 4.0463ms.
+2025-02-10 06:52:46.207 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 25.5827ms
+2025-02-10 06:52:46.207 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 06:52:46.209 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 28.9279ms
+2025-02-10 07:17:38.201 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 07:17:38.202 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:17:38.202 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 07:17:38.228 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:17:38.235 +03:00 [INF] Executed ViewResult - view Index executed in 8.5411ms.
+2025-02-10 07:17:38.236 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 33.9054ms
+2025-02-10 07:17:38.237 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:17:38.238 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 36.9967ms
+2025-02-10 07:17:39.740 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 07:17:39.741 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 07:17:39.741 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 07:17:39.767 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:17:39.770 +03:00 [INF] Executed ViewResult - view Index executed in 4.1296ms.
+2025-02-10 07:17:39.770 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 28.6512ms
+2025-02-10 07:17:39.770 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 07:17:39.771 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 30.7639ms
+2025-02-10 07:17:39.872 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 07:17:39.874 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 1.8844ms
+2025-02-10 07:17:39.875 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 07:17:39.915 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 07:17:39.917 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 1.7652ms
+2025-02-10 07:17:39.917 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 07:17:40.943 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 07:17:40.943 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:17:40.943 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 07:17:40.964 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:17:40.974 +03:00 [INF] Executed ViewResult - view Index executed in 9.7921ms.
+2025-02-10 07:17:40.974 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 30.5152ms
+2025-02-10 07:17:40.974 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:17:40.975 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 31.9207ms
+2025-02-10 07:17:42.260 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 07:17:42.261 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 07:17:42.261 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 07:17:42.287 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:17:42.291 +03:00 [INF] Executed ViewResult - view Index executed in 3.1049ms.
+2025-02-10 07:17:42.291 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 29.1834ms
+2025-02-10 07:17:42.291 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 07:17:42.293 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 32.2129ms
+2025-02-10 07:17:42.404 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 07:17:42.405 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.5198ms
+2025-02-10 07:17:42.410 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 07:17:42.687 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 07:17:42.688 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.5279ms
+2025-02-10 07:17:42.688 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 07:17:45.267 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Auth/Logout - null null
+2025-02-10 07:17:45.267 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Logout (FrontOffice)'
+2025-02-10 07:17:45.274 +03:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-02-10 07:17:45.301 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2025-02-10 07:17:45.302 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Logout (FrontOffice) in 27.1941ms
+2025-02-10 07:17:45.303 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Logout (FrontOffice)'
+2025-02-10 07:17:45.303 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Auth/Logout - 200 null text/plain; charset=utf-8 36.3623ms
+2025-02-10 07:17:45.330 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 07:17:45.331 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 07:17:45.332 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 07:17:45.334 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:17:45.342 +03:00 [INF] Executed ViewResult - view Index executed in 9.0861ms.
+2025-02-10 07:17:45.345 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 12.0962ms
+2025-02-10 07:17:45.345 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 07:17:45.346 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 15.9591ms
+2025-02-10 07:18:09.436 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - application/json 58
+2025-02-10 07:18:09.436 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 07:18:09.437 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-02-10 07:18:09.438 +03:00 [INF] Sending authentication request for user: jonahrafit@gmail.com
+2025-02-10 07:18:09.697 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-10 07:18:09.698 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Authenticate (FrontOffice) in 260.9845ms
+2025-02-10 07:18:09.699 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 07:18:09.699 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - 200 null application/json; charset=utf-8 262.8628ms
+2025-02-10 07:18:09.721 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 07:18:09.722 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 07:18:09.722 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 07:18:09.722 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:18:09.724 +03:00 [INF] Executed ViewResult - view Index executed in 1.6012ms.
+2025-02-10 07:18:09.724 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 1.9994ms
+2025-02-10 07:18:09.724 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 07:18:09.725 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 3.6553ms
+2025-02-10 07:18:12.547 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 07:18:12.547 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:18:12.548 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 07:18:12.560 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:18:12.562 +03:00 [INF] Executed ViewResult - view Index executed in 1.8914ms.
+2025-02-10 07:18:12.566 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 17.7915ms
+2025-02-10 07:18:12.568 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:18:12.569 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 22.4272ms
+2025-02-10 07:18:16.900 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 07:18:16.901 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 07:18:16.902 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 07:18:16.937 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:18:16.940 +03:00 [INF] Executed ViewResult - view Index executed in 3.3623ms.
+2025-02-10 07:18:16.940 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 37.6823ms
+2025-02-10 07:18:16.941 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 07:18:16.941 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 40.6748ms
+2025-02-10 07:18:17.084 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 07:18:17.085 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 1.5979ms
+2025-02-10 07:18:17.086 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 07:18:17.127 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 07:18:17.128 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.5404ms
+2025-02-10 07:18:17.128 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 07:18:19.111 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/3 - null null
+2025-02-10 07:18:19.112 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 07:18:19.112 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 07:18:19.131 +03:00 [INF] Executing ViewResult, running view Details.
+2025-02-10 07:18:19.136 +03:00 [INF] Executed ViewResult - view Details executed in 5.6451ms.
+2025-02-10 07:18:19.141 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 27.9423ms
+2025-02-10 07:18:19.141 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 07:18:19.143 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/3 - 200 null text/html; charset=utf-8 31.2085ms
+2025-02-10 07:18:27.115 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 74
+2025-02-10 07:18:27.116 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 07:18:27.116 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 07:18:27.181 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-02-10 07:18:27.185 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 68.4229ms
+2025-02-10 07:18:27.187 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 07:18:27.188 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 73.388ms
+2025-02-10 07:18:27.197 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 07:18:27.198 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:18:27.198 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 07:18:27.237 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 07:18:27.239 +03:00 [INF] Executed ViewResult - view Index executed in 1.7274ms.
+2025-02-10 07:18:27.239 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 40.6015ms
+2025-02-10 07:18:27.239 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 07:18:27.240 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 42.3099ms
+2025-02-10 09:02:43.278 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 09:02:43.279 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 09:02:43.279 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 09:02:43.283 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 3.4166ms
+2025-02-10 09:02:43.283 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 09:02:43.284 +03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'Newtonsoft.Json.Linq.JArray' does not contain a definition for 'reservations'
+   at CallSite.Target(Closure, CallSite, Object)
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure, CallSite, Object)
+   at FrontOffice.Controllers.ReservationController.Index(Int32 page, Int32 pageSize) in /home/jonah/Documents/MASTER/PicnicFinder/FrontOffice/Controllers/ReservationController.cs:line 60
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeFilterPipelineAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-02-10 09:02:43.325 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 500 null text/html; charset=utf-8 47.0585ms
+2025-02-10 09:02:49.070 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 09:02:49.072 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:02:49.073 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 09:02:49.074 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:02:49.077 +03:00 [INF] Executed ViewResult - view Index executed in 3.9268ms.
+2025-02-10 09:02:49.077 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 4.4374ms
+2025-02-10 09:02:49.078 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:02:49.079 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 8.5716ms
+2025-02-10 09:02:52.963 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Auth/Logout - null null
+2025-02-10 09:02:52.964 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Logout (FrontOffice)'
+2025-02-10 09:02:52.964 +03:00 [INF] Route matched with {action = "Logout", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Logout() on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-02-10 09:02:53.250 +03:00 [WRN] Déconnexion échouée avec le code d'état : Unauthorized
+2025-02-10 09:02:53.259 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2025-02-10 09:02:53.269 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Logout (FrontOffice) in 305.3855ms
+2025-02-10 09:02:53.271 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Logout (FrontOffice)'
+2025-02-10 09:02:53.276 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Auth/Logout - 500 null text/plain; charset=utf-8 312.6732ms
+2025-02-10 09:02:56.308 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 09:02:56.309 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:02:56.309 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 09:02:56.310 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:02:56.312 +03:00 [INF] Executed ViewResult - view Index executed in 1.5488ms.
+2025-02-10 09:02:56.313 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 2.943ms
+2025-02-10 09:02:56.313 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:02:56.314 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 5.6688ms
+2025-02-10 09:03:01.011 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/bootstrap.bundle.min.js.map - null null
+2025-02-10 09:03:01.012 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/bootstrap.bundle.min.js.map - 404 0 null 1.3154ms
+2025-02-10 09:03:01.015 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/js/bootstrap.bundle.min.js.map, Response status code: 404
+2025-02-10 09:03:01.023 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/bootstrap.min.css.map - null null
+2025-02-10 09:03:01.025 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/bootstrap.min.css.map - 404 0 null 2.2589ms
+2025-02-10 09:03:01.028 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/bootstrap.min.css.map, Response status code: 404
+2025-02-10 09:03:01.034 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/app.css.map - null null
+2025-02-10 09:03:01.034 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/app.css.map - 404 0 null 0.7071ms
+2025-02-10 09:03:01.035 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/app.css.map, Response status code: 404
+2025-02-10 09:03:10.382 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 09:03:10.384 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:03:10.384 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 09:03:10.385 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:03:10.389 +03:00 [INF] Executed ViewResult - view Index executed in 3.057ms.
+2025-02-10 09:03:10.389 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 3.4422ms
+2025-02-10 09:03:10.389 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:03:10.394 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 12.0332ms
+2025-02-10 09:03:10.529 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/app.css.map - null null
+2025-02-10 09:03:10.530 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/app.css.map - 404 0 null 0.6468ms
+2025-02-10 09:03:10.530 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/app.css.map, Response status code: 404
+2025-02-10 09:03:10.534 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/bootstrap.min.css.map - null null
+2025-02-10 09:03:10.534 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/bootstrap.min.css.map - 404 0 null 0.5428ms
+2025-02-10 09:03:10.535 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/bootstrap.min.css.map, Response status code: 404
+2025-02-10 09:03:10.584 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/js/bootstrap.bundle.min.js.map - null null
+2025-02-10 09:03:10.584 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/js/bootstrap.bundle.min.js.map - 404 0 null 0.6583ms
+2025-02-10 09:03:10.585 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/js/bootstrap.bundle.min.js.map, Response status code: 404
+2025-02-10 09:03:23.465 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - application/json 58
+2025-02-10 09:03:23.465 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 09:03:23.466 +03:00 [INF] Route matched with {action = "Authenticate", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Authenticate(SigninModel) on controller FrontOffice.Controllers.AuthController (FrontOffice).
+2025-02-10 09:03:23.467 +03:00 [INF] Sending authentication request for user: jonahrafit@gmail.com
+2025-02-10 09:03:25.028 +03:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-02-10 09:03:25.029 +03:00 [INF] Executed action FrontOffice.Controllers.AuthController.Authenticate (FrontOffice) in 1563.1759ms
+2025-02-10 09:03:25.030 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.AuthController.Authenticate (FrontOffice)'
+2025-02-10 09:03:25.031 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Auth/Authenticate - 200 null application/json; charset=utf-8 1566.0336ms
+2025-02-10 09:03:25.072 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/ - null null
+2025-02-10 09:03:25.079 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:03:25.082 +03:00 [INF] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller FrontOffice.Controllers.HomeController (FrontOffice).
+2025-02-10 09:03:25.086 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:03:25.091 +03:00 [INF] Executed ViewResult - view Index executed in 4.7359ms.
+2025-02-10 09:03:25.091 +03:00 [INF] Executed action FrontOffice.Controllers.HomeController.Index (FrontOffice) in 5.1642ms
+2025-02-10 09:03:25.091 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.HomeController.Index (FrontOffice)'
+2025-02-10 09:03:25.092 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/ - 200 null text/html; charset=utf-8 19.92ms
+2025-02-10 09:03:27.595 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 09:03:27.596 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 09:03:27.596 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 09:03:28.323 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:03:28.326 +03:00 [INF] Executed ViewResult - view Index executed in 3.3108ms.
+2025-02-10 09:03:28.326 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 730.3761ms
+2025-02-10 09:03:28.327 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 09:03:28.327 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 731.5614ms
+2025-02-10 09:03:30.323 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space - null null
+2025-02-10 09:03:30.323 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 09:03:30.324 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 09:03:30.601 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:03:30.606 +03:00 [INF] Executed ViewResult - view Index executed in 5.1788ms.
+2025-02-10 09:03:30.606 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 282.2985ms
+2025-02-10 09:03:30.606 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 09:03:30.607 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space - 200 null text/html; charset=utf-8 283.7523ms
+2025-02-10 09:03:30.709 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 09:03:30.710 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.4781ms
+2025-02-10 09:03:30.711 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 09:03:30.947 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 09:03:30.947 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.5795ms
+2025-02-10 09:03:30.948 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 09:03:33.277 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space?page=2 - null null
+2025-02-10 09:03:33.280 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 09:03:33.281 +03:00 [INF] Route matched with {action = "Index", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 09:03:33.314 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:03:33.320 +03:00 [INF] Executed ViewResult - view Index executed in 6.1039ms.
+2025-02-10 09:03:33.321 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Index (FrontOffice) in 39.5053ms
+2025-02-10 09:03:33.321 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Index (FrontOffice)'
+2025-02-10 09:03:33.321 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space?page=2 - 200 null text/html; charset=utf-8 44.3393ms
+2025-02-10 09:03:33.462 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 09:03:33.463 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6 - 404 0 null 0.6533ms
+2025-02-10 09:03:33.463 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff2, Response status code: 404
+2025-02-10 09:03:33.528 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - null null
+2025-02-10 09:03:33.529 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/css/fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6 - 404 0 null 1.24ms
+2025-02-10 09:03:33.530 +03:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:5179/css/fonts/bootstrap-icons.woff, Response status code: 404
+2025-02-10 09:03:34.730 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Space/Details/4 - null null
+2025-02-10 09:03:34.732 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 09:03:34.732 +03:00 [INF] Route matched with {action = "Details", controller = "Space"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Details(Int32) on controller FrontOffice.Controllers.SpaceController (FrontOffice).
+2025-02-10 09:03:34.776 +03:00 [INF] Executing ViewResult, running view Details.
+2025-02-10 09:03:34.779 +03:00 [INF] Executed ViewResult - view Details executed in 4.1855ms.
+2025-02-10 09:03:34.780 +03:00 [INF] Executed action FrontOffice.Controllers.SpaceController.Details (FrontOffice) in 47.346ms
+2025-02-10 09:03:34.782 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.SpaceController.Details (FrontOffice)'
+2025-02-10 09:03:34.782 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Space/Details/4 - 200 null text/html; charset=utf-8 51.7692ms
+2025-02-10 09:03:48.780 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - application/x-www-form-urlencoded 74
+2025-02-10 09:03:48.781 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 09:03:48.782 +03:00 [INF] Route matched with {action = "CreateReservation", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateReservation(FrontOffice.Models.ReservationViewModel) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 09:03:49.209 +03:00 [INF] Executing RedirectResult, redirecting to /Reservation.
+2025-02-10 09:03:49.210 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice) in 426.8628ms
+2025-02-10 09:03:49.210 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.CreateReservation (FrontOffice)'
+2025-02-10 09:03:49.212 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5179/Reservation/CreateReservation - 302 0 null 431.9942ms
+2025-02-10 09:03:49.217 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5179/Reservation - null null
+2025-02-10 09:03:49.218 +03:00 [INF] Executing endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 09:03:49.218 +03:00 [INF] Route matched with {action = "Index", controller = "Reservation"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(Int32, Int32) on controller FrontOffice.Controllers.ReservationController (FrontOffice).
+2025-02-10 09:03:49.240 +03:00 [INF] Executing ViewResult, running view Index.
+2025-02-10 09:03:49.242 +03:00 [INF] Executed ViewResult - view Index executed in 1.6204ms.
+2025-02-10 09:03:49.242 +03:00 [INF] Executed action FrontOffice.Controllers.ReservationController.Index (FrontOffice) in 23.8365ms
+2025-02-10 09:03:49.242 +03:00 [INF] Executed endpoint 'FrontOffice.Controllers.ReservationController.Index (FrontOffice)'
+2025-02-10 09:03:49.243 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5179/Reservation - 200 null text/html; charset=utf-8 26.0051ms

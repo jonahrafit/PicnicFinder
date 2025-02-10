@@ -120,10 +120,6 @@
 
                         try {
                             let already_reserved = await fetchReservations(day, month, year, space_id);
-                            console.log("----------++++++------------");
-                            console.log("Réservations confirmées :", already_reserved);
-                            alert("----------++++++------------");
-                            alert("Réservations confirmées :", already_reserved);
 
                             // Vérifiez si la date sélectionnée est déjà réservée
                             if (already_reserved) {
