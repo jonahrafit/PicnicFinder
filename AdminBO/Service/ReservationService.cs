@@ -115,7 +115,7 @@ namespace AdminBO.Services
             return await _context.Reservations.Where(r => r.EmployeeId == employeeId).CountAsync();
         }
 
-        string BuildReservationQuery(string year)
+        string BuildReservationQuery(string year, long owner_Id)
         {
             // Définir la structure de base du CTE en fonction de la présence de l'année
             string cteBase;
@@ -161,6 +161,10 @@ namespace AdminBO.Services
                     GeneratedMonths gm
                 LEFT JOIN 
                     Reservations r ON FORMAT(r.StartDate, 'yyyy-MM') = gm.MonthYear
+                LEFT JOIN 
+                    Spaces s ON r.SpaceID = s.ID
+                WHERE
+                    (s.OwnerID = @OwnerID OR s.OwnerID IS NULL)
                 GROUP BY 
                     gm.MonthYear
                 ORDER BY 
@@ -170,12 +174,12 @@ namespace AdminBO.Services
             return $"{cteBase} {mainQuery}";
         }
 
-        public List<ReservationStats> GetReservationsByYearOrLast12Months(string? year)
+        public List<ReservationStats> GetReservationsByYearOrLast12Months(string? year, long owner_Id)
         {
             var stats = new List<ReservationStats>();
             using (var connection = new SqlConnection(_connectionString))
             {
-                string query = BuildReservationQuery(year);
+                string query = BuildReservationQuery(year, owner_Id);
                 using (var command = new SqlCommand(query, connection))
                 {
                     if (!string.IsNullOrEmpty(year) && int.TryParse(year, out int parsedYear))
@@ -183,6 +187,8 @@ namespace AdminBO.Services
                         command.Parameters.AddWithValue("@Year", parsedYear);
                         // string sqlQuery = query.Replace("@Year", parsedYear.ToString());
                     }
+
+                    command.Parameters.AddWithValue("@OwnerID", owner_Id); // Ajout du paramètre OwnerID
 
                     connection.Open();
                     using (var reader = command.ExecuteReader())
