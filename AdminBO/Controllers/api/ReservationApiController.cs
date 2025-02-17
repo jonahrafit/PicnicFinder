@@ -156,6 +156,24 @@ namespace AdminBO.Controllers.Api
             return Ok(reservation);
         }
 
+        [HttpGet("{month}/{year}/{space_id}")]
+        [Authorize(Roles = "OWNER")]
+        public async Task<
+            ActionResult<IEnumerable<Reservation>>
+        > GetApprovedReservationsByMonthAndYearAndSpaceIdAsync(int month, int year, int space_id)
+        {
+            if (month < 1 || month > 12)
+            {
+                return BadRequest("Month must be between 1 and 12.");
+            }
+            var reservation = await _reservationService.GetApprovedReservationsByMonthAndYearAndSpaceIdAsync(
+                month,
+                year,
+                space_id
+            );
+            return Ok(reservation);
+        }
+
         [HttpGet("{day}/{month}/{year}/{spaceId}")]
         public async Task<ActionResult<bool>> GetApprovedReservationExistsAsync(
             int day,

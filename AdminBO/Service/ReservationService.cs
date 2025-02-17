@@ -52,9 +52,26 @@ namespace AdminBO.Services
             return await _context
                 .Reservations.Where(r =>
                     r.Status == ReservationStatus.CONFIRMED
-                    && // Comparaison avec l'énumérateur
-                    r.StartDate.Month == month
+                    && r.StartDate.Month == month
                     && r.StartDate.Year == year
+                )
+                .Include(r => r.Space) // Inclure les données liées
+                .OrderBy(r => r.StartDate) // Optionnel, pour trier par date de début
+                .ToListAsync();
+        }
+
+        public async Task<List<Reservation>> GetApprovedReservationsByMonthAndYearAndSpaceIdAsync(
+            int month,
+            int year,
+            int space_id
+        )
+        {
+            return await _context
+                .Reservations.Where(r =>
+                    r.Status == ReservationStatus.CONFIRMED
+                    && r.StartDate.Month == month
+                    && r.StartDate.Year == year
+                    && r.SpaceId == space_id
                 )
                 .Include(r => r.Space) // Inclure les données liées
                 .OrderBy(r => r.StartDate) // Optionnel, pour trier par date de début
@@ -174,6 +191,64 @@ namespace AdminBO.Services
             return $"{cteBase} {mainQuery}";
         }
 
+        string BuildReservationWithSpaceIdQuery(string year, long owner_Id, int spaceId)
+        {
+            // Définir la structure de base du CTE en fonction de la présence de l'année
+            string cteBase;
+            if (string.IsNullOrEmpty(year))
+            {
+                // Générer les 12 derniers mois
+                cteBase =
+                    @"
+                    WITH GeneratedMonths AS (
+                        SELECT 
+                            FORMAT(DATEADD(MONTH, -n, GETDATE()), 'yyyy-MM') AS MonthYear
+                        FROM 
+                            (VALUES (0), (1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (11)) AS x(n)
+                    )";
+            }
+            else if (int.TryParse(year, out int _))
+            {
+                // Générer les 12 mois d'une année spécifique
+                cteBase =
+                    @"
+                    WITH GeneratedMonths AS (
+                        SELECT 
+                            FORMAT(DATEFROMPARTS(@Year, n, 1), 'yyyy-MM') AS MonthYear
+                        FROM 
+                            (VALUES (1), (2), (3), (4), (5), (6), (7), (8), (9), (10), (11), (12)) AS x(n)
+                    )";
+            }
+            else
+            {
+                throw new ArgumentException("Invalid year format.");
+            }
+
+            // Requête principale avec jointure
+            string mainQuery =
+                @"
+                SELECT 
+                    gm.MonthYear,
+                    ISNULL(COUNT(r.Id), 0) AS TotalReservations,
+                    ISNULL(SUM(CASE WHEN r.Status = 0 THEN 1 ELSE 0 END), 0) AS PendingReservations,
+                    ISNULL(SUM(CASE WHEN r.Status = 1 THEN 1 ELSE 0 END), 0) AS ConfirmedReservations,
+                    ISNULL(SUM(CASE WHEN r.Status = 2 THEN 1 ELSE 0 END), 0) AS CancelledReservations
+                FROM 
+                    GeneratedMonths gm
+                LEFT JOIN 
+                    Reservations r ON FORMAT(r.StartDate, 'yyyy-MM') = gm.MonthYear and r.SpaceId = @SpaceId 
+                LEFT JOIN 
+                    Spaces s ON r.SpaceID = s.ID
+                WHERE
+                    (s.OwnerID = @OwnerID OR s.OwnerID IS NULL)
+                GROUP BY 
+                    gm.MonthYear
+                ORDER BY 
+                    gm.MonthYear";
+
+            return $"{cteBase} {mainQuery}";
+        }
+
         public List<ReservationStats> GetReservationsByYearOrLast12Months(string? year, long owner_Id)
         {
             var stats = new List<ReservationStats>();
@@ -218,7 +293,49 @@ namespace AdminBO.Services
             return stats;
         }
 
-        // Fonction pour obtenir le nombre total de réservations d'une année donnée
+        public List<ReservationStats> GetReservationsByYearOrLast12MonthsAndSpaceId(string? year, long owner_Id, int space_Id)
+        {
+            var stats = new List<ReservationStats>();
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                string query = BuildReservationWithSpaceIdQuery(year, owner_Id, space_Id);
+                using (var command = new SqlCommand(query, connection))
+                {
+                    if (!string.IsNullOrEmpty(year) && int.TryParse(year, out int parsedYear))
+                    {
+                        command.Parameters.AddWithValue("@Year", parsedYear);
+                    }
+
+                    command.Parameters.AddWithValue("@OwnerID", owner_Id);
+                    command.Parameters.AddWithValue("@SpaceId", space_Id);
+
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            stats.Add(
+                                new ReservationStats
+                                {
+                                    MonthYear = reader["MonthYear"].ToString(),
+                                    PendingReservations = Convert.ToInt32(
+                                        reader["PendingReservations"]
+                                    ),
+                                    ConfirmedReservations = Convert.ToInt32(
+                                        reader["ConfirmedReservations"]
+                                    ),
+                                    CancelledReservations = Convert.ToInt32(
+                                        reader["CancelledReservations"]
+                                    ),
+                                }
+                            );
+                        }
+                    }
+                }
+            }
+            return stats;
+        }
+
         public async Task<int> GetTotalReservationsByYearAsync(int year)
         {
             int totalReservations = 0;
@@ -237,6 +354,32 @@ namespace AdminBO.Services
                 );
 
                 command.Parameters.AddWithValue("@Year", year);
+
+                totalReservations = (int)await command.ExecuteScalarAsync();
+            }
+
+            return totalReservations;
+        }
+        public async Task<int> GetTotalReservationsByYearAndSpaceIdAsync(int year, int spaceId)
+        {
+            int totalReservations = 0;
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                var command = new SqlCommand(
+                    @"
+                        SELECT COUNT(*) 
+                        FROM Reservations 
+                        WHERE YEAR(ReservationDate) = @Year
+                        AND Status = 1 AND
+                        SpaceId = @SpaceId",
+                    connection
+                );
+
+                command.Parameters.AddWithValue("@Year", year);
+                command.Parameters.AddWithValue("@SpaceId", spaceId);
 
                 totalReservations = (int)await command.ExecuteScalarAsync();
             }
@@ -274,6 +417,34 @@ namespace AdminBO.Services
         }
 
         // Construire la requête sans modifier manuellement la chaîne SQL
+        public async Task<double> CalculateReservationGrowthAsyncAndSpaceId(string year, int space_Id)
+        {
+            int currentYear = int.Parse(year);
+            int currentYearReservations = await GetTotalReservationsByYearAndSpaceIdAsync(currentYear, space_Id);
+            int lastYearReservations = await GetTotalReservationsByYearAndSpaceIdAsync(currentYear - 1, space_Id);
+
+            // Calculer la croissance en pourcentage
+            double growthPercentage = 0;
+
+            if (lastYearReservations > 0)
+            {
+                // Calcul de la croissance si l'année précédente a des réservations
+                growthPercentage =
+                    ((double)currentYearReservations / lastYearReservations - 1) * 100;
+            }
+            else if (lastYearReservations == 0 && currentYearReservations > 0)
+            {
+                // Si aucune réservation l'année précédente mais des réservations cette année
+                growthPercentage = 100;
+            }
+            else
+            {
+                // Cas où aucune réservation n'est présente pour l'année en cours
+                growthPercentage = 0; // aucune réservation cette année
+            }
+
+            return growthPercentage;
+        }
 
         public List<ViewReservation> GetAllReservationsByFilter(
             long ownerId,
@@ -461,3 +632,6 @@ namespace AdminBO.Services
         }
     }
 }
+
+// GetReservationsByYearOrLast12MonthsAndSpaceId(year, owner_Id, space_Id);
+// CalculateReservationGrowthAsyncAndSpaceId(year, space_id);

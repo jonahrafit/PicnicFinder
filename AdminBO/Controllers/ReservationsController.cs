@@ -92,6 +92,26 @@ public class ReservationsController : BaseController
     }
 
     [Authorize(Roles = "OWNER")]
+    public IActionResult GetReservationsDataWithSpaceId(string? year, int space_Id)
+    {
+        var userIdClaim = HttpContext.User.FindFirst("UserId")?.Value;
+        if (string.IsNullOrEmpty(userIdClaim))
+        {
+            throw new Exception("Utilisateur non authentifié ou ID d'utilisateur manquant");
+        }
+        long owner_Id = long.Parse(userIdClaim);
+        var data = _reservationService.GetReservationsByYearOrLast12MonthsAndSpaceId(year, owner_Id, space_Id);
+        return Json(data);
+    }
+
+    [Authorize(Roles = "OWNER")]
+    public async Task<ActionResult<double>> GetReservationGrowthWithSpaceId(string year, int space_Id)
+    {
+        double growth = await _reservationService.CalculateReservationGrowthAsyncAndSpaceId(year, space_Id);
+        return Ok(growth);
+    }
+
+    [Authorize(Roles = "OWNER")]
     public IActionResult UpdateStatus([FromBody] ReservationStatusUpdateRequest request)
     {
         // Rechercher la réservation par ID et vérifier l'employeeId
